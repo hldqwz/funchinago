@@ -1,0 +1,106 @@
+---
+// src/pages/blog/[slug].astro — 博客文章（英文版）
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n';
+import { getCollection, getEntry, render } from 'astro:content';
+
+const locale = 'en';
+const t = useTranslations(locale);
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.filter(p => p.data.locale === 'en').map((post) => ({
+    params: { slug: post.id },
+  }));
+}
+
+const { slug } = Astro.params;
+const post = await getEntry('blog', slug!);
+
+if (!post || post.data.locale !== 'en') {
+  return Astro.redirect('/blog', 301);
+}
+
+const { Content } = await render(post);
+---
+
+<Layout title={post.data.title} description={post.data.description} lang={locale}>
+  <div class="container-narrow" style="padding-top: 2rem;">
+    <a href="/blog" style="font-size: 0.85rem; color: var(--text-tertiary); display: inline-flex; align-items: center; gap: 0.25rem;">
+      ← {t('blog.back')}
+    </a>
+
+    <article style="margin-top: 1.5rem;">
+      <header style="margin-bottom: 2rem;">
+        <time datetime={post.data.date.toISOString()} style="font-size: 0.85rem; color: var(--text-tertiary);">
+          {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+        <h1 style="font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; margin: 0.5rem 0; line-height: 1.3;">
+          {post.data.title}
+        </h1>
+        {post.data.tags && post.data.tags.length > 0 && (
+          <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+            {post.data.tags.map((tag) => (
+              <span class="badge badge-blue">{tag}</span>
+            ))}
+          </div>
+        )}
+      </header>
+
+      <div style="font-size: 1rem; line-height: 1.8; color: var(--text);">
+        <Content />
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  article h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+  article h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  article p {
+    margin-bottom: 1rem;
+  }
+  article ul, article ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+  article li {
+    margin-bottom: 0.4rem;
+  }
+  article code {
+    background: var(--overlay);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  article pre {
+    background: var(--overlay);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    overflow-x: auto;
+    margin-bottom: 1rem;
+  }
+  article blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+  article hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+</style>

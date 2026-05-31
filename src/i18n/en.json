@@ -8,6 +8,7 @@
   "nav": {
     "rankings": "Rankings",
     "compare": "Compare",
+    "blog": "Blog",
     "language": "中文"
   },
   "home": {
@@ -88,5 +89,14 @@
     "source": "Data from",
     "auto_update": "Auto-updated daily",
     "copyright": "LLM Rankings"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "In-depth analysis of LLM trends, rankings, and model comparisons",
+    "read_more": "Read more",
+    "published": "Published",
+    "tags": "Tags",
+    "back": "← Back to Blog",
+    "no_posts": "No posts yet"
   }
 }

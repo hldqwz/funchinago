@@ -89,7 +89,7 @@ const hasBL = model?.platforms?.bailian != null;
       <div class="stat-tile"><div class="stat-value" style="color:var(--green);font-size:1.3rem;">{avgInput !== null ? `$${avgInput.toFixed(2)}` : "—"}</div><div class="stat-label">{t("detail.input_price")}</div></div>
       <div class="stat-tile"><div class="stat-value" style="color:var(--green);font-size:1.3rem;">{avgOutput !== null ? `$${avgOutput.toFixed(2)}` : "—"}</div><div class="stat-label">{t("detail.output_price")}</div></div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
+    <div class="model-info-grid">
       <div class="card" style="padding:1.25rem;">
         <h3 style="font-size:0.85rem;font-weight:700;margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-secondary);">{t("detail.model_info")}</h3>
         <table style="width:100%;"><tbody>
@@ -134,3 +134,18 @@ const hasBL = model?.platforms?.bailian != null;
     </section>
   </div>
 </Layout>
+
+<style>
+  .model-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .model-info-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

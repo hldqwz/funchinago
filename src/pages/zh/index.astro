@@ -102,7 +102,7 @@ function rankClass(r: number | null): string { if (r === 1) return "gold"; if (r
     </div>
 
     <!-- Leader Cards -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+    <div class="leader-grid">
       <div class="leader-card"><h3>📊 {t("home.section_most_used")}</h3>
         {topMostUsed.map((m, i) => { const u = getUsage(m); const pct = u ? Math.max(3, (u / Number(maxUsage)) * 100) : 5;
           return <div class="leader-row"><span class="leader-num">{i + 1}</span><a href={`/zh/models/${m.canonical_name}`} class="leader-name">{m.name}</a><div class="leader-bar"><div class="bar-fill bar-blue" style={`width:${pct}%`}></div></div></div><span class="leader-score">{usageDisplay(u)}</span></div>; })}
@@ -176,3 +176,18 @@ function rankClass(r: number | null): string { if (r === 1) return "gold"; if (r
     )}
   </div>
 </Layout>
+
+<style>
+  .leader-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .leader-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

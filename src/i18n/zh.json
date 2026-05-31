@@ -8,6 +8,7 @@
   "nav": {
     "rankings": "排行榜",
     "compare": "模型对比",
+    "blog": "博客",
     "language": "English"
   },
   "home": {
@@ -88,5 +89,14 @@
     "source": "数据来源",
     "auto_update": "每日自动更新",
     "copyright": "LLM Rankings"
+  },
+  "blog": {
+    "title": "博客",
+    "subtitle": "大模型趋势、排名与模型对比的深度分析",
+    "read_more": "阅读全文",
+    "published": "发布于",
+    "tags": "标签",
+    "back": "← 返回博客",
+    "no_posts": "暂无文章"
   }
 }

@@ -73,9 +73,9 @@ const selected = selectedIds.length > 0
     <div class="card" style="padding:1.25rem;margin-bottom:1.5rem;">
       <form method="get" action="/compare">
         <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <div style="flex:1;min-width:280px;">
+          <div class="compare-select-wrap">
             <label style="font-size:0.85rem;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:0.4rem;">{t("compare.select_hint")}</label>
-            <select name="ids" multiple style="width:100%;padding:0.5rem;border:1px solid var(--border);border-radius:8px;font-size:0.9rem;min-height:200px;">
+            <select name="ids" multiple class="compare-select">
               {models.map(m => <option value={m.canonical_name} selected={selected.some(s => s.canonical_name === m.canonical_name)}>#{m.platforms?.openrouter?.rank} — {m.name}  (${cheapestRoundtrip(m) !== null ? cheapestRoundtrip(m)!.toFixed(1) : "—"}/M)</option>)}
             </select>
           </div>
@@ -88,7 +88,7 @@ const selected = selectedIds.length > 0
       <div class="card" style="text-align:center;padding:3rem;color:var(--text-secondary);">{t("compare.no_selection")}</div>
     ) : (
       <div class="card table-wrap"><table>
-        <thead><tr><th style="width:100px;">{t("compare.col_metric")}</th>{selected.map(m => <th style="text-align:center;" colspan="2"><a href={`/models/${m.canonical_name}`} style="color:var(--accent);font-size:0.9rem;">#{m.platforms?.openrouter?.rank} {m.name}</a></th>)}</tr></thead>
+        <thead><tr><th class="compare-metric-col">{t("compare.col_metric")}</th>{selected.map(m => <th style="text-align:center;" colspan="2"><a href={`/models/${m.canonical_name}`} style="color:var(--accent);font-size:0.9rem;">#{m.platforms?.openrouter?.rank} {m.name}</a></th>)}</tr></thead>
         <tbody>
           <tr><td style="color:var(--text-secondary);font-weight:500;">Rank</td>{selected.map(m => <td colspan="2" style="text-align:center;font-weight:700;font-size:1.1rem;">#{m.platforms?.openrouter?.rank || "—"}</td>)}</tr>
           <tr><td style="color:var(--text-secondary);font-weight:500;">OR Input /1M</td>{selected.map(m => { const p = priceOR(m, "prompt"); return <td colspan="2" style="text-align:center;font-weight:600;color:var(--green);">{p !== null ? `$${p.toFixed(2)}` : "—"}</td>; })}</tr>
@@ -104,3 +104,33 @@ const selected = selectedIds.length > 0
     )}
   </div>
 </Layout>
+
+<style>
+  .compare-select-wrap {
+    flex: 1;
+    min-width: 280px;
+  }
+  .compare-select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    min-height: 200px;
+  }
+  .compare-metric-col {
+    width: 100px;
+  }
+
+  @media (max-width: 768px) {
+    .compare-select-wrap {
+      min-width: 200px;
+    }
+    .compare-select {
+      min-height: 140px;
+    }
+    .compare-metric-col {
+      width: 70px;
+    }
+  }
+</style>

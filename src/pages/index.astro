@@ -202,7 +202,7 @@ function rankClass(r: number | null): string {
       <span style="font-size: 0.75rem; font-weight: 400; color: var(--text-tertiary);">· {t("home.stat_ranked").toLowerCase()}</span>
     </h2>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+    <div class="leader-grid">
       <!-- Most Used -->
       <div class="leader-card">
         <h3>📊 {t("home.section_most_used")}</h3>
@@ -466,6 +466,19 @@ function rankClass(r: number | null): string {
     background: var(--accent);
     color: white;
     border-color: var(--accent);
+  }
+
+  .leader-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .leader-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 
