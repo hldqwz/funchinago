@@ -1,0 +1,43 @@
+---
+// src/components/GiscusComments.astro — Giscus 评论组件
+export interface Props {
+  category?: string;
+  categoryId?: string;
+  mapping?: string;
+  lang?: string;
+}
+
+const {
+  category = "General",
+  categoryId = "DIC_kwDOSs4oGM4C-OF5",
+  mapping = "pathname",
+  lang = "en",
+} = Astro.props;
+---
+
+<div class="giscus" style="margin-top: 3rem;"></div>
+
+<script>
+  (function () {
+    const container = document.querySelector(".giscus");
+    if (!container) return;
+
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", "hldqwz/llm-rankings");
+    script.setAttribute("data-repo-id", "R_kgDOSs4oGA");
+    script.setAttribute("data-category", "General");
+    script.setAttribute("data-category-id", "DIC_kwDOSs4oGM4C-OF5");
+    script.setAttribute("data-mapping", "pathname");
+    script.setAttribute("data-strict", "0");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "bottom");
+    script.setAttribute("data-theme", "preferred_color_scheme");
+    script.setAttribute("data-lang", document.documentElement.lang === "zh" ? "zh-CN" : "en");
+    script.setAttribute("crossorigin", "anonymous");
+    script.async = true;
+
+    container.appendChild(script);
+  })();
+</script>

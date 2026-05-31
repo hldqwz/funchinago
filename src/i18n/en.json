@@ -9,6 +9,7 @@
     "rankings": "Rankings",
     "compare": "Compare",
     "blog": "Blog",
+    "discuss": "Discuss",
     "language": "中文"
   },
   "home": {
@@ -88,7 +89,43 @@
   "footer": {
     "source": "Data from",
     "auto_update": "Auto-updated daily",
-    "copyright": "LLM Rankings"
+    "copyright": "LLM Rankings",
+    "about": "About",
+    "privacy": "Privacy",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About",
+    "intro": "LLM Rankings tracks real AI model usage data across the top API aggregation platforms.",
+    "what": "What This Is",
+    "what_text": "We collect and rank AI models based on actual API token consumption — not benchmarks, not marketing claims. If a model is being used in production, you'll see it here.",
+    "sources": "Data Sources",
+    "sources_text": "We aggregate data from OpenRouter, Groq, SiliconFlow, and Alibaba Bailian. Rankings are updated daily by an automated pipeline.",
+    "why": "Why We Built This",
+    "why_text": "There are hundreds of AI models. Choosing the right one means balancing quality, price, and speed. We built LLM Rankings to give developers a data-driven way to compare models across platforms and make informed decisions.",
+    "who": "Who Runs This",
+    "who_text": "A small team of developers who spend too much time thinking about AI model selection. We're not affiliated with any model provider or platform."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "intro": "Last updated: June 2026",
+    "data": "Data We Collect",
+    "data_text": "We do not collect any personal data. No cookies, no tracking scripts, no analytics. This site is fully static — it cannot store or process user information.",
+    "third_party": "Third-Party Services",
+    "third_party_text": "This site is hosted on Cloudflare Pages. Cloudflare may collect anonymized request logs for security and performance purposes. The comment system is powered by Giscus, which uses GitHub Discussions for data storage. See Cloudflare's and GitHub's privacy policies for details.",
+    "changes": "Changes",
+    "changes_text": "If we ever add analytics or data collection, this page will be updated before any data is collected."
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Have feedback, suggestions, or found a data error? We'd love to hear from you.",
+    "email": "Email",
+    "response": "We read every message and typically respond within 1-2 business days.",
+    "feedback": "What to Send",
+    "feedback_1": "Missing models or platforms you'd like us to track",
+    "feedback_2": "Data errors or ranking inconsistencies",
+    "feedback_3": "Feature requests and general feedback",
+    "feedback_4": "Partnership or collaboration inquiries"
   },
   "blog": {
     "title": "Blog",

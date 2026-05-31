@@ -1,0 +1,38 @@
+---
+// src/pages/zh/contact.astro
+import Layout from "../../layouts/Layout.astro";
+import { useTranslations } from "../../i18n";
+
+const locale = "zh";
+const t = useTranslations(locale);
+---
+
+<Layout title={t("contact.title")} lang={locale}>
+  <div class="container-narrow" style="padding-top: 2rem; padding-bottom: 3rem;">
+    <h1 style="font-size: 1.65rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem;">
+      {t("contact.title")}
+    </h1>
+
+    <p style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+      {t("contact.intro")}
+    </p>
+
+    <section style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">{t("contact.email")}</h2>
+      <p style="color: var(--text-secondary); line-height: 1.8;">
+        <a href="mailto:llmrankings@proton.me" style="font-weight: 600;">llmrankings@proton.me</a>
+      </p>
+      <p style="color: var(--text-tertiary); font-size: 0.9rem; margin-top: 0.5rem;">{t("contact.response")}</p>
+    </section>
+
+    <section style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem;">{t("contact.feedback")}</h2>
+      <ul style="color: var(--text-secondary); line-height: 2; padding-left: 1.25rem;">
+        <li>{t("contact.feedback_1")}</li>
+        <li>{t("contact.feedback_2")}</li>
+        <li>{t("contact.feedback_3")}</li>
+        <li>{t("contact.feedback_4")}</li>
+      </ul>
+    </section>
+  </div>
+</Layout>

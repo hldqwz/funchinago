@@ -1,0 +1,32 @@
+---
+// src/pages/privacy.astro
+import Layout from "../layouts/Layout.astro";
+import { useTranslations } from "../i18n";
+
+const locale = "en";
+const t = useTranslations(locale);
+---
+
+<Layout title={t("privacy.title")} lang={locale}>
+  <div class="container-narrow" style="padding-top: 2rem; padding-bottom: 3rem;">
+    <h1 style="font-size: 1.65rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.5rem;">
+      {t("privacy.title")}
+    </h1>
+    <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-bottom: 2rem;">{t("privacy.intro")}</p>
+
+    <section style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">{t("privacy.data")}</h2>
+      <p style="color: var(--text-secondary); line-height: 1.8;">{t("privacy.data_text")}</p>
+    </section>
+
+    <section style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">{t("privacy.third_party")}</h2>
+      <p style="color: var(--text-secondary); line-height: 1.8;">{t("privacy.third_party_text")}</p>
+    </section>
+
+    <section style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">{t("privacy.changes")}</h2>
+      <p style="color: var(--text-secondary); line-height: 1.8;">{t("privacy.changes_text")}</p>
+    </section>
+  </div>
+</Layout>

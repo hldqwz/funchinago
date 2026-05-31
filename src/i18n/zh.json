@@ -9,6 +9,7 @@
     "rankings": "排行榜",
     "compare": "模型对比",
     "blog": "博客",
+    "discuss": "讨论区",
     "language": "English"
   },
   "home": {
@@ -88,7 +89,43 @@
   "footer": {
     "source": "数据来源",
     "auto_update": "每日自动更新",
-    "copyright": "LLM Rankings"
+    "copyright": "LLM Rankings",
+    "about": "关于",
+    "privacy": "隐私政策",
+    "contact": "联系我们"
+  },
+  "about": {
+    "title": "关于我们",
+    "intro": "LLM Rankings 追踪主流 API 聚合平台上各大 AI 模型的真实使用数据。",
+    "what": "这是什么",
+    "what_text": "我们基于 API 实际调用量对 AI 模型进行排名——不是跑分，不是宣传数据。只要有人在生产环境里用，这里就有数据。",
+    "sources": "数据来源",
+    "sources_text": "我们从 OpenRouter、Groq、硅基流动、阿里百炼四个平台聚合数据，排名每日自动更新。",
+    "why": "为什么做这个",
+    "why_text": "市面上有几百个 AI 模型，选模型要看质量、价格、速度三者平衡。我们建 LLM Rankings 就是给开发者一个用数据说话、跨平台对比的地方。",
+    "who": "谁在运营",
+    "who_text": "一个专注于 AI 模型选择的开发者小团队。我们不隶属于任何模型提供商或平台。"
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "intro": "最后更新：2026年6月",
+    "data": "我们收集什么数据",
+    "data_text": "我们不收集任何个人数据。没有 Cookie，没有追踪脚本，没有统计代码。本站是完全静态的，无法存储或处理用户信息。",
+    "third_party": "第三方服务",
+    "third_party_text": "本站托管于 Cloudflare Pages，Cloudflare 可能会为安全和性能目的收集匿名请求日志。评论区由 Giscus 驱动，使用 GitHub Discussions 存储数据。详情请参见 Cloudflare 和 GitHub 隐私政策。",
+    "changes": "政策变更",
+    "changes_text": "如果我们将来添加分析或数据收集功能，会在收集任何数据之前更新本页面。"
+  },
+  "contact": {
+    "title": "联系我们",
+    "intro": "有反馈、建议、或发现数据有误？欢迎联系我们。",
+    "email": "邮箱",
+    "response": "每条消息我们都会看，通常 1-2 个工作日内回复。",
+    "feedback": "可以发什么",
+    "feedback_1": "希望我们收录的新模型或平台",
+    "feedback_2": "数据错误或排名不一致",
+    "feedback_3": "功能建议和一般反馈",
+    "feedback_4": "合作或商务洽谈"
   },
   "blog": {
     "title": "博客",

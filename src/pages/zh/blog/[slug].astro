@@ -3,6 +3,7 @@
 import Layout from '../../../layouts/Layout.astro';
 import { useTranslations } from '../../../i18n';
 import { getCollection, getEntry, render } from 'astro:content';
+import GiscusComments from '../../../components/GiscusComments.astro';
 
 const locale = 'zh';
 const t = useTranslations(locale);
@@ -51,6 +52,8 @@ const { Content } = await render(post);
         <Content />
       </div>
     </article>
+
+    <GiscusComments />
   </div>
 </Layout>
 
