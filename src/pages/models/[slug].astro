@@ -35,8 +35,8 @@ function priceOR(side: "prompt" | "completion"): number | null {
   if (!p) return null;
   return parseFloat(p[side] || "0") * 1_000_000;
 }
-function priceTJ(side: "prompt" | "completion"): number | null {
-  const p = model?.platforms?.together?.pricing;
+function priceGR(side: "prompt" | "completion"): number | null {
+  const p = model?.platforms?.groq?.pricing;
   if (!p) return null;
   return side === "prompt" ? p.prompt_per_m ?? 0 : p.completion_per_m ?? 0;
 }
@@ -44,6 +44,9 @@ function priceSF(side: "prompt" | "completion"): number | null {
   const p = model?.platforms?.siliconflow?.pricing;
   if (!p) return null;
   return side === "prompt" ? p.prompt_per_m ?? 0 : p.completion_per_m ?? 0;
+}
+function priceBL(side: "prompt" | "completion"): number | null {
+  return null;
 }
 function formatTokens(n: number | null | undefined): string {
   if (!n) return "—";
@@ -53,7 +56,7 @@ function formatTokens(n: number | null | undefined): string {
   if (n >= 1e3) return (n / 1e3).toFixed(0) + "K";
   return n.toString();
 }
-function getCtx(plat: "openrouter" | "together" | "siliconflow"): number {
+function getCtx(plat: "openrouter" | "groq" | "siliconflow" | "bailian"): number {
   return Math.round((model?.platforms?.[plat]?.context_length || 0) / 1024);
 }
 function getRank(): number | null {
@@ -68,27 +71,31 @@ function getTrend(): string {
 
 const rank = getRank();
 const ctxOR = getCtx("openrouter");
-const ctxTJ = getCtx("together");
+const ctxGR = getCtx("groq");
 const ctxSF = getCtx("siliconflow");
-const maxCtx = ctxOR || ctxTJ || ctxSF;
+const ctxBL = getCtx("bailian");
+const maxCtx = ctxOR || ctxGR || ctxSF || ctxBL;
 
 const orInput = priceOR("prompt");
 const orOutput = priceOR("completion");
-const tjInput = priceTJ("prompt");
-const tjOutput = priceTJ("completion");
+const tjInput = priceGR("prompt");
+const tjOutput = priceGR("completion");
 const sfInput = priceSF("prompt");
 const sfOutput = priceSF("completion");
+const blInput = priceBL("prompt");
+const blOutput = priceBL("completion");
 
 // Best available prices
-const bestInput = [orInput, tjInput, sfInput].filter(p => p !== null) as number[];
-const bestOutput = [orOutput, tjOutput, sfOutput].filter(p => p !== null) as number[];
+const bestInput = [orInput, tjInput, sfInput, blInput].filter(p => p !== null) as number[];
+const bestOutput = [orOutput, tjOutput, sfOutput, blOutput].filter(p => p !== null) as number[];
 const avgInput = bestInput.length > 0 ? Math.min(...bestInput) : null;
 const avgOutput = bestOutput.length > 0 ? Math.min(...bestOutput) : null;
 const roundtrip = avgInput !== null && avgOutput !== null ? avgInput + avgOutput : null;
 
 const hasOR = model?.platforms?.openrouter != null;
-const hasTJ = model?.platforms?.together != null;
+const hasGR = model?.platforms?.groq != null;
 const hasSF = model?.platforms?.siliconflow != null;
+const hasBL = model?.platforms?.bailian != null;
 ---
 
 <Layout title={`${model.name} — Model Details`} description={model.description} lang={locale}>
@@ -165,7 +172,7 @@ const hasSF = model?.platforms?.siliconflow != null;
             <tr style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
               <td style="color: var(--text-tertiary); font-size: 0.85rem; padding: 0;">Platforms</td>
               <td style="font-size: 0.85rem; font-weight: 600; padding: 0;">
-                {[hasOR && "OR", hasTJ && "TJ", hasSF && "SF"].filter(Boolean).join(", ") || "—"}
+                {[hasOR && "OR", hasGR && "GR", hasSF && "SF", hasBL && "BL"].filter(Boolean).join(", ") || "—"}
               </td>
             </tr>
           </tbody>
@@ -240,17 +247,17 @@ const hasSF = model?.platforms?.siliconflow != null;
                 </td>
               </tr>
             )}
-            {hasTJ && (
+            {hasGR && (
               <tr>
                 <td style="font-weight: 600;">
-                  <span class="badge badge-purple badge-platform" style="font-size: 0.8rem;">TJ</span>
-                  Together AI
+                  <span class="badge badge-purple badge-platform" style="font-size: 0.8rem;">GR</span>
+                  Groq
                 </td>
                 <td style="text-align: right; font-weight: 600;">${tjInput !== null ? tjInput.toFixed(3) : "—"}</td>
                 <td style="text-align: right; font-weight: 600;">${tjOutput !== null ? tjOutput.toFixed(3) : "—"}</td>
-                <td style="text-align: right;">{ctxTJ > 0 ? `${ctxTJ.toLocaleString()}K` : "—"}</td>
+                <td style="text-align: right;">{ctxGR > 0 ? `${ctxGR.toLocaleString()}K` : "—"}</td>
                 <td style="font-family: monospace; font-size: 0.8rem; max-width: 200px; overflow: hidden; text-overflow: ellipsis;">
-                  {model.platforms.together.model_id}
+                  {model.platforms.groq.model_id}
                 </td>
               </tr>
             )}
@@ -265,6 +272,20 @@ const hasSF = model?.platforms?.siliconflow != null;
                 <td style="text-align: right;">{ctxSF > 0 ? `${ctxSF.toLocaleString()}K` : "—"}</td>
                 <td style="font-family: monospace; font-size: 0.8rem; max-width: 200px; overflow: hidden; text-overflow: ellipsis;">
                   {model.platforms.siliconflow.model_id}
+                </td>
+              </tr>
+            )}
+            {hasBL && (
+              <tr>
+                <td style="font-weight: 600;">
+                  <span class="badge badge-teal badge-platform" style="font-size: 0.8rem;">BL</span>
+                  Bailian
+                </td>
+                <td style="text-align: right; font-weight: 600;">—</td>
+                <td style="text-align: right; font-weight: 600;">—</td>
+                <td style="text-align: right;">{ctxBL > 0 ? `${ctxBL.toLocaleString()}K` : "—"}</td>
+                <td style="font-family: monospace; font-size: 0.8rem; max-width: 200px; overflow: hidden; text-overflow: ellipsis;">
+                  {model.platforms.bailian.model_id}
                 </td>
               </tr>
             )}
@@ -319,8 +340,8 @@ const hasSF = model?.platforms?.siliconflow != null;
           {roundtrip !== null
             ? `The best available input price is $${avgInput!.toFixed(3)}/1M tokens and output price is $${avgOutput!.toFixed(3)}/1M tokens, with a round-trip cost of $${roundtrip.toFixed(2)}/1M tokens.`
             : "Pricing information is not available for this model."}
-          {[hasOR, hasTJ, hasSF].filter(Boolean).length > 1
-            ? ` This model is available on ${[hasOR && "OpenRouter", hasTJ && "Together AI", hasSF && "SiliconFlow"].filter(Boolean).join(", ")}.`
+          {[hasOR, hasGR, hasSF, hasBL].filter(Boolean).length > 1
+            ? ` This model is available on ${[hasOR && "OpenRouter", hasGR && "Groq", hasSF && "SiliconFlow", hasBL && "Bailian"].filter(Boolean).join(", ")}.`
             : ""}
         </p>
       </div>

@@ -9,7 +9,7 @@ const t = useTranslations(locale);
 
 let models: ModelData[] = [];
 let updatedAt = "";
-let platformStats = { openrouter: 0, together: 0, siliconflow: 0, multi_platform: 0 };
+let platformStats = { openrouter: 0, groq: 0, siliconflow: 0, bailian: 0, multi_platform: 0 };
 
 try {
   const raw = await import("../data/models.json");
@@ -26,8 +26,8 @@ function priceOR(model: ModelData, side: "prompt" | "completion"): number {
   if (!p) return -1;
   return parseFloat(p[side] || "0") * 1_000_000;
 }
-function priceTJ(model: ModelData, side: "prompt" | "completion"): number {
-  const p = model.platforms?.together?.pricing;
+function priceGR(model: ModelData, side: "prompt" | "completion"): number {
+  const p = model.platforms?.groq?.pricing;
   if (!p) return -1;
   if (side === "prompt") return p.prompt_per_m ?? parseFloat(p.prompt || "0");
   return p.completion_per_m ?? parseFloat(p.completion || "0");
@@ -48,12 +48,12 @@ function getRoundtrip(model: ModelData): number | null {
 
 // ── 获取模型在至少一个平台上有价格的输入/输出价 ──
 function getMinInputPrice(model: ModelData): number | null {
-  const prices = [priceOR(model, "prompt"), priceTJ(model, "prompt"), priceSF(model, "prompt")]
+  const prices = [priceOR(model, "prompt"), priceGR(model, "prompt"), priceSF(model, "prompt")]
     .filter(p => p >= 0);
   return prices.length > 0 ? Math.min(...prices) : null;
 }
 function getMinOutputPrice(model: ModelData): number | null {
-  const prices = [priceOR(model, "completion"), priceTJ(model, "completion"), priceSF(model, "completion")]
+  const prices = [priceOR(model, "completion"), priceGR(model, "completion"), priceSF(model, "completion")]
     .filter(p => p >= 0);
   return prices.length > 0 ? Math.min(...prices) : null;
 }
@@ -84,8 +84,8 @@ function usageDisplay(n: number | null): string {
 function contextK(model: ModelData): number {
   // 取任意平台有值的上下文
   const ctx = model.platforms?.openrouter?.context_length
-    || model.platforms?.together?.context_length
-    || model.platforms?.siliconflow?.context_length
+    || model.platforms?.groq?.context_length
+    || model.platforms?.siliconflow?.context_length || model.platforms?.bailian?.context_length
     || 0;
   return Math.round(ctx / 1024);
 }
@@ -135,12 +135,12 @@ const maxCtx = topCtx.length > 0 ? contextK(topCtx[0]) || 1 : 1;
 // ── 平台标签 ──
 function platformBadge(platform: string): string {
   return platform === "openrouter" ? "OR"
-    : platform === "together" ? "TJ"
+    : platform === "groq" ? "GR"
     : "SF";
 }
 function platformColor(platform: string): string {
   return platform === "openrouter" ? "badge-blue"
-    : platform === "together" ? "badge-purple"
+    : platform === "groq" ? "badge-purple"
     : "badge-orange";
 }
 
@@ -184,7 +184,7 @@ function rankClass(r: number | null): string {
       </div>
       <div class="stat-tile">
         <div class="stat-value" style="color: var(--accent-2);">
-          {[platformStats.openrouter > 0, platformStats.together > 0, platformStats.siliconflow > 0].filter(Boolean).length}
+          {[platformStats.openrouter > 0, platformStats.groq > 0, platformStats.siliconflow > 0, platformStats.bailian > 0].filter(Boolean).length}
         </div>
         <div class="stat-label">{t("home.stat_platforms")}</div>
       </div>
@@ -295,8 +295,9 @@ function rankClass(r: number | null): string {
       <span style="font-size: 0.75rem; color: var(--text-tertiary); margin-right: 0.25rem;">{t("home.sort_tip")}</span>
       <button class="filter-btn active" data-filter="all">{t("home.filter_all")}</button>
       <button class="filter-btn" data-filter="openrouter">{t("home.filter_or")}</button>
-      <button class="filter-btn" data-filter="together">{t("home.filter_tj")}</button>
+      <button class="filter-btn" data-filter="groq">{t("home.filter_tj")}</button>
       <button class="filter-btn" data-filter="siliconflow">{t("home.filter_sf")}</button>
+      <button class="filter-btn" data-filter="bailian">{t("home.filter_bl")}</button>
     </div>
 
     <!-- Main Table -->
@@ -361,7 +362,7 @@ function rankClass(r: number | null): string {
                   <div style="display: flex; gap: 0.2rem; justify-content: center;">
                     {platforms.map(p => (
                       <span class={"badge badge-platform " + platformColor(p)}
-                            title={p === "openrouter" ? "OpenRouter" : p === "together" ? "Together AI" : "SiliconFlow"}>
+                            title={p === "openrouter" ? "OpenRouter" : p === "groq" ? "Groq" : p === "bailian" ? "Bailian" : "SiliconFlow"}>
                         {platformBadge(p)}
                       </span>
                     ))}

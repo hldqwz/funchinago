@@ -1,12 +1,14 @@
 {
-  "updated_at": "2026-05-31T07:47:10Z",
-  "total_models": 350,
+  "updated_at": "2026-05-31T14:02:28Z",
+  "total_models": 602,
   "ranked_models": 10,
   "platform_stats": {
-    "openrouter": 350,
-    "together": 0,
-    "siliconflow": 0,
-    "multi_platform": 0
+    "openrouter": 343,
+    "groq": 0,
+    "siliconflow": 91,
+    "bailian": 208,
+    "fireworks": 9,
+    "multi_platform": 41
   },
   "models": [
     {
@@ -460,6 +462,36 @@
       }
     },
     {
+      "canonical_name": "anthropic-claude-opus-4",
+      "name": "Anthropic: Claude Opus 4",
+      "description": "Claude Opus 4 is benchmarked as the world’s best coding model, at time of release, bringing sustained performance on complex, long-running tasks and agent workflows. It sets new benchmarks in...",
+      "platforms": {
+        "openrouter": {
+          "model_id": "anthropic/claude-opus-4",
+          "pricing": {
+            "prompt": "0.000015",
+            "completion": "0.000075",
+            "image": "0",
+            "request": "0"
+          },
+          "context_length": 200000,
+          "architecture": {
+            "modality": "text+image+file->text",
+            "tokenizer": "Claude"
+          },
+          "top_provider": {
+            "name": "",
+            "context_length": 200000,
+            "max_completion_tokens": 32000
+          },
+          "rank": null,
+          "usage_tokens": null,
+          "trend": null,
+          "usage_display": ""
+        }
+      }
+    },
+    {
       "canonical_name": "anthropic-claude-opus-4-1",
       "name": "Anthropic: Claude Opus 4.1",
       "description": "Claude Opus 4.1 is an updated version of Anthropic’s flagship model, offering improved performance in coding, reasoning, and agentic tasks. It achieves 74.5% on SWE-bench Verified and shows notable gains...",
@@ -661,6 +693,36 @@
             "name": "",
             "context_length": 1000000,
             "max_completion_tokens": 128000
+          },
+          "rank": null,
+          "usage_tokens": null,
+          "trend": null,
+          "usage_display": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "anthropic-claude-sonnet-4",
+      "name": "Anthropic: Claude Sonnet 4",
+      "description": "Claude Sonnet 4 significantly enhances the capabilities of its predecessor, Sonnet 3.7, excelling in both coding and reasoning tasks with improved precision and controllability. Achieving state-of-the-art performance on SWE-bench (72.7%),...",
+      "platforms": {
+        "openrouter": {
+          "model_id": "anthropic/claude-sonnet-4",
+          "pricing": {
+            "prompt": "0.000003",
+            "completion": "0.000015",
+            "image": "0",
+            "request": "0"
+          },
+          "context_length": 1000000,
+          "architecture": {
+            "modality": "text+image+file->text",
+            "tokenizer": "Claude"
+          },
+          "top_provider": {
+            "name": "",
+            "context_length": 1000000,
+            "max_completion_tokens": 64000
           },
           "rank": null,
           "usage_tokens": null,
@@ -1120,66 +1182,6 @@
       }
     },
     {
-      "canonical_name": "claude-opus-4",
-      "name": "Anthropic: Claude Opus 4",
-      "description": "Claude Opus 4 is benchmarked as the world’s best coding model, at time of release, bringing sustained performance on complex, long-running tasks and agent workflows. It sets new benchmarks in...",
-      "platforms": {
-        "openrouter": {
-          "model_id": "anthropic/claude-opus-4",
-          "pricing": {
-            "prompt": "0.000015",
-            "completion": "0.000075",
-            "image": "0",
-            "request": "0"
-          },
-          "context_length": 200000,
-          "architecture": {
-            "modality": "text+image+file->text",
-            "tokenizer": "Claude"
-          },
-          "top_provider": {
-            "name": "",
-            "context_length": 200000,
-            "max_completion_tokens": 32000
-          },
-          "rank": null,
-          "usage_tokens": null,
-          "trend": null,
-          "usage_display": ""
-        }
-      }
-    },
-    {
-      "canonical_name": "claude-sonnet-4",
-      "name": "Anthropic: Claude Sonnet 4",
-      "description": "Claude Sonnet 4 significantly enhances the capabilities of its predecessor, Sonnet 3.7, excelling in both coding and reasoning tasks with improved precision and controllability. Achieving state-of-the-art performance on SWE-bench (72.7%),...",
-      "platforms": {
-        "openrouter": {
-          "model_id": "anthropic/claude-sonnet-4",
-          "pricing": {
-            "prompt": "0.000003",
-            "completion": "0.000015",
-            "image": "0",
-            "request": "0"
-          },
-          "context_length": 1000000,
-          "architecture": {
-            "modality": "text+image+file->text",
-            "tokenizer": "Claude"
-          },
-          "top_provider": {
-            "name": "",
-            "context_length": 1000000,
-            "max_completion_tokens": 64000
-          },
-          "rank": null,
-          "usage_tokens": null,
-          "trend": null,
-          "usage_display": ""
-        }
-      }
-    },
-    {
       "canonical_name": "cognitivecomputations-dolphin-mistral-24b-venice-edition-free",
       "name": "Venice: Uncensored (free)",
       "description": "Venice Uncensored Dolphin Mistral 24B Venice Edition is a fine-tuned variant of Mistral-Small-24B-Instruct-2501, developed by dphn.ai in collaboration with Venice.ai. This model is designed as an “uncensored” instruct-tuned LLM, preserving...",
@@ -1506,6 +1508,12 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "deepseek-r1-distill-llama-70b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -1536,6 +1544,12 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "deepseek-r1-distill-qwen-32b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -1600,36 +1614,6 @@
       }
     },
     {
-      "canonical_name": "deepseek-deepseek-v4-flash-free",
-      "name": "DeepSeek: DeepSeek V4 Flash (free)",
-      "description": "DeepSeek V4 Flash is an efficiency-optimized Mixture-of-Experts model from DeepSeek with 284B total parameters and 13B activated parameters, supporting a 1M-token context window. It is designed for fast inference and...",
-      "platforms": {
-        "openrouter": {
-          "model_id": "deepseek/deepseek-v4-flash:free",
-          "pricing": {
-            "prompt": "0",
-            "completion": "0",
-            "image": "0",
-            "request": "0"
-          },
-          "context_length": 1048576,
-          "architecture": {
-            "modality": "text->text",
-            "tokenizer": "DeepSeek"
-          },
-          "top_provider": {
-            "name": "",
-            "context_length": 1048576,
-            "max_completion_tokens": 384000
-          },
-          "rank": null,
-          "usage_tokens": null,
-          "trend": null,
-          "usage_display": ""
-        }
-      }
-    },
-    {
       "canonical_name": "deepseek-r1",
       "name": "DeepSeek: R1",
       "description": "DeepSeek R1 is here: Performance on par with [OpenAI o1](/openai/o1), but open-sourced and with fully open reasoning tokens. It's 671B parameters in size, with 37B active in an inference pass....",
@@ -1656,6 +1640,23 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "deepseek-ai/DeepSeek-R1",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        },
+        "bailian": {
+          "model_id": "vanchin/deepseek-r1",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -1710,66 +1711,6 @@
           "top_provider": {
             "name": "",
             "context_length": 131072,
-            "max_completion_tokens": 16384
-          },
-          "rank": null,
-          "usage_tokens": null,
-          "trend": null,
-          "usage_display": ""
-        }
-      }
-    },
-    {
-      "canonical_name": "gemma-4-26b",
-      "name": "Google: Gemma 4 26B A4B ",
-      "description": "Gemma 4 26B A4B IT is an instruction-tuned Mixture-of-Experts (MoE) model from Google DeepMind. Despite 25.2B total parameters, only 3.8B activate per token during inference — delivering near-31B quality at...",
-      "platforms": {
-        "openrouter": {
-          "model_id": "google/gemma-4-26b-a4b-it",
-          "pricing": {
-            "prompt": "0.00000006",
-            "completion": "0.00000033",
-            "image": "0",
-            "request": "0"
-          },
-          "context_length": 262144,
-          "architecture": {
-            "modality": "text+image+video->text",
-            "tokenizer": "Gemma"
-          },
-          "top_provider": {
-            "name": "",
-            "context_length": 262144,
-            "max_completion_tokens": null
-          },
-          "rank": null,
-          "usage_tokens": null,
-          "trend": null,
-          "usage_display": ""
-        }
-      }
-    },
-    {
-      "canonical_name": "gemma-4-31b",
-      "name": "Google: Gemma 4 31B",
-      "description": "Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function...",
-      "platforms": {
-        "openrouter": {
-          "model_id": "google/gemma-4-31b-it",
-          "pricing": {
-            "prompt": "0.00000012",
-            "completion": "0.00000037",
-            "image": "0",
-            "request": "0"
-          },
-          "context_length": 262144,
-          "architecture": {
-            "modality": "text+image+video->text",
-            "tokenizer": "Gemma"
-          },
-          "top_provider": {
-            "name": "",
-            "context_length": 262144,
             "max_completion_tokens": 16384
           },
           "rank": null,
@@ -2380,6 +2321,36 @@
       }
     },
     {
+      "canonical_name": "google-gemma-4-26b-a4b-it",
+      "name": "Google: Gemma 4 26B A4B ",
+      "description": "Gemma 4 26B A4B IT is an instruction-tuned Mixture-of-Experts (MoE) model from Google DeepMind. Despite 25.2B total parameters, only 3.8B activate per token during inference — delivering near-31B quality at...",
+      "platforms": {
+        "openrouter": {
+          "model_id": "google/gemma-4-26b-a4b-it",
+          "pricing": {
+            "prompt": "0.00000006",
+            "completion": "0.00000033",
+            "image": "0",
+            "request": "0"
+          },
+          "context_length": 262144,
+          "architecture": {
+            "modality": "text+image+video->text",
+            "tokenizer": "Gemma"
+          },
+          "top_provider": {
+            "name": "",
+            "context_length": 262144,
+            "max_completion_tokens": null
+          },
+          "rank": null,
+          "usage_tokens": null,
+          "trend": null,
+          "usage_display": ""
+        }
+      }
+    },
+    {
       "canonical_name": "google-gemma-4-26b-a4b-it-free",
       "name": "Google: Gemma 4 26B A4B  (free)",
       "description": "Gemma 4 26B A4B IT is an instruction-tuned Mixture-of-Experts (MoE) model from Google DeepMind. Despite 25.2B total parameters, only 3.8B activate per token during inference — delivering near-31B quality at...",
@@ -2401,6 +2372,36 @@
             "name": "",
             "context_length": 262144,
             "max_completion_tokens": 32768
+          },
+          "rank": null,
+          "usage_tokens": null,
+          "trend": null,
+          "usage_display": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "google-gemma-4-31b-it",
+      "name": "Google: Gemma 4 31B",
+      "description": "Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function...",
+      "platforms": {
+        "openrouter": {
+          "model_id": "google/gemma-4-31b-it",
+          "pricing": {
+            "prompt": "0.00000012",
+            "completion": "0.00000037",
+            "image": "0",
+            "request": "0"
+          },
+          "context_length": 262144,
+          "architecture": {
+            "modality": "text+image+video->text",
+            "tokenizer": "Gemma"
+          },
+          "top_provider": {
+            "name": "",
+            "context_length": 262144,
+            "max_completion_tokens": 16384
           },
           "rank": null,
           "usage_tokens": null,
@@ -2747,8 +2748,8 @@
         "openrouter": {
           "model_id": "inclusionai/ring-2.6-1t",
           "pricing": {
-            "prompt": "0.000000075",
-            "completion": "0.000000625",
+            "prompt": "0.0000003",
+            "completion": "0.0000025",
             "image": "0",
             "request": "0"
           },
@@ -3490,36 +3491,6 @@
       }
     },
     {
-      "canonical_name": "minimax-m2-7",
-      "name": "MiniMax: MiniMax M2.7",
-      "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic capabilities through multi-agent...",
-      "platforms": {
-        "openrouter": {
-          "model_id": "minimax/minimax-m2.7",
-          "pricing": {
-            "prompt": "0.00000026",
-            "completion": "0.0000012",
-            "image": "0",
-            "request": "0"
-          },
-          "context_length": 204800,
-          "architecture": {
-            "modality": "text->text",
-            "tokenizer": "Other"
-          },
-          "top_provider": {
-            "name": "",
-            "context_length": 196608,
-            "max_completion_tokens": null
-          },
-          "rank": null,
-          "usage_tokens": null,
-          "trend": null,
-          "usage_display": ""
-        }
-      }
-    },
-    {
       "canonical_name": "minimax-minimax-01",
       "name": "MiniMax: MiniMax-01",
       "description": "MiniMax-01 is a combines MiniMax-Text-01 for text generation and MiniMax-VL-01 for image understanding. It has 456 billion parameters, with 45.9 billion parameters activated per inference, and can handle a context...",
@@ -3636,6 +3607,12 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "MiniMax/MiniMax-M2.1",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -3666,6 +3643,48 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "MiniMax/MiniMax-M2.5",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "minimax-minimax-m2-7",
+      "name": "MiniMax: MiniMax M2.7",
+      "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic capabilities through multi-agent...",
+      "platforms": {
+        "openrouter": {
+          "model_id": "minimax/minimax-m2.7",
+          "pricing": {
+            "prompt": "0.00000026",
+            "completion": "0.0000012",
+            "image": "0",
+            "request": "0"
+          },
+          "context_length": 204800,
+          "architecture": {
+            "modality": "text->text",
+            "tokenizer": "Other"
+          },
+          "top_provider": {
+            "name": "",
+            "context_length": 196608,
+            "max_completion_tokens": null
+          },
+          "rank": null,
+          "usage_tokens": null,
+          "trend": null,
+          "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "MiniMax/MiniMax-M2.7",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -3790,66 +3809,6 @@
       }
     },
     {
-      "canonical_name": "mistralai-devstral-medium",
-      "name": "Mistral: Devstral Medium",
-      "description": "Devstral Medium is a high-performance code generation and agentic reasoning model developed jointly by Mistral AI and All Hands AI. Positioned as a step up from Devstral Small, it achieves...",
-      "platforms": {
-        "openrouter": {
-          "model_id": "mistralai/devstral-medium",
-          "pricing": {
-            "prompt": "0.0000004",
-            "completion": "0.000002",
-            "image": "0",
-            "request": "0"
-          },
-          "context_length": 131072,
-          "architecture": {
-            "modality": "text+file->text",
-            "tokenizer": "Mistral"
-          },
-          "top_provider": {
-            "name": "",
-            "context_length": 131072,
-            "max_completion_tokens": null
-          },
-          "rank": null,
-          "usage_tokens": null,
-          "trend": null,
-          "usage_display": ""
-        }
-      }
-    },
-    {
-      "canonical_name": "mistralai-devstral-small",
-      "name": "Mistral: Devstral Small 1.1",
-      "description": "Devstral Small 1.1 is a 24B parameter open-weight language model for software engineering agents, developed by Mistral AI in collaboration with All Hands AI. Finetuned from Mistral Small 3.1 and...",
-      "platforms": {
-        "openrouter": {
-          "model_id": "mistralai/devstral-small",
-          "pricing": {
-            "prompt": "0.0000001",
-            "completion": "0.0000003",
-            "image": "0",
-            "request": "0"
-          },
-          "context_length": 131072,
-          "architecture": {
-            "modality": "text+file->text",
-            "tokenizer": "Mistral"
-          },
-          "top_provider": {
-            "name": "",
-            "context_length": 131072,
-            "max_completion_tokens": null
-          },
-          "rank": null,
-          "usage_tokens": null,
-          "trend": null,
-          "usage_display": ""
-        }
-      }
-    },
-    {
       "canonical_name": "mistralai-ministral-14b-2512",
       "name": "Mistral: Ministral 3 14B 2512",
       "description": "The largest model in the Ministral 3 family, Ministral 3 14B offers frontier capabilities and performance comparable to its larger Mistral Small 3.2 24B counterpart. A powerful and efficient language...",
@@ -3946,36 +3905,6 @@
       "platforms": {
         "openrouter": {
           "model_id": "mistralai/mistral-large-2407",
-          "pricing": {
-            "prompt": "0.000002",
-            "completion": "0.000006",
-            "image": "0",
-            "request": "0"
-          },
-          "context_length": 131072,
-          "architecture": {
-            "modality": "text+file->text",
-            "tokenizer": "Mistral"
-          },
-          "top_provider": {
-            "name": "",
-            "context_length": 131072,
-            "max_completion_tokens": null
-          },
-          "rank": null,
-          "usage_tokens": null,
-          "trend": null,
-          "usage_display": ""
-        }
-      }
-    },
-    {
-      "canonical_name": "mistralai-mistral-large-2411",
-      "name": "Mistral Large 2411",
-      "description": "Mistral Large 2 2411 is an update of [Mistral Large 2](/mistralai/mistral-large) released together with [Pixtral Large 2411](/mistralai/pixtral-large-2411) It provides a significant upgrade on the previous [Mistral Large 24.07](/mistralai/mistral-large-2407), with notable...",
-      "platforms": {
-        "openrouter": {
-          "model_id": "mistralai/mistral-large-2411",
           "pricing": {
             "prompt": "0.000002",
             "completion": "0.000006",
@@ -4330,36 +4259,6 @@
       }
     },
     {
-      "canonical_name": "mistralai-pixtral-large-2411",
-      "name": "Mistral: Pixtral Large 2411",
-      "description": "Pixtral Large is a 124B parameter, open-weight, multimodal model built on top of [Mistral Large 2](/mistralai/mistral-large-2411). The model is able to understand documents, charts and natural images. The model is...",
-      "platforms": {
-        "openrouter": {
-          "model_id": "mistralai/pixtral-large-2411",
-          "pricing": {
-            "prompt": "0.000002",
-            "completion": "0.000006",
-            "image": "0",
-            "request": "0"
-          },
-          "context_length": 131072,
-          "architecture": {
-            "modality": "text+image+file->text",
-            "tokenizer": "Mistral"
-          },
-          "top_provider": {
-            "name": "",
-            "context_length": 131072,
-            "max_completion_tokens": null
-          },
-          "rank": null,
-          "usage_tokens": null,
-          "trend": null,
-          "usage_display": ""
-        }
-      }
-    },
-    {
       "canonical_name": "mistralai-voxtral-small-24b-2507",
       "name": "Mistral: Voxtral Small 24B 2507",
       "description": "Voxtral Small is an enhancement of Mistral Small 3, incorporating state-of-the-art audio input capabilities while retaining best-in-class text performance. It excels at speech transcription, translation and audio understanding. Input audio...",
@@ -4566,6 +4465,12 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "kimi-k2-thinking",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -7476,6 +7381,12 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "qwen-plus",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -7596,6 +7507,23 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-14B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        },
+        "bailian": {
+          "model_id": "qwen3-14b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -7626,6 +7554,12 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "qwen3-235b-a22b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -7686,6 +7620,12 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -7716,6 +7656,12 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "qwen3-30b-a3b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -7746,6 +7692,23 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        },
+        "bailian": {
+          "model_id": "qwen3-30b-a3b-instruct-2507",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -7776,6 +7739,12 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "qwen3-30b-a3b-thinking-2507",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -7806,6 +7775,23 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-32B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        },
+        "bailian": {
+          "model_id": "qwen3-32b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -7836,6 +7822,17 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3.5-122B-A10B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
         }
       }
     },
@@ -7866,6 +7863,17 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3.5-27B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
         }
       }
     },
@@ -7896,6 +7904,17 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3.5-35B-A3B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
         }
       }
     },
@@ -7926,6 +7945,58 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3.5-397B-A17B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen3-5-9b",
+      "name": "Qwen: Qwen3.5-9B",
+      "description": "Qwen3.5-9B is a multimodal foundation model from the Qwen3.5 family, designed to deliver strong reasoning, coding, and visual understanding in an efficient 9B-parameter architecture. It uses a unified vision-language design...",
+      "platforms": {
+        "openrouter": {
+          "model_id": "qwen/qwen3.5-9b",
+          "pricing": {
+            "prompt": "0.00000004",
+            "completion": "0.00000015",
+            "image": "0",
+            "request": "0"
+          },
+          "context_length": 262144,
+          "architecture": {
+            "modality": "text+image+video->text",
+            "tokenizer": "Qwen3"
+          },
+          "top_provider": {
+            "name": "",
+            "context_length": 262144,
+            "max_completion_tokens": 81920
+          },
+          "rank": null,
+          "usage_tokens": null,
+          "trend": null,
+          "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3.5-9B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
         }
       }
     },
@@ -8046,6 +8117,17 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3.6-27B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
         }
       }
     },
@@ -8076,6 +8158,17 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3.6-35B-A3B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
         }
       }
     },
@@ -8140,6 +8233,66 @@
       }
     },
     {
+      "canonical_name": "qwen-qwen3-6-plus",
+      "name": "Qwen: Qwen3.6 Plus",
+      "description": "Qwen 3.6 Plus builds on a hybrid architecture that combines efficient linear attention with sparse mixture-of-experts routing, enabling strong scalability and high-performance inference. Compared to the 3.5 series, it delivers...",
+      "platforms": {
+        "openrouter": {
+          "model_id": "qwen/qwen3.6-plus",
+          "pricing": {
+            "prompt": "0.000000325",
+            "completion": "0.00000195",
+            "image": "0",
+            "request": "0"
+          },
+          "context_length": 1000000,
+          "architecture": {
+            "modality": "text+image+video->text",
+            "tokenizer": "Qwen3"
+          },
+          "top_provider": {
+            "name": "",
+            "context_length": 1000000,
+            "max_completion_tokens": 65536
+          },
+          "rank": null,
+          "usage_tokens": null,
+          "trend": null,
+          "usage_display": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen3-7-max",
+      "name": "Qwen: Qwen3.7 Max",
+      "description": "Qwen3.7-Max is the flagship model in Alibaba's Qwen3.7 series. It supports text input and output and is designed for agent-centric workloads, with particular strengths in coding, office and productivity tasks,...",
+      "platforms": {
+        "openrouter": {
+          "model_id": "qwen/qwen3.7-max",
+          "pricing": {
+            "prompt": "0.00000125",
+            "completion": "0.00000375",
+            "image": "0",
+            "request": "0"
+          },
+          "context_length": 1000000,
+          "architecture": {
+            "modality": "text->text",
+            "tokenizer": "Qwen"
+          },
+          "top_provider": {
+            "name": "",
+            "context_length": 1000000,
+            "max_completion_tokens": 65536
+          },
+          "rank": null,
+          "usage_tokens": null,
+          "trend": null,
+          "usage_display": ""
+        }
+      }
+    },
+    {
       "canonical_name": "qwen-qwen3-8b",
       "name": "Qwen: Qwen3 8B",
       "description": "Qwen3-8B is a dense 8.2B parameter causal language model from the Qwen3 series, designed for both reasoning-heavy tasks and efficient dialogue. It supports seamless switching between \"thinking\" mode for math,...",
@@ -8166,6 +8319,23 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-8B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        },
+        "bailian": {
+          "model_id": "qwen3-8b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -8196,6 +8366,17 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
         }
       }
     },
@@ -8226,6 +8407,12 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "qwen3-coder-flash",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -8286,6 +8473,12 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "qwen3-coder-next",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -8316,6 +8509,12 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "qwen3-coder-plus",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -8346,6 +8545,12 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "qwen3-max",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -8406,6 +8611,12 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "qwen3-next-80b-a3b-instruct",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -8466,6 +8677,12 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "qwen3-next-80b-a3b-thinking",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -8556,6 +8773,17 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
         }
       }
     },
@@ -8586,6 +8814,17 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-VL-30B-A3B-Thinking",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
         }
       }
     },
@@ -8616,6 +8855,17 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-VL-32B-Instruct",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
         }
       }
     },
@@ -8646,6 +8896,17 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
         }
       }
     },
@@ -8676,96 +8937,17 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
-        }
-      }
-    },
-    {
-      "canonical_name": "qwen3-6-plus",
-      "name": "Qwen: Qwen3.6 Plus",
-      "description": "Qwen 3.6 Plus builds on a hybrid architecture that combines efficient linear attention with sparse mixture-of-experts routing, enabling strong scalability and high-performance inference. Compared to the 3.5 series, it delivers...",
-      "platforms": {
-        "openrouter": {
-          "model_id": "qwen/qwen3.6-plus",
+        },
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-VL-8B-Thinking",
           "pricing": {
-            "prompt": "0.000000325",
-            "completion": "0.00000195",
-            "image": "0",
-            "request": "0"
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
           },
-          "context_length": 1000000,
-          "architecture": {
-            "modality": "text+image+video->text",
-            "tokenizer": "Qwen3"
-          },
-          "top_provider": {
-            "name": "",
-            "context_length": 1000000,
-            "max_completion_tokens": 65536
-          },
-          "rank": null,
-          "usage_tokens": null,
-          "trend": null,
-          "usage_display": ""
-        }
-      }
-    },
-    {
-      "canonical_name": "qwen3-7b-max",
-      "name": "Qwen: Qwen3.7 Max",
-      "description": "Qwen3.7-Max is the flagship model in Alibaba's Qwen3.7 series. It supports text input and output and is designed for agent-centric workloads, with particular strengths in coding, office and productivity tasks,...",
-      "platforms": {
-        "openrouter": {
-          "model_id": "qwen/qwen3.7-max",
-          "pricing": {
-            "prompt": "0.00000125",
-            "completion": "0.00000375",
-            "image": "0",
-            "request": "0"
-          },
-          "context_length": 1000000,
-          "architecture": {
-            "modality": "text->text",
-            "tokenizer": "Qwen"
-          },
-          "top_provider": {
-            "name": "",
-            "context_length": 1000000,
-            "max_completion_tokens": 65536
-          },
-          "rank": null,
-          "usage_tokens": null,
-          "trend": null,
-          "usage_display": ""
-        }
-      }
-    },
-    {
-      "canonical_name": "qwen3-9b",
-      "name": "Qwen: Qwen3.5-9B",
-      "description": "Qwen3.5-9B is a multimodal foundation model from the Qwen3.5 family, designed to deliver strong reasoning, coding, and visual understanding in an efficient 9B-parameter architecture. It uses a unified vision-language design...",
-      "platforms": {
-        "openrouter": {
-          "model_id": "qwen/qwen3.5-9b",
-          "pricing": {
-            "prompt": "0.00000004",
-            "completion": "0.00000015",
-            "image": "0",
-            "request": "0"
-          },
-          "context_length": 262144,
-          "architecture": {
-            "modality": "text+image+video->text",
-            "tokenizer": "Qwen3"
-          },
-          "top_provider": {
-            "name": "",
-            "context_length": 262144,
-            "max_completion_tokens": 81920
-          },
-          "rank": null,
-          "usage_tokens": null,
-          "trend": null,
-          "usage_display": ""
+          "context_length": 0,
+          "owned_by": ""
         }
       }
     },
@@ -9186,6 +9368,17 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "tencent/Hunyuan-A13B-Instruct",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
         }
       }
     },
@@ -9520,66 +9713,6 @@
       }
     },
     {
-      "canonical_name": "xiaomi-mimo-v2-omni",
-      "name": "Xiaomi: MiMo-V2-Omni",
-      "description": "MiMo-V2-Omni is a frontier omni-modal model that natively processes image, video, and audio inputs within a unified architecture. It combines strong multimodal perception with agentic capability - visual grounding, multi-step...",
-      "platforms": {
-        "openrouter": {
-          "model_id": "xiaomi/mimo-v2-omni",
-          "pricing": {
-            "prompt": "0.0000004",
-            "completion": "0.000002",
-            "image": "0",
-            "request": "0"
-          },
-          "context_length": 262144,
-          "architecture": {
-            "modality": "text+image+audio+video->text",
-            "tokenizer": "Other"
-          },
-          "top_provider": {
-            "name": "",
-            "context_length": 262144,
-            "max_completion_tokens": 65536
-          },
-          "rank": null,
-          "usage_tokens": null,
-          "trend": null,
-          "usage_display": ""
-        }
-      }
-    },
-    {
-      "canonical_name": "xiaomi-mimo-v2-pro",
-      "name": "Xiaomi: MiMo-V2-Pro",
-      "description": "MiMo-V2-Pro is Xiaomi's flagship foundation model, featuring over 1T total parameters and a 1M context length, deeply optimized for agentic scenarios. It is highly adaptable to general agent frameworks like...",
-      "platforms": {
-        "openrouter": {
-          "model_id": "xiaomi/mimo-v2-pro",
-          "pricing": {
-            "prompt": "0.000001",
-            "completion": "0.000003",
-            "image": "0",
-            "request": "0"
-          },
-          "context_length": 1048576,
-          "architecture": {
-            "modality": "text->text",
-            "tokenizer": "Other"
-          },
-          "top_provider": {
-            "name": "",
-            "context_length": 1048576,
-            "max_completion_tokens": 131072
-          },
-          "rank": null,
-          "usage_tokens": null,
-          "trend": null,
-          "usage_display": ""
-        }
-      }
-    },
-    {
       "canonical_name": "z-ai-glm-4-32b",
       "name": "Z.ai: GLM 4 32B ",
       "description": "GLM 4 32B is a cost-effective foundation language model. It can efficiently perform complex tasks and has significantly enhanced capabilities in tool use, online search, and code-related intelligent tasks. It...",
@@ -9876,6 +10009,12 @@
           "usage_tokens": null,
           "trend": null,
           "usage_display": ""
+        },
+        "bailian": {
+          "model_id": "glm-5",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     },
@@ -10356,6 +10495,29 @@
           "usage_tokens": 1260000000000,
           "trend": "22%",
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "deepseek-ai/DeepSeek-V4-Pro",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        },
+        "bailian": {
+          "model_id": "deepseek-v4-pro",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        },
+        "fireworks": {
+          "model_id": "accounts/fireworks/models/deepseek-v4-pro",
+          "pricing": {},
+          "context_length": 1048576,
+          "owned_by": "fireworks"
         }
       }
     },
@@ -10420,7 +10582,7 @@
       }
     },
     {
-      "canonical_name": "anthropic-claude-opus-4-7",
+      "canonical_name": "claude-opus-4-7",
       "name": "Anthropic: Claude Opus 4.7",
       "description": "Opus 4.7 is the next generation of Anthropic's Opus family, built for long-running, asynchronous agents. Building on the coding and agentic strengths of Opus 4.6, it delivers stronger performance on...",
       "platforms": {
@@ -10506,6 +10668,3752 @@
           "usage_tokens": 3310000000000,
           "trend": "3%",
           "usage_display": ""
+        },
+        "siliconflow": {
+          "model_id": "deepseek-ai/DeepSeek-V4-Flash",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        },
+        "bailian": {
+          "model_id": "deepseek-v4-flash",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "accounts-fireworks-models-flux-1-dev-fp8",
+      "name": "accounts/fireworks/models/flux-1-dev-fp8",
+      "description": "",
+      "platforms": {
+        "fireworks": {
+          "model_id": "accounts/fireworks/models/flux-1-dev-fp8",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "fireworks"
+        }
+      }
+    },
+    {
+      "canonical_name": "accounts-fireworks-models-flux-1-schnell-fp8",
+      "name": "accounts/fireworks/models/flux-1-schnell-fp8",
+      "description": "",
+      "platforms": {
+        "fireworks": {
+          "model_id": "accounts/fireworks/models/flux-1-schnell-fp8",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "fireworks"
+        }
+      }
+    },
+    {
+      "canonical_name": "accounts-fireworks-models-flux-kontext-max",
+      "name": "accounts/fireworks/models/flux-kontext-max",
+      "description": "",
+      "platforms": {
+        "fireworks": {
+          "model_id": "accounts/fireworks/models/flux-kontext-max",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "fireworks"
+        }
+      }
+    },
+    {
+      "canonical_name": "accounts-fireworks-models-flux-kontext-pro",
+      "name": "accounts/fireworks/models/flux-kontext-pro",
+      "description": "",
+      "platforms": {
+        "fireworks": {
+          "model_id": "accounts/fireworks/models/flux-kontext-pro",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "fireworks"
+        }
+      }
+    },
+    {
+      "canonical_name": "accounts-fireworks-models-glm-5p1",
+      "name": "accounts/fireworks/models/glm-5p1",
+      "description": "",
+      "platforms": {
+        "fireworks": {
+          "model_id": "accounts/fireworks/models/glm-5p1",
+          "pricing": {},
+          "context_length": 202752,
+          "owned_by": "fireworks"
+        }
+      }
+    },
+    {
+      "canonical_name": "accounts-fireworks-models-gpt-oss-120b",
+      "name": "accounts/fireworks/models/gpt-oss-120b",
+      "description": "",
+      "platforms": {
+        "fireworks": {
+          "model_id": "accounts/fireworks/models/gpt-oss-120b",
+          "pricing": {},
+          "context_length": 131072,
+          "owned_by": "fireworks"
+        }
+      }
+    },
+    {
+      "canonical_name": "accounts-fireworks-models-kimi-k2p5",
+      "name": "accounts/fireworks/models/kimi-k2p5",
+      "description": "",
+      "platforms": {
+        "fireworks": {
+          "model_id": "accounts/fireworks/models/kimi-k2p5",
+          "pricing": {},
+          "context_length": 262144,
+          "owned_by": "fireworks"
+        }
+      }
+    },
+    {
+      "canonical_name": "accounts-fireworks-models-kimi-k2p6",
+      "name": "accounts/fireworks/models/kimi-k2p6",
+      "description": "",
+      "platforms": {
+        "fireworks": {
+          "model_id": "accounts/fireworks/models/kimi-k2p6",
+          "pricing": {},
+          "context_length": 262144,
+          "owned_by": "fireworks"
+        }
+      }
+    },
+    {
+      "canonical_name": "baai-bge-large-en-v1-5",
+      "name": "BAAI/bge-large-en-v1.5",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "BAAI/bge-large-en-v1.5",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "baai-bge-large-zh-v1-5",
+      "name": "BAAI/bge-large-zh-v1.5",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "BAAI/bge-large-zh-v1.5",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "baai-bge-m3",
+      "name": "BAAI/bge-m3",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "BAAI/bge-m3",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "baai-bge-reranker-v2-m3",
+      "name": "BAAI/bge-reranker-v2-m3",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "BAAI/bge-reranker-v2-m3",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "baidu-ernie-image-turbo",
+      "name": "baidu/ERNIE-Image-Turbo",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "baidu/ERNIE-Image-Turbo",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "bytedance-seed-seed-oss-36b-instruct",
+      "name": "ByteDance-Seed/Seed-OSS-36B-Instruct",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "ByteDance-Seed/Seed-OSS-36B-Instruct",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "codeqwen1-5-7b-chat",
+      "name": "codeqwen1.5-7b-chat",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "codeqwen1.5-7b-chat",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "deepseek-ai-deepseek-ocr",
+      "name": "deepseek-ai/DeepSeek-OCR",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "deepseek-ai/DeepSeek-OCR",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "deepseek-ai-deepseek-r1-0528-qwen3-8b",
+      "name": "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "deepseek-ai-deepseek-v3",
+      "name": "deepseek-ai/DeepSeek-V3",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "deepseek-ai/DeepSeek-V3",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        },
+        "bailian": {
+          "model_id": "deepseek-v3",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "deepseek-ai-deepseek-v3-1-terminus",
+      "name": "deepseek-ai/DeepSeek-V3.1-Terminus",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "deepseek-ai/DeepSeek-V3.1-Terminus",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "deepseek-ai-deepseek-v3-2",
+      "name": "deepseek-ai/DeepSeek-V3.2",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "deepseek-ai/DeepSeek-V3.2",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "deepseek-r1-distill-llama-8b",
+      "name": "deepseek-r1-distill-llama-8b",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "deepseek-r1-distill-llama-8b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "deepseek-r1-distill-qwen-1-5b",
+      "name": "deepseek-r1-distill-qwen-1.5b",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "deepseek-r1-distill-qwen-1.5b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "deepseek-r1-distill-qwen-14b",
+      "name": "deepseek-r1-distill-qwen-14b",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "deepseek-r1-distill-qwen-14b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "deepseek-r1-distill-qwen-7b",
+      "name": "deepseek-r1-distill-qwen-7b",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "deepseek-r1-distill-qwen-7b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "deepseek-v3-1",
+      "name": "deepseek-v3.1",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "deepseek-v3.1",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "deepseek-v3-2",
+      "name": "deepseek-v3.2",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "deepseek-v3.2",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "fnlp-moss-ttsd-v0-5",
+      "name": "fnlp/MOSS-TTSD-v0.5",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "fnlp/MOSS-TTSD-v0.5",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "funaudiollm-cosyvoice2-0-5b",
+      "name": "FunAudioLLM/CosyVoice2-0.5B",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "FunAudioLLM/CosyVoice2-0.5B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "funaudiollm-sensevoicesmall",
+      "name": "FunAudioLLM/SenseVoiceSmall",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "FunAudioLLM/SenseVoiceSmall",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "glm-4-7",
+      "name": "glm-4.7",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "glm-4.7",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "glm-5-1",
+      "name": "glm-5.1",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "glm-5.1",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "gui-plus",
+      "name": "gui-plus",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "gui-plus",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "inclusionai-ling-flash-2-0",
+      "name": "inclusionAI/Ling-flash-2.0",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "inclusionAI/Ling-flash-2.0",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "inclusionai-ling-mini-2-0",
+      "name": "inclusionAI/Ling-mini-2.0",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "inclusionAI/Ling-mini-2.0",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "kimi-k2-5",
+      "name": "kimi-k2.5",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "kimi-k2.5",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "kimi-k2-6",
+      "name": "kimi-k2.6",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "kimi-k2.6",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "kimi-kimi-k2-5",
+      "name": "kimi/kimi-k2.5",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "kimi/kimi-k2.5",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "kimi-kimi-k2-6",
+      "name": "kimi/kimi-k2.6",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "kimi/kimi-k2.6",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "kwai-kolors-kolors",
+      "name": "Kwai-Kolors/Kolors",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Kwai-Kolors/Kolors",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "lora-qwen-qwen2-5-14b-instruct",
+      "name": "LoRA/Qwen/Qwen2.5-14B-Instruct",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "LoRA/Qwen/Qwen2.5-14B-Instruct",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "lora-qwen-qwen2-5-32b-instruct",
+      "name": "LoRA/Qwen/Qwen2.5-32B-Instruct",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "LoRA/Qwen/Qwen2.5-32B-Instruct",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "lora-qwen-qwen2-5-72b-instruct",
+      "name": "LoRA/Qwen/Qwen2.5-72B-Instruct",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "LoRA/Qwen/Qwen2.5-72B-Instruct",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "lora-qwen-qwen2-5-7b-instruct",
+      "name": "LoRA/Qwen/Qwen2.5-7B-Instruct",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "LoRA/Qwen/Qwen2.5-7B-Instruct",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "minimax-m2-1",
+      "name": "MiniMax-M2.1",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "MiniMax-M2.1",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "minimax-m2-5",
+      "name": "MiniMax-M2.5",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "MiniMax-M2.5",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "minimax-speech-02-hd",
+      "name": "MiniMax/speech-02-hd",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "MiniMax/speech-02-hd",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "minimax-speech-02-turbo",
+      "name": "MiniMax/speech-02-turbo",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "MiniMax/speech-02-turbo",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "minimax-speech-2-8-hd",
+      "name": "MiniMax/speech-2.8-hd",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "MiniMax/speech-2.8-hd",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "minimax-speech-2-8-turbo",
+      "name": "MiniMax/speech-2.8-turbo",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "MiniMax/speech-2.8-turbo",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "minimaxai-minimax-m2-5",
+      "name": "MiniMaxAI/MiniMax-M2.5",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "MiniMaxAI/MiniMax-M2.5",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "netease-youdao-bce-embedding-base_v1",
+      "name": "netease-youdao/bce-embedding-base_v1",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "netease-youdao/bce-embedding-base_v1",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "netease-youdao-bce-reranker-base_v1",
+      "name": "netease-youdao/bce-reranker-base_v1",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "netease-youdao/bce-reranker-base_v1",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "paddlepaddle-paddleocr-vl-1-5",
+      "name": "PaddlePaddle/PaddleOCR-VL-1.5",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "PaddlePaddle/PaddleOCR-VL-1.5",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "pro-baai-bge-m3",
+      "name": "Pro/BAAI/bge-m3",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Pro/BAAI/bge-m3",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "pro-baai-bge-reranker-v2-m3",
+      "name": "Pro/BAAI/bge-reranker-v2-m3",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Pro/BAAI/bge-reranker-v2-m3",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "pro-deepseek-ai-deepseek-v3",
+      "name": "Pro/deepseek-ai/DeepSeek-V3",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Pro/deepseek-ai/DeepSeek-V3",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "pro-deepseek-ai-deepseek-v3-1-terminus",
+      "name": "Pro/deepseek-ai/DeepSeek-V3.1-Terminus",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Pro/deepseek-ai/DeepSeek-V3.1-Terminus",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "pro-deepseek-ai-deepseek-v3-2",
+      "name": "Pro/deepseek-ai/DeepSeek-V3.2",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Pro/deepseek-ai/DeepSeek-V3.2",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "pro-minimaxai-minimax-m2-5",
+      "name": "Pro/MiniMaxAI/MiniMax-M2.5",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Pro/MiniMaxAI/MiniMax-M2.5",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "pro-moonshotai-kimi-k2-5",
+      "name": "Pro/moonshotai/Kimi-K2.5",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Pro/moonshotai/Kimi-K2.5",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "pro-moonshotai-kimi-k2-6",
+      "name": "Pro/moonshotai/Kimi-K2.6",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Pro/moonshotai/Kimi-K2.6",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "pro-qwen-qwen2-5-7b-instruct",
+      "name": "Pro/Qwen/Qwen2.5-7B-Instruct",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Pro/Qwen/Qwen2.5-7B-Instruct",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "pro-zai-org-glm-4-7",
+      "name": "Pro/zai-org/GLM-4.7",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Pro/zai-org/GLM-4.7",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "pro-zai-org-glm-5",
+      "name": "Pro/zai-org/GLM-5",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Pro/zai-org/GLM-5",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "pro-zai-org-glm-5-1",
+      "name": "Pro/zai-org/GLM-5.1",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Pro/zai-org/GLM-5.1",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qvq-max",
+      "name": "qvq-max",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qvq-max",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qvq-plus",
+      "name": "qvq-plus",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qvq-plus",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-1-8b-chat",
+      "name": "qwen-1.8b-chat",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-1.8b-chat",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-1-8b-longcontext-chat",
+      "name": "qwen-1.8b-longcontext-chat",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-1.8b-longcontext-chat",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-14b-chat",
+      "name": "qwen-14b-chat",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-14b-chat",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-72b-chat",
+      "name": "qwen-72b-chat",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-72b-chat",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-7b-chat",
+      "name": "qwen-7b-chat",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-7b-chat",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-coder-plus",
+      "name": "qwen-coder-plus",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-coder-plus",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-coder-plus-1106",
+      "name": "qwen-coder-plus-1106",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-coder-plus-1106",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-coder-turbo",
+      "name": "qwen-coder-turbo",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-coder-turbo",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-deep-research-2025-12-15",
+      "name": "qwen-deep-research-2025-12-15",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-deep-research-2025-12-15",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-deep-search-planning",
+      "name": "qwen-deep-search-planning",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-deep-search-planning",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-flash",
+      "name": "qwen-flash",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-flash",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-flash-character",
+      "name": "qwen-flash-character",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-flash-character",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-flash-character-2026-02-26",
+      "name": "qwen-flash-character-2026-02-26",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-flash-character-2026-02-26",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-image-2-0",
+      "name": "qwen-image-2.0",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-image-2.0",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-image-2-0-2026-03-03",
+      "name": "qwen-image-2.0-2026-03-03",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-image-2.0-2026-03-03",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-image-2-0-pro",
+      "name": "qwen-image-2.0-pro",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-image-2.0-pro",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-image-2-0-pro-2026-03-03",
+      "name": "qwen-image-2.0-pro-2026-03-03",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-image-2.0-pro-2026-03-03",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-image-2-0-pro-2026-04-22",
+      "name": "qwen-image-2.0-pro-2026-04-22",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-image-2.0-pro-2026-04-22",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-image-edit-max",
+      "name": "qwen-image-edit-max",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-image-edit-max",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-image-edit-max-2026-01-16",
+      "name": "qwen-image-edit-max-2026-01-16",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-image-edit-max-2026-01-16",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-image-edit-plus",
+      "name": "qwen-image-edit-plus",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-image-edit-plus",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-image-edit-plus-2025-10-30",
+      "name": "qwen-image-edit-plus-2025-10-30",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-image-edit-plus-2025-10-30",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-image-edit-plus-2025-12-15",
+      "name": "qwen-image-edit-plus-2025-12-15",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-image-edit-plus-2025-12-15",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-image-max",
+      "name": "qwen-image-max",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-image-max",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-image-max-2025-12-30",
+      "name": "qwen-image-max-2025-12-30",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-image-max-2025-12-30",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-image-plus-2026-01-09",
+      "name": "qwen-image-plus-2026-01-09",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-image-plus-2026-01-09",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-long",
+      "name": "qwen-long",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-long",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-math-plus",
+      "name": "qwen-math-plus",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-math-plus",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-math-plus-0919",
+      "name": "qwen-math-plus-0919",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-math-plus-0919",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-math-plus-latest",
+      "name": "qwen-math-plus-latest",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-math-plus-latest",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-math-turbo",
+      "name": "qwen-math-turbo",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-math-turbo",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-max",
+      "name": "qwen-max",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-max",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-max-0107",
+      "name": "qwen-max-0107",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-max-0107",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-max-1201",
+      "name": "qwen-max-1201",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-max-1201",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-max-longcontext",
+      "name": "qwen-max-longcontext",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-max-longcontext",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-mt-flash",
+      "name": "qwen-mt-flash",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-mt-flash",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-mt-lite",
+      "name": "qwen-mt-lite",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-mt-lite",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-mt-plus",
+      "name": "qwen-mt-plus",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-mt-plus",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-mt-turbo",
+      "name": "qwen-mt-turbo",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-mt-turbo",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-omni-turbo",
+      "name": "qwen-omni-turbo",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-omni-turbo",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-plus-2025-01-25",
+      "name": "qwen-plus-2025-01-25",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-plus-2025-01-25",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-plus-2025-04-28",
+      "name": "qwen-plus-2025-04-28",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-plus-2025-04-28",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-plus-2025-07-14",
+      "name": "qwen-plus-2025-07-14",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-plus-2025-07-14",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-plus-2025-09-11",
+      "name": "qwen-plus-2025-09-11",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-plus-2025-09-11",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-plus-2025-11-05",
+      "name": "qwen-plus-2025-11-05",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-plus-2025-11-05",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-plus-2025-12-01",
+      "name": "qwen-plus-2025-12-01",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-plus-2025-12-01",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-plus-latest",
+      "name": "qwen-plus-latest",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-plus-latest",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen-image",
+      "name": "Qwen/Qwen-Image",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen-Image",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen-image-edit",
+      "name": "Qwen/Qwen-Image-Edit",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen-Image-Edit",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen-image-edit-2509",
+      "name": "Qwen/Qwen-Image-Edit-2509",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen-Image-Edit-2509",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen2-5-14b-instruct",
+      "name": "Qwen/Qwen2.5-14B-Instruct",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen2.5-14B-Instruct",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen2-5-32b-instruct",
+      "name": "Qwen/Qwen2.5-32B-Instruct",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen2.5-32B-Instruct",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen2-5-72b-instruct",
+      "name": "Qwen/Qwen2.5-72B-Instruct",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen2.5-72B-Instruct",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen2-5-72b-instruct-128k",
+      "name": "Qwen/Qwen2.5-72B-Instruct-128K",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen2.5-72B-Instruct-128K",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen2-5-7b-instruct",
+      "name": "Qwen/Qwen2.5-7B-Instruct",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen3-5-4b",
+      "name": "Qwen/Qwen3.5-4B",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3.5-4B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen3-embedding-0-6b",
+      "name": "Qwen/Qwen3-Embedding-0.6B",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-Embedding-0.6B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen3-embedding-4b",
+      "name": "Qwen/Qwen3-Embedding-4B",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-Embedding-4B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen3-embedding-8b",
+      "name": "Qwen/Qwen3-Embedding-8B",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-Embedding-8B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen3-omni-30b-a3b-captioner",
+      "name": "Qwen/Qwen3-Omni-30B-A3B-Captioner",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-Omni-30B-A3B-Captioner",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen3-omni-30b-a3b-instruct",
+      "name": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen3-omni-30b-a3b-thinking",
+      "name": "Qwen/Qwen3-Omni-30B-A3B-Thinking",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-Omni-30B-A3B-Thinking",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen3-reranker-0-6b",
+      "name": "Qwen/Qwen3-Reranker-0.6B",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-Reranker-0.6B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen3-reranker-4b",
+      "name": "Qwen/Qwen3-Reranker-4B",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-Reranker-4B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen3-reranker-8b",
+      "name": "Qwen/Qwen3-Reranker-8B",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-Reranker-8B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen3-vl-32b-thinking",
+      "name": "Qwen/Qwen3-VL-32B-Thinking",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-VL-32B-Thinking",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen3-vl-embedding-8b",
+      "name": "Qwen/Qwen3-VL-Embedding-8B",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-VL-Embedding-8B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-qwen3-vl-reranker-8b",
+      "name": "Qwen/Qwen3-VL-Reranker-8B",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Qwen/Qwen3-VL-Reranker-8B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-tts-2025-05-22",
+      "name": "qwen-tts-2025-05-22",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-tts-2025-05-22",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-turbo",
+      "name": "qwen-turbo",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-turbo",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-turbo-0919",
+      "name": "qwen-turbo-0919",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-turbo-0919",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-turbo-2024-11-01",
+      "name": "qwen-turbo-2024-11-01",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-turbo-2024-11-01",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-vl-max",
+      "name": "qwen-vl-max",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-vl-max",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-vl-ocr",
+      "name": "qwen-vl-ocr",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-vl-ocr",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-vl-ocr-2025-11-20",
+      "name": "qwen-vl-ocr-2025-11-20",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-vl-ocr-2025-11-20",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-vl-ocr-latest",
+      "name": "qwen-vl-ocr-latest",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-vl-ocr-latest",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen-vl-plus",
+      "name": "qwen-vl-plus",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen-vl-plus",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen1-5-0-5b-chat",
+      "name": "qwen1.5-0.5b-chat",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen1.5-0.5b-chat",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen1-5-1-8b-chat",
+      "name": "qwen1.5-1.8b-chat",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen1.5-1.8b-chat",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen1-5-110b-chat",
+      "name": "qwen1.5-110b-chat",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen1.5-110b-chat",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen1-5-14b-chat",
+      "name": "qwen1.5-14b-chat",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen1.5-14b-chat",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen1-5-32b-chat",
+      "name": "qwen1.5-32b-chat",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen1.5-32b-chat",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen1-5-72b-chat",
+      "name": "qwen1.5-72b-chat",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen1.5-72b-chat",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen1-5-7b-chat",
+      "name": "qwen1.5-7b-chat",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen1.5-7b-chat",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen2-0-5b-instruct",
+      "name": "qwen2-0.5b-instruct",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen2-0.5b-instruct",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen2-1-5b-instruct",
+      "name": "qwen2-1.5b-instruct",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen2-1.5b-instruct",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen2-5-0-5b-instruct",
+      "name": "qwen2.5-0.5b-instruct",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen2.5-0.5b-instruct",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen2-5-1-5b-instruct",
+      "name": "qwen2.5-1.5b-instruct",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen2.5-1.5b-instruct",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen2-5-math-1-5b-instruct",
+      "name": "qwen2.5-math-1.5b-instruct",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen2.5-math-1.5b-instruct",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen2-57b-a14b-instruct",
+      "name": "qwen2-57b-a14b-instruct",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen2-57b-a14b-instruct",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen2-7b-instruct",
+      "name": "qwen2-7b-instruct",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen2-7b-instruct",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-235b-a22b-instruct-2507",
+      "name": "qwen3-235b-a22b-instruct-2507",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-122b-a10b",
+      "name": "qwen3.5-122b-a10b",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-122b-a10b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-27b",
+      "name": "qwen3.5-27b",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-27b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-35b-a3b",
+      "name": "qwen3.5-35b-a3b",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-35b-a3b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-397b-a17b",
+      "name": "qwen3.5-397b-a17b",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-397b-a17b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-flash",
+      "name": "qwen3.5-flash",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-flash",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-flash-2026-02-23",
+      "name": "qwen3.5-flash-2026-02-23",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-flash-2026-02-23",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-livetranslate-flash-realtime",
+      "name": "qwen3.5-livetranslate-flash-realtime",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-livetranslate-flash-realtime",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-livetranslate-flash-realtime-2026-05-19",
+      "name": "qwen3.5-livetranslate-flash-realtime-2026-05-19",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-livetranslate-flash-realtime-2026-05-19",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-omni-flash",
+      "name": "qwen3.5-omni-flash",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-omni-flash",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-omni-flash-2026-03-15",
+      "name": "qwen3.5-omni-flash-2026-03-15",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-omni-flash-2026-03-15",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-omni-flash-realtime",
+      "name": "qwen3.5-omni-flash-realtime",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-omni-flash-realtime",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-omni-flash-realtime-2026-03-15",
+      "name": "qwen3.5-omni-flash-realtime-2026-03-15",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-omni-flash-realtime-2026-03-15",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-omni-plus",
+      "name": "qwen3.5-omni-plus",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-omni-plus",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-omni-plus-2026-03-15",
+      "name": "qwen3.5-omni-plus-2026-03-15",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-omni-plus-2026-03-15",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-omni-plus-realtime",
+      "name": "qwen3.5-omni-plus-realtime",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-omni-plus-realtime",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-omni-plus-realtime-2026-03-15",
+      "name": "qwen3.5-omni-plus-realtime-2026-03-15",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-omni-plus-realtime-2026-03-15",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-plus",
+      "name": "qwen3.5-plus",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-plus",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-plus-2026-02-15",
+      "name": "qwen3.5-plus-2026-02-15",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-plus-2026-02-15",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-5-plus-2026-04-20",
+      "name": "qwen3.5-plus-2026-04-20",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.5-plus-2026-04-20",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-6-27b",
+      "name": "qwen3.6-27b",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.6-27b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-6-35b-a3b",
+      "name": "qwen3.6-35b-a3b",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.6-35b-a3b",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-6-flash",
+      "name": "qwen3.6-flash",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.6-flash",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-6-flash-2026-04-16",
+      "name": "qwen3.6-flash-2026-04-16",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.6-flash-2026-04-16",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-6-max-preview",
+      "name": "qwen3.6-max-preview",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.6-max-preview",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-6-plus",
+      "name": "qwen3.6-plus",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.6-plus",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-6-plus-2026-04-02",
+      "name": "qwen3.6-plus-2026-04-02",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.6-plus-2026-04-02",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-7-max",
+      "name": "qwen3.7-max",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.7-max",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-7-max-2026-05-17",
+      "name": "qwen3.7-max-2026-05-17",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.7-max-2026-05-17",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-7-max-2026-05-20",
+      "name": "qwen3.7-max-2026-05-20",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.7-max-2026-05-20",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-7-max-preview",
+      "name": "qwen3.7-max-preview",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3.7-max-preview",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-asr-flash-2026-02-10",
+      "name": "qwen3-asr-flash-2026-02-10",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-asr-flash-2026-02-10",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-asr-flash-realtime",
+      "name": "qwen3-asr-flash-realtime",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-asr-flash-realtime",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-asr-flash-realtime-2025-10-27",
+      "name": "qwen3-asr-flash-realtime-2025-10-27",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-asr-flash-realtime-2025-10-27",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-asr-flash-realtime-2026-02-10",
+      "name": "qwen3-asr-flash-realtime-2026-02-10",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-asr-flash-realtime-2026-02-10",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-coder-480b-a35b-instruct",
+      "name": "qwen3-coder-480b-a35b-instruct",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-coder-480b-a35b-instruct",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-coder-plus-2025-07-22",
+      "name": "qwen3-coder-plus-2025-07-22",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-coder-plus-2025-07-22",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-coder-plus-2025-09-23",
+      "name": "qwen3-coder-plus-2025-09-23",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-coder-plus-2025-09-23",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-livetranslate-flash",
+      "name": "qwen3-livetranslate-flash",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-livetranslate-flash",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-livetranslate-flash-2025-12-01",
+      "name": "qwen3-livetranslate-flash-2025-12-01",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-livetranslate-flash-2025-12-01",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-livetranslate-flash-realtime",
+      "name": "qwen3-livetranslate-flash-realtime",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-livetranslate-flash-realtime",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-livetranslate-flash-realtime-2025-09-22",
+      "name": "qwen3-livetranslate-flash-realtime-2025-09-22",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-livetranslate-flash-realtime-2025-09-22",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-max-2025-09-23",
+      "name": "qwen3-max-2025-09-23",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-max-2025-09-23",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-max-2026-01-23",
+      "name": "qwen3-max-2026-01-23",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-max-2026-01-23",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-max-preview",
+      "name": "qwen3-max-preview",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-max-preview",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-omni-flash",
+      "name": "qwen3-omni-flash",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-omni-flash",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-omni-flash-2025-09-15",
+      "name": "qwen3-omni-flash-2025-09-15",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-omni-flash-2025-09-15",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-omni-flash-2025-12-01",
+      "name": "qwen3-omni-flash-2025-12-01",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-omni-flash-2025-12-01",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-omni-flash-realtime",
+      "name": "qwen3-omni-flash-realtime",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-omni-flash-realtime",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-omni-flash-realtime-2025-09-15",
+      "name": "qwen3-omni-flash-realtime-2025-09-15",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-omni-flash-realtime-2025-09-15",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-omni-flash-realtime-2025-12-01",
+      "name": "qwen3-omni-flash-realtime-2025-12-01",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-omni-flash-realtime-2025-12-01",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-s2s-flash-realtime-2025-09-22",
+      "name": "qwen3-s2s-flash-realtime-2025-09-22",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-s2s-flash-realtime-2025-09-22",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-tts-flash",
+      "name": "qwen3-tts-flash",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-tts-flash",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-tts-flash-2025-09-18",
+      "name": "qwen3-tts-flash-2025-09-18",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-tts-flash-2025-09-18",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-tts-flash-2025-11-27",
+      "name": "qwen3-tts-flash-2025-11-27",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-tts-flash-2025-11-27",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-tts-flash-realtime",
+      "name": "qwen3-tts-flash-realtime",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-tts-flash-realtime",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-tts-flash-realtime-2025-09-18",
+      "name": "qwen3-tts-flash-realtime-2025-09-18",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-tts-flash-realtime-2025-09-18",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-tts-flash-realtime-2025-11-27",
+      "name": "qwen3-tts-flash-realtime-2025-11-27",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-tts-flash-realtime-2025-11-27",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-tts-instruct-flash",
+      "name": "qwen3-tts-instruct-flash",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-tts-instruct-flash",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-tts-instruct-flash-2026-01-26",
+      "name": "qwen3-tts-instruct-flash-2026-01-26",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-tts-instruct-flash-2026-01-26",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-tts-instruct-flash-realtime",
+      "name": "qwen3-tts-instruct-flash-realtime",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-tts-instruct-flash-realtime",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-tts-instruct-flash-realtime-2026-01-22",
+      "name": "qwen3-tts-instruct-flash-realtime-2026-01-22",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-tts-instruct-flash-realtime-2026-01-22",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-tts-vc-2026-01-22",
+      "name": "qwen3-tts-vc-2026-01-22",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-tts-vc-2026-01-22",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-tts-vc-realtime-2025-11-27",
+      "name": "qwen3-tts-vc-realtime-2025-11-27",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-tts-vc-realtime-2025-11-27",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-tts-vc-realtime-2026-01-15",
+      "name": "qwen3-tts-vc-realtime-2026-01-15",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-tts-vc-realtime-2026-01-15",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-tts-vd-2026-01-26",
+      "name": "qwen3-tts-vd-2026-01-26",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-tts-vd-2026-01-26",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-tts-vd-realtime-2025-12-16",
+      "name": "qwen3-tts-vd-realtime-2025-12-16",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-tts-vd-realtime-2025-12-16",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-tts-vd-realtime-2026-01-15",
+      "name": "qwen3-tts-vd-realtime-2026-01-15",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-tts-vd-realtime-2026-01-15",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-vl-flash",
+      "name": "qwen3-vl-flash",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-vl-flash",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-vl-flash-2025-10-15",
+      "name": "qwen3-vl-flash-2025-10-15",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-vl-flash-2025-10-15",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-vl-flash-2026-01-22",
+      "name": "qwen3-vl-flash-2026-01-22",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-vl-flash-2026-01-22",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-vl-plus",
+      "name": "qwen3-vl-plus",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-vl-plus",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-vl-plus-2025-09-23",
+      "name": "qwen3-vl-plus-2025-09-23",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-vl-plus-2025-09-23",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwen3-vl-plus-2025-12-19",
+      "name": "qwen3-vl-plus-2025-12-19",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwen3-vl-plus-2025-12-19",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "qwq-plus",
+      "name": "qwq-plus",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "qwq-plus",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "siliconflow-deepseek-r1-0528",
+      "name": "siliconflow/deepseek-r1-0528",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "siliconflow/deepseek-r1-0528",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "siliconflow-deepseek-v3-0324",
+      "name": "siliconflow/deepseek-v3-0324",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "siliconflow/deepseek-v3-0324",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "siliconflow-deepseek-v3-1-terminus",
+      "name": "siliconflow/deepseek-v3.1-terminus",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "siliconflow/deepseek-v3.1-terminus",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "siliconflow-deepseek-v3-2",
+      "name": "siliconflow/deepseek-v3.2",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "siliconflow/deepseek-v3.2",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "stepfun-ai-step-3-5-flash",
+      "name": "stepfun-ai/Step-3.5-Flash",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "stepfun-ai/Step-3.5-Flash",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "teleai-telespeechasr",
+      "name": "TeleAI/TeleSpeechASR",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "TeleAI/TeleSpeechASR",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "tencent-hunyuan-mt-7b",
+      "name": "tencent/Hunyuan-MT-7B",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "tencent/Hunyuan-MT-7B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "thudm-glm-4-32b-0414",
+      "name": "THUDM/GLM-4-32B-0414",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "THUDM/GLM-4-32B-0414",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "thudm-glm-4-9b-0414",
+      "name": "THUDM/GLM-4-9B-0414",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "THUDM/GLM-4-9B-0414",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "thudm-glm-z1-9b-0414",
+      "name": "THUDM/GLM-Z1-9B-0414",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "THUDM/GLM-Z1-9B-0414",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "tongyi-mai-z-image",
+      "name": "Tongyi-MAI/Z-Image",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Tongyi-MAI/Z-Image",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "tongyi-mai-z-image-turbo",
+      "name": "Tongyi-MAI/Z-Image-Turbo",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Tongyi-MAI/Z-Image-Turbo",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        },
+        "bailian": {
+          "model_id": "z-image-turbo",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "tongyi-xiaomi-analysis-flash",
+      "name": "tongyi-xiaomi-analysis-flash",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "tongyi-xiaomi-analysis-flash",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "tongyi-xiaomi-analysis-pro",
+      "name": "tongyi-xiaomi-analysis-pro",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "tongyi-xiaomi-analysis-pro",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "vanchin-deepseek-ocr",
+      "name": "vanchin/deepseek-ocr",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "vanchin/deepseek-ocr",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "vanchin-deepseek-v3",
+      "name": "vanchin/deepseek-v3",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "vanchin/deepseek-v3",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "vanchin-deepseek-v3-1-terminus",
+      "name": "vanchin/deepseek-v3.1-terminus",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "vanchin/deepseek-v3.1-terminus",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "vanchin-deepseek-v3-2-think",
+      "name": "vanchin/deepseek-v3.2-think",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "vanchin/deepseek-v3.2-think",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "wan-ai-wan2-2-i2v-a14b",
+      "name": "Wan-AI/Wan2.2-I2V-A14B",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Wan-AI/Wan2.2-I2V-A14B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "wan-ai-wan2-2-t2v-a14b",
+      "name": "Wan-AI/Wan2.2-T2V-A14B",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "Wan-AI/Wan2.2-T2V-A14B",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "wan2-7-image",
+      "name": "wan2.7-image",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "wan2.7-image",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "wan2-7-image-pro",
+      "name": "wan2.7-image-pro",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "wan2.7-image-pro",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "zai-org-glm-4-5-air",
+      "name": "zai-org/GLM-4.5-Air",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "zai-org/GLM-4.5-Air",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "zai-org-glm-4-5v",
+      "name": "zai-org/GLM-4.5V",
+      "description": "",
+      "platforms": {
+        "siliconflow": {
+          "model_id": "zai-org/GLM-4.5V",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "prompt_per_m": 0,
+            "completion_per_m": 0
+          },
+          "context_length": 0,
+          "owned_by": ""
+        }
+      }
+    },
+    {
+      "canonical_name": "zhipu-glm-5",
+      "name": "ZHIPU/GLM-5",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "ZHIPU/GLM-5",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
+        }
+      }
+    },
+    {
+      "canonical_name": "zhipu-glm-5-1",
+      "name": "ZHIPU/GLM-5.1",
+      "description": "",
+      "platforms": {
+        "bailian": {
+          "model_id": "ZHIPU/GLM-5.1",
+          "pricing": {},
+          "context_length": 0,
+          "owned_by": "system"
         }
       }
     }

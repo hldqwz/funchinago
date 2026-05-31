@@ -7,3 +7,7 @@ dist/
 __pycache__/
 .env
 debug/
+scripts/*.log
+.mcp.json
+tools/
+.venv/

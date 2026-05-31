@@ -1,0 +1,46 @@
+name: Weekly Full Crawl
+
+on:
+  schedule:
+    # 每周一北京时间 8:00 (UTC 0:00 Mon)
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Python deps + Playwright
+        run: |
+          pip install requests playwright
+          playwright install chromium --with-deps
+
+      - name: Install Node deps
+        run: npm ci
+
+      - name: Full crawl
+        env:
+          SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
+          DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
+          FIREWORKS_API_KEY: ${{ secrets.FIREWORKS_API_KEY }}
+        run: python3 crawler/run.py
+
+      - name: Build site
+        run: npx astro build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist/ --project-name=llm-rankings --commit-dirty=true

@@ -19,8 +19,8 @@ function priceOR(m: ModelData, s: "prompt" | "completion"): number | null {
   const p = m.platforms?.openrouter?.pricing; if (!p) return null;
   return parseFloat(p[s] || "0") * 1_000_000;
 }
-function priceTJ(m: ModelData, s: "prompt" | "completion"): number | null {
-  const p = m.platforms?.together?.pricing; if (!p) return null;
+function priceGR(m: ModelData, s: "prompt" | "completion"): number | null {
+  const p = m.platforms?.groq?.pricing; if (!p) return null;
   return s === "prompt" ? p.prompt_per_m ?? 0 : p.completion_per_m ?? 0;
 }
 function priceSF(m: ModelData, s: "prompt" | "completion"): number | null {
@@ -28,11 +28,11 @@ function priceSF(m: ModelData, s: "prompt" | "completion"): number | null {
   return s === "prompt" ? p.prompt_per_m ?? 0 : p.completion_per_m ?? 0;
 }
 function contextK(m: ModelData): number {
-  return Math.round((m.platforms?.openrouter?.context_length || m.platforms?.together?.context_length || m.platforms?.siliconflow?.context_length || 0) / 1024);
+  return Math.round((m.platforms?.openrouter?.context_length || m.platforms?.groq?.context_length || m.platforms?.siliconflow?.context_length || 0) / 1024);
 }
 function cheapestRoundtrip(m: ModelData): number | null {
-  const prices = [priceOR(m, "prompt"), priceTJ(m, "prompt"), priceSF(m, "prompt")].filter(p => p !== null) as number[];
-  const out = [priceOR(m, "completion"), priceTJ(m, "completion"), priceSF(m, "completion")].filter(p => p !== null) as number[];
+  const prices = [priceOR(m, "prompt"), priceGR(m, "prompt"), priceSF(m, "prompt")].filter(p => p !== null) as number[];
+  const out = [priceOR(m, "completion"), priceGR(m, "completion"), priceSF(m, "completion")].filter(p => p !== null) as number[];
   if (prices.length === 0 || out.length === 0) return null;
   return Math.min(...prices) + Math.min(...out);
 }
@@ -90,11 +90,11 @@ const selected = selectedIds.length > 0
           <tr><td style="color:var(--text-secondary);font-weight:500;">排名</td>{selected.map(m => <td colspan="2" style="text-align:center;font-weight:700;font-size:1.1rem;">#{m.platforms?.openrouter?.rank || "—"}</td>)}</tr>
           <tr><td style="color:var(--text-secondary);font-weight:500;">OR 输入价</td>{selected.map(m => { const p = priceOR(m, "prompt"); return <td colspan="2" style="text-align:center;font-weight:600;color:var(--green);">{p !== null ? `$${p.toFixed(2)}` : "—"}</td>; })}</tr>
           <tr><td style="color:var(--text-secondary);font-weight:500;">OR 输出价</td>{selected.map(m => { const p = priceOR(m, "completion"); return <td colspan="2" style="text-align:center;font-weight:600;color:var(--green);">{p !== null ? `$${p.toFixed(2)}` : "—"}</td>; })}</tr>
-          {selected.some(m => priceTJ(m, "prompt") !== null) && <tr><td style="color:var(--text-secondary);font-weight:500;">TJ 输入价</td>{selected.map(m => { const p = priceTJ(m, "prompt"); return <td colspan="2" style="text-align:center;font-weight:600;color:var(--accent-2);">{p !== null ? `$${p.toFixed(2)}` : <span style="color:var(--text-tertiary);">—</span>}</td>; })}</tr>}
+          {selected.some(m => priceGR(m, "prompt") !== null) && <tr><td style="color:var(--text-secondary);font-weight:500;">GR 输入价</td>{selected.map(m => { const p = priceGR(m, "prompt"); return <td colspan="2" style="text-align:center;font-weight:600;color:var(--accent-2);">{p !== null ? `$${p.toFixed(2)}` : <span style="color:var(--text-tertiary);">—</span>}</td>; })}</tr>}
           {selected.some(m => priceSF(m, "prompt") !== null) && <tr><td style="color:var(--text-secondary);font-weight:500;">SF 输入价</td>{selected.map(m => { const p = priceSF(m, "prompt"); return <td colspan="2" style="text-align:center;font-weight:600;color:var(--orange);">{p !== null ? `$${p.toFixed(2)}` : <span style="color:var(--text-tertiary);">—</span>}</td>; })}</tr>}
           <tr><td style="color:var(--text-secondary);font-weight:500;">最佳往返价</td>{selected.map(m => { const p = cheapestRoundtrip(m); return <td colspan="2" style="text-align:center;font-weight:700;color:var(--accent);font-size:1.05rem;">{p !== null ? `$${p.toFixed(2)}/M` : "—"}</td>; })}</tr>
           <tr><td style="color:var(--text-secondary);font-weight:500;">上下文</td>{selected.map(m => <td colspan="2" style="text-align:center;font-weight:600;">{contextK(m).toLocaleString()}K</td>)}</tr>
-          <tr><td style="color:var(--text-secondary);font-weight:500;">可用平台</td>{selected.map(m => { const ps = Object.keys(m.platforms || {}); return <td colspan="2" style="text-align:center;">{ps.map(p => <span class={`badge badge-platform ${p === "openrouter" ? "badge-blue" : p === "together" ? "badge-purple" : "badge-orange"}`} style="margin:0.1rem;">{p === "openrouter" ? "OR" : p === "together" ? "TJ" : "SF"}</span>)}</td>; })}</tr>
+          <tr><td style="color:var(--text-secondary);font-weight:500;">可用平台</td>{selected.map(m => { const ps = Object.keys(m.platforms || {}); return <td colspan="2" style="text-align:center;">{ps.map(p => <span class={`badge badge-platform ${p === "openrouter" ? "badge-blue" : p === "groq" ? "badge-purple" : p === "bailian" ? "badge-teal" : "badge-orange"}`} style="margin:0.1rem;">{p === "openrouter" ? "OR" : p === "groq" ? "GR" : p === "bailian" ? "BL" : "SF"}</span>)}</td>; })}</tr>
           <tr><td style="color:var(--text-secondary);font-weight:500;">称号</td>{selected.map(m => <td colspan="2" style="text-align:center;">{bestInBadges(m, selected, t).length > 0 ? <Fragment set:html={bestInBadges(m, selected, t)} /> : <span style="color:var(--text-tertiary);font-size:0.8rem;">—</span>}</td>)}</tr>
         </tbody>
       </table></div>

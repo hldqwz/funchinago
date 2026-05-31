@@ -9,7 +9,7 @@ const t = useTranslations(locale);
 
 let models: ModelData[] = [];
 let updatedAt = "";
-let platformStats = { openrouter: 0, together: 0, siliconflow: 0, multi_platform: 0 };
+let platformStats = { openrouter: 0, groq: 0, siliconflow: 0, bailian: 0, multi_platform: 0 };
 
 try {
   const raw = await import("../../data/models.json");
@@ -25,8 +25,8 @@ function priceOR(model: ModelData, side: "prompt" | "completion"): number {
   if (!p) return -1;
   return parseFloat(p[side] || "0") * 1_000_000;
 }
-function priceTJ(model: ModelData, side: "prompt" | "completion"): number {
-  const p = model.platforms?.together?.pricing;
+function priceGR(model: ModelData, side: "prompt" | "completion"): number {
+  const p = model.platforms?.groq?.pricing;
   if (!p) return -1;
   if (side === "prompt") return p.prompt_per_m ?? parseFloat(p.prompt || "0");
   return p.completion_per_m ?? parseFloat(p.completion || "0");
@@ -38,11 +38,11 @@ function priceSF(model: ModelData, side: "prompt" | "completion"): number {
   return p.completion_per_m ?? (parseFloat(p.completion || "0") * 1_000_000);
 }
 function getMinInputPrice(model: ModelData): number | null {
-  const prices = [priceOR(model, "prompt"), priceTJ(model, "prompt"), priceSF(model, "prompt")].filter(p => p >= 0);
+  const prices = [priceOR(model, "prompt"), priceGR(model, "prompt"), priceSF(model, "prompt")].filter(p => p >= 0);
   return prices.length > 0 ? Math.min(...prices) : null;
 }
 function getMinOutputPrice(model: ModelData): number | null {
-  const prices = [priceOR(model, "completion"), priceTJ(model, "completion"), priceSF(model, "completion")].filter(p => p >= 0);
+  const prices = [priceOR(model, "completion"), priceGR(model, "completion"), priceSF(model, "completion")].filter(p => p >= 0);
   return prices.length > 0 ? Math.min(...prices) : null;
 }
 function getPlatforms(model: ModelData): string[] { return Object.keys(model.platforms || {}); }
@@ -57,7 +57,7 @@ function usageDisplay(n: number | null): string {
   if (n >= 1e3) return (n / 1e3).toFixed(0) + "K"; return n.toString();
 }
 function contextK(model: ModelData): number {
-  return Math.round((model.platforms?.openrouter?.context_length || model.platforms?.together?.context_length || model.platforms?.siliconflow?.context_length || 0) / 1024);
+  return Math.round((model.platforms?.openrouter?.context_length || model.platforms?.groq?.context_length || model.platforms?.siliconflow?.context_length || model.platforms?.bailian?.context_length || 0) / 1024);
 }
 function getRoundtrip(model: ModelData): number | null {
   const in_ = priceOR(model, "prompt"); const out_ = priceOR(model, "completion");
@@ -74,7 +74,7 @@ const maxUsage = topMostUsed.length > 0 ? getUsage(topMostUsed[0]) || 1 : 1;
 const maxTrend = topTrending.length > 0 ? parseFloat(getTrend(topTrending[0]).replace(/[^0-9.\-]/g, "0")) || 1 : 1;
 const maxCtx = topCtx.length > 0 ? contextK(topCtx[0]) || 1 : 1;
 
-function platformColor(p: string): string { return p === "openrouter" ? "badge-blue" : p === "together" ? "badge-purple" : "badge-orange"; }
+function platformColor(p: string): string { return p === "openrouter" ? "badge-blue" : p === "groq" ? "badge-purple" : p === "bailian" ? "badge-teal" : "badge-orange"; }
 function rankClass(r: number | null): string { if (r === 1) return "gold"; if (r === 2) return "silver"; if (r === 3) return "bronze"; return ""; }
 ---
 
@@ -97,7 +97,7 @@ function rankClass(r: number | null): string { if (r === 1) return "gold"; if (r
     <div class="stat-grid" style="margin-bottom: 2rem;">
       <div class="stat-tile"><div class="stat-value" style="color: var(--accent);">{models.length}</div><div class="stat-label">{t("home.stat_collected")}</div></div>
       <div class="stat-tile"><div class="stat-value" style="color: var(--green);">{rankedModels.length}</div><div class="stat-label">{t("home.stat_ranked")}</div></div>
-      <div class="stat-tile"><div class="stat-value" style="color: var(--accent-2);">{[platformStats.openrouter > 0, platformStats.together > 0, platformStats.siliconflow > 0].filter(Boolean).length}</div><div class="stat-label">{t("home.stat_platforms")}</div></div>
+      <div class="stat-tile"><div class="stat-value" style="color: var(--accent-2);">{[platformStats.openrouter > 0, platformStats.groq > 0, platformStats.siliconflow > 0, platformStats.bailian > 0].filter(Boolean).length}</div><div class="stat-label">{t("home.stat_platforms")}</div></div>
       <div class="stat-tile"><div class="stat-value" style="color: var(--gold); font-size: 1.3rem;">{topCtx.length > 0 ? `${contextK(topCtx[0]).toLocaleString()}K` : "—"}</div><div class="stat-label">{t("home.stat_context")}</div></div>
     </div>
 
@@ -154,7 +154,7 @@ function rankClass(r: number | null): string { if (r === 1) return "gold"; if (r
                 </td>
                 <td style="text-align:right;font-weight:600;">{inP !== null ? <span style={`color:${inP < 1 ? "var(--green)" : "var(--text)"}`}>${inP.toFixed(2)}</span> : <span style="color:var(--text-tertiary)">—</span>}</td>
                 <td style="text-align:right;font-weight:600;">{outP !== null ? <span style={`color:${outP < 2 ? "var(--green)" : "var(--text)"}`}>${outP.toFixed(2)}</span> : <span style="color:var(--text-tertiary)">—</span>}</td>
-                <td style="text-align:center;"><div style="display:flex;gap:0.2rem;justify-content:center;">{platforms.map(p => <span class={"badge badge-platform " + platformColor(p)}>{p === "openrouter" ? "OR" : p === "together" ? "TJ" : "SF"}</span>)}</div></td>
+                <td style="text-align:center;"><div style="display:flex;gap:0.2rem;justify-content:center;">{platforms.map(p => <span class={"badge badge-platform " + platformColor(p)}>{p === "openrouter" ? "OR" : p === "groq" ? "GR" : p === "bailian" ? "BL" : "SF"}</span>)}</div></td>
                 <td style="text-align:right;color:var(--text-secondary);font-size:0.82rem;">{ctx > 0 ? `${ctx.toLocaleString()}K` : "—"}</td>
                 <td style="text-align:right;font-weight:600;">{usageDisplay(getUsage(model))}</td>
                 <td style="text-align:center;">{getTrend(model) && getTrend(model) !== "0%" ? <span class={`badge ${getTrend(model).startsWith("-") ? "badge-red" : "badge-green"}`}>{getTrend(model).startsWith("-") ? "↓" : "↑"} {getTrend(model)}</span> : <span style="color:var(--text-tertiary);font-size:0.75rem;">—</span>}</td>

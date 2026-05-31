@@ -33,15 +33,19 @@ export interface ModelData {
   description: string;
   platforms: {
     openrouter?: PlatformData;
-    together?: PlatformData;
+    groq?: PlatformData;
     siliconflow?: PlatformData;
+    bailian?: PlatformData;
+    fireworks?: PlatformData;
   };
 }
 
 export interface PlatformStats {
   openrouter: number;
-  together: number;
+  groq: number;
   siliconflow: number;
+  bailian: number;
+  fireworks: number;
   multi_platform: number;
 }
 
