@@ -1,0 +1,551 @@
+---
+// src/layouts/Layout.astro — 全局布局（i18n + 暗黑模式）
+import { useTranslations, detectLocale, switchLocaleUrl } from "../i18n";
+
+export interface Props {
+  title: string;
+  description?: string;
+  lang?: "en" | "zh";
+}
+
+const { title, description } = Astro.props;
+const locale = Astro.props.lang || detectLocale(Astro.url.pathname);
+const t = useTranslations(locale);
+const altUrl = switchLocaleUrl(Astro.url.pathname, locale);
+const year = new Date().getFullYear();
+---
+
+<!DOCTYPE html>
+<html lang={locale}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | LLM Rankings</title>
+  <meta name="description" content={description || t("site.description")} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description || t("site.description")} />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🏆</text></svg>">
+
+  <style is:global>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Light Theme (default) ── */
+    :root {
+      --bg: #f4f5f7;
+      --surface: #ffffff;
+      --surface-hover: #f8f9fa;
+      --text: #111827;
+      --text-secondary: #6b7280;
+      --text-tertiary: #9ca3af;
+      --border: #e5e7eb;
+      --border-light: #f3f4f6;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --accent-light: #eff6ff;
+      --accent-2: #7c3aed;
+      --accent-2-light: #f5f3ff;
+      --green: #16a34a;
+      --green-light: #dcfce7;
+      --red: #dc2626;
+      --red-light: #fee2e2;
+      --orange: #ea580c;
+      --orange-light: #fff7ed;
+      --gold: #f59e0b;
+      --gold-light: #fef3c7;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-lg: 0 4px 6px rgba(0,0,0,0.05), 0 10px 15px rgba(0,0,0,0.03);
+      --header-bg: rgba(255,255,255,0.85);
+      --overlay: rgba(0,0,0,0.04);
+      --search-bg: #ffffff;
+    }
+
+    /* ── Dark Theme ── */
+    [data-theme="dark"] {
+      --bg: #0f1117;
+      --surface: #1a1c25;
+      --surface-hover: #22242f;
+      --text: #e4e6ed;
+      --text-secondary: #9ca0ae;
+      --text-tertiary: #6b6f7d;
+      --border: #2a2d39;
+      --border-light: #22252f;
+      --accent: #5185f5;
+      --accent-hover: #6b9af7;
+      --accent-light: rgba(81,133,245,0.12);
+      --accent-2: #a78bfa;
+      --accent-2-light: rgba(167,139,250,0.12);
+      --green: #4ade80;
+      --green-light: rgba(74,222,128,0.12);
+      --red: #f87171;
+      --red-light: rgba(248,113,113,0.12);
+      --orange: #fb923c;
+      --orange-light: rgba(251,146,60,0.12);
+      --gold: #fbbf24;
+      --gold-light: rgba(251,191,36,0.12);
+      --shadow: 0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15);
+      --shadow-lg: 0 4px 6px rgba(0,0,0,0.25), 0 10px 15px rgba(0,0,0,0.15);
+      --header-bg: rgba(15,17,23,0.88);
+      --overlay: rgba(255,255,255,0.04);
+      --search-bg: #22242f;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    .container-narrow { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── Header ── */
+    .site-header {
+      background: var(--header-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .logo span { color: var(--accent); }
+
+    .site-nav { display: flex; align-items: center; gap: 0.25rem; }
+    .site-nav a {
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: all 0.15s;
+    }
+    .site-nav a:hover { color: var(--text); background: var(--surface-hover); text-decoration: none; }
+    .site-nav a.active { color: var(--accent); background: var(--accent-light); }
+
+    .header-actions { display: flex; align-items: center; gap: 0.4rem; }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.7rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      transition: all 0.15s;
+      cursor: pointer;
+    }
+    .lang-switch:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      transition: all 0.15s;
+      cursor: pointer;
+    }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── Footer ── */
+    .site-footer {
+      text-align: center;
+      padding: 2.5rem 0;
+      color: var(--text-tertiary);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+      transition: border-color 0.2s;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .card, .stat-tile, .leader-card {
+      transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    /* ── Badges ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      gap: 0.2rem;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+    .badge-green { background: var(--green-light); color: var(--green); }
+    .badge-red { background: var(--red-light); color: var(--red); }
+    .badge-orange { background: var(--orange-light); color: var(--orange); }
+    .badge-blue { background: var(--accent-light); color: var(--accent); }
+    .badge-purple { background: var(--accent-2-light); color: var(--accent-2); }
+
+    /* ── Table ── */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius);
+    }
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+    thead th {
+      background: var(--overlay);
+      text-align: left;
+      padding: 0.75rem 0.875rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-tertiary);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      white-space: nowrap;
+    }
+    thead th:first-child { border-radius: var(--radius) 0 0 0; }
+    thead th:last-child { border-radius: 0 var(--radius) 0 0; }
+    tbody tr { transition: background 0.1s; }
+    tbody tr:hover { background: var(--surface-hover); }
+    tbody td {
+      padding: 0.75rem 0.875rem;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.875rem;
+      vertical-align: middle;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+
+    /* ── Rank Badge ── */
+    .rank-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: var(--overlay);
+      color: var(--text-secondary);
+    }
+    .rank-num.gold { background: var(--gold-light); color: var(--gold); }
+    .rank-num.silver { background: var(--overlay); color: var(--text-secondary); }
+    .rank-num.bronze { background: var(--gold-light); color: var(--gold); }
+
+    /* ── Progress bar ── */
+    .bar-track {
+      height: 6px;
+      background: var(--border);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.3s;
+    }
+    .bar-blue { background: var(--accent); }
+    .bar-purple { background: var(--accent-2); }
+    .bar-green { background: var(--green); }
+    .bar-gold { background: var(--gold); }
+
+    /* ── Stat tiles ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.875rem;
+    }
+    .stat-tile {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .stat-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-tertiary);
+      margin-top: 0.2rem;
+    }
+
+    /* ── Search ── */
+    .search-input {
+      width: 100%;
+      padding: 0.65rem 1rem 0.65rem 2.35rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.9rem;
+      background: var(--search-bg);
+      color: var(--text);
+      transition: all 0.15s;
+      outline: none;
+    }
+    .search-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
+    .search-wrap { position: relative; }
+    .search-icon {
+      position: absolute;
+      left: 0.8rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-tertiary);
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    /* ── Vellum-style leader cards ── */
+    .leader-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .leader-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .leader-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.3rem 0;
+    }
+    .leader-num {
+      width: 22px;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-tertiary);
+      flex-shrink: 0;
+    }
+    .leader-name {
+      flex: 0 0 auto;
+      min-width: 0;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      max-width: 35%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .leader-name:hover { color: var(--accent); }
+    .leader-bar {
+      flex: 1;
+      height: 14px;
+      background: var(--overlay);
+      border-radius: 7px;
+      overflow: hidden;
+      min-width: 40px;
+    }
+    .leader-bar .bar-fill {
+      height: 100%;
+      border-radius: 7px;
+      transition: width 0.4s ease;
+    }
+    .bar-blue { background: linear-gradient(90deg, var(--accent), #60a5fa); }
+    .bar-green { background: linear-gradient(90deg, var(--green), #4ade80); }
+    .bar-gold { background: linear-gradient(90deg, var(--gold), #fcd34d); }
+    .bar-purple { background: linear-gradient(90deg, var(--accent-2), #a78bfa); }
+    .leader-score {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text);
+      text-align: right;
+      flex-shrink: 0;
+      min-width: 55px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ── Select ── */
+    select {
+      background: var(--search-bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      outline: none;
+    }
+    select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
+    option { background: var(--surface); color: var(--text); }
+
+    /* ── Details / Summary ── */
+    details { color: var(--text-secondary); }
+    summary { cursor: pointer; }
+    summary:hover { color: var(--text); }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+    .btn-outline:hover { background: var(--surface-hover); border-color: var(--text-tertiary); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href={locale === "zh" ? "/zh/" : "/"} class="logo">
+        <span>LLM</span>Rankings
+      </a>
+      <nav class="site-nav">
+        <a href={locale === "zh" ? "/zh/" : "/"}
+           class:list={{ active: Astro.url.pathname === "/" || Astro.url.pathname === "/zh/" }}>
+          {t("nav.rankings")}
+        </a>
+        <a href={locale === "zh" ? "/zh/compare" : "/compare"}
+           class:list={{ active: Astro.url.pathname.includes("/compare") }}>
+          {t("nav.compare")}
+        </a>
+        <div class="header-actions">
+          <button id="theme-btn" class="theme-toggle" aria-label="Toggle dark mode">
+            🌙
+          </button>
+          <a href={altUrl} class="lang-switch">{t("nav.language")}</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>{t("footer.source")} <a href="https://openrouter.ai/" target="_blank" rel="noopener">OpenRouter</a>,
+      <a href="https://www.together.ai/" target="_blank" rel="noopener">Together AI</a>,
+      <a href="https://siliconflow.cn/" target="_blank" rel="noopener">SiliconFlow</a>
+      · {t("footer.auto_update")} · &copy; {year} {t("footer.copyright")}</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── 搜索功能 ──
+    const searchInput = document.getElementById("model-search");
+    if (searchInput) {
+      searchInput.addEventListener("input", (e) => {
+        const q = e.target.value.toLowerCase();
+        document.querySelectorAll(".model-row").forEach((row) => {
+          const name = row.getAttribute("data-name")?.toLowerCase() || "";
+          const provider = row.getAttribute("data-provider")?.toLowerCase() || "";
+          row.style.display = name.includes(q) || provider.includes(q) ? "" : "none";
+        });
+      });
+    }
+
+    // ── 暗黑模式切换 ──
+    (function() {
+      const btn = document.getElementById("theme-btn");
+      if (!btn) return;
+
+      const STORAGE_KEY = "llm-rankings-theme";
+      const DARK = "dark";
+      const LIGHT = "light";
+
+      // 获取初始主题
+      function getPreferredTheme() {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored === DARK || stored === LIGHT) return stored;
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ? DARK : LIGHT;
+      }
+
+      function applyTheme(theme) {
+        if (theme === DARK) {
+          document.documentElement.setAttribute("data-theme", DARK);
+          btn.textContent = "☀️";
+        } else {
+          document.documentElement.removeAttribute("data-theme");
+          btn.textContent = "🌙";
+        }
+      }
+
+      // 初始化
+      applyTheme(getPreferredTheme());
+
+      // 切换按钮
+      btn.addEventListener("click", () => {
+        const current = document.documentElement.getAttribute("data-theme") === DARK ? DARK : LIGHT;
+        const next = current === DARK ? LIGHT : DARK;
+        localStorage.setItem(STORAGE_KEY, next);
+        applyTheme(next);
+      });
+
+      // 跟随系统变化
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+        if (!localStorage.getItem(STORAGE_KEY)) {
+          applyTheme(e.matches ? DARK : LIGHT);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+- [技术栈：Astro SSG + Cloudflare Pages](project_tech_stack.md) — 零成本部署，SEO 友好，含数据来源和排名维度设计
+- [用户：非技术背景](user_profile.md) — 需要技术解释，偏好讨论后再行动
+- [当前阻塞](blockers.md) — Scrapling 安装超时，项目代码待开始
