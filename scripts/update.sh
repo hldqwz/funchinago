@@ -2,9 +2,8 @@
 set -e
 cd /Users/apple/ai-webplan
 
-export SILICONFLOW_API_KEY="sk-qkylyzadhlpqzycdhyivdukdioegolzqncmbypkhjcjzahsx"
-export DASHSCOPE_API_KEY="sk-f2721b188d774704b16c56592122157b"
-export FIREWORKS_API_KEY="fw_M4JVevRfKn2G4o8WkoXgxs"
+# API keys must be set in environment before running this script.
+# GitHub Actions uses secrets. For local dev: export XXX_API_KEY=xxx first.
 
 echo "=== LLM Rankings Update: $1 ==="
 echo "Started: $(date)"
