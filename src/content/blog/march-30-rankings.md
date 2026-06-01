@@ -3,6 +3,7 @@ title: "Q1 2026 State of AI Models — What 3 Months of Rankings Actually Tell U
 date: 2026-03-30
 description: "A quarter of ranking data. Patterns are starting to emerge that you won't see in any single-week snapshot."
 tags: ["rankings", "weekly", "analysis", "quarterly"]
+hero_image: "/images/blog/hero-data-rankings.jpg"
 locale: "en"
 ---
 

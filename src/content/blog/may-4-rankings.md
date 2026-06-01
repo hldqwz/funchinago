@@ -3,6 +3,7 @@ title: "The AI Price War Is Real — Here's the Receipts"
 date: 2026-05-04
 description: "Average token price dropped another 11% in April. I tracked exactly where the cuts are happening and who's driving them."
 tags: ["rankings", "weekly", "analysis", "pricing"]
+hero_image: "/images/blog/hero-price-war.jpg"
 locale: "en"
 ---
 

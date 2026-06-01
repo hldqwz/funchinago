@@ -3,6 +3,7 @@ title: "The Open-Source Tipping Point Is Closer Than You Think"
 date: 2026-04-13
 description: "Three open-source models in the top 20. Six months ago there were zero. Here's what changed and why it's accelerating."
 tags: ["rankings", "weekly", "analysis", "open-source"]
+hero_image: "/images/blog/hero-open-source.jpg"
 locale: "en"
 ---
 

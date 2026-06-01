@@ -3,6 +3,7 @@ title: "The Rankings Just Got Weird — 3 Surprises From This Week's Data"
 date: 2026-06-01
 description: "A model nobody was talking about jumped 12 spots. OpenRouter pricing shifted overnight. And the #1 spot? Not as safe as it looks."
 tags: ["rankings", "weekly", "analysis"]
+hero_image: "/images/blog/hero-rankings-weird.jpg"
 locale: "en"
 ---
 
