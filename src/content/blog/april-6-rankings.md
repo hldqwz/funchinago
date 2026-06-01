@@ -3,6 +3,7 @@ title: "OpenRouter Just Crossed 5 Million Daily Calls — Here's Why That Matter
 date: 2026-04-06
 description: "The API gateway is becoming the default way developers access models. The numbers tell an interesting story about where inference is heading."
 tags: ["rankings", "weekly", "analysis", "platforms"]
+hero_image: "/images/blog/hero-gateway.jpg"
 locale: "en"
 ---
 

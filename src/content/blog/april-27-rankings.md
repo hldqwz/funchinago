@@ -3,6 +3,7 @@ title: "Developers Are Switching Models Faster Than Ever — And That's a Good T
 date: 2026-04-27
 description: "The average model in the top 50 changes rank by 3.4 positions per week. A year ago it was 1.8. Low switching costs are reshaping the market."
 tags: ["rankings", "weekly", "analysis"]
+hero_image: "/images/blog/hero-switching.jpg"
 locale: "en"
 ---
 

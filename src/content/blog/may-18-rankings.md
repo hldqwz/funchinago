@@ -3,6 +3,7 @@ title: "What the Top 10 Tells Us About Where AI Is Heading"
 date: 2026-05-18
 description: "The top 10 models by usage aren't the top 10 by benchmark scores. The differences tell you more than either list alone."
 tags: ["rankings", "weekly", "analysis"]
+hero_image: "/images/blog/hero-benchmark-gap.jpg"
 locale: "en"
 ---
 

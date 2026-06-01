@@ -3,6 +3,7 @@ title: "Vision Models Are Quietly Taking Over — Look at the Rankings"
 date: 2026-05-11
 description: "Models that can see images are climbing faster than text-only models. The ranking data shows a shift that most people haven't noticed yet."
 tags: ["rankings", "weekly", "analysis", "multimodal"]
+hero_image: "/images/blog/hero-vision.jpg"
 locale: "en"
 ---
 

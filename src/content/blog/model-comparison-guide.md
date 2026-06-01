@@ -3,6 +3,7 @@ title: "Stop Guessing Which Model to Use — Look at These 5 Numbers Instead"
 date: 2026-05-20
 description: "Hundreds of models, no idea which to pick? Five data points, five minutes, decision made."
 tags: ["guide", "comparison", "beginner"]
+hero_image: "/images/blog/hero-dashboard.jpg"
 locale: "en"
 ---
 

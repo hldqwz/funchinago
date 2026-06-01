@@ -3,6 +3,7 @@ title: "This Week in AI Models: Claude Still #1, but Open-Source is Catching Up 
 date: 2026-05-25
 description: "OpenRouter weekly ranking breakdown — who's up, who's down, and whether you should switch models."
 tags: ["rankings", "weekly", "analysis"]
+hero_image: "/images/blog/hero-race.jpg"
 locale: "en"
 ---
 

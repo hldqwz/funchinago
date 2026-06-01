@@ -3,6 +3,7 @@ title: "Why the Cheapest Model is Usually the Wrong Choice"
 date: 2026-05-15
 description: "Everyone optimizes for price first. Here's why that backfires, and what to optimize for instead."
 tags: ["guide", "pricing", "analysis"]
+hero_image: "/images/blog/hero-value.jpg"
 locale: "en"
 ---
 

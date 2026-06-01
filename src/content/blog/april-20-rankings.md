@@ -3,6 +3,7 @@ title: "Context Windows Are the New Battleground — and the Rankings Prove It"
 date: 2026-04-20
 description: "Everyone talks about benchmark scores. But the ranking data suggests developers care more about how much text a model can handle at once."
 tags: ["rankings", "weekly", "analysis"]
+hero_image: "/images/blog/hero-context.jpg"
 locale: "en"
 ---
 
