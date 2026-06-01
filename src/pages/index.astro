@@ -151,6 +151,25 @@ function rankClass(r: number | null): string {
   if (r === 3) return "bronze";
   return "";
 }
+
+// ── Modality ──
+function getModality(model: ModelData): { type: string; icon: string } {
+  const arch = model.platforms?.openrouter?.architecture;
+  const mod = arch?.modality || "";
+  if (!mod || mod === "text->text") return { type: "text", icon: "" };
+  const [input, output] = mod.split("->");
+  const inputs = (input || "").split("+");
+  const outputs = (output || "").split("+");
+  const hasImageIn = inputs.includes("image");
+  const hasVideoIn = inputs.includes("video");
+  const hasAudioIn = inputs.includes("audio");
+  const hasFileIn = inputs.includes("file");
+  const hasImageOut = outputs.includes("image");
+  if (hasImageOut) return { type: "img_gen", icon: "🎨" };
+  if (hasVideoIn) return { type: "video", icon: "🎬" };
+  if (hasImageIn || hasFileIn) return { type: "vision", icon: "👁️" };
+  return { type: "multimodal", icon: "👁️" };
+}
 ---
 
 <Layout title={t("site.title")} description={t("site.description")} lang={locale}>
@@ -299,6 +318,13 @@ function rankClass(r: number | null): string {
       <button class="filter-btn" data-filter="siliconflow">{t("home.filter_sf")}</button>
       <button class="filter-btn" data-filter="bailian">{t("home.filter_bl")}</button>
     </div>
+    <div class="filter-bar" style="display: flex; gap: 0.4rem; margin-bottom: 1rem; align-items: center; flex-wrap: wrap;">
+      <span style="font-size: 0.75rem; color: var(--text-tertiary); margin-right: 0.25rem;">Type:</span>
+      <button class="filter-btn modality-btn active" data-modality="all">{t("home.filter_all")}</button>
+      <button class="filter-btn modality-btn" data-modality="multimodal">{t("home.filter_multimodal")}</button>
+      <button class="filter-btn modality-btn" data-modality="vision">{t("home.filter_vision")}</button>
+      <button class="filter-btn modality-btn" data-modality="img_gen">{t("home.filter_image_gen")}</button>
+    </div>
 
     <!-- Main Table -->
     <div class="card table-wrap">
@@ -325,8 +351,10 @@ function rankClass(r: number | null): string {
             const usage = getUsage(model);
             const trend = getTrend(model);
 
+            const md = getModality(model);
             return (
               <tr class="model-row" data-name={model.name} data-platforms={getPlatforms(model).join(",")}
+	                  data-modality={md.type}
 	                  data-input={inPrice !== null ? inPrice : 999999}
 	                  data-output={outPrice !== null ? outPrice : 999999}
 	                  data-context={ctx}
@@ -340,6 +368,7 @@ function rankClass(r: number | null): string {
                      style="font-weight: 600; color: var(--text);">
                     {model.name}
                   </a>
+                  {md.icon && <span style="margin-left: 0.3rem;" title={md.type}>{md.icon}</span>}
                   {model.platforms?.openrouter?.top_provider?.name && (
                     <span class="badge badge-blue badge-platform" style="margin-left: 0.4rem;">
                       {model.platforms.openrouter.top_provider.name}
@@ -491,6 +520,7 @@ function rankClass(r: number | null): string {
     let sortKey = "usage";
     let sortDir = -1;
     let activeFilter = "all";
+    let activeModality = "all";
     let searchQuery = "";
 
     function getVal(tr, key) {
@@ -499,10 +529,13 @@ function rankClass(r: number | null): string {
 
     function rowVisible(tr) {
       const platforms = tr.getAttribute("data-platforms") || "";
+      const modality = tr.getAttribute("data-modality") || "text";
       const name = (tr.getAttribute("data-name") || "").toLowerCase();
       const passFilter = activeFilter === "all" || platforms.split(",").includes(activeFilter);
+      const passModality = activeModality === "all" || activeModality === "multimodal" ? modality !== "text" :
+                           modality === activeModality;
       const passSearch = !searchQuery || name.includes(searchQuery);
-      return passFilter && passSearch;
+      return passFilter && passModality && passSearch;
     }
 
     function reorder() {
@@ -551,11 +584,20 @@ function rankClass(r: number | null): string {
     }
 
     // ── Filter handlers ──
-    document.querySelectorAll(".filter-btn").forEach(btn => {
+    document.querySelectorAll(".filter-btn[data-filter]").forEach(btn => {
       btn.addEventListener("click", () => {
-        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".filter-btn[data-filter]").forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
         activeFilter = btn.getAttribute("data-filter");
+        reorder();
+      });
+    });
+    // ── Modality filter handlers ──
+    document.querySelectorAll(".modality-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".modality-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeModality = btn.getAttribute("data-modality");
         reorder();
       });
     });

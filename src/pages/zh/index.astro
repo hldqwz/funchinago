@@ -76,6 +76,24 @@ const maxCtx = topCtx.length > 0 ? contextK(topCtx[0]) || 1 : 1;
 
 function platformColor(p: string): string { return p === "openrouter" ? "badge-blue" : p === "groq" ? "badge-purple" : p === "bailian" ? "badge-teal" : "badge-orange"; }
 function rankClass(r: number | null): string { if (r === 1) return "gold"; if (r === 2) return "silver"; if (r === 3) return "bronze"; return ""; }
+
+// ── Modality ──
+function getModality(model: ModelData): { type: string; icon: string } {
+  const arch = model.platforms?.openrouter?.architecture;
+  const mod = arch?.modality || "";
+  if (!mod || mod === "text->text") return { type: "text", icon: "" };
+  const [input, output] = mod.split("->");
+  const inputs = (input || "").split("+");
+  const outputs = (output || "").split("+");
+  const hasImageIn = inputs.includes("image");
+  const hasVideoIn = inputs.includes("video");
+  const hasFileIn = inputs.includes("file");
+  const hasImageOut = outputs.includes("image");
+  if (hasImageOut) return { type: "img_gen", icon: "🎨" };
+  if (hasVideoIn) return { type: "video", icon: "🎬" };
+  if (hasImageIn || hasFileIn) return { type: "vision", icon: "👁️" };
+  return { type: "multimodal", icon: "👁️" };
+}
 ---
 
 <Layout title={t("site.title")} description={t("site.description")} lang="zh">
@@ -145,11 +163,13 @@ function rankClass(r: number | null): string { if (r === 1) return "gold"; if (r
             const outP = getMinOutputPrice(model);
             const platforms = getPlatforms(model);
             const ctx = contextK(model);
+            const md = getModality(model);
             return (
-              <tr class="model-row" data-name={model.name} data-provider={""}>
+              <tr class="model-row" data-name={model.name} data-provider={""} data-modality={md.type}>
                 <td style="text-align:center;"><span class={"rank-num " + rankClass(r)}>{r}</span></td>
                 <td>
                   <a href={`/zh/models/${model.canonical_name}`} style="font-weight:600;color:var(--text);">{model.name}</a>
+                  {md.icon && <span style="margin-left:0.3rem;" title={md.type}>{md.icon}</span>}
                   {model.platforms?.openrouter?.top_provider?.name && <span class="badge badge-blue badge-platform" style="margin-left:0.4rem;">{model.platforms.openrouter.top_provider.name}</span>}
                 </td>
                 <td style="text-align:right;font-weight:600;">{inP !== null ? <span style={`color:${inP < 1 ? "var(--green)" : "var(--text)"}`}>${inP.toFixed(2)}</span> : <span style="color:var(--text-tertiary)">—</span>}</td>
