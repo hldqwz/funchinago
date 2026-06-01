@@ -3,11 +3,10 @@
 import Layout from "../layouts/Layout.astro";
 import { useTranslations } from "../i18n";
 
-const locale = "en";
-const t = useTranslations(locale);
+const t = useTranslations();
 ---
 
-<Layout title={t("privacy.title")} lang={locale}>
+<Layout title={t("privacy.title")} >
   <div class="container-narrow" style="padding-top: 2rem; padding-bottom: 3rem;">
     <h1 style="font-size: 1.65rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.5rem;">
       {t("privacy.title")}

@@ -1,41 +1,39 @@
 ---
-title: "这周模型排名变了：Claude还在榜首，开源模型追上来了"
+title: "This Week in AI Models: Claude Still #1, but Open-Source is Catching Up Fast"
 date: 2026-05-25
-description: "OpenRouter周排名解读：谁在涨、谁在跌、谁值得你换模型。"
+description: "OpenRouter weekly ranking breakdown — who's up, who's down, and whether you should switch models."
 tags: ["rankings", "weekly", "analysis"]
 locale: "en"
 ---
 
-每周看一眼排名，这周有几个变化值得聊聊。
+I check the rankings every week. This one had some moves worth talking about.
 
 <!-- more -->
 
-## Claude还是第一，但增速放缓了
+## Claude is still king, but the lead is shrinking
 
-Claude Opus 4.6 这周还是榜首。周用量涨了 12%，比上周的 18% 慢了一些。
+Claude Opus 4.6 held #1 again. Weekly usage grew 12%, down from 18% the week before.
 
-不是说 Claude 不行了。它的位置挺稳，尤其是复杂推理和长文档处理，目前没人能动摇。但后面有人在追。
+It's not that Claude got worse. It's that the alternatives got better. Claude still dominates on complex reasoning and long documents — nobody touches it there. But the gap isn't what it was three months ago.
 
-## 开源模型在加速
+## Open-source models are actually competing now
 
-Mistral 的新模型这周从第 21 位跳到第 16 位。
+Mistral's latest jumped from #21 to #16 this week. The growth is coming from code-related usage — developers are voting with their API keys.
 
-为什么？两个原因。一是价格有竞争力，二是代码能力确实不错。我们后台看到它的使用量增长主要来自代码相关场景，说明开发者是用脚投票的。
+DeepSeek V4 crept up too. Qwen held steady. Three open-source players, all climbing. Not a fluke.
 
-不止 Mistral。DeepSeek V4 也在悄悄上涨，Qwen 系列保持了稳定。开源模型这一波不是昙花一现。
+What's driving it? Price, mostly. Mistral's pricing is aggressive, and for a lot of coding tasks, you don't need Claude-level reasoning. You need fast, cheap, good enough. That's where open-source is winning.
 
-## 价格还在跌
+## Prices keep dropping
 
-Top 50 的模型，每百万 token 均价这个月又降了 8%。硅基流动和 Groq 的价格战还在打。
+Average price across the top 50 models dropped another 8% this month. The SiliconFlow / Groq price war is still going, and honestly, I don't think it stops anytime soon.
 
-如果你做大规模推理，这个趋势对你是好事。模型越来越便宜，你能试的东西就越多。
+If you're doing high-volume inference, this is your moment. Cheaper models mean you can experiment more, run more evaluations, try things you'd have hesitated on before.
 
-## 我的建议
+## What I'd do
 
-预算紧张的：去硅基流动找中端开源模型，性价比很高。
+- **Tight budget?** Check SiliconFlow's mid-tier open-source models. Best bang for your buck right now.
+- **Need the best?** Claude Opus 4.6 on OpenRouter. You'll pay more, but for quality-critical work it's still the safest bet.
+- **Want speed AND savings?** Groq. Faster than OpenRouter, noticeably cheaper.
 
-追求最强能力的：OpenRouter 上 Claude Opus 4.6 还是首选。
-
-想省钱又要效果的：Groq 值得看看，速度比 OpenRouter 快，价格便宜不少。
-
-下周继续盯排名，看看 Mistral 能不能冲进前 15。
+Next week I'm watching whether Mistral cracks the top 15.

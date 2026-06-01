@@ -1,58 +1,56 @@
 ---
-title: "选模型别再凭感觉了——看这5个数据就行"
+title: "Stop Guessing Which Model to Use — Look at These 5 Numbers Instead"
 date: 2026-05-20
-description: "几百个模型不知道怎么选？盯住这5个指标，5分钟出结论。"
+description: "Hundreds of models, no idea which to pick? Five data points, five minutes, decision made."
 tags: ["guide", "comparison", "beginner"]
 locale: "en"
 ---
 
-我见过太多人选模型的方式：同事说这个好用，或者看哪个模型名字眼熟，就直接用了。
+I've watched too many people pick models the wrong way. A coworker said it was good. The name sounded familiar. That's it.
 
-结果呢？要么多花了几倍的 API 费用，要么用的模型根本不适合自己的场景。
+Then they wonder why their API bill is 3x what it should be, or why the model can't handle their use case.
 
-其实选模型不需要成为专家。你只需要看 5 个数据。
+You don't need to be an expert. You need to look at five things.
 
 <!-- more -->
 
-## 1. 先搞清楚你要干嘛
+## 1. Know what you're building
 
-不是所有模型都擅长所有事。先问自己：
+Different models are good at different things. Start here:
 
-- **聊天对话** → 看使用量排名，大家用脚投票的结果最靠谱
-- **写代码** → 看模型描述里有没有 "code" 相关标注
-- **图片理解** → 搜 architecture 字段里带 multimodal 的
-- **长文档处理** → 重点看上下文窗口大小
+- **Chat / conversation** → Usage rankings. When thousands of devs pick a model for chat, the signal is real.
+- **Code generation** → Check if the model description mentions code benchmarks.
+- **Image understanding** → Filter by multimodal (look for the 👁️ icon on our table).
+- **Long documents** → Context window is your main concern.
 
-我有个朋友做法律合同审查，一直用 GPT-4 觉得挺好。后来发现有个模型上下文窗口比 GPT-4 大 4 倍，价格只要三分之一。换过去之后，他说省了不少钱，效果也没差。
+I know someone doing contract review. They used GPT-4 for a year because it was the default. Then they found a model with 4x the context window at a third the price. Switched, saved money, same quality. Defaults are expensive.
 
-## 2. 同一个模型，不同平台价格差很多
+## 2. Same model, different platform, wildly different price
 
-这是最容易被忽略的点。
+This is the one that surprises people.
 
-同一个模型，在 OpenRouter 上调用可能要 $2/百万 token，在硅基流动上可能只要 $1.2。差 40%。
+Same exact model. $2/million tokens on OpenRouter. $1.20 on SiliconFlow. That's 40% gone, for nothing.
 
-我们每个模型详情页都有跨平台价格对比表。选模型之前看一眼，别花冤枉钱。
+Every model page on this site has a cross-platform price table. Look at it before you commit. Don't leave money on the table.
 
-## 3. 上下文窗口比你想象的重要
+## 3. Context window matters more than you think
 
-128K 以上的模型，处理长文档和长对话时不容易"失忆"。
+Models with 128K+ context don't "forget" the beginning of your conversation halfway through. If you're feeding in contracts, research papers, or codebases, this matters more than price.
 
-首页 "Longest Context" 排行榜可以直接看谁的窗口最大。如果你的场景涉及长文档（合同、论文、代码库），这个指标比价格还重要。
+Check the Longest Context leaderboard on the homepage. For document-heavy workflows, it's your most important filter.
 
-## 4. 看趋势，别看绝对值
+## 4. Watch the trend, not just the rank
 
-一个模型现在排名第 30，但每周都在涨（绿色箭头 ↑），说明它可能是个潜力股。
+A model at #30 with a green ↑ every week? That's a signal. Something is catching on.
 
-反过来，排名前 10 但如果趋势是红色的（↓），说明用户正在流失。可能出了更好的替代品，或者它最近挂了。
+A model in the top 10 with a red ↓? Users are leaving. Maybe there's a better alternative. Maybe it went down last week. Either way, pay attention.
 
-## 5. 用对比工具
+## 5. Use the comparison tool
 
-选 3-5 个候选模型，扔进 Compare 页面。
+Pick 3-5 candidates. Throw them into Compare. Price, context, platforms — one screen.
 
-价格、上下文、可用平台，一屏看完。这是我做这个网站时觉得最有用的功能——因为人脑不擅长同时比较超过 3 个东西。
+I built this because the human brain is terrible at comparing more than three things at once. The tool does it for you.
 
 ---
 
-选模型这件事，花 5 分钟看数据，比花 5 小时测试更有效。
-
-数据不会骗你。
+Five minutes looking at data beats five hours of blind testing. Every time.

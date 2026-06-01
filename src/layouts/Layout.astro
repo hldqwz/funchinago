@@ -1,22 +1,19 @@
 ---
-// src/layouts/Layout.astro — 全局布局（i18n + 暗黑模式）
-import { useTranslations, detectLocale, switchLocaleUrl } from "../i18n";
+// src/layouts/Layout.astro — 全局布局
+import { useTranslations } from "../i18n";
 
 export interface Props {
   title: string;
   description?: string;
-  lang?: "en" | "zh";
 }
 
 const { title, description } = Astro.props;
-const locale = Astro.props.lang || detectLocale(Astro.url.pathname);
-const t = useTranslations(locale);
-const altUrl = switchLocaleUrl(Astro.url.pathname, locale);
+const t = useTranslations();
 const year = new Date().getFullYear();
 ---
 
 <!DOCTYPE html>
-<html lang={locale}>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -149,21 +146,6 @@ const year = new Date().getFullYear();
     .site-nav a.active { color: var(--accent); background: var(--accent-light); }
 
     .header-actions { display: flex; align-items: center; gap: 0.4rem; }
-
-    .lang-switch {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.35rem 0.7rem;
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      border: 1px solid var(--border);
-      background: var(--surface);
-      transition: all 0.15s;
-      cursor: pointer;
-    }
-    .lang-switch:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
 
     .theme-toggle {
       display: inline-flex;
@@ -505,23 +487,23 @@ const year = new Date().getFullYear();
 <body>
   <header class="site-header">
     <div class="container">
-      <a href={locale === "zh" ? "/zh/" : "/"} class="logo">
+      <a href="/" class="logo">
         <span>LLM</span>Rankings
       </a>
       <nav class="site-nav">
-        <a href={locale === "zh" ? "/zh/" : "/"}
-           class:list={{ active: Astro.url.pathname === "/" || Astro.url.pathname === "/zh/" }}>
+        <a href="/"
+           class:list={{ active: Astro.url.pathname === "/" }}>
           {t("nav.rankings")}
         </a>
-        <a href={locale === "zh" ? "/zh/compare" : "/compare"}
+        <a href="/compare"
            class:list={{ active: Astro.url.pathname.includes("/compare") }}>
           {t("nav.compare")}
         </a>
-        <a href={locale === "zh" ? "/zh/blog" : "/blog"}
+        <a href="/blog"
            class:list={{ active: Astro.url.pathname.includes("/blog") }}>
           {t("nav.blog")}
         </a>
-        <a href={locale === "zh" ? "/zh/discuss" : "/discuss"}
+        <a href="/discuss"
            class:list={{ active: Astro.url.pathname.includes("/discuss") }}>
           {t("nav.discuss")}
         </a>
@@ -529,7 +511,6 @@ const year = new Date().getFullYear();
           <button id="theme-btn" class="theme-toggle" aria-label="Toggle dark mode">
             🌙
           </button>
-          <a href={altUrl} class="lang-switch">{t("nav.language")}</a>
         </div>
       </nav>
     </div>
@@ -547,11 +528,11 @@ const year = new Date().getFullYear();
       <a href="https://dashscope.aliyun.com" target="_blank" rel="noopener">Bailian</a>
       · {t("footer.auto_update")} · &copy; {year} {t("footer.copyright")}</p>
       <p style="margin-top: 0.75rem;">
-        <a href={locale === "zh" ? "/zh/about" : "/about"}>{t("footer.about")}</a>
+        <a href="/about">{t("footer.about")}</a>
         &nbsp;·&nbsp;
-        <a href={locale === "zh" ? "/zh/privacy" : "/privacy"}>{t("footer.privacy")}</a>
+        <a href="/privacy">{t("footer.privacy")}</a>
         &nbsp;·&nbsp;
-        <a href={locale === "zh" ? "/zh/contact" : "/contact"}>{t("footer.contact")}</a>
+        <a href="/contact">{t("footer.contact")}</a>
       </p>
     </div>
   </footer>

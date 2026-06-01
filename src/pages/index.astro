@@ -1,11 +1,10 @@
 ---
 // src/pages/index.astro — 排行榜首页（Vellum 风格 + 三平台）
 import Layout from "../layouts/Layout.astro";
-import { useTranslations, detectLocale } from "../i18n";
+import { useTranslations } from "../i18n";
 import type { ModelData } from "../types";
 
-const locale = detectLocale(Astro.url.pathname);
-const t = useTranslations(locale);
+const t = useTranslations();
 
 let models: ModelData[] = [];
 let updatedAt = "";
@@ -172,7 +171,7 @@ function getModality(model: ModelData): { type: string; icon: string } {
 }
 ---
 
-<Layout title={t("site.title")} description={t("site.description")} lang={locale}>
+<Layout title={t("site.title")} description={t("site.description")}>
   <!-- Hero -->
   <div class="container" style="padding-top: 2rem;">
     <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.75rem;">
@@ -182,7 +181,7 @@ function getModality(model: ModelData): { type: string; icon: string } {
         </h1>
         <p style="color: var(--text-secondary); margin-top: 0.3rem; font-size: 0.9rem;">
           {t("home.hero_subtitle")}
-          {updatedAt && <> · {t("site.updated")} <time class="relative-time" datetime={updatedAt}>{new Date(updatedAt).toLocaleString(locale === "zh" ? "zh-CN" : "en-US", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })}</time></>}
+          {updatedAt && <> · {t("site.updated")} <time class="relative-time" datetime={updatedAt}>{new Date(updatedAt).toLocaleString("en-US", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })}</time></>}
         </p>
       </div>
       <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
@@ -231,7 +230,7 @@ function getModality(model: ModelData): { type: string; icon: string } {
           return (
             <div class="leader-row">
               <span class="leader-num">{i + 1}</span>
-              <a href={`/${locale === "zh" ? "zh/" : ""}models/${m.canonical_name}`} class="leader-name">{m.name}</a>
+              <a href={`/models/${m.canonical_name}`} class="leader-name">{m.name}</a>
               <div class="leader-bar">
                 <div class="bar-fill bar-blue" style={`width: ${pct}%`}></div>
               </div>
@@ -252,7 +251,7 @@ function getModality(model: ModelData): { type: string; icon: string } {
           return (
             <div class="leader-row">
               <span class="leader-num">{i + 1}</span>
-              <a href={`/${locale === "zh" ? "zh/" : ""}models/${m.canonical_name}`} class="leader-name">{m.name}</a>
+              <a href={`/models/${m.canonical_name}`} class="leader-name">{m.name}</a>
               <div class="leader-bar">
                 <div class="bar-fill bar-green" style={`width: ${pct}%`}></div>
               </div>
@@ -273,7 +272,7 @@ function getModality(model: ModelData): { type: string; icon: string } {
           return (
             <div class="leader-row">
               <span class="leader-num">{i + 1}</span>
-              <a href={`/${locale === "zh" ? "zh/" : ""}models/${m.canonical_name}`} class="leader-name">{m.name}</a>
+              <a href={`/models/${m.canonical_name}`} class="leader-name">{m.name}</a>
               <div class="leader-bar">
                 <div class="bar-fill bar-gold" style={`width: ${pct}%`}></div>
               </div>
@@ -293,7 +292,7 @@ function getModality(model: ModelData): { type: string; icon: string } {
           return (
             <div class="leader-row">
               <span class="leader-num">{i + 1}</span>
-              <a href={`/${locale === "zh" ? "zh/" : ""}models/${m.canonical_name}`} class="leader-name">{m.name}</a>
+              <a href={`/models/${m.canonical_name}`} class="leader-name">{m.name}</a>
               <div class="leader-bar">
                 <div class="bar-fill bar-purple" style={`width: ${pct}%`}></div>
               </div>
@@ -364,7 +363,7 @@ function getModality(model: ModelData): { type: string; icon: string } {
                   <span class={"rank-num " + rankClass(r)}>{r}</span>
                 </td>
                 <td>
-                  <a href={`/${locale === "zh" ? "zh/" : ""}models/${model.canonical_name}`}
+                  <a href={`/models/${model.canonical_name}`}
                      style="font-weight: 600; color: var(--text);">
                     {model.name}
                   </a>
@@ -427,7 +426,7 @@ function getModality(model: ModelData): { type: string; icon: string } {
         </summary>
         <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem;">
           {unrankedModels.slice(0, 60).map((m) => (
-            <a href={`/${locale === "zh" ? "zh/" : ""}models/${m.canonical_name}`} class="badge badge-blue">
+            <a href={`/models/${m.canonical_name}`} class="badge badge-blue">
               {m.name}
             </a>
           ))}
@@ -608,8 +607,7 @@ function getModality(model: ModelData): { type: string; icon: string } {
   // ── 相对时间 ──
   (function() {
     function update() {
-      const locale = document.documentElement.lang || "en";
-      const rtf = new Intl.RelativeTimeFormat(locale, { numeric: "auto", style: "short" });
+      const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto", style: "short" });
       document.querySelectorAll("time.relative-time").forEach(el => {
         const diff = (new Date(el.getAttribute("datetime")) - new Date()) / 1000;
         const units = [
