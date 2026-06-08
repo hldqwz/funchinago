@@ -27,31 +27,34 @@ const sectionBreadcrumbMap: Record<string, { name: string }> = {
 };
 
 const homeUrl = new URL("/china-travel/", siteUrl).toString();
-const breadcrumbItems: Array<{ position: number; name: string; item?: string }> = [
-  { position: 1, name: "Home", item: homeUrl },
+const breadcrumbItems: Array<{ "@type": string; position: number; name: string; item?: string }> = [
+  { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
 ];
 
 const matchedSection = sectionBreadcrumbMap[currentPath];
 if (matchedSection) {
   breadcrumbItems.push({
+    "@type": "ListItem",
     position: 2,
     name: matchedSection.name,
     item: new URL(currentPath, siteUrl).toString(),
   });
 } else if (currentPath.startsWith("/china-travel/articles/") && currentPath !== "/china-travel/articles/") {
   breadcrumbItems.push({
+    "@type": "ListItem",
     position: 2,
     name: "Articles",
     item: new URL("/china-travel/articles/", siteUrl).toString(),
   });
-  breadcrumbItems.push({ position: 3, name: title });
+  breadcrumbItems.push({ "@type": "ListItem", position: 3, name: title });
 } else if (currentPath.startsWith("/tools/")) {
   breadcrumbItems.push({
+    "@type": "ListItem",
     position: 2,
     name: "Tools",
     item: new URL("/china-travel/tools/", siteUrl).toString(),
   });
-  breadcrumbItems.push({ position: 3, name: title });
+  breadcrumbItems.push({ "@type": "ListItem", position: 3, name: title });
 }
 
 const orgSchema = {
