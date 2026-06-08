@@ -1,0 +1,454 @@
+---
+import Layout from "../../layouts/ChinaTravelLayout.astro";
+import { eligibleCountries, officialSources } from "../../../public/tools/china-transit-checker.js";
+
+const title = "China 240-Hour Visa-Free Transit Self-Check";
+const description = "A cautious self-check tool for China’s 240-hour visa-free transit policy, with official Chinese government sources.";
+const countriesCount = eligibleCountries.length;
+---
+
+<Layout title={title} description={description}>
+  <main class="transit-page">
+    <section class="hero-panel">
+      <div class="hero-copy">
+        <p class="kicker">China Travel Made Easy · MVP Tool</p>
+        <h1>China 240-Hour Visa-Free Transit Self-Check</h1>
+        <p class="lead">
+          A cautious, official-source-first self-check for travelers planning to transit through China without a visa.
+          This tool checks the core conditions published by China’s National Immigration Administration.
+        </p>
+        <div class="trust-row" aria-label="Official source summary">
+          <span>{countriesCount} eligible passport countries</span>
+          <span>65 eligible ports</span>
+          <span>Up to 240 hours</span>
+          <span>Official links included</span>
+        </div>
+      </div>
+      <aside class="source-card">
+        <p class="eyebrow">Accuracy rule</p>
+        <h2>Official sources come first</h2>
+        <p>
+          Policies can change. Use this MVP as a guided checklist, not a final immigration decision.
+          The final reference should be China’s official immigration and government pages.
+        </p>
+        <a href={officialSources[0].url} target="_blank" rel="noreferrer">Open NIA official notice</a>
+      </aside>
+    </section>
+
+    <section class="tool-grid">
+      <form class="checker-card" data-transit-form>
+        <div class="form-header">
+          <p class="eyebrow">Step-by-step check</p>
+          <h2>Answer these questions</h2>
+          <p>Choose the closest answer. If you are unsure, treat the result as “needs official confirmation.”</p>
+        </div>
+
+        <label>
+          Passport country
+          <select name="nationality" data-country-select required>
+            <option value="">Loading countries...</option>
+          </select>
+        </label>
+
+        <label>
+          Is your route transit to a third country or region?
+          <select name="routeType" required>
+            <option value="">Select one</option>
+            <option value="third-region">Yes: Country/region A → China → Country/region B</option>
+            <option value="round-trip">No or unsure: returning to the same country/region</option>
+          </select>
+        </label>
+
+        <label>
+          Do you have a confirmed onward ticket or proof document?
+          <select name="onwardTicket" required>
+            <option value="">Select one</option>
+            <option value="yes">Yes, with a departure date within 240 hours</option>
+            <option value="no">No or not yet</option>
+          </select>
+        </label>
+
+        <label>
+          Planned stay length in China, in hours
+          <input name="stayHours" type="number" min="1" max="999" placeholder="Example: 144" required />
+          <small>The official stay period is calculated from 0:00 on the day after entry.</small>
+        </label>
+
+        <label>
+          Does your passport / travel document have at least 3 months of validity?
+          <select name="passportValidity" required>
+            <option value="">Select one</option>
+            <option value="yes">Yes</option>
+            <option value="no">No or unsure</option>
+          </select>
+        </label>
+
+        <label>
+          Will you enter through an official eligible port and stay within the permitted area?
+          <select name="portEligible" required>
+            <option value="">Select one</option>
+            <option value="yes">Yes, I checked the official port and area list</option>
+            <option value="no">No or unsure</option>
+          </select>
+          <small>This MVP does not replace the official port and permitted-area list.</small>
+        </label>
+
+        <label>
+          Purpose of stay
+          <select name="purpose" required>
+            <option value="">Select one</option>
+            <option value="transit-tourism">Transit, tourism, business, visit, or family visit</option>
+            <option value="restricted">Work, study, news reporting, or another activity requiring prior approval</option>
+          </select>
+        </label>
+
+        <button type="submit">Run official-source self-check</button>
+      </form>
+
+      <div class="result-card result-check" data-result>
+        <p class="eyebrow">Self-check result</p>
+        <h2>Fill out the form</h2>
+        <p>The result will appear here.</p>
+      </div>
+    </section>
+
+    <section class="explain-grid">
+      <article class="info-card">
+        <p class="eyebrow">What this MVP checks</p>
+        <h2>Core official conditions</h2>
+        <ul>
+          <li>Passport country appears on the official 55-country list.</li>
+          <li>Travel document has at least 3 months of validity.</li>
+          <li>Route is transit to a third country or region.</li>
+          <li>Confirmed onward ticket or proof document within 240 hours.</li>
+          <li>Entry through an eligible port and stay within the permitted area.</li>
+          <li>Purpose is tourism, business, visit, family visit, or similar permitted activity.</li>
+        </ul>
+      </article>
+
+      <article class="info-card caution-card">
+        <p class="eyebrow">Important limitation</p>
+        <h2>This is not a final decision</h2>
+        <p>
+          Immigration officers and the official policy text are the final authority. This MVP intentionally avoids over-promising.
+          If your route, port, nationality, ticket, or purpose is unusual, check the official notice or call the China Immigration Service Hotline 12367.
+        </p>
+      </article>
+    </section>
+
+    <section class="sources-section">
+      <p class="eyebrow">Official references</p>
+      <h2>Sources used by this MVP</h2>
+      <div class="sources-list">
+        {officialSources.map((source) => (
+          <a href={source.url} target="_blank" rel="noreferrer" class="source-link">
+            <strong>{source.label}</strong>
+            <span>{source.authority} · Last checked {source.lastChecked}</span>
+          </a>
+        ))}
+      </div>
+      <p class="source-note">
+        The NIA notice states that eligible travelers may apply at 65 ports in 24 provincial-level areas,
+        stay within the allowed areas for no more than 240 hours, and that work, study, and news reporting require the appropriate visa or prior approval.
+      </p>
+    </section>
+
+    <section class="explain-grid">
+      <article class="info-card">
+        <p class="eyebrow">Real use cases</p>
+        <h2>When to use this self-check</h2>
+        <ul>
+          <li><strong>Europe → China → Japan</strong> — Checking whether your passport and route qualify before booking the onward ticket.</li>
+          <li><strong>Round-trip confusion</strong> — Unsure whether a return to the same country still counts as transit. This tool flags the route pattern.</li>
+          <li><strong>144-hour vs 240-hour</strong> — Comparing older assumptions against the current 240-hour policy before you book.</li>
+          <li><strong>Before buying the onward ticket</strong> — Screening your nationality, ports, and stay area before committing to a non-refundable flight.</li>
+        </ul>
+      </article>
+
+      <article class="info-card caution-card">
+        <p class="eyebrow">Limitation</p>
+        <h2>This is a self-check, not an immigration decision</h2>
+        <p>Border officers and the official policy text are the final authority. If your route, passport, or purpose is unusual, confirm with official sources before booking.</p>
+      </article>
+
+      <article class="info-card">
+        <p class="eyebrow">Related guides</p>
+        <h2>Read before you fly</h2>
+        <ul>
+          <li><a href="/china-travel/articles/china-240-hour-visa-free-transit/">China 240-Hour Visa-Free Transit Explained</a></li>
+          <li><a href="/china-travel/articles/china-visa-free-travel-guide/">China Visa-Free Travel Guide 2026</a></li>
+          <li><a href="/china-travel/sources/">Official source library</a></li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="/tools/china-transit-checker.js"></script>
+</Layout>
+
+<style>
+  .transit-page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .hero-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(280px, 0.9fr);
+    gap: 1rem;
+    align-items: stretch;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-copy,
+  .source-card,
+  .checker-card,
+  .result-card,
+  .info-card,
+  .sources-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hero-copy {
+    padding: 2.2rem;
+    background:
+      radial-gradient(circle at 14% 12%, rgba(22, 163, 74, 0.16), transparent 28%),
+      radial-gradient(circle at 86% 8%, rgba(37, 99, 235, 0.16), transparent 24%),
+      linear-gradient(135deg, var(--surface), var(--surface-hover));
+  }
+
+  .kicker,
+  .eyebrow {
+    color: var(--green);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    margin-bottom: 0.55rem;
+  }
+
+  h1 {
+    max-width: 820px;
+    font-size: clamp(2.1rem, 5vw, 4.5rem);
+    line-height: 0.96;
+    letter-spacing: -0.07em;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.55rem;
+  }
+
+  .lead {
+    max-width: 760px;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+  }
+
+  .trust-row {
+    display: flex;
+    gap: 0.55rem;
+    flex-wrap: wrap;
+    margin-top: 1.4rem;
+  }
+
+  .trust-row span {
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.5);
+    color: var(--text);
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .source-card {
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .source-card p,
+  .info-card p,
+  .sources-section p,
+  .form-header p,
+  .result-card p {
+    color: var(--text-secondary);
+  }
+
+  .source-card a,
+  .source-link {
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--text);
+    color: var(--surface);
+    padding: 0.75rem 0.9rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .tool-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .checker-card,
+  .result-card,
+  .info-card,
+  .sources-section {
+    padding: 1.35rem;
+  }
+
+  .form-header {
+    margin-bottom: 1rem;
+  }
+
+  label {
+    display: grid;
+    gap: 0.38rem;
+    font-weight: 800;
+    margin-bottom: 0.9rem;
+  }
+
+  select,
+  input {
+    width: 100%;
+    border: 1px solid var(--border);
+    background: var(--search-bg);
+    color: var(--text);
+    border-radius: 12px;
+    padding: 0.78rem 0.85rem;
+    font: inherit;
+    font-weight: 600;
+  }
+
+  small {
+    color: var(--text-tertiary);
+    font-weight: 500;
+  }
+
+  button {
+    width: 100%;
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--green), var(--accent));
+    color: white;
+    padding: 0.9rem 1rem;
+    font: inherit;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .result-card {
+    position: sticky;
+    top: 5rem;
+  }
+
+  .result-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .result-likely {
+    border-color: rgba(22, 163, 74, 0.35);
+    background: linear-gradient(180deg, var(--green-light), var(--surface));
+  }
+
+  .result-check {
+    border-color: rgba(245, 158, 11, 0.35);
+    background: linear-gradient(180deg, var(--gold-light), var(--surface));
+  }
+
+  .result-not {
+    border-color: rgba(220, 38, 38, 0.35);
+    background: linear-gradient(180deg, var(--red-light), var(--surface));
+  }
+
+  .result-list {
+    margin-top: 1rem;
+  }
+
+  .result-list ul,
+  .info-card ul {
+    padding-left: 1.1rem;
+    margin-top: 0.45rem;
+    color: var(--text-secondary);
+  }
+
+  .result-list li,
+  .info-card li {
+    margin-bottom: 0.45rem;
+  }
+
+  .explain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .caution-card {
+    background: linear-gradient(135deg, var(--orange-light), var(--surface));
+  }
+
+  .sources-section {
+    margin-top: 1rem;
+  }
+
+  .sources-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+
+  .source-link {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    background: var(--surface-hover);
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+
+  .source-link span {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.3rem;
+  }
+
+  .source-note {
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 860px) {
+    .hero-panel,
+    .tool-grid,
+    .explain-grid,
+    .sources-list {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-copy {
+      padding: 1.35rem;
+    }
+
+    .result-card {
+      position: static;
+    }
+  }
+</style>
