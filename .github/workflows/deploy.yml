@@ -21,11 +21,6 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Verify _routes.json exists and deploy
-        run: |
-          ls -la dist/_routes.json dist/_redirects dist/tools/china-transit-checker/index.html
-          echo "--- files exist ---"
-
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:

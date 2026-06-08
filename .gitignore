@@ -9,5 +9,5 @@ __pycache__/
 debug/
 scripts/*.log
 .mcp.json
-tools/
+/tools/
 .venv/
