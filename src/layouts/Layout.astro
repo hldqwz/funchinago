@@ -10,6 +10,7 @@ export interface Props {
 const { title, description } = Astro.props;
 const t = useTranslations();
 const year = new Date().getFullYear();
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? "https://llm-rankings.pages.dev");
 ---
 
 <!DOCTYPE html>
@@ -19,10 +20,14 @@ const year = new Date().getFullYear();
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title} | LLM Rankings</title>
   <meta name="description" content={description || t("site.description")} />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="canonical" href={canonicalUrl.toString()} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description || t("site.description")} />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalUrl.toString()} />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#2563eb" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🏆</text></svg>">
   <!-- Cloudflare Web Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "53776ca23b6448c6a4527a04a6b1b66a"}'></script>

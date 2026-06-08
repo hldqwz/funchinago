@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://llm-rankings.pages.dev/sitemap-index.xml
+# 买完正式域名后，可运行:
+# npm run set-site-url -- https://你的域名
+Sitemap: https://funchinago.com/sitemap-index.xml

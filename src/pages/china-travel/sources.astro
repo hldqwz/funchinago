@@ -1,0 +1,245 @@
+---
+import Layout from "../../layouts/ChinaTravelLayout.astro";
+import sourceRegistry from "../../data/chinaTravelSources.json";
+
+const title = "China Travel Official Sources Library";
+const description = "Official and platform-authoritative sources used by China Travel Made Easy for visa, payment, train, and travel preparation guides.";
+
+const trustLabels = {
+  "official": "Official Chinese source",
+  "platform-official": "Platform official source",
+  "media-context": "Media context",
+  "community-signal": "Community signal"
+};
+
+const trustOrder = ["official", "platform-official", "media-context", "community-signal"];
+const grouped = trustOrder.map((trustLevel) => ({
+  trustLevel,
+  label: trustLabels[trustLevel],
+  sources: sourceRegistry.sources.filter((source) => source.trustLevel === trustLevel)
+})).filter((group) => group.sources.length > 0);
+---
+
+<Layout title={title} description={description}>
+  <main class="source-page">
+    <section class="source-hero">
+      <p class="source-kicker">China Travel Made Easy · Source Library</p>
+      <h1>Official sources first. Local experience second.</h1>
+      <p>
+        This library tracks the sources used for China Travel Made Easy articles and tools. For policy-sensitive topics like visa-free transit, arrival cards, payments, and railway tickets, official Chinese or platform-authoritative sources should be the fact backbone.
+      </p>
+      <div class="source-meta">
+        <span>{sourceRegistry.sources.length} tracked sources</span>
+        <span>Last updated {sourceRegistry.updatedAt}</span>
+      </div>
+      <a class="source-entry-link" href="/china-travel/articles/">Back to the article archive</a>
+    </section>
+
+    <section class="rules-card">
+      <h2>How to use these sources</h2>
+      <div class="rules-grid">
+        <article>
+          <strong>Policy pages</strong>
+          <p>Use official government or immigration sources as the final authority. Community posts can reveal confusion, but should not decide the answer.</p>
+        </article>
+        <article>
+          <strong>Payment and app pages</strong>
+          <p>Use Chinese government service guidance plus Alipay, WeChat Pay, 12306, Trip.com, or other platform-official pages where available.</p>
+        </article>
+        <article>
+          <strong>Inspiration pages</strong>
+          <p>Use official tourism pages for facts and opening information, then add local experience and social trend observations for context.</p>
+        </article>
+      </div>
+    </section>
+
+    {grouped.map((group) => (
+      <section class="source-group">
+        <div class="group-head">
+          <p class="source-kicker">{group.trustLevel}</p>
+          <h2>{group.label}</h2>
+        </div>
+        <div class="source-grid">
+          {group.sources.map((source) => (
+            <a class="source-card" href={source.url} target="_blank" rel="noreferrer">
+              <span>{source.category}</span>
+              <h3>{source.title}</h3>
+              <p>{source.useFor}</p>
+              <small>{source.authority} · Last checked {source.lastChecked}</small>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+  </main>
+</Layout>
+
+<style>
+  .source-page {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .source-hero,
+  .rules-card,
+  .source-card {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .source-hero {
+    padding: 2.2rem;
+    background:
+      radial-gradient(circle at 18% 12%, rgba(37, 99, 235, 0.16), transparent 28%),
+      radial-gradient(circle at 88% 16%, rgba(22, 163, 74, 0.14), transparent 26%),
+      linear-gradient(135deg, var(--surface), var(--surface-hover));
+    margin-bottom: 1rem;
+  }
+
+  .source-kicker {
+    color: var(--success);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.55rem;
+  }
+
+  h1 {
+    max-width: 820px;
+    font-size: clamp(2.1rem, 5vw, 4.4rem);
+    line-height: 0.96;
+    letter-spacing: -0.07em;
+    margin-bottom: 1rem;
+  }
+
+  .source-hero p,
+  .rules-card p,
+  .source-card p,
+  .source-card small {
+    color: var(--text-secondary);
+  }
+
+  .source-hero > p {
+    max-width: 760px;
+    font-size: 1.03rem;
+  }
+
+  .source-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 1.2rem;
+  }
+
+  .source-meta span {
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.5);
+    border-radius: 999px;
+    padding: 0.45rem 0.75rem;
+    font-weight: 800;
+    font-size: 0.85rem;
+  }
+
+  .rules-card,
+  .source-group {
+    margin-bottom: 1rem;
+  }
+
+  .rules-card {
+    padding: 1.35rem;
+  }
+
+  .rules-card h2,
+  .source-group h2 {
+    font-size: 1.45rem;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.8rem;
+  }
+
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .rules-grid article {
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 1rem;
+    background: var(--surface-hover);
+  }
+
+  .rules-grid strong {
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .group-head {
+    margin: 1.5rem 0 0.8rem;
+  }
+
+  .source-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .source-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    padding: 1rem;
+    color: var(--text);
+    text-decoration: none;
+    box-shadow: var(--shadow);
+  }
+
+  .source-card span {
+    align-self: flex-start;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 0.2rem 0.55rem;
+    font-size: 0.72rem;
+    font-weight: 900;
+    margin-bottom: 0.75rem;
+  }
+
+  .source-entry-link {
+    display: inline-flex;
+    margin-top: 1rem;
+    font-weight: 850;
+    color: var(--accent-strong);
+  }
+
+  .source-card h3 {
+    font-size: 1.05rem;
+    line-height: 1.25;
+    letter-spacing: -0.035em;
+    margin-bottom: 0.55rem;
+  }
+
+  .source-card small {
+    display: block;
+    margin-top: auto;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 860px) {
+    .rules-grid,
+    .source-grid {
+      grid-template-columns: 1fr;
+    }
+    .source-hero {
+      padding: 1.35rem;
+    }
+    .source-card {
+      min-height: auto;
+    }
+  }
+</style>

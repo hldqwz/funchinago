@@ -1,0 +1,528 @@
+---
+import Layout from '../../../layouts/ChinaTravelLayout.astro';
+import { getCollection } from 'astro:content';
+import { portalSections } from '../../../data/chinaStarterPortal';
+
+const articles = (await getCollection('chinaTravel'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const stageLabels = {
+  discover: 'Discover China',
+  before: 'Before You Go',
+  'in-china': 'In China',
+};
+
+const stageDescriptions = {
+  discover: 'Choose where to go and what kind of China trip fits you.',
+  before: 'Prepare entry, payment, internet, apps, transport, and backup plans.',
+  'in-china': 'Solve practical problems once you are on the ground.',
+};
+
+const groups = ['discover', 'before', 'in-china'].map((stage) => {
+  const stageArticles = articles.filter((article) => article.data.stage === stage);
+  return {
+    stage,
+    featured: stageArticles[0],
+    remaining: stageArticles.slice(1),
+    count: stageArticles.length,
+  };
+});
+
+const featureArticle = articles[0];
+const articleCount = articles.length;
+const cityCount = new Set(
+  articles
+    .filter((article) => article.data.section === 'cities')
+    .flatMap((article) => article.data.tags)
+).size;
+---
+
+<Layout title="All China Articles" description="Browse the full China Travel Made Easy archive by trip stage, city choice, planning topic, and practical first-time visitor questions.">
+  <main class="ct-articles">
+    <section class="hero">
+      <div class="hero-copy">
+        <a class="back-link" href="/china-travel/">← Back to the portal</a>
+        <p class="kicker">Full article archive</p>
+        <h1>Browse every China guide in one place.</h1>
+        <p>
+          Use the main portal if you want a guided start. Use this archive if you already know the topic you want to explore next.
+        </p>
+        <div class="hero-actions">
+          <a href="/china-travel/start-here/">Start here</a>
+          <a href="/china-travel/travel/">Travel basics</a>
+          <a href="/china-travel/sources/">Source library</a>
+        </div>
+        <div class="hero-stats" aria-label="Archive summary">
+          <div>
+            <strong>{articleCount}</strong>
+            <span>Guides</span>
+          </div>
+          <div>
+            <strong>3</strong>
+            <span>Trip stages</span>
+          </div>
+          <div>
+            <strong>{cityCount || 4}+</strong>
+            <span>City angles</span>
+          </div>
+        </div>
+      </div>
+
+      {featureArticle && (
+        <a class="hero-feature" href={`/china-travel/articles/${featureArticle.id}/`}>
+          {featureArticle.data.hero_image && <img src={featureArticle.data.hero_image} alt={`Featured article cover for ${featureArticle.data.title}`} loading="eager" />}
+          <div>
+            <span>Freshest read</span>
+            <h2>{featureArticle.data.title}</h2>
+            <p>{featureArticle.data.description}</p>
+          </div>
+        </a>
+      )}
+    </section>
+
+    <section class="section-doors" aria-label="Portal section links">
+      {portalSections.map((section) => (
+        <a class="section-door" href={section.href}>
+          <img src={section.image} alt={`${section.title} section preview image`} loading="lazy" />
+          <div>
+            <span>{section.eyebrow}</span>
+            <h2>{section.title}</h2>
+            <p>{section.description}</p>
+          </div>
+        </a>
+      ))}
+    </section>
+
+    {groups.map((group) => (
+      <section class="stage-section">
+        <div class="stage-heading">
+          <div>
+            <p>{stageLabels[group.stage]}</p>
+            <h2>{stageDescriptions[group.stage]}</h2>
+          </div>
+          <span class="stage-count">{group.count} guides</span>
+        </div>
+
+        {group.featured && (
+          <div class="stage-layout">
+            <a class="featured-card" href={`/china-travel/articles/${group.featured.id}/`}>
+              {group.featured.data.hero_image && <img src={group.featured.data.hero_image} alt={`Featured cover for ${group.featured.data.title}`} />}
+              <div>
+                <span>{stageLabels[group.stage]}</span>
+                <h3>{group.featured.data.title}</h3>
+                <p>{group.featured.data.description}</p>
+                <time datetime={group.featured.data.updatedAt.toISOString()}>
+                  Updated {group.featured.data.updatedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                </time>
+              </div>
+            </a>
+
+            <div class="article-grid">
+              {group.remaining.map((article) => (
+                <article class="article-card">
+                  {article.data.hero_image && <img src={article.data.hero_image} alt={`Cover image for ${article.data.title}`} />}
+                  <div>
+                    <div class="tags">
+                      {article.data.tags.slice(0, 3).map((tag) => <span>{tag}</span>)}
+                    </div>
+                    <h3><a href={`/china-travel/articles/${article.id}/`}>{article.data.title}</a></h3>
+                    <p>{article.data.description}</p>
+                    <time datetime={article.data.updatedAt.toISOString()}>
+                      Updated {article.data.updatedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                    </time>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
+      </section>
+    ))}
+
+    <section class="archive-tools">
+      <div>
+        <p class="kicker">Useful tools</p>
+        <h2>Use the helpers once you know your route.</h2>
+        <p class="archive-note">Need policy-sensitive details before booking? Cross-check our source library alongside the tools and guides.</p>
+      </div>
+      <div class="tool-links">
+        <a href="/tools/china-city-picker/">City picker</a>
+        <a href="/tools/china-travel-checklist/">Travel checklist</a>
+        <a href="/tools/china-transit-checker/">Transit self-check</a>
+        <a href="/china-travel/sources/">Source library</a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .ct-articles {
+    max-width: 1180px;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: 2.25rem 1.5rem 4rem;
+  }
+
+  .hero,
+  .stage-section,
+  .section-door,
+  .article-card,
+  .featured-card,
+  .archive-tools {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hero,
+  .stage-section,
+  .archive-tools {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero {
+    padding: clamp(1.25rem, 3vw, 2rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .back-link {
+    color: var(--accent-strong);
+    font-weight: 800;
+    font-size: 0.9rem;
+  }
+
+  .kicker,
+  .stage-heading p,
+  .section-door span,
+  .featured-card span,
+  .hero-feature span {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.74rem;
+    font-weight: 900;
+  }
+
+  .kicker {
+    margin-top: 1rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.3rem, 6vw, 4.6rem);
+    line-height: 0.96;
+    max-width: 820px;
+    letter-spacing: -0.06em;
+    margin: 0.35rem 0 1rem;
+  }
+
+  .hero-copy > p {
+    max-width: 720px;
+    color: var(--text-secondary);
+    font-size: 1.02rem;
+  }
+
+  .archive-note {
+    margin-top: 0.55rem;
+    color: var(--text-secondary);
+    max-width: 620px;
+  }
+
+  .hero-actions,
+  .tool-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .hero-actions {
+    margin-top: 1.5rem;
+  }
+
+  .hero-actions a,
+  .tool-links a {
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    padding: 0.75rem 1rem;
+    background: var(--surface-strong);
+    color: var(--text);
+    font-weight: 850;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .hero-stats div {
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface-strong);
+    padding: 0.95rem 1rem;
+  }
+
+  .hero-stats strong,
+  .stage-count {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-stats span {
+    color: var(--text-secondary);
+    font-size: 0.86rem;
+  }
+
+  .hero-feature,
+  .featured-card {
+    display: grid;
+    overflow: hidden;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .hero-feature {
+    background: var(--surface-strong);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+  }
+
+  .hero-feature img,
+  .featured-card img,
+  .section-door img,
+  .article-card img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    background: var(--surface-muted);
+  }
+
+  .hero-feature img {
+    height: 320px;
+  }
+
+  .hero-feature div,
+  .featured-card div,
+  .section-door div,
+  .article-card div {
+    padding: 1.15rem;
+  }
+
+  .hero-feature h2,
+  .featured-card h3,
+  .stage-heading h2,
+  .section-door h2,
+  .article-card h3,
+  .archive-tools h2 {
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+  }
+
+  .hero-feature h2 {
+    margin: 0.45rem 0;
+    font-size: 1.7rem;
+  }
+
+  .hero-feature p,
+  .section-door p,
+  .article-card p,
+  .featured-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+
+  .section-doors {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .section-door {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    overflow: hidden;
+    color: var(--text);
+    text-decoration: none;
+    transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+  }
+
+  .section-door:hover,
+  .article-card:hover,
+  .featured-card:hover,
+  .hero-feature:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+
+  .section-door img,
+  .featured-card img,
+  .article-card img {
+    min-height: 190px;
+    height: 100%;
+  }
+
+  .section-door h2 {
+    margin: 0.35rem 0 0.45rem;
+    font-size: 1.2rem;
+  }
+
+  .stage-section {
+    padding: clamp(1.15rem, 2.8vw, 1.8rem);
+  }
+
+  .stage-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: end;
+    margin-bottom: 1rem;
+  }
+
+  .stage-heading h2 {
+    font-size: clamp(1.25rem, 3vw, 1.95rem);
+    max-width: 640px;
+  }
+
+  .stage-count {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    font-weight: 800;
+  }
+
+  .stage-layout {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .featured-card img {
+    height: 320px;
+  }
+
+  .featured-card h3 {
+    margin: 0.45rem 0;
+    font-size: 1.45rem;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: start;
+    align-content: start;
+  }
+
+  .article-card {
+    overflow: hidden;
+  }
+
+  .article-card h3 {
+    font-size: 1.08rem;
+    margin: 0.55rem 0;
+  }
+
+  .article-card h3 a {
+    color: var(--text);
+  }
+
+  .tags {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    padding: 0 !important;
+  }
+
+  .tags span {
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    border-radius: 999px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+  }
+
+  time {
+    display: inline-block;
+    margin-top: 0.7rem;
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+  }
+
+  .archive-tools {
+    padding: clamp(1.2rem, 2.8vw, 1.6rem);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .archive-tools h2 {
+    font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+    margin-top: 0.2rem;
+  }
+
+  @media (max-width: 1100px) {
+    .hero,
+    .stage-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .section-doors,
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-door {
+      grid-template-columns: 1fr;
+    }
+
+    .stage-heading,
+    .archive-tools {
+      display: block;
+    }
+
+    .stage-count {
+      margin-top: 0.45rem;
+    }
+
+    .archive-tools .tool-links {
+      margin-top: 1rem;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .ct-articles {
+      padding: 1.35rem 1rem 3rem;
+    }
+
+    .hero-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+      font-size: 2.55rem;
+    }
+
+    .hero-feature h2,
+    .featured-card h3 {
+      font-size: 1.35rem;
+    }
+  }
+</style>

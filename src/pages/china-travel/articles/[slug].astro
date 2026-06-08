@@ -1,0 +1,187 @@
+---
+import Layout from '../../../layouts/ChinaTravelLayout.astro';
+import { getCollection, getEntry, render } from 'astro:content';
+import sourceRegistry from '../../../data/chinaTravelSources.json';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('chinaTravel');
+  return articles.map((article) => ({ params: { slug: article.id } }));
+}
+
+const { slug } = Astro.params;
+const article = await getEntry('chinaTravel', slug!);
+
+if (!article) {
+  return Astro.redirect('/china-travel/articles/', 301);
+}
+
+const { Content } = await render(article);
+const allArticles = await getCollection('chinaTravel');
+const sources = article.data.officialSources
+  .map((id) => sourceRegistry.sources.find((source) => source.id === id))
+  .filter(Boolean);
+const relatedArticles = allArticles
+  .filter((candidate) => candidate.id !== article.id)
+  .map((candidate) => {
+    let score = 0;
+    if (candidate.data.section === article.data.section) score += 4;
+    if (candidate.data.stage === article.data.stage) score += 2;
+    const sharedTags = candidate.data.tags.filter((tag) => article.data.tags.includes(tag)).length;
+    score += sharedTags * 3;
+    return { candidate, score };
+  })
+  .filter(({ score }) => score > 0)
+  .sort((a, b) => b.score - a.score)
+  .slice(0, 3)
+  .map(({ candidate }) => candidate);
+
+const siteUrl = Astro.site ?? new URL("https://funchinago.com");
+const articleUrl = new URL(`/china-travel/articles/${article.id}/`, siteUrl).toString();
+const articleImage = article.data.hero_image
+  ? new URL(article.data.hero_image, siteUrl).toString()
+  : undefined;
+
+const orgId = new URL("/china-travel/", siteUrl).toString();
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": article.data.title,
+  "description": article.data.description,
+  "image": articleImage,
+  "datePublished": article.data.date.toISOString(),
+  "dateModified": article.data.updatedAt.toISOString(),
+  "author": { "@type": "Organization", "@id": orgId, "name": "China Travel Made Easy" },
+  "publisher": { "@type": "Organization", "@id": orgId, "name": "China Travel Made Easy" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": articleUrl },
+};
+---
+
+<Layout
+  title={article.data.title}
+  description={article.data.description}
+  ogImage={article.data.hero_image}
+  pageType="article"
+  jsonLd={articleSchema}
+>
+  <main class="article-shell">
+    <article class="article-wrap">
+      <a class="back-link" href="/china-travel/articles/">← All China Travel articles</a>
+      <header class="article-header">
+        <p class="stage">{article.data.stage.replace('-', ' ')}</p>
+        <h1>{article.data.title}</h1>
+        <p class="description">{article.data.description}</p>
+        <div class="meta">
+          <time datetime={article.data.updatedAt.toISOString()}>
+            Updated {article.data.updatedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </time>
+          {article.data.tags.map((tag) => <span>{tag}</span>)}
+        </div>
+        {article.data.hero_image && <img class="hero-image" src={article.data.hero_image} alt={`Hero image for ${article.data.title}`} />}
+      </header>
+
+      <aside class="accuracy-note">
+        <strong>Accuracy note:</strong> China Travel Made Easy uses official Chinese government or platform sources as the backbone for policy-sensitive topics. Always confirm visa, entry, payment, and ticketing details with the linked official source before you travel.
+      </aside>
+
+      <div class="content">
+        <Content />
+      </div>
+
+      {sources.length > 0 && (
+        <section class="source-box">
+          <h2>Official and platform sources used</h2>
+          <ul>
+            {sources.map((source) => (
+              <li>
+                <a href={source.url} target="_blank" rel="noreferrer">{source.title}</a>
+                <span>{source.authority}</span>
+              </li>
+            ))}
+          </ul>
+          <a class="source-library" href="/china-travel/sources/">Open the full source library</a>
+        </section>
+      )}
+
+      {article.data.relatedTools.length > 0 && (
+        <section class="tool-box">
+          <h2>Helpful tools</h2>
+          {article.data.relatedTools.map((tool) => <a href={tool.href}>{tool.title}</a>)}
+        </section>
+      )}
+
+      {relatedArticles.length > 0 && (
+        <section class="related-box">
+          <div class="related-header">
+            <h2>Keep planning from here</h2>
+            <a class="related-archive" href="/china-travel/articles/">See all guides</a>
+          </div>
+          <div class="related-grid">
+            {relatedArticles.map((related) => (
+              <a class="related-card" href={`/china-travel/articles/${related.id}/`}>
+                {related.data.hero_image && <img src={related.data.hero_image} alt={`Cover image for ${related.data.title}`} />}
+                <div class="related-copy">
+                  <span>{related.data.stage.replace('-', ' ')}</span>
+                  <h3>{related.data.title}</h3>
+                  <p>{related.data.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .article-shell {
+    background:
+      radial-gradient(circle at top right, rgba(202, 97, 48, 0.18), transparent 24rem),
+      linear-gradient(135deg, #fffaf1 0%, #eef5ef 100%);
+    min-height: 100vh;
+    padding: 2.5rem 1.25rem 4rem;
+    color: #1f2a24;
+  }
+  .article-wrap { max-width: 860px; margin: 0 auto; }
+  .back-link { color: #7d5537; font-size: 0.9rem; font-weight: 800; }
+  .article-header { margin-top: 1.5rem; }
+  .stage { color: #a14d2b; text-transform: uppercase; letter-spacing: 0.14em; font-weight: 900; font-size: 0.78rem; }
+  h1 { font-size: clamp(2.1rem, 7vw, 4.3rem); line-height: 0.98; letter-spacing: -0.06em; margin: 0.55rem 0 1rem; }
+  .description { color: #617064; font-size: 1.08rem; max-width: 720px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: center; margin-top: 1rem; color: #6f7a70; font-size: 0.82rem; }
+  .meta span { background: rgba(161, 77, 43, 0.1); color: #874422; border-radius: 999px; padding: 0.22rem 0.55rem; font-weight: 800; }
+  .hero-image { width: 100%; margin-top: 1.25rem; border-radius: 26px; box-shadow: 0 24px 60px rgba(67, 47, 32, 0.12); background: #efe4d4; }
+  .accuracy-note, .source-box, .tool-box, .related-box { background: rgba(255, 252, 246, 0.92); border: 1px solid rgba(31, 42, 36, 0.12); border-radius: 22px; padding: 1rem; margin: 1.5rem 0; color: #4e5b51; }
+  .content { background: rgba(255, 255, 255, 0.66); border: 1px solid rgba(31, 42, 36, 0.08); border-radius: 26px; padding: clamp(1.1rem, 4vw, 2rem); font-size: 1.03rem; line-height: 1.82; }
+  .content :global(h2) { font-size: 1.55rem; line-height: 1.15; margin: 2rem 0 0.75rem; letter-spacing: -0.04em; }
+  .content :global(h3) { font-size: 1.15rem; margin: 1.4rem 0 0.45rem; }
+  .content :global(p), .content :global(ul), .content :global(ol) { margin-bottom: 1rem; }
+  .content :global(ul), .content :global(ol) { padding-left: 1.3rem; }
+  .content :global(li) { margin-bottom: 0.45rem; }
+  .content :global(a) { color: #9a4a24; font-weight: 700; }
+  .source-box h2, .tool-box h2 { font-size: 1.1rem; margin-bottom: 0.7rem; }
+  .source-box ul { list-style: none; padding: 0; display: grid; gap: 0.75rem; }
+  .source-box li { display: grid; gap: 0.15rem; }
+  .source-box span { color: #6f7a70; font-size: 0.85rem; }
+  .source-library, .tool-box a { display: inline-block; margin-top: 0.85rem; background: #1f2a24; color: #fffaf1; border-radius: 999px; padding: 0.65rem 0.9rem; font-weight: 900; }
+  .tool-box { display: flex; gap: 0.65rem; flex-wrap: wrap; align-items: center; }
+  .related-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem; }
+  .related-header h2 { font-size: 1.1rem; }
+  .related-archive { color: #9a4a24; font-weight: 800; }
+  .related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.85rem; }
+  .related-card { display: block; overflow: hidden; border: 1px solid rgba(31, 42, 36, 0.1); border-radius: 18px; background: rgba(255,255,255,0.88); color: inherit; text-decoration: none; }
+  .related-card:hover { transform: translateY(-1px); text-decoration: none; box-shadow: 0 14px 30px rgba(67, 47, 32, 0.08); }
+  .related-card img { display: block; width: 100%; height: 155px; object-fit: cover; background: #efe4d4; }
+  .related-copy { padding: 0.9rem; }
+  .related-copy span { display: inline-flex; margin-bottom: 0.35rem; color: #874422; font-size: 0.7rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
+  .related-copy h3 { font-size: 1rem; line-height: 1.2; margin-bottom: 0.35rem; letter-spacing: -0.03em; }
+  .related-copy p { color: #617064; font-size: 0.88rem; line-height: 1.5; }
+  @media (max-width: 720px) {
+    .article-shell { padding-top: 2rem; }
+    .content { border-radius: 20px; }
+    .related-header { display: block; }
+    .related-archive { display: inline-block; margin-top: 0.45rem; }
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

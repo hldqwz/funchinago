@@ -1,13 +1,15 @@
 {
-  "name": "llm-rankings",
+  "name": "funchinago",
   "version": "1.0.0",
-  "description": "全球大模型调用排名 — Global LLM Usage Rankings",
+  "description": "FunChinaGo — China Travel Made Easy",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "crawl": "python3 crawler/run.py"
+    "crawl": "python3 crawler/run.py",
+    "set-site-url": "node scripts/set-site-url.mjs",
+    "verify-site-url": "node scripts/verify-site-url.mjs"
   },
   "dependencies": {
     "astro": "^5.0.0"
