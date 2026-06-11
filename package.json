@@ -1,0 +1,21 @@
+{
+  "name": "funchinago",
+  "version": "1.0.0",
+  "description": "FunChinaGo — China Travel Made Easy",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "set-site-url": "node scripts/set-site-url.mjs",
+    "verify-site-url": "node scripts/verify-site-url.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/sitemap": "^3.0.0",
+    "typescript": "^5.0.0",
+    "wrangler": "^4.95.0"
+  }
+}

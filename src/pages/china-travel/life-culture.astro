@@ -1,0 +1,255 @@
+---
+import Layout from "../../layouts/ChinaTravelLayout.astro";
+import { getCollection } from "astro:content";
+import { lifeCultureDoorways } from "../../data/chinaStarterPortal";
+
+const cultureArticles = (await getCollection("chinaTravel"))
+  .filter((article) => article.data.section === "life-culture")
+  .sort((a, b) => b.data.updatedAt.getTime() - a.data.updatedAt.getTime());
+---
+
+<Layout
+  title="Life & Culture"
+  description="Food, daily habits, and practical cultural context for first-time visitors trying to understand modern China."
+>
+  <main class="section-page">
+    <section class="section-hero">
+      <div>
+        <p class="eyebrow">Life &amp; Culture</p>
+        <h1>Feel ready for modern China, not just the landmarks.</h1>
+        <p class="lede">
+          Food, delivery apps, transport habits, city pace, and everyday rituals shape how China feels once you arrive.
+        </p>
+        <div class="hero-pills" aria-label="Daily-life topics">
+          <span>Food confidence</span>
+          <span>Phone-first routines</span>
+          <span>Culture without overwhelm</span>
+        </div>
+      </div>
+      <img
+        class="hero-image"
+        src="/china-travel/images/article-modern-china-editorial.png"
+        alt="Modern China daily-life scene with food, city movement, and local rhythm"
+      />
+    </section>
+
+    <section class="doorway-grid" aria-label="Life and culture doorways">
+      {lifeCultureDoorways.map((doorway) => (
+        <a class="doorway-card" href={doorway.href}>
+          <img src={doorway.image} alt={`${doorway.theme} doorway for China travel`} />
+          <div>
+            <span>{doorway.theme}</span>
+            <h2>{doorway.title}</h2>
+            <p>{doorway.text}</p>
+          </div>
+        </a>
+      ))}
+    </section>
+
+    <section class="article-strip">
+      <div class="section-head">
+        <p class="eyebrow">Practical reading</p>
+        <h2>Use these when you want more context, not just inspiration.</h2>
+      </div>
+
+      <div class="article-grid">
+        {cultureArticles.map((article) => (
+          <a class="article-card" href={`/china-travel/articles/${article.id}/`}>
+            {article.data.hero_image && <img src={article.data.hero_image} alt={`Cover image for ${article.data.title}`} loading="lazy" />}
+            <div>
+              <h3>{article.data.title}</h3>
+              <p>{article.data.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <a class="source-link" href="/china-travel/sources/">Check the source library for linked official or platform-backed references</a>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .section-page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2.25rem 1.5rem 4rem;
+  }
+
+  .section-hero,
+  .article-strip {
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    box-shadow: var(--shadow-lg);
+    padding: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .section-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.04fr) minmax(280px, 0.96fr);
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .eyebrow {
+    margin-bottom: 0.65rem;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    max-width: 780px;
+    font-size: clamp(2.3rem, 6vw, 4.4rem);
+    line-height: 0.96;
+    letter-spacing: -0.06em;
+  }
+
+  .lede {
+    max-width: 720px;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .hero-image {
+    width: 100%;
+    min-height: 280px;
+    border-radius: 22px;
+    object-fit: cover;
+    background: #eadfd1;
+    box-shadow: var(--shadow);
+  }
+
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 1rem;
+  }
+
+  .hero-pills span {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    color: var(--accent-strong);
+    font-size: 0.76rem;
+    font-weight: 850;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .doorway-grid,
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .doorway-card,
+  .article-card {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface-strong);
+    color: var(--text);
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+  }
+
+  .doorway-card:hover,
+  .article-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-lg);
+    text-decoration: none;
+  }
+
+  .doorway-card img,
+  .article-card img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+  }
+
+  .doorway-card div,
+  .article-card div {
+    padding: 1rem;
+  }
+
+  .doorway-card span {
+    display: inline-flex;
+    margin-bottom: 0.4rem;
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .doorway-card h2,
+  .section-head h2,
+  .article-card h3 {
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+  }
+
+  .doorway-card h2 {
+    margin-bottom: 0.35rem;
+    font-size: 1.15rem;
+  }
+
+  .article-card h3 {
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+  }
+
+  .doorway-card p,
+  .article-card p {
+    color: var(--text-secondary);
+  }
+
+  .source-link {
+    display: inline-flex;
+    margin-top: 1rem;
+    font-weight: 850;
+    color: var(--accent-strong);
+  }
+
+  @media (max-width: 900px) {
+    .section-hero {
+      grid-template-columns: 1fr;
+    }
+
+    .doorway-grid,
+    .article-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .section-page {
+      padding: 1.35rem 1rem 3rem;
+    }
+
+    .doorway-grid,
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    h1 {
+      font-size: 2.35rem;
+    }
+  }
+</style>

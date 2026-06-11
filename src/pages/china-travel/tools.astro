@@ -1,0 +1,220 @@
+---
+import Layout from "../../layouts/ChinaTravelLayout.astro";
+import { homepageTools } from "../../data/chinaStarterPortal";
+---
+
+<Layout
+  title="Tools"
+  description="Simple China travel tools for route checking, planning checklists, and city selection."
+>
+  <main class="section-page">
+    <section class="section-hero">
+      <div>
+        <p class="eyebrow">Tools</p>
+        <h1>Small tools that remove first-trip friction.</h1>
+        <p class="lede">
+          Use these when you want to turn research into action: check a transit idea,
+          build a prep list, or narrow down your first city.
+        </p>
+        <p class="supporting-copy">
+          For policy-sensitive questions, pair the tools with the official source library before you book or fly.
+        </p>
+        <div class="hero-pills" aria-label="Tool use cases">
+          <span>Check a rule fast</span>
+          <span>Build a prep plan</span>
+          <span>Choose with less guesswork</span>
+        </div>
+      </div>
+      <img
+        class="hero-image"
+        src="/china-travel/images/article-20-city-picker.png"
+        alt="China travel planning tools with city picker and decision support mood"
+      />
+    </section>
+
+    <section class="tool-grid" aria-label="China tools">
+      {homepageTools.map((tool) => (
+        <a class="tool-card" href={tool.href}>
+          <img src={tool.image} alt={`${tool.title} planning visual`} loading="lazy" />
+          <div>
+            <span>{tool.label}</span>
+            <h2>{tool.title}</h2>
+            <p>{tool.text}</p>
+          </div>
+        </a>
+      ))}
+    </section>
+
+    <a class="source-link" href="/china-travel/sources/">Open the official source library</a>
+  </main>
+</Layout>
+
+<style>
+  .section-page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2.25rem 1.5rem 4rem;
+  }
+
+  .section-hero {
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    box-shadow: var(--shadow-lg);
+    padding: clamp(1.25rem, 3vw, 2rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.04fr) minmax(280px, 0.96fr);
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .eyebrow {
+    margin-bottom: 0.65rem;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    max-width: 760px;
+    font-size: clamp(2.3rem, 6vw, 4.4rem);
+    line-height: 0.96;
+    letter-spacing: -0.06em;
+  }
+
+  .lede {
+    max-width: 720px;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .supporting-copy {
+    max-width: 720px;
+    margin-top: 0.75rem;
+    color: var(--text-secondary);
+  }
+
+  .hero-image {
+    width: 100%;
+    min-height: 280px;
+    border-radius: 22px;
+    object-fit: cover;
+    background: #ecdfcf;
+    box-shadow: var(--shadow);
+  }
+
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 1rem;
+  }
+
+  .hero-pills span {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    color: var(--accent-strong);
+    font-size: 0.76rem;
+    font-weight: 850;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .tool-card {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface-strong);
+    color: var(--text);
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+  }
+
+  .tool-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-lg);
+    text-decoration: none;
+  }
+
+  .tool-card img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    background: #ecdfcf;
+  }
+
+  .tool-card div {
+    padding: 1rem;
+  }
+
+  .tool-card span {
+    display: inline-flex;
+    margin-bottom: 0.45rem;
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .tool-card h2 {
+    margin-bottom: 0.4rem;
+    font-size: 1.12rem;
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+  }
+
+  .tool-card p {
+    color: var(--text-secondary);
+  }
+
+  .source-link {
+    display: inline-flex;
+    margin-top: 1rem;
+    font-weight: 850;
+    color: var(--accent-strong);
+  }
+
+  @media (max-width: 900px) {
+    .section-hero {
+      grid-template-columns: 1fr;
+    }
+
+    .tool-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .section-page {
+      padding: 1.35rem 1rem 3rem;
+    }
+
+    .tool-grid {
+      grid-template-columns: 1fr;
+    }
+
+    h1 {
+      font-size: 2.35rem;
+    }
+  }
+</style>

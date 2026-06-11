@@ -1,0 +1,490 @@
+---
+import Layout from "../../layouts/ChinaTravelLayout.astro";
+
+const title = "China Travel Checklist Generator";
+const description = "Generate a personalized pre-travel checklist for your first trip to China based on your trip stage, route, payment setup, and internet needs.";
+---
+
+<Layout title={title} description={description}>
+  <main class="checklist-page">
+    <section class="hero-panel">
+      <div class="hero-copy">
+        <p class="kicker">China Travel Made Easy · Tools</p>
+        <h1>China Travel Checklist Generator</h1>
+        <p class="lead">
+          Answer a few questions about your trip and get a personalized checklist
+          covering documents, payment, internet, transport, packing, and last-minute prep.
+        </p>
+        <div class="trust-row">
+          <span>No sign-up</span>
+          <span>No data stored</span>
+          <span>Official sources linked</span>
+          <span>Works on mobile</span>
+        </div>
+      </div>
+      <aside class="intro-card">
+        <p class="eyebrow">How it works</p>
+        <h2>1-minute setup</h2>
+        <p>
+          Tell us where you are in planning, how long you are staying, whether you
+          travel between cities, and whether payment and internet are ready.
+        </p>
+        <p>
+          The checklist adapts to your answers. Each item links to a detailed guide
+          or official source when accuracy matters.
+        </p>
+      </aside>
+    </section>
+
+    <section class="tool-grid">
+      <form class="checker-card" data-checklist-form>
+        <div class="form-header">
+          <p class="eyebrow">Your trip profile</p>
+          <h2>Answer these questions</h2>
+          <p>All questions help tailor the checklist. None of your answers are saved.</p>
+        </div>
+
+        <label>
+          Where are you in planning?
+          <select name="tripStage" required>
+            <option value="thinking">Just thinking about it</option>
+            <option value="booked">Booked flights or dates set</option>
+            <option value="flying-soon">Flying soon (within 2 weeks)</option>
+          </select>
+        </label>
+
+        <label>
+          How long will you stay in China?
+          <select name="stayLength" required>
+            <option value="short">1–3 days (transit or quick visit)</option>
+            <option value="medium" selected>4–7 days</option>
+            <option value="long">8+ days</option>
+          </select>
+        </label>
+
+        <label>
+          How many cities will you visit?
+          <select name="routeType" required>
+            <option value="one-city">One city only</option>
+            <option value="multi-city" selected>Multiple cities</option>
+            <option value="transit">Transit only (using 240-hour transit policy)</option>
+          </select>
+        </label>
+
+        <label>
+          Is your mobile payment ready?
+          <select name="paymentReady" required>
+            <option value="no" selected>No — I need to set up Alipay or WeChat Pay</option>
+            <option value="yes">Yes — both set up and tested</option>
+          </select>
+        </label>
+
+        <label>
+          Is your internet access ready for China?
+          <select name="internetReady" required>
+            <option value="no" selected>No — I need eSIM, SIM, or VPN advice</option>
+            <option value="yes">Yes — eSIM or SIM sorted, VPN installed if needed</option>
+          </select>
+        </label>
+
+        <label>
+          Will you take high-speed trains?
+          <select name="trainTravel" required>
+            <option value="maybe" selected>Maybe — unsure</option>
+            <option value="yes">Yes — I plan to take trains between cities</option>
+            <option value="no">No — flights or local transport only</option>
+          </select>
+        </label>
+
+        <button type="submit">Generate my checklist</button>
+      </form>
+
+      <div class="result-area" data-checklist-result>
+        <div class="result-placeholder">
+          <p class="eyebrow">Your checklist</p>
+          <h2>Fill out the form</h2>
+          <p>Select your trip profile on the left and generate a personalized checklist.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="explain-grid">
+      <article class="info-card">
+        <p class="eyebrow">What this tool covers</p>
+        <h2>Six preparation categories</h2>
+        <ul>
+          <li>Documents and entry requirements</li>
+          <li>Payment setup (Alipay, WeChat Pay, cash backup)</li>
+          <li>Internet and essential apps</li>
+          <li>Transport and high-speed train prep</li>
+          <li>Packing suggestions</li>
+          <li>Last-minute departure checks</li>
+        </ul>
+      </article>
+
+      <article class="info-card caution-card">
+        <p class="eyebrow">Accuracy note</p>
+        <h2>Check official sources before travel</h2>
+        <p>
+          This tool gives preparation advice based on common first-time visitor needs.
+          For visa, entry, payment, and railway rules, the linked official Chinese government
+          or platform sources should be your final reference.
+        </p>
+      </article>
+    </section>
+
+    <section class="explain-grid">
+      <article class="info-card">
+        <p class="eyebrow">Real use cases</p>
+        <h2>When to use this checklist</h2>
+        <ul>
+          <li><strong>First-time visitor flying in two weeks</strong> — Generate a prioritized preparation list covering payment, internet, and documents.</li>
+          <li><strong>Multi-city traveler using high-speed trains</strong> — Get reminders about 12306 account setup, passport matching, and station navigation.</li>
+          <li><strong>Payment not yet set up</strong> — The checklist surfaces Alipay and WeChat Pay setup as a must-do before departure.</li>
+          <li><strong>Saving offline backups</strong> — Reminds you to download offline maps, translation packs, and hotel confirmations.</li>
+        </ul>
+      </article>
+
+      <article class="info-card caution-card">
+        <p class="eyebrow">Limitation</p>
+        <h2>This is planning guidance, not official policy confirmation</h2>
+        <p>The checklist adapts to common first-time visitor scenarios. Always verify visa, transit, and payment policies with official Chinese government sources before you fly.</p>
+      </article>
+
+      <article class="info-card">
+        <p class="eyebrow">Related guides</p>
+        <h2>Read before you fly</h2>
+        <ul>
+          <li><a href="/china-travel/articles/china-travel-checklist-before-you-fly/">China Travel Checklist article</a></li>
+          <li><a href="/china-travel/articles/how-to-pay-in-china-tourist/">How to Pay in China as a Tourist</a></li>
+          <li><a href="/china-travel/articles/best-esim-for-china-travel-internet-access/">Best eSIMs for China Travel</a></li>
+          <li><a href="/china-travel/sources/">Official source library</a></li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="/tools/china-travel-checklist.js"></script>
+</Layout>
+
+<style>
+  .checklist-page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .hero-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(280px, 0.9fr);
+    gap: 1rem;
+    align-items: stretch;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-copy,
+  .intro-card,
+  .checker-card,
+  .info-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hero-copy {
+    padding: 2.2rem;
+    background:
+      radial-gradient(circle at 14% 12%, rgba(245, 158, 11, 0.18), transparent 28%),
+      radial-gradient(circle at 86% 8%, rgba(22, 163, 74, 0.14), transparent 24%),
+      linear-gradient(135deg, var(--surface), var(--surface-hover));
+  }
+
+  .kicker, .eyebrow {
+    color: var(--green);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    margin-bottom: 0.55rem;
+  }
+
+  h1 {
+    max-width: 820px;
+    font-size: clamp(2.1rem, 5vw, 4.2rem);
+    line-height: 0.96;
+    letter-spacing: -0.07em;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.55rem;
+  }
+
+  .lead, .intro-card p, .info-card p, .form-header p {
+    color: var(--text-secondary);
+  }
+
+  .lead { max-width: 760px; font-size: 1.05rem; }
+
+  .trust-row {
+    display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 1.4rem;
+  }
+
+  .trust-row span {
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.5);
+    color: var(--text);
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .intro-card {
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .tool-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .checker-card {
+    padding: 1.35rem;
+    position: sticky;
+    top: 1rem;
+  }
+
+  .form-header { margin-bottom: 1rem; }
+
+  label {
+    display: grid; gap: 0.38rem;
+    font-weight: 800; margin-bottom: 0.9rem;
+  }
+
+  select, input {
+    width: 100%;
+    border: 1px solid var(--border);
+    background: var(--search-bg);
+    color: var(--text);
+    border-radius: 12px;
+    padding: 0.78rem 0.85rem;
+    font: inherit; font-weight: 600;
+  }
+
+  button {
+    width: 100%;
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    padding: 0.9rem 1rem;
+    font: inherit; font-weight: 900;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    margin-top: 0.25rem;
+  }
+
+  /* ── Result area ── */
+  .result-area {
+    min-height: 400px;
+  }
+
+  .result-placeholder {
+    background: var(--surface);
+    border: 2px dashed var(--border);
+    border-radius: 22px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: var(--text-secondary);
+  }
+
+  .result-placeholder h2 { margin-top: 0.5rem; }
+
+  .cl-result-header {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 1.35rem;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), var(--surface));
+    margin-bottom: 1rem;
+  }
+
+  .cl-result-header h2 {
+    font-size: 1.65rem;
+    margin: 0.4rem 0 0.7rem;
+  }
+
+  .cl-summary { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
+
+  .cl-badge {
+    border-radius: 999px;
+    padding: 0.35rem 0.7rem;
+    font-weight: 800;
+    font-size: 0.82rem;
+  }
+
+  .cl-badge.must {
+    background: rgba(220, 38, 38, 0.12);
+    color: #b91c1c;
+  }
+
+  .cl-badge.nice {
+    background: rgba(22, 163, 74, 0.12);
+    color: #15803d;
+  }
+
+  .cl-disclaimer {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+  }
+
+  /* ── Checklist sections ── */
+  .cl-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cl-section h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.9rem;
+    font-size: 1.15rem;
+  }
+
+  .cl-section h2 span {
+    font-size: 0.82rem;
+    color: var(--text-tertiary);
+    font-weight: 600;
+  }
+
+  .cl-must { border-left: 4px solid rgba(220, 38, 38, 0.5); }
+  .cl-nice { border-left: 4px solid rgba(22, 163, 74, 0.5); }
+
+  .cl-section ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .cl-section li {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  .cl-cat {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 800;
+    color: var(--accent);
+  }
+
+  .cl-section li p {
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .cl-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.15rem;
+  }
+
+  .cl-guide-link, .cl-source-link {
+    font-size: 0.82rem;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 0.3rem 0.65rem;
+    text-decoration: none;
+  }
+
+  .cl-guide-link {
+    background: rgba(37, 99, 235, 0.1);
+    color: #1d4ed8;
+  }
+
+  .cl-source-link {
+    background: rgba(22, 163, 74, 0.1);
+    color: #15803d;
+  }
+
+  /* ── Related ── */
+  .cl-related {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cl-related h2 {
+    font-size: 1.05rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .cl-related ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .cl-related a {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 0.45rem 0.75rem;
+    background: var(--surface-hover);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+  /* ── Explain grid ── */
+  .explain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .info-card {
+    padding: 1.35rem;
+  }
+
+  .info-card ul {
+    padding-left: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .caution-card {
+    background: linear-gradient(135deg, var(--orange-light), var(--surface));
+  }
+
+  @media (max-width: 860px) {
+    .hero-panel, .tool-grid, .explain-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-copy { padding: 1.35rem; }
+    .checker-card { position: static; }
+  }
+</style>

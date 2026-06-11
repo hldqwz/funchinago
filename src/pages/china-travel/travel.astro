@@ -1,0 +1,234 @@
+---
+import Layout from "../../layouts/ChinaTravelLayout.astro";
+import { getCollection } from "astro:content";
+
+const travelArticles = (await getCollection("chinaTravel"))
+  .filter((article) => article.data.section === "travel")
+  .sort((a, b) => b.data.updatedAt.getTime() - a.data.updatedAt.getTime());
+---
+
+<Layout
+  title="Travel"
+  description="Practical China travel planning for first-time visitors: visas, payments, apps, trains, internet, and preparation."
+>
+  <main class="section-page">
+    <section class="section-hero">
+      <div>
+        <p class="eyebrow">Travel</p>
+        <h1>Handle the trip setup that actually matters.</h1>
+        <p class="lede">
+          Visas, payments, apps, internet, trains, and route planning decide whether
+          your first China trip feels smooth or stressful.
+        </p>
+        <div class="hero-pills" aria-label="Travel setup priorities">
+          <span>Entry rules</span>
+          <span>Payment setup</span>
+          <span>Apps and trains</span>
+        </div>
+      </div>
+      <img
+        class="hero-image"
+        src="/china-travel/images/article-checklist-editorial.png"
+        alt="China trip planning desk with phone, route notes, and travel checklist"
+      />
+    </section>
+
+    <section class="article-grid" aria-label="Travel planning guides">
+      {travelArticles.map((article) => (
+        <a class="article-card" href={`/china-travel/articles/${article.id}/`}>
+          {article.data.hero_image && <img src={article.data.hero_image} alt={`Cover image for ${article.data.title}`} loading="lazy" />}
+          <div>
+            <span>{article.data.stage.replace("-", " ")}</span>
+            <h2>{article.data.title}</h2>
+            <p>{article.data.description}</p>
+          </div>
+        </a>
+      ))}
+    </section>
+
+    <section class="source-callout feature-accent" aria-labelledby="travel-sources-title">
+      <div>
+        <p class="eyebrow">Accuracy first</p>
+        <h2 id="travel-sources-title">Use official sources for visas, payments, trains, and entry rules.</h2>
+        <p class="lede compact">
+          Our travel planning pieces are written to be readable first, but the underlying facts should come from official Chinese government or platform-authoritative pages.
+        </p>
+        <a class="source-link" href="/china-travel/sources/">Open the source library</a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .section-page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2.25rem 1.5rem 4rem;
+  }
+
+  .section-hero {
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    box-shadow: var(--shadow-lg);
+    padding: clamp(1.25rem, 3vw, 2rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .eyebrow {
+    margin-bottom: 0.65rem;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    max-width: 780px;
+    font-size: clamp(2.3rem, 6vw, 4.4rem);
+    line-height: 0.96;
+    letter-spacing: -0.06em;
+  }
+
+  .lede {
+    max-width: 720px;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 1rem;
+  }
+
+  .hero-pills span {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    color: var(--accent-strong);
+    font-size: 0.76rem;
+    font-weight: 850;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .hero-image {
+    width: 100%;
+    min-height: 260px;
+    border-radius: 22px;
+    object-fit: cover;
+    background: #ecdfcf;
+    box-shadow: var(--shadow);
+  }
+
+  .compact {
+    max-width: 760px;
+    margin-top: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .article-card {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface-strong);
+    color: var(--text);
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+  }
+
+  .article-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-lg);
+    text-decoration: none;
+  }
+
+  .article-card img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+  }
+
+  .article-card div {
+    padding: 1rem;
+  }
+
+  .article-card span {
+    display: inline-flex;
+    margin-bottom: 0.4rem;
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .article-card h2 {
+    margin-bottom: 0.4rem;
+    font-size: 1.08rem;
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+  }
+
+  .article-card p {
+    color: var(--text-secondary);
+  }
+
+  .source-callout {
+    margin-top: 1.25rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .source-link {
+    display: inline-flex;
+    margin-top: 1rem;
+    font-weight: 850;
+    color: var(--accent-strong);
+  }
+
+  @media (max-width: 900px) {
+    .section-hero {
+      grid-template-columns: 1fr;
+    }
+
+    .article-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .section-page {
+      padding: 1.35rem 1rem 3rem;
+    }
+
+    .article-grid {
+      grid-template-columns: 1fr;
+    }
+
+    h1 {
+      font-size: 2.35rem;
+    }
+  }
+</style>

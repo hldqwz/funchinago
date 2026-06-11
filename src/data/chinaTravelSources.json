@@ -1,0 +1,195 @@
+{
+  "updatedAt": "2026-06-02",
+  "sources": [
+    {
+      "id": "nia-240h-transit-2025",
+      "title": "Conditions for Foreign Nationals Applying for 240-Hour Visa-Free Transit Policy",
+      "url": "https://en.nia.gov.cn/n147418/n147468/c187308/content.html",
+      "authority": "National Immigration Administration, Exit and Entry Administration of P.R. China",
+      "category": "visa-entry",
+      "trustLevel": "official",
+      "useFor": "240-hour visa-free transit rules, eligible countries, core conditions, eligible ports, permitted stay areas, arrival card links",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "gov-visa-free-access-2025",
+      "title": "China widens visa-free access in latest opening-up move",
+      "url": "https://english.www.gov.cn/news/202511/04/content_WS69094ae0c6d00ca5f9a07472.html",
+      "authority": "The State Council, The People’s Republic of China",
+      "category": "visa-entry",
+      "trustLevel": "official",
+      "useFor": "Context on China visa-free access expansion and official policy direction",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "nia-arrival-card-online",
+      "title": "Online Arrival Card Filling for Foreigners",
+      "url": "https://s.nia.gov.cn/ArrivalCardFillingPC/",
+      "authority": "National Immigration Administration, Exit and Entry Administration of P.R. China",
+      "category": "visa-entry",
+      "trustLevel": "official",
+      "useFor": "Online arrival card instructions and entry preparation references",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "gov-payment-guide-2024",
+      "title": "Guide to Payment Services in China",
+      "url": "https://english.www.gov.cn/news/202404/11/content_WS6617c858c6d0868f4e8e5f4d.html",
+      "authority": "The State Council, The People’s Republic of China",
+      "category": "payments",
+      "trustLevel": "official",
+      "useFor": "Official payment options for visitors, including bank cards, mobile payments, cash, and account services",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "gov-payment-optimization-2024",
+      "title": "China issues guideline on further optimizing payment services",
+      "url": "https://english.www.gov.cn/policies/latestreleases/202403/08/content_WS65eaad91c6d0868f4e8e4d52.html",
+      "authority": "The State Council, The People’s Republic of China",
+      "category": "payments",
+      "trustLevel": "official",
+      "useFor": "Policy background on improving payment convenience for foreigners and elderly users",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "alipayplus-mainland-guide",
+      "title": "Pay in the Chinese Mainland with Alipay+",
+      "url": "https://www.alipayplus.com/my/pay-in-the-chinese-mainland/",
+      "authority": "Alipay+",
+      "category": "payments",
+      "trustLevel": "platform-official",
+      "useFor": "Platform-official Alipay+ guidance for overseas users paying in the Chinese mainland",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "railway-12306-en",
+      "title": "China Railway 12306 English Site",
+      "url": "https://www.12306.cn/en/index.html",
+      "authority": "China Railway 12306",
+      "category": "transport",
+      "trustLevel": "platform-official",
+      "useFor": "Official train ticketing and railway travel reference for foreign visitors",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "official-travel-china",
+      "title": "Travel China Official Tourism Site",
+      "url": "https://www.travelchina.org.cn/en",
+      "authority": "Official China tourism portal",
+      "category": "discover-china",
+      "trustLevel": "official",
+      "useFor": "Official tourism inspiration, destinations, attractions, and cultural travel references",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "scio-inbound-tourism-2026",
+      "title": "China says 2025 inbound trips top 150 million",
+      "url": "https://english.scio.gov.cn/m/pressroom/2026-03/09/content_118371274.html",
+      "authority": "State Council Information Office / Xinhua",
+      "category": "market-context",
+      "trustLevel": "official",
+      "useFor": "Inbound tourism trend context and market opportunity framing",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "peoples-daily-living-like-local",
+      "title": "Living like a local trend enhances China Travel allure",
+      "url": "https://en.people.cn/n3/2026/0502/c90000-20452593.html",
+      "authority": "People’s Daily Online",
+      "category": "discover-china",
+      "trustLevel": "media-context",
+      "useFor": "Context for foreign traveler interest in local lifestyle experiences in China",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "reddit-travelchina-common-mistakes",
+      "title": "Common mistakes in China travel itineraries",
+      "url": "https://www.reddit.com/r/travelchina/comments/1tto8t7/common_mistakes_i_keep_seeing_in_china_travel/",
+      "authority": "Reddit r/travelchina community",
+      "category": "traveler-pain-points",
+      "trustLevel": "community-signal",
+      "useFor": "Community signal for real traveler concerns, itinerary mistakes, and preparation pain points; not a policy source",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "tencent-weixin-pay-overseas-users-2023",
+      "title": "Tencent enhances mobile payment experience for overseas users visiting China",
+      "url": "https://www.tencent.com.cn/en-us/articles/2201652.html",
+      "authority": "Tencent / Weixin Pay",
+      "category": "payments",
+      "trustLevel": "platform-official",
+      "useFor": "Weixin Pay setup context for overseas users, international card linking, and visitor payment experience",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "tencent-inbound-payments-apec-2026",
+      "title": "Tencent announces initiatives to make inbound payments easier during APEC 2026",
+      "url": "https://www.tencent.com/en-us/articles/2202338.html",
+      "authority": "Tencent / Weixin Pay",
+      "category": "payments",
+      "trustLevel": "platform-official",
+      "useFor": "Recent Tencent context on PayPal World integration, international card fee waiver, overseas wallets, and multilingual guidance for visitors",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "railway-12306-account-center-en",
+      "title": "12306 China Railway English Account Center and Help",
+      "url": "https://passport.12306.cn/en/center-index.html",
+      "authority": "China Railway 12306",
+      "category": "transport",
+      "trustLevel": "platform-official",
+      "useFor": "12306 English account, ticketing help, passenger account and booking support references",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "shanghai-240h-transit-guide",
+      "title": "Shanghai 240-Hour Visa-Free Transit Guide",
+      "url": "https://english.shanghai.gov.cn/en-240HourVisaFreeTransit/",
+      "authority": "Shanghai Municipal Government English Portal",
+      "category": "visa-entry",
+      "trustLevel": "official",
+      "useFor": "City-level official explanation of 240-hour visa-free transit for Shanghai-related itinerary planning; NIA remains final authority",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "apple-esim-support",
+      "title": "About eSIM on iPhone",
+      "url": "https://support.apple.com/en-us/118669",
+      "authority": "Apple Support",
+      "category": "internet-access",
+      "trustLevel": "platform-official",
+      "useFor": "General eSIM device support context for travelers preparing mobile data before arriving in China",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "google-translate-offline-help",
+      "title": "Download languages to use offline in Google Translate",
+      "url": "https://support.google.com/translate/answer/6142473",
+      "authority": "Google Translate Help",
+      "category": "apps-translation",
+      "trustLevel": "platform-official",
+      "useFor": "Platform guidance for offline translation preparation before travel",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "apple-maps-china-support",
+      "title": "Apple Maps availability and features",
+      "url": "https://www.apple.com/ios/feature-availability/#maps-standard",
+      "authority": "Apple",
+      "category": "apps-maps",
+      "trustLevel": "platform-official",
+      "useFor": "Platform context for map availability and travel navigation preparation",
+      "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "ap-tencent-paypal-wechat-2026",
+      "title": "Tencent to allow PayPal payments through WeChat networks in China",
+      "url": "https://apnews.com/article/c871ddfb60aa87e9f1d6220c3131545d",
+      "authority": "Associated Press",
+      "category": "payments",
+      "trustLevel": "media-context",
+      "useFor": "Recent media context on Tencent and PayPal World support for inbound tourist payment convenience; use Tencent official source as authority",
+      "lastChecked": "2026-06-02"
+    }
+  ]
+}
