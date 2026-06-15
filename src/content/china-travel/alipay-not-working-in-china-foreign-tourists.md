@@ -35,10 +35,10 @@ A failure in one place does not always mean Alipay is unusable everywhere.
 Useful first steps:
 
 - move from unstable Wi-Fi to mobile data,
-- reopen Alipay and confirm your card still appears active,
+- reopen Alipay and confirm your payment code and linked card still appear active,
 - check whether your bank has sent an alert,
 - try the other QR direction if the merchant can support it,
-- switch quickly to [WeChat Pay](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/) or cash if the line is moving.
+- switch quickly to [WeChat Pay](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/), a backup card, cash, or a travel companion's payment method if the line is moving.
 
 If you need to revisit your setup, return to [how to prepare Alipay before arrival](/china-travel/articles/how-to-use-alipay-in-china-foreigner/).
 
@@ -50,10 +50,14 @@ If the QR menu worked but the payment failed, do not assume the whole meal flow 
 
 A practical response is:
 
+- confirm your phone has a stable connection before retrying,
 - ask the staff whether you can pay at the counter,
 - show the failure screen if needed,
 - use a translation app if the conversation is difficult,
-- switch to cash, card, or [WeChat Pay as a backup](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/) instead of holding up the table-turnover process.
+- ask whether they can scan your payment code instead of asking you to scan theirs, or the reverse,
+- switch to cash, a backup card, a companion's payment app, or [WeChat Pay as a backup](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/) instead of holding up the table-turnover process.
+
+If the restaurant uses QR ordering and you cannot finish payment inside the flow, ask whether staff can convert it to counter payment or manual checkout. This is often easier than repeatedly refreshing the same page.
 
 ## If Alipay Fails in a Convenience Store
 
@@ -63,7 +67,8 @@ If the first scan fails:
 
 - check whether your data is weak,
 - reopen the payment code,
-- try once more,
+- ask the cashier whether they can scan your code or let you scan theirs,
+- try once more only if the line is not building,
 - if it still fails, move to another payment option immediately.
 
 In many cases, the best traveler move is not "fix it now" but "pay fast and debug later."
@@ -77,9 +82,12 @@ Useful steps are:
 - confirm whether the payment actually failed or is still pending,
 - check your network before reopening the app,
 - look at the order screen and payment method,
+- check whether the charge is waiting for card approval or bank confirmation,
 - if needed, prepare another way to pay before leaving the vehicle or curbside area.
 
 If you are in a hurry, this is a good moment to use a backup rather than forcing one app to work.
+
+For Didi, do not close the situation mentally just because you stepped out of the car. In many cases, you should confirm the order status, payment status, and selected payment method before you walk away. If you are with someone whose payment app is working, asking them to pay first and settling privately later may be the least stressful option.
 
 ## Backup Options
 
@@ -106,6 +114,8 @@ To reduce the chance of failure:
 A local usually would not spend ten minutes blocking a line to debug one payment app. They would switch methods quickly, complete the purchase, and sort the app out later.
 
 That mindset helps visitors too. Fast fallback is often better than perfect troubleshooting in public.
+
+For many visitors, the most useful local habit is having a short payment order in mind: try Alipay once, switch QR direction once if the merchant can help, then use WeChat Pay, another card, cash, or a companion as a backup option. After you are away from the counter, you can review bank alerts, app verification, and your broader [China travel checklist](/china-travel/articles/china-travel-checklist-before-you-fly/) calmly.
 
 ## Check Official Sources Before You Travel
 

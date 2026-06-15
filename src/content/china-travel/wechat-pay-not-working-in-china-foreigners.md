@@ -36,9 +36,10 @@ Try this order first:
 
 - move from weak Wi-Fi to mobile data if you can,
 - reopen WeChat and confirm the card is still linked,
+- refresh your payment code once,
 - check for bank notifications,
-- ask the merchant whether there is another payment flow,
-- switch quickly to [Alipay as a backup](/china-travel/articles/how-to-use-alipay-in-china-foreigner/) or cash if people are waiting.
+- ask the merchant whether there is another QR direction or payment flow,
+- switch quickly to [Alipay as a backup](/china-travel/articles/how-to-use-alipay-in-china-foreigner/), a backup card, cash, or a companion's payment method if people are waiting.
 
 If you need the full setup page again, return to [how to prepare WeChat Pay before travel](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/).
 
@@ -48,11 +49,15 @@ At a shop counter, the best move is usually speed.
 
 If your first attempt fails:
 
+- switch from unstable Wi-Fi to mobile data if possible,
 - refresh the payment code once,
 - try the other QR direction if available,
+- ask whether the cashier can scan your code instead of asking you to scan theirs, or the reverse,
 - if that fails again, use another method immediately.
 
 Do not keep everyone waiting while you test every possible setting inside the app.
+
+At a busy counter, a useful rule is one quick retry, one QR-direction change if the cashier can help, then a fallback. [Alipay](/china-travel/articles/how-to-use-alipay-in-china-foreigner/), another bank card, some cash, or a companion's working app may all be useful backup options, depending on the merchant.
 
 ## If WeChat Pay Fails in a Restaurant QR Menu
 
@@ -65,7 +70,10 @@ Practical options:
 - ask the staff whether you can pay at the cashier,
 - use a translation app if needed,
 - ask whether you can switch to manual ordering,
-- pay with [Alipay](/china-travel/articles/how-to-use-alipay-in-china-foreigner/) or cash if the QR flow keeps failing.
+- ask staff to help confirm whether the order was placed before you try again,
+- pay with [Alipay](/china-travel/articles/how-to-use-alipay-in-china-foreigner/), a backup card, cash, or a companion's app if the QR flow keeps failing.
+
+If the menu opens but payment fails, do not keep refreshing the same mini program for several minutes. In many cases, staff can help you move to counter payment, manual ordering, or another checkout path.
 
 ## If WeChat Pay Fails When Using a Mini Program
 
@@ -76,9 +84,12 @@ If a mini program fails:
 - check whether your network is stable,
 - leave and reopen the flow once,
 - see whether the same task can be done at a counter or through staff help,
-- avoid assuming the mini program is the only path.
+- avoid assuming the mini program is the only path,
+- switch payment method quickly if the mini program keeps rejecting the final payment step.
 
 For travelers, a manual workaround is often better than fighting one app flow for too long.
+
+This matters because WeChat mini programs can mix ordering, identity, location, coupons, and payment in one flow. A failure may come from any one of those steps, not only from your card. If payment is urgent, your broader [tourist payment plan for China](/china-travel/articles/how-to-pay-in-china-tourist/) is more useful than proving the mini program should work.
 
 ## Backup Options
 
@@ -105,6 +116,8 @@ Before the trip, try to lower risk by:
 A local usually would switch methods fast, finish the purchase, and only then check why the first app failed. That habit is useful for visitors too.
 
 When in doubt, reduce friction first, then troubleshoot later.
+
+For many visitors, the local-feeling approach is simple: try WeChat Pay once, ask for a different scan direction if possible, then move to Alipay, cash, another card, or a companion's payment as a backup option. Later, when you are not at a counter or restaurant table, review your card link, bank alerts, network setup, and [China travel checklist](/china-travel/articles/china-travel-checklist-before-you-fly/).
 
 ## Check Official Sources Before You Travel
 
