@@ -33,10 +33,11 @@ assertFrontmatterValue(
 );
 for (const heading of [
   '## Can Foreigners Use WeChat Pay in China?',
+  '## How to Set Up WeChat Pay Before You Travel',
   '## WeChat Pay Not Working in China: What to Do',
-  '## WeChat Pay vs Alipay for Tourists',
-  '## Do You Still Need Cash in China?',
-  '## FAQ for Foreign Visitors',
+  '## WeChat Pay vs Alipay for Foreign Tourists',
+  '## Do You Still Need Cash If You Have WeChat Pay?',
+  '## FAQ',
 ]) {
   assertIncludes(wechat, heading, 'wechat article');
 }
@@ -64,10 +65,10 @@ assertFrontmatterValue(
 );
 for (const heading of [
   '## Is Alipay Easier Than WeChat Pay for Foreign Tourists?',
+  '## Should You Set Up Alipay Before Arriving in China?',
   '## Alipay Not Working in China: Common Reasons',
   '## What to Do If Alipay Fails at a Shop or Restaurant',
-  '## Should You Set Up Alipay Before Arriving in China?',
-  '## FAQ for Foreign Visitors',
+  '## FAQ',
 ]) {
   assertIncludes(alipay, heading, 'alipay article');
 }
@@ -145,6 +146,26 @@ for (const [slug, expectedTitle, mustLink] of [
   ]) {
     assertIncludes(article, href, `${slug} article links`);
   }
+}
+
+const alipayFail = readArticle('alipay-not-working-in-china-foreign-tourists');
+for (const heading of [
+  '## If Alipay Fails at a Restaurant',
+  '## If Alipay Fails in a Convenience Store',
+  '## If Alipay Fails When Taking a Taxi or Didi',
+  '## What a Local Would Usually Do',
+]) {
+  assertIncludes(alipayFail, heading, 'alipay fail article');
+}
+
+const wechatFail = readArticle('wechat-pay-not-working-in-china-foreigners');
+for (const heading of [
+  '## If WeChat Pay Fails at a Shop Counter',
+  '## If WeChat Pay Fails in a Restaurant QR Menu',
+  '## If WeChat Pay Fails When Using a Mini Program',
+  '## What a Local Would Usually Do',
+]) {
+  assertIncludes(wechatFail, heading, 'wechat fail article');
 }
 
 const paymentHub = readArticle('how-to-pay-in-china-tourist');
@@ -232,6 +253,16 @@ for (const marker of [
     travelPage.includes(marker) || portalData.includes(marker),
     `travel page payment spotlight missing: ${marker}`,
   );
+}
+
+for (const forbidden of [
+  'Search Console',
+  'SEO',
+  'ranking',
+  'trust tests for FunChinaGo',
+  'trust test for FunChinaGo',
+]) {
+  assert.ok(!travelPage.includes(forbidden), `travel page should not include internal ops phrase: ${forbidden}`);
 }
 
 console.log('chinaTravel payment cluster tests passed');

@@ -11,63 +11,105 @@ officialSources: ["alipayplus-mainland-guide", "gov-payment-guide-2024", "gov-pa
 relatedTools: []
 ---
 
-Payment failures feel stressful mostly because they happen in public and under time pressure. The good news is that many Alipay problems have a practical workaround, especially if you prepared more than one payment option.
+When Alipay fails, the worst part is usually not the app itself. It is the moment: people are waiting, you are tired, and you need to pay now. The best response is usually short, calm, and practical.
 
 ## Quick Answer
 
-If Alipay is not working in China, first check your internet, linked card status, and bank alerts. Many failures are temporary or merchant-specific. If the payment still does not go through, switch to [WeChat Pay](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/), another bank card, cash, or the broader [How to Pay in China as a Tourist](/china-travel/articles/how-to-pay-in-china-tourist/) backup plan.
+If Alipay is not working in China, first check your internet, linked card status, and bank alerts. In many cases the problem is temporary or merchant-specific. If payment still fails, switch to [WeChat Pay as a backup](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/), another card, cash, or your broader [tourist payment plan for China](/china-travel/articles/how-to-pay-in-china-tourist/).
 
 ## Common Reasons
 
 Alipay may fail because:
 
 - your bank blocks the charge,
-- the linked foreign card is unsupported for that flow,
-- the merchant QR method does not process smoothly with your account,
+- the linked foreign card is unsupported for that payment flow,
+- the merchant QR type does not process smoothly with your setup,
 - the app asks for another verification step,
 - your data connection is unstable,
-- a temporary limit or security review is triggered.
+- a temporary limit or review is triggered.
 
-A failure in one shop does not always mean Alipay is fully broken for the rest of the trip.
+A failure in one place does not always mean Alipay is unusable everywhere.
 
 ## What to Do Immediately
 
-Work through these in order:
+Useful first steps:
 
-- Move from unstable Wi-Fi to mobile data if possible.
-- Reopen Alipay and confirm your linked card still appears active.
-- Check whether your bank has sent a fraud alert or approval request.
-- Ask whether the merchant can use the other QR direction, scanning your code instead of you scanning theirs, or the reverse.
-- Try another card if you linked one.
-- If payment is urgent, switch to [WeChat Pay](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/) or cash.
+- move from unstable Wi-Fi to mobile data,
+- reopen Alipay and confirm your card still appears active,
+- check whether your bank has sent an alert,
+- try the other QR direction if the merchant can support it,
+- switch quickly to [WeChat Pay](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/) or cash if the line is moving.
 
-If you want the main setup guide again, return to [How to Use Alipay in China as a Foreigner](/china-travel/articles/how-to-use-alipay-in-china-foreigner/).
+If you need to revisit your setup, return to [how to prepare Alipay before arrival](/china-travel/articles/how-to-use-alipay-in-china-foreigner/).
+
+## If Alipay Fails at a Restaurant
+
+This is common enough to plan for.
+
+If the QR menu worked but the payment failed, do not assume the whole meal flow is broken. In many cases the ordering page and the payment page behave differently.
+
+A practical response is:
+
+- ask the staff whether you can pay at the counter,
+- show the failure screen if needed,
+- use a translation app if the conversation is difficult,
+- switch to cash, card, or [WeChat Pay as a backup](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/) instead of holding up the table-turnover process.
+
+## If Alipay Fails in a Convenience Store
+
+Convenience stores are often fast-moving, so long debugging is rarely worth it.
+
+If the first scan fails:
+
+- check whether your data is weak,
+- reopen the payment code,
+- try once more,
+- if it still fails, move to another payment option immediately.
+
+In many cases, the best traveler move is not "fix it now" but "pay fast and debug later."
+
+## If Alipay Fails When Taking a Taxi or Didi
+
+Do not walk away from the payment situation without checking what happened.
+
+Useful steps are:
+
+- confirm whether the payment actually failed or is still pending,
+- check your network before reopening the app,
+- look at the order screen and payment method,
+- if needed, prepare another way to pay before leaving the vehicle or curbside area.
+
+If you are in a hurry, this is a good moment to use a backup rather than forcing one app to work.
 
 ## Backup Options
 
 The best backup options are usually:
 
-- [WeChat Pay](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/)
+- [WeChat Pay as a backup](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/),
 - a second bank card,
-- some RMB cash,
-- a quick review of your [China Travel Checklist Before You Fly](/china-travel/articles/china-travel-checklist-before-you-fly/) in case the root problem is internet or missing preparation.
-
-For many visitors, the real win is not making Alipay perfect. It is making sure one failed payment does not derail the whole day.
+- some cash,
+- a quick review of your [China travel checklist before you fly](/china-travel/articles/china-travel-checklist-before-you-fly/) if the deeper issue is internet or weak preparation.
 
 ## Before You Arrive Checklist
 
-To reduce the chance of Alipay failures:
+To reduce the chance of failure:
 
 - link your card before departure,
 - tell your bank you are traveling,
-- keep a second card,
-- prepare [WeChat Pay](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/) if possible,
-- carry a small amount of cash,
-- review the full [payment hub](/china-travel/articles/how-to-pay-in-china-tourist/).
+- keep another card,
+- prepare [WeChat Pay as a backup](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/),
+- carry some cash,
+- build a full [payment backup plan before flying to China](/china-travel/articles/how-to-pay-in-china-tourist/).
+
+## What a Local Would Usually Do
+
+A local usually would not spend ten minutes blocking a line to debug one payment app. They would switch methods quickly, complete the purchase, and sort the app out later.
+
+That mindset helps visitors too. Fast fallback is often better than perfect troubleshooting in public.
 
 ## Check Official Sources Before You Travel
 
-Support rules and visitor flows can change, so always verify them before your trip.
+Support rules and visitor flows can change, so verify them before departure.
 
 - [Alipay+ — Pay in the Chinese mainland](https://www.alipayplus.com/my/pay-in-the-chinese-mainland/)
 - [Chinese Government — Guide to Payment Services in China](https://english.www.gov.cn/news/202404/11/content_WS6617c858c6d0868f4e8e5f4d.html)
