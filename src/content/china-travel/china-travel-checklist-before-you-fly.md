@@ -1,170 +1,119 @@
 ---
-title: "China Travel Checklist: What to Prepare Before You Fly"
+title: "China Travel Checklist Before You Fly: Apps, Payments, Internet & Documents"
 date: 2026-06-02
-updatedAt: 2026-06-02
-description: "A practical pre-departure checklist for China covering passport, visa-free rules, payment, internet, apps, trains, hotels, and backup plans."
+updatedAt: 2026-06-15
+description: "A practical China travel checklist for first-time visitors, covering payment apps, internet access, documents, transport, hotels, and arrival-day backups."
 stage: "before"
 section: "travel"
 hero_image: "/china-travel/images/article-checklist-editorial.png"
 tags: ["checklist", "preparation", "first trip"]
-officialSources: ["nia-arrival-card-online", "gov-payment-guide-2024", "alipayplus-mainland-guide", "railway-12306-en"]
+officialSources: ["nia-arrival-card-online", "gov-payment-guide-2024", "alipayplus-mainland-guide", "railway-12306-en", "google-translate-offline-help"]
 relatedTools:
   - title: "240-Hour Transit Self-Check"
     href: "/tools/china-transit-checker/"
 ---
 
-China is easiest when you prepare before landing. Many things work extremely well once your phone, payment, internet, and transport are ready. The hard part is discovering a missing setup step after you are already tired at the airport.
-
-Use this checklist as a calm pre-flight pass through the essentials.
+The easiest China trips usually start before the plane takes off. Once you land, your phone becomes your map, wallet, translator, contact tool, and hotel lifeline. This checklist is built for first-time visitors who want to avoid small problems turning into stressful arrival-day delays.
 
 ## Quick Answer
 
-Before flying to China, prepare six things: entry documents, payment, internet, translation, transport, and backup plans. Do not rely only on credit cards or airport Wi-Fi. Set up your mobile payment, download key apps, save hotel addresses in Chinese, and check your visa or visa-free eligibility through official sources.
+Before flying to China, set up your documents, payment apps, internet plan, translation tools, hotel details, and transport basics. The most practical approach is to prepare [How to Pay in China as a Tourist](/china-travel/articles/how-to-pay-in-china-tourist/), confirm at least one payment app works, and keep backup options for arrival day.
 
-## 1. Check Passport And Entry Eligibility
+## China Travel Checklist: 7 Things to Set Up Before You Fly
 
-Start with your passport and entry route.
+Use this as your pre-departure list:
 
-Check:
+1. Confirm passport validity and entry eligibility.
+2. Save your hotel name and address in Chinese.
+3. Prepare your payment setup, ideally with [Alipay](/china-travel/articles/how-to-use-alipay-in-china-foreigner/) and, if possible, [WeChat Pay](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/).
+4. Decide your internet plan before landing.
+5. Download translation, maps, and travel apps.
+6. Review airport-to-hotel transport and any train plans.
+7. Prepare backup items such as cash, another card, and offline screenshots.
 
-- Passport validity.
-- Visa, visa-free access, or transit visa-free eligibility.
-- Purpose of travel.
-- Confirmed onward ticket if using transit rules.
-- Hotel address and first-night booking.
+If you are still uncertain about mobile payments, use the main [payment hub](/china-travel/articles/how-to-pay-in-china-tourist/) first, then return here to finish the rest of the checklist.
 
-If you plan to use the 240-hour visa-free transit policy, make sure you understand the third-country or region rule. A simple round trip to and from the same country may not qualify as transit.
+## Arrival Day Checklist
 
-## 2. Prepare Arrival Information
+Arrival day is when small gaps become big annoyances. Before you board, make sure you can do these on landing:
 
-China has an online arrival card channel from the National Immigration Administration. Availability and exact process may change, so use the official page as your reference before departure.
+- Turn on mobile data, roaming, eSIM, or your chosen internet option.
+- Open your hotel booking and show the address in Chinese.
+- Use at least one payment method that is likely to work, whether that is [Alipay](/china-travel/articles/how-to-use-alipay-in-china-foreigner/), [WeChat Pay](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/), a bank card, or cash.
+- Reach a backup guide quickly if an app fails, such as [Alipay Not Working in China for Foreign Tourists](/china-travel/articles/alipay-not-working-in-china-foreign-tourists/) or [WeChat Pay Not Working in China for Foreigners](/china-travel/articles/wechat-pay-not-working-in-china-foreigners/).
+- Keep screenshots of bookings, tickets, and important addresses offline.
 
-Keep these details easy to access:
+A calm arrival usually depends on practical redundancy, not on one perfect app.
 
-- Flight number.
-- Hotel name and address.
-- Local contact if you have one.
-- Return or onward ticket.
-- Travel insurance information.
+## Payment Backup Plan
 
-Save your first hotel address in English and Chinese. Taxi drivers, hotel staff, and station workers may understand the Chinese version faster.
+This is where many first-time visitors worry the most.
 
-## 3. Set Up Payment Before Landing
+A strong payment setup usually looks like this:
 
-Payment is the biggest first-time anxiety for many visitors.
+- Primary payment app: Alipay or WeChat Pay.
+- Secondary app: whichever of the two also works for you.
+- One or two physical bank cards.
+- Some RMB cash.
+- Working mobile data.
 
-The safest practical setup is:
+Do not assume every foreign card will work in every flow. If one app fails, move to the matching recovery guide quickly instead of improvising at the counter:
 
-- Alipay or WeChat Pay prepared before arrival.
-- At least one international bank card linked if supported.
-- Some cash as backup.
-- A second card in case your bank blocks a transaction.
+- [How to Use Alipay in China as a Foreigner](/china-travel/articles/how-to-use-alipay-in-china-foreigner/)
+- [How to Use WeChat Pay in China as a Foreigner](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/)
+- [Alipay Not Working in China for Foreign Tourists](/china-travel/articles/alipay-not-working-in-china-foreign-tourists/)
+- [WeChat Pay Not Working in China for Foreigners](/china-travel/articles/wechat-pay-not-working-in-china-foreigners/)
 
-China’s official payment guidance for visitors describes multiple options, including mobile payments, bank cards, cash, and account services. In practice, mobile payment is often the smoothest for daily spending, but cash and cards still matter as backup.
+## Internet and Translation Setup
 
-## 4. Prepare Internet Access
+Your internet plan affects almost everything else.
 
-Do not wait until you land to think about internet.
+Before departure, decide:
 
-Decide before departure:
+- eSIM, roaming, or local SIM,
+- how much data you may need,
+- whether your phone supports the setup you chose,
+- which translation app you will trust when data is weak.
 
-- eSIM, roaming, or local SIM.
-- How much data you need.
-- Whether your phone supports eSIM.
-- Whether key services you rely on will work normally.
-- Offline maps or screenshots for arrival.
+Download offline translation packs and save key phrases, especially if you have dietary restrictions or specific hotel needs. A working translator plus working data often matters just as much as the payment apps themselves.
 
-Your phone is not just for social media in China. It may be your payment tool, translator, map, train ticket manager, and hotel contact method.
+## Hotel and Transport Preparation
 
-## 5. Download Key Apps
+Save these before you leave:
 
-At minimum, prepare apps for:
-
-- Payment.
-- Translation.
-- Maps.
-- Messaging.
-- Train tickets.
-- Hotel and travel bookings.
-
-Some apps may require verification or card linking. Do that before the trip if possible. Airport arrival is not the best time to troubleshoot app setup.
-
-## 6. Plan Transport Realistically
-
-China’s high-speed rail can be excellent for travel between cities, but stations can be huge. Leave more time than you would in a small European train station.
-
-Before departure:
-
-- Know your arrival airport or station.
-- Save your hotel address.
-- Check whether your first transfer is by metro, taxi, ride-hailing, or hotel pickup.
-- For intercity travel, check 12306 or a trusted booking platform.
-
-## 7. Check Hotel Details
-
-Use hotels that clearly accept foreign guests and can process foreign passports. Most major hotels can, but very small local properties may not be ideal for a first trip.
-
-Save:
-
-- Hotel name in Chinese.
+- Hotel name in English and Chinese.
 - Full address in Chinese.
 - Phone number.
 - Booking confirmation.
-- Check-in time.
+- Airport, station, or first-transfer plan.
 
-## 8. Pack Practical Backup Items
-
-Useful items include:
-
-- Power adapter.
-- Portable charger.
-- Backup bank card.
-- Cash.
-- Printed or offline copies of bookings.
-- Medication with basic documentation if needed.
-- A translation card for allergies or dietary restrictions.
-
-## Final Pre-Flight Checklist
-
-Before you leave for the airport, confirm:
-
-- Entry route is legal and current.
-- Payment app opens and card is linked if possible.
-- Internet plan is ready.
-- Translation app works offline or with your chosen data plan.
-- First hotel address is saved in Chinese.
-- Important documents are available offline.
-
-A prepared China trip can feel surprisingly smooth. An unprepared one can feel confusing in the first few hours. Do the boring setup early; your future self at the airport will thank you.
+If you plan to use trains, review your route before arrival instead of solving it on the platform. Large stations can feel more like airports than neighborhood rail stops.
 
 ## Common Mistakes
 
-Even a well-prepared traveler can miss something. These mistakes are the most frequent among first-time visitors:
+Common first-trip mistakes include:
 
-- **Assuming credit cards work everywhere.** Many small restaurants, taxis, convenience stores, and local businesses in China operate on mobile payment or cash. Arriving with only a Visa or Mastercard can leave you unable to pay for basic purchases. Prepare Alipay or WeChat Pay before departure.
+- arriving with only one payment method,
+- assuming airport Wi-Fi will solve internet access,
+- saving hotel details only in English,
+- leaving app setup until after landing,
+- underestimating how much smoother day one feels with offline backups.
 
-- **Not having any internet access for the first day.** Airport Wi-Fi often requires SMS verification, which does not work if your phone has no roaming or local SIM. Without data, you cannot use maps, payment, translation, ride-hailing, or contact your hotel. Decide your internet plan before you leave.
-
-- **Overpacking the itinerary and underestimating travel time.** China's cities are large, and train stations can be the size of international airports. A plan that looks neat on a map may mean 4-hour station transfers and exhausted evenings. Two or three cities in 10 days is a better pace for a first trip.
-
-- **Saving hotel addresses only in English.** Taxi drivers, metro signs, and local staff may not recognize the English name of your hotel. Always save the address in Chinese characters on your phone or on a printed card.
-
-- **Confusing visa-free entry types.** Unilateral visa-free access, mutual visa-free access, and 240-hour visa-free transit are separate rules. Using the wrong definition at the border can mean being denied entry. Check official sources, not just blog summaries.
-
-- **Forgetting that China has major holiday rushes.** During Chinese New Year, Golden Week, and other national holidays, train tickets sell out weeks in advance, prices rise, and attractions are packed. Check the calendar before booking.
-
-- **Not downloading offline translation and maps.** Internet access may be slower or intermittent in some areas. Without offline tools, understanding a menu, a station sign, or a taxi conversation becomes much harder.
+The strongest pattern is simple: boring preparation usually creates a much easier trip.
 
 ## Check Official Sources Before You Travel
 
-This checklist is a practical guide, not a legal or authoritative travel document. Always verify passport, visa, health, and customs requirements against official government sources before departure.
+This checklist is practical guidance, not a legal authority. Always confirm entry rules, payment policies, and transport details with official sources before your trip.
 
-- [National Immigration Administration — arrival card and visa policies](https://en.nia.gov.cn/)
-- [Chinese Government — latest travel advisories](https://english.www.gov.cn/)
+- [National Immigration Administration](https://en.nia.gov.cn/)
+- [Chinese Government — Guide to Payment Services in China](https://english.www.gov.cn/news/202404/11/content_WS6617c858c6d0868f4e8e5f4d.html)
+- [Alipay+ mainland guide](https://www.alipayplus.com/my/pay-in-the-chinese-mainland/)
 - [China Travel Made Easy — official source library](/china-travel/sources/)
 
 ## Related Guides
 
 - [How to Pay in China as a Tourist](/china-travel/articles/how-to-pay-in-china-tourist/)
-- [China 240-Hour Visa-Free Transit Explained](/china-travel/articles/china-240-hour-visa-free-transit/)
-- [How to Book High-Speed Train Tickets in China as a Foreigner](/china-travel/articles/how-to-book-high-speed-train-tickets-china-foreigner/)
+- [How to Use Alipay in China as a Foreigner](/china-travel/articles/how-to-use-alipay-in-china-foreigner/)
+- [How to Use WeChat Pay in China as a Foreigner](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/)
+- [Alipay Not Working in China for Foreign Tourists](/china-travel/articles/alipay-not-working-in-china-foreign-tourists/)
+- [WeChat Pay Not Working in China for Foreigners](/china-travel/articles/wechat-pay-not-working-in-china-foreigners/)

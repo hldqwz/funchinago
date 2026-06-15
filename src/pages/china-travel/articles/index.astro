@@ -3,7 +3,9 @@ import Layout from '../../../layouts/ChinaTravelLayout.astro';
 import { getCollection } from 'astro:content';
 import { portalSections } from '../../../data/chinaStarterPortal';
 
-const articles = (await getCollection('chinaTravel'))
+const articleSlug = (id: string) => id.replace(/\.md$/, '');
+
+const articles = (await getCollection('china-travel'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const stageLabels = {
@@ -69,7 +71,7 @@ const cityCount = new Set(
       </div>
 
       {featureArticle && (
-        <a class="hero-feature" href={`/china-travel/articles/${featureArticle.id}/`}>
+        <a class="hero-feature" href={`/china-travel/articles/${articleSlug(featureArticle.id)}/`}>
           {featureArticle.data.hero_image && <img src={featureArticle.data.hero_image} alt={`Featured article cover for ${featureArticle.data.title}`} loading="eager" />}
           <div>
             <span>Freshest read</span>
@@ -105,7 +107,7 @@ const cityCount = new Set(
 
         {group.featured && (
           <div class="stage-layout">
-            <a class="featured-card" href={`/china-travel/articles/${group.featured.id}/`}>
+            <a class="featured-card" href={`/china-travel/articles/${articleSlug(group.featured.id)}/`}>
               {group.featured.data.hero_image && <img src={group.featured.data.hero_image} alt={`Featured cover for ${group.featured.data.title}`} />}
               <div>
                 <span>{stageLabels[group.stage]}</span>
@@ -125,7 +127,7 @@ const cityCount = new Set(
                     <div class="tags">
                       {article.data.tags.slice(0, 3).map((tag) => <span>{tag}</span>)}
                     </div>
-                    <h3><a href={`/china-travel/articles/${article.id}/`}>{article.data.title}</a></h3>
+                    <h3><a href={`/china-travel/articles/${articleSlug(article.id)}/`}>{article.data.title}</a></h3>
                     <p>{article.data.description}</p>
                     <time datetime={article.data.updatedAt.toISOString()}>
                       Updated {article.data.updatedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}

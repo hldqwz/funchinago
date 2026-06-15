@@ -190,6 +190,46 @@
       "trustLevel": "media-context",
       "useFor": "Recent media context on Tencent and PayPal World support for inbound tourist payment convenience; use Tencent official source as authority",
       "lastChecked": "2026-06-02"
+    },
+    {
+      "id": "apple-pay-setup-2026",
+      "title": "Set up Apple Pay",
+      "url": "https://support.apple.com/en-us/108398",
+      "authority": "Apple Support",
+      "category": "payments",
+      "trustLevel": "platform-official",
+      "useFor": "Official Apple Pay setup guidance, including China mainland notes and cross-border card context",
+      "lastChecked": "2026-06-15"
+    },
+    {
+      "id": "apple-pay-where-to-use-2026",
+      "title": "Learn where to use Apple Pay",
+      "url": "https://support.apple.com/en-us/120364",
+      "authority": "Apple Support",
+      "category": "payments",
+      "trustLevel": "platform-official",
+      "useFor": "Official Apple Pay merchant acceptance and NFC use guidance, including China mainland notes",
+      "lastChecked": "2026-06-15"
+    },
+    {
+      "id": "google-wallet-supported-countries-2026",
+      "title": "Supported countries for Google Wallet & tap to pay",
+      "url": "https://support.google.com/wallet/answer/12060037?hl=en",
+      "authority": "Google Wallet Help",
+      "category": "payments",
+      "trustLevel": "platform-official",
+      "useFor": "Official Google Wallet country and tap-to-pay support context for traveler payment planning",
+      "lastChecked": "2026-06-15"
+    },
+    {
+      "id": "google-wallet-pay-in-store-2026",
+      "title": "Pay in store with Google Wallet",
+      "url": "https://support.google.com/wallet/answer/14188457?hl=en",
+      "authority": "Google Wallet Help",
+      "category": "payments",
+      "trustLevel": "platform-official",
+      "useFor": "Official Google Wallet contactless in-store payment guidance for NFC-capable devices",
+      "lastChecked": "2026-06-15"
     }
   ]
 }

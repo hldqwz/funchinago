@@ -1,8 +1,7 @@
 import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
 
-const chinaTravel = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: 'src/content/china-travel' }),
+const chinaTravelCollection = defineCollection({
+  type: 'content',
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
@@ -20,4 +19,6 @@ const chinaTravel = defineCollection({
   }),
 });
 
-export const collections = { chinaTravel };
+export const collections = {
+  'china-travel': chinaTravelCollection,
+};

@@ -1,22 +1,26 @@
 ---
 import Layout from '../../../layouts/ChinaTravelLayout.astro';
-import { getCollection, getEntry, render } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import sourceRegistry from '../../../data/chinaTravelSources.json';
 
+function articleSlug(id: string) {
+  return id.replace(/\.md$/, '');
+}
+
 export async function getStaticPaths() {
-  const articles = await getCollection('chinaTravel');
-  return articles.map((article) => ({ params: { slug: article.id } }));
+  const articles = await getCollection('china-travel');
+  return articles.map((article) => ({ params: { slug: article.id.replace(/\.md$/, '') } }));
 }
 
 const { slug } = Astro.params;
-const article = await getEntry('chinaTravel', slug!);
+const allArticles = await getCollection('china-travel');
+const article = allArticles.find((entry) => articleSlug(entry.id) === slug);
 
 if (!article) {
   return Astro.redirect('/china-travel/articles/', 301);
 }
 
 const { Content } = await render(article);
-const allArticles = await getCollection('chinaTravel');
 const sources = article.data.officialSources
   .map((id) => sourceRegistry.sources.find((source) => source.id === id))
   .filter(Boolean);
@@ -36,7 +40,7 @@ const relatedArticles = allArticles
   .map(({ candidate }) => candidate);
 
 const siteUrl = Astro.site ?? new URL("https://funchinago.com");
-const articleUrl = new URL(`/china-travel/articles/${article.id}/`, siteUrl).toString();
+const articleUrl = new URL(`/china-travel/articles/${articleSlug(article.id)}/`, siteUrl).toString();
 const articleImage = article.data.hero_image
   ? new URL(article.data.hero_image, siteUrl).toString()
   : undefined;
@@ -118,7 +122,7 @@ const articleSchema = {
           </div>
           <div class="related-grid">
             {relatedArticles.map((related) => (
-              <a class="related-card" href={`/china-travel/articles/${related.id}/`}>
+              <a class="related-card" href={`/china-travel/articles/${articleSlug(related.id)}/`}>
                 {related.data.hero_image && <img src={related.data.hero_image} alt={`Cover image for ${related.data.title}`} />}
                 <div class="related-copy">
                   <span>{related.data.stage.replace('-', ' ')}</span>

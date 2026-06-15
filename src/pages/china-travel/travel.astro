@@ -1,8 +1,11 @@
 ---
 import Layout from "../../layouts/ChinaTravelLayout.astro";
 import { getCollection } from "astro:content";
+import { travelPaymentSpotlight } from "../../data/chinaStarterPortal";
 
-const travelArticles = (await getCollection("chinaTravel"))
+const articleSlug = (id: string) => id.replace(/\.md$/, "");
+
+const travelArticles = (await getCollection("china-travel"))
   .filter((article) => article.data.section === "travel")
   .sort((a, b) => b.data.updatedAt.getTime() - a.data.updatedAt.getTime());
 ---
@@ -33,9 +36,27 @@ const travelArticles = (await getCollection("chinaTravel"))
       />
     </section>
 
+    <section class="payment-spotlight feature-accent" aria-labelledby="payment-spotlight-title">
+      <div class="payment-spotlight-copy">
+        <p class="eyebrow">Payment planning</p>
+        <h2 id="payment-spotlight-title">Start with the money questions most visitors actually search.</h2>
+        <p class="lede compact">
+          Search Console is already telling us that payment setup is one of the first trust tests for FunChinaGo. Use this cluster first, then move into visas, apps, and transport.
+        </p>
+      </div>
+      <div class="payment-spotlight-grid">
+        {travelPaymentSpotlight.map((item) => (
+          <a class="payment-spotlight-card" href={item.href}>
+            <strong>{item.title}</strong>
+            <p>{item.text}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
     <section class="article-grid" aria-label="Travel planning guides">
       {travelArticles.map((article) => (
-        <a class="article-card" href={`/china-travel/articles/${article.id}/`}>
+        <a class="article-card" href={`/china-travel/articles/${articleSlug(article.id)}/`}>
           {article.data.hero_image && <img src={article.data.hero_image} alt={`Cover image for ${article.data.title}`} loading="lazy" />}
           <div>
             <span>{article.data.stage.replace("-", " ")}</span>
@@ -145,6 +166,53 @@ const travelArticles = (await getCollection("chinaTravel"))
     gap: 1rem;
   }
 
+  .payment-spotlight {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    padding: clamp(1.2rem, 3vw, 1.8rem);
+  }
+
+  .payment-spotlight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  .payment-spotlight-card {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface-strong);
+    color: var(--text);
+    text-decoration: none;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+  }
+
+  .payment-spotlight-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-lg);
+    text-decoration: none;
+  }
+
+  .payment-spotlight-card strong {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.22;
+    letter-spacing: -0.03em;
+  }
+
+  .payment-spotlight-card p {
+    margin-top: 0.4rem;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.52;
+  }
+
   .article-card {
     display: block;
     overflow: hidden;
@@ -213,6 +281,14 @@ const travelArticles = (await getCollection("chinaTravel"))
       grid-template-columns: 1fr;
     }
 
+    .payment-spotlight {
+      grid-template-columns: 1fr;
+    }
+
+    .payment-spotlight-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
     .article-grid {
       grid-template-columns: 1fr 1fr;
     }
@@ -221,6 +297,10 @@ const travelArticles = (await getCollection("chinaTravel"))
   @media (max-width: 620px) {
     .section-page {
       padding: 1.35rem 1rem 3rem;
+    }
+
+    .payment-spotlight-grid {
+      grid-template-columns: 1fr;
     }
 
     .article-grid {

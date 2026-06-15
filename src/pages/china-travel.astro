@@ -5,6 +5,7 @@ import {
   featuredCity,
   homepageTools,
   lifeCultureDoorways,
+  paymentQuickLinks,
   startHereCards,
 } from "../data/chinaStarterPortal";
 ---
@@ -31,6 +32,15 @@ import {
             <a href="/china-travel/sources/">Open source library</a>
             <a href="/china-travel/articles/">Browse all guides</a>
           </div>
+        </div>
+        <div class="hero-payment-strip" aria-label="Payment quick start">
+          {paymentQuickLinks.map((item) => (
+            <a class="payment-chip" href={item.href}>
+              <span>{item.eyebrow}</span>
+              <strong>{item.title}</strong>
+              <p>{item.text}</p>
+            </a>
+          ))}
         </div>
       </div>
 
@@ -231,6 +241,55 @@ import {
   .hero-trust-links a {
     color: var(--utility);
     font-weight: 850;
+  }
+
+  .hero-payment-strip {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+
+  .payment-chip {
+    display: block;
+    padding: 0.95rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface-muted);
+    color: var(--text);
+    text-decoration: none;
+    transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+  }
+
+  .payment-chip:hover {
+    transform: translateY(-1px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+  }
+
+  .payment-chip span {
+    display: inline-flex;
+    margin-bottom: 0.35rem;
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .payment-chip strong {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+  }
+
+  .payment-chip p {
+    margin-top: 0.35rem;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.5;
   }
 
   .button {
@@ -665,6 +724,10 @@ import {
 
     .hero-trust-links {
       margin-top: 0.55rem;
+    }
+
+    .hero-payment-strip {
+      grid-template-columns: 1fr;
     }
 
     .start-grid,

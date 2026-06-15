@@ -3,7 +3,9 @@ import Layout from "../../layouts/ChinaTravelLayout.astro";
 import { getCollection } from "astro:content";
 import { lifeCultureDoorways } from "../../data/chinaStarterPortal";
 
-const cultureArticles = (await getCollection("chinaTravel"))
+const articleSlug = (id: string) => id.replace(/\.md$/, "");
+
+const cultureArticles = (await getCollection("china-travel"))
   .filter((article) => article.data.section === "life-culture")
   .sort((a, b) => b.data.updatedAt.getTime() - a.data.updatedAt.getTime());
 ---
@@ -54,7 +56,7 @@ const cultureArticles = (await getCollection("chinaTravel"))
 
       <div class="article-grid">
         {cultureArticles.map((article) => (
-          <a class="article-card" href={`/china-travel/articles/${article.id}/`}>
+          <a class="article-card" href={`/china-travel/articles/${articleSlug(article.id)}/`}>
             {article.data.hero_image && <img src={article.data.hero_image} alt={`Cover image for ${article.data.title}`} loading="lazy" />}
             <div>
               <h3>{article.data.title}</h3>

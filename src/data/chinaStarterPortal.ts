@@ -156,6 +156,51 @@ export const homepageTools = [
   },
 ] as const;
 
+export const paymentQuickLinks = [
+  {
+    eyebrow: 'Payment hub',
+    title: 'Start with the full China payment guide',
+    text: 'See the safest tourist setup across Alipay, WeChat Pay, cards, and cash before you choose one method.',
+    href: '/china-travel/articles/how-to-pay-in-china-tourist/',
+  },
+  {
+    eyebrow: 'Most searched',
+    title: 'Set up Alipay first',
+    text: 'For many visitors, Alipay is the easiest first payment app to prepare before arrival.',
+    href: '/china-travel/articles/how-to-use-alipay-in-china-foreigner/',
+  },
+  {
+    eyebrow: 'Backup route',
+    title: 'Prepare WeChat Pay too',
+    text: 'WeChat often matters when local service flows and mini programs enter the picture.',
+    href: '/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/',
+  },
+  {
+    eyebrow: 'Arrival safety',
+    title: 'Know when cash still helps',
+    text: 'A little cash can still save your first day when data, cards, or app linking gets messy.',
+    href: '/china-travel/articles/do-you-need-cash-in-china-as-a-tourist/',
+  },
+] as const;
+
+export const travelPaymentSpotlight = [
+  {
+    title: 'How to pay in China as a tourist',
+    text: 'Use this as the main decision page before choosing any single payment method.',
+    href: '/china-travel/articles/how-to-pay-in-china-tourist/',
+  },
+  {
+    title: 'Can foreign credit cards work in China?',
+    text: 'Set realistic expectations for hotels, malls, contactless terminals, and smaller merchants.',
+    href: '/china-travel/articles/can-foreign-credit-cards-work-in-china/',
+  },
+  {
+    title: 'Can you use Apple Pay or Google Pay in China?',
+    text: 'Helpful for long-tail searchers comparing contactless wallets with local QR payment apps.',
+    href: '/china-travel/articles/can-you-use-apple-pay-or-google-pay-in-china/',
+  },
+] as const;
+
 export const featuredCity = {
   city: 'Guangzhou',
   eyebrow: 'This week',
