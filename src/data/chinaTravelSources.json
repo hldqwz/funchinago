@@ -230,6 +230,36 @@
       "trustLevel": "platform-official",
       "useFor": "Official Google Wallet contactless in-store payment guidance for NFC-capable devices",
       "lastChecked": "2026-06-15"
+    },
+    {
+      "id": "chengdu-panda-base",
+      "title": "Chengdu Research Base of Giant Panda Breeding",
+      "url": "https://www.panda.org.cn/en/",
+      "authority": "Chengdu Research Base of Giant Panda Breeding",
+      "category": "cities",
+      "trustLevel": "official",
+      "useFor": "Official reference for Chengdu panda base visitor planning, conservation context, opening notices, and reservation checks",
+      "lastChecked": "2026-06-22"
+    },
+    {
+      "id": "unesco-qingcheng-dujiangyan",
+      "title": "Mount Qingcheng and the Dujiangyan Irrigation System",
+      "url": "https://whc.unesco.org/en/list/1001/",
+      "authority": "UNESCO World Heritage Centre",
+      "category": "cities",
+      "trustLevel": "official",
+      "useFor": "UNESCO reference for Mount Qingcheng and Dujiangyan as a Chengdu-area heritage day trip",
+      "lastChecked": "2026-06-22"
+    },
+    {
+      "id": "chengdu-airport",
+      "title": "Chengdu Tianfu International Airport",
+      "url": "https://www.sctfia.com/",
+      "authority": "Chengdu Tianfu International Airport",
+      "category": "transport",
+      "trustLevel": "official",
+      "useFor": "Official airport reference for Chengdu arrivals, airport services, and ground transport checks",
+      "lastChecked": "2026-06-22"
     }
   ]
 }
