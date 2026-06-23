@@ -1,13 +1,13 @@
 ---
 title: "Chengdu Travel Guide for First-Time Visitors: Pandas, Hotpot and Tea Houses"
 date: 2026-06-22
-updatedAt: 2026-06-22
+updatedAt: 2026-06-23
 description: "A practical and human Chengdu travel guide for first-time visitors to China, covering pandas, hotpot, teahouses, neighborhoods, day trips, transport, payment and common mistakes."
 stage: "discover"
 section: "cities"
 hero_image: "/china-travel/images/chengdu-peoples-park-teahouse.jpg"
 tags: ["Chengdu", "city guide", "pandas", "food", "first-time"]
-officialSources: ["chengdu-panda-base", "unesco-qingcheng-dujiangyan", "chengdu-airport", "railway-12306-en", "gov-payment-guide-2024"]
+officialSources: ["chengdu-panda-base", "unesco-qingcheng-dujiangyan", "chengdu-airport", "railway-12306-en", "gov-payment-guide-2024", "unesco-chengdu-creative-city-gastronomy"]
 relatedTools:
   - title: "China City Picker"
     href: "/tools/china-city-picker/"
@@ -79,6 +79,14 @@ Three days gives you time to make a small mistake and recover from it: ordering 
 
 Stay longer if you want to use Chengdu as a base for deeper Sichuan travel. With four or five days, the city becomes less of a destination and more of a comfortable base: one foot in urban China, one foot toward mountains, rivers, and the Tibetan edges of Sichuan.
 
+## Best Time to Visit Chengdu
+
+Spring and autumn are usually the easiest seasons for a first Chengdu trip. The weather is more comfortable, parks and tea houses feel pleasant, and you are less likely to build the whole day around heat, rain, or heavy indoor breaks.
+
+Summer can still be fun, especially if your main goal is food, but it is often humid and hot. If pandas are a priority, go early in the morning. Later in the day, especially in warmer weather, they may be less active or harder to see clearly.
+
+Winter can be gray and damp, but it suits Chengdu better than many cities: hotpot feels right, tea houses still work, and the slower rhythm makes sense. The main caution is crowding. Chinese public holidays such as National Day and Spring Festival can make attractions, trains, and hotels much busier, so check opening hours, reservation rules, and transport schedules before you lock the route.
+
 ## Best Things to Do in Chengdu
 
 ### 1. See the pandas early in the morning
@@ -87,9 +95,11 @@ For many visitors, the Chengdu Research Base of Giant Panda Breeding is the reas
 
 Go early. Not "after breakfast at 10:30" early, but properly early. Pandas are usually more active in the morning, especially when eating. Later in the day, especially in warm weather, they may become sleepy and retreat indoors. That can still be cute, but it is not the same as watching a panda sit with ridiculous seriousness over a pile of bamboo.
 
-Do not treat the Panda Base like a quick photo stop. It is larger than many visitors expect, and the walking can add up. Wear comfortable shoes, bring water, and check the official reservation rules before you go. You may need real-name online booking and the original ID document used for the reservation.
+Do not treat the Panda Base like a quick photo stop. It is larger than many visitors expect, and the walking can add up. Wear comfortable shoes, bring water, and check the official reservation rules before you go. The official Panda Base ticket page currently says visitors should make an online real-name reservation and bring the valid ID document used for the booking. Reservation channels and entry rules can change, so check the official Panda Base ticket page before you go.
 
 A good panda visit is not about seeing every enclosure. It is about giving yourself enough time to slow down, watch properly, and accept that the animals are not performers. They are pandas. Their schedule is mostly bamboo, sleep, and complete emotional independence from your travel plans.
+
+![Giant panda at Chengdu Panda Base](/china-travel/images/chengdu-giant-panda.jpg)
 
 ### 2. Sit in a Chengdu tea house
 
@@ -111,6 +121,8 @@ If you do not eat very spicy food, do not try to prove yourself. Ask for a split
 
 Hotpot is better when you stop treating it as a challenge. It is not a test of toughness. It is a shared table.
 
+![Chengdu hotpot with red spicy broth](/china-travel/images/chengdu-hotpot.jpg)
+
 ### 4. Walk through Jinli or Kuanzhai Alley, but keep expectations realistic
 
 Jinli and Kuanzhai Alley are popular for a reason: red lanterns, old-style architecture, snacks, souvenirs, and easy photos. They can also feel commercial, crowded, and polished for tourism.
@@ -120,6 +132,8 @@ That does not mean you should skip them. It means you should know what they are.
 Go in the late afternoon or evening if you want atmosphere. Walk slowly. Try a snack or two. Take photos, but do not expect the most authentic hidden corner of Chengdu. These places work best as light city walks, especially if you are already nearby.
 
 If you want a stronger sense of everyday life, pair them with a tea house, a park, a local noodle shop, or a neighborhood walk away from the main tourist drag.
+
+![Jinli Street in Chengdu](/china-travel/images/chengdu-jinli-street.jpg)
 
 ### 5. Spend an evening around Taikoo Li and Chunxi Road
 
@@ -154,6 +168,8 @@ Pick one, not all.
 Leshan is best if you want a major cultural sight and do not mind a full travel day. Mount Qingcheng is better if you want green scenery, temples, and a calmer mountain atmosphere. Dujiangyan is good if you enjoy history, engineering, and UNESCO-listed heritage.
 
 Do not try to do too much in one day. Chengdu is not a city that rewards rushing.
+
+![Mount Qingcheng near Chengdu](/china-travel/images/chengdu-mount-qingcheng.jpg)
 
 ## What to Eat in Chengdu
 
@@ -251,7 +267,13 @@ If you are new to China trains, read our [high-speed rail guide for foreigners](
 
 ### Where to stay
 
-For first-time visitors, Chunxi Road / Taikoo Li is convenient, central, and easy for food, shopping, and transport. Tianfu Square is also central. If you want a quieter cultural feel, look near Wenshu Monastery or Qingyang, but check metro access carefully.
+For first-time visitors, Chunxi Road / Taikoo Li is usually the easiest base. It is convenient for food, shopping, metro access, taxis, and evening walks, and it makes the first day feel less confusing.
+
+Tianfu Square is also useful if you want a central location for a short stay. It is practical rather than especially atmospheric, but it can work well when you care more about transport than neighborhood charm.
+
+The Wenshu Monastery area can feel calmer and more cultural, with snacks, older streets, and a softer pace. It is a good fit if you want a less glossy base, but check the exact metro distance before booking.
+
+In Chengdu, being near a metro station often matters more than chasing a famous hotel district. A slightly less trendy area with easy metro access can make pandas, tea houses, train stations, and day trips much easier.
 
 ## Common Mistakes First-Time Visitors Make in Chengdu
 
@@ -315,10 +337,6 @@ Policies, opening hours, booking systems, and transport arrangements can change.
 - [How to Book High-Speed Train Tickets in China as a Foreigner](/china-travel/articles/how-to-book-high-speed-train-tickets-china-foreigner/)
 - [Best Places to Visit in China for First-Time Visitors](/china-travel/articles/best-places-to-visit-in-china-first-time/)
 
-## Image Note
-
-Hero image: real photo of a tea house in People's Park, Chengdu, from Wikimedia Commons. Photographer: Daderot. License: CC0.
-
 ## Final Thoughts
 
 Chengdu is a good first-China city because it gives visitors permission to breathe.
@@ -328,3 +346,5 @@ It has famous things: pandas, hotpot, tea houses, Jinli, Kuanzhai, Taikoo Li, Le
 Come with a plan, but not a military schedule. Wake early for pandas. Sit too long over tea. Order something you cannot fully identify. Let one afternoon remain loose.
 
 Some cities impress you by being efficient. Chengdu wins by being warm.
+
+Photo credits: People's Park tea house - Daderot, CC0; Giant panda - Mikael Haggstrom, Public Domain; Chengdu hotpot - Prince Roy, CC BY 2.0; Jinli Street - Daderot, CC0; Mount Qingcheng - JianEn Yu, CC BY 2.0.

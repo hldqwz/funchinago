@@ -260,6 +260,16 @@
       "trustLevel": "official",
       "useFor": "Official airport reference for Chengdu arrivals, airport services, and ground transport checks",
       "lastChecked": "2026-06-22"
+    },
+    {
+      "id": "unesco-chengdu-creative-city-gastronomy",
+      "title": "Chengdu - UNESCO Creative Cities Network",
+      "url": "https://www.unesco.org/en/creative-cities/chengdu",
+      "authority": "UNESCO",
+      "category": "culture",
+      "trustLevel": "official",
+      "useFor": "Confirming Chengdu's UNESCO Creative City of Gastronomy status",
+      "lastChecked": "2026-06-23"
     }
   ]
 }

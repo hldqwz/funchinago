@@ -115,8 +115,11 @@ for (const tool of homepageTools) {
 }
 
 const featuredCity = readExportedObject(portalData, 'featuredCity');
-assert.equal(featuredCity.city, 'Guangzhou', 'featured city should keep Guangzhou as the weekly visual highlight');
+assert.equal(featuredCity.city, 'Chengdu', 'featured city should show Chengdu as the current weekly visual highlight');
 assertRealRoute(featuredCity.href, 'featured city');
 assertImageExists(featuredCity.image, 'featured city');
+assert.match(featuredCity.href, /chengdu-travel-guide-first-time-visitors\/$/, 'featured city should link to the current Chengdu guide');
+assert.ok(featuredCity.title.includes('Chengdu'), 'featured city title should name Chengdu');
+assert.ok(featuredCity.alt.includes('Chengdu'), 'featured city image alt text should name Chengdu');
 
 console.log('chinaStarterPortalRoutes tests passed');

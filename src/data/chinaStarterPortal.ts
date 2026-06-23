@@ -202,10 +202,11 @@ export const travelPaymentSpotlight = [
 ] as const;
 
 export const featuredCity = {
-  city: 'Guangzhou',
+  city: 'Chengdu',
   eyebrow: 'This week',
-  title: 'Try Guangzhou first if you travel for food.',
-  text: 'A warm, great-value tier-1 city with Cantonese breakfast, old neighborhoods, river walks, markets, and an easier pace than Beijing or Shanghai.',
-  href: '/china-travel/articles/guangzhou-travel-guide-first-time-visitors/',
-  image: '/china-travel/images/article-weekly-guangzhou.jpg',
+  title: "This Week's City Pick: Chengdu",
+  text: 'Chengdu is a gentle first-China city for travelers who want pandas, hotpot, tea houses, and a slower introduction to urban China.',
+  href: '/china-travel/articles/chengdu-travel-guide-first-time-visitors/',
+  image: '/china-travel/images/chengdu-peoples-park-teahouse.jpg',
+  alt: "People drinking tea at a traditional teahouse in People's Park, Chengdu",
 } as const;

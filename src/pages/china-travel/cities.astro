@@ -50,12 +50,12 @@ const cityArticles = (await getCollection("china-travel"))
     </section>
 
     <section class="feature-block feature-accent">
-      <img class="feature-image" src={featuredCity.image} alt={`${featuredCity.city} food and neighborhood travel scene`} loading="lazy" />
+      <img class="feature-image" src={featuredCity.image} alt={featuredCity.alt} loading="lazy" />
       <div>
         <p class="eyebrow">Weekly recommendation</p>
         <h2>{featuredCity.title}</h2>
         <p>{featuredCity.text}</p>
-        <a class="feature-link" href={featuredCity.href}>Read the Guangzhou guide</a>
+        <a class="feature-link" href={featuredCity.href}>Read the Chengdu guide</a>
       </div>
     </section>
 

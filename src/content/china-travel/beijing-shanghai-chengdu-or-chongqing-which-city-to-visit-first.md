@@ -74,6 +74,7 @@ Why choose it:
 
 - It feels relaxed without being boring.
 - It is a strong food city for first-time visitors.
+- It now has a dedicated [Chengdu first-time visitor guide](/china-travel/articles/chengdu-travel-guide-first-time-visitors/) if you want pandas, hotpot, tea houses, and a slower route.
 
 Watch out for:
 
@@ -111,6 +112,7 @@ If you want the strongest visual surprise, add Chongqing after one easier city.
 ## Related Guides
 
 - [Best Places to Visit in China for First-Time Visitors](/china-travel/articles/best-places-to-visit-in-china-first-time/)
+- [Chengdu Travel Guide for First-Time Visitors](/china-travel/articles/chengdu-travel-guide-first-time-visitors/)
 - [Best China Itineraries by Travel Style](/china-travel/articles/best-china-itineraries-by-travel-style/)
 - [China City Picker](/tools/china-city-picker/)
 - [How to Book High-Speed Train Tickets in China as a Foreigner](/china-travel/articles/how-to-book-high-speed-train-tickets-china-foreigner/)
