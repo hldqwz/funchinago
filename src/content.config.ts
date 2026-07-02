@@ -11,6 +11,7 @@ const chinaTravelCollection = defineCollection({
     section: z.enum(['start-here', 'travel', 'cities', 'life-culture', 'tools']),
     tags: z.array(z.string()).default([]),
     hero_image: z.string().optional(),
+    hero_alt: z.string().optional(),
     officialSources: z.array(z.string()).default([]),
     relatedTools: z.array(z.object({
       title: z.string(),

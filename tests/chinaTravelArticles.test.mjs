@@ -125,6 +125,13 @@ for (const file of files) {
   const heroPath = path.resolve('public', heroMatch[1].replace(/^\//, ''));
   assert.ok(fs.existsSync(heroPath), `${file} hero image does not exist: ${heroMatch[1]}`);
 
+  if (file === 'shanghai-travel-guide-first-time-visitors.md') {
+    assert.ok(
+      frontmatter.includes('hero_alt: "Shanghai skyline seen from the Bund across the Huangpu River"'),
+      'Shanghai guide should use a specific hero image alt text',
+    );
+  }
+
   const officialSources = extractYamlList(frontmatter, 'officialSources');
   if (officialSources) {
     assert.ok(officialSources.length > 0, `${file} should cite at least one source id`);

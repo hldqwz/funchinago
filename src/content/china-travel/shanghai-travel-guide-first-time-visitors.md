@@ -6,6 +6,7 @@ description: "A practical and human Shanghai travel guide for first-time visitor
 stage: "discover"
 section: "cities"
 hero_image: "/china-travel/images/shanghai-bund-skyline.jpg"
+hero_alt: "Shanghai skyline seen from the Bund across the Huangpu River"
 tags: ["Shanghai", "city guide", "first-time", "metro", "food"]
 officialSources: ["shanghai-official-travel", "meet-in-shanghai", "shanghai-museum", "shanghai-airport", "shanghai-maglev", "railway-12306-en", "gov-payment-guide-2024"]
 relatedTools:
