@@ -270,6 +270,56 @@
       "trustLevel": "official",
       "useFor": "Confirming Chengdu's UNESCO Creative City of Gastronomy status",
       "lastChecked": "2026-06-23"
+    },
+    {
+      "id": "shanghai-official-travel",
+      "title": "Travel in Shanghai - Shanghai Municipal Government",
+      "url": "https://english.shanghai.gov.cn/en-TravelinShanghai/index.html",
+      "authority": "Shanghai Municipal Government",
+      "category": "city",
+      "trustLevel": "official",
+      "useFor": "Official Shanghai travel information, attractions, events and visitor guidance",
+      "lastChecked": "2026-07-02"
+    },
+    {
+      "id": "meet-in-shanghai",
+      "title": "Shanghai Travel Guide - Meet in Shanghai",
+      "url": "https://www.meet-in-shanghai.net/en/",
+      "authority": "Shanghai Municipal Administration of Culture and Tourism",
+      "category": "city",
+      "trustLevel": "official",
+      "useFor": "Shanghai tourism promotion, attractions, performances, exhibitions and city travel information",
+      "lastChecked": "2026-07-02"
+    },
+    {
+      "id": "shanghai-museum",
+      "title": "Shanghai Museum",
+      "url": "https://www.shanghaimuseum.net/",
+      "authority": "Shanghai Museum",
+      "category": "culture",
+      "trustLevel": "official",
+      "useFor": "Official museum opening hours, locations, exhibitions and visitor notices",
+      "lastChecked": "2026-07-02"
+    },
+    {
+      "id": "shanghai-airport",
+      "title": "Shanghai Airport Official Website",
+      "url": "https://www.shanghaiairport.com/enhq/index.html",
+      "authority": "Shanghai Airport Authority",
+      "category": "transport",
+      "trustLevel": "official",
+      "useFor": "Official airport information for Pudong and Hongqiao airports",
+      "lastChecked": "2026-07-02"
+    },
+    {
+      "id": "shanghai-maglev",
+      "title": "Shanghai Maglev - Shanghai Airport Official Information",
+      "url": "https://www.shairport.com/ensh/cxf/index.html",
+      "authority": "Shanghai Airport Authority",
+      "category": "transport",
+      "trustLevel": "official",
+      "useFor": "Official Shanghai Maglev operating hours, ticket price and airport transfer information",
+      "lastChecked": "2026-07-02"
     }
   ]
 }

@@ -39,6 +39,8 @@ Shanghai is often the easiest first city for foreign visitors. It has major inte
 
 It is not the most “ancient China” choice, but it is a comfortable place to learn how China works: mobile payment, metro systems, QR ordering, shopping malls, river walks, and high-speed rail connections.
 
+If Shanghai is near the top of your list, use the dedicated [Shanghai travel guide for first-time visitors](/china-travel/articles/shanghai-travel-guide-first-time-visitors/) to plan the Bund, Yu Garden, the former French Concession, food, metro, and airport basics.
+
 Choose Shanghai if you want:
 
 - A smoother arrival experience.
@@ -107,4 +109,5 @@ If you want the strongest visual surprise, choose Shanghai and Chongqing, but pr
 - [China Visa-Free Travel Guide 2026](/china-travel/articles/china-visa-free-travel-guide/)
 - [China Travel Mistakes to Avoid on Your First Trip](/china-travel/articles/china-travel-mistakes-first-trip/)
 - [Beijing, Shanghai, Chengdu, or Chongqing: Which Chinese City Should You Visit First?](/china-travel/articles/beijing-shanghai-chengdu-or-chongqing-which-city-to-visit-first/)
+- [Shanghai Travel Guide for First-Time Visitors](/china-travel/articles/shanghai-travel-guide-first-time-visitors/)
 - [10 Days in China: First-Time Itinerary](/china-travel/articles/ten-days-in-china-first-time-itinerary/)

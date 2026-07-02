@@ -56,6 +56,7 @@ Why choose it:
 
 - It is often the most comfortable first city for foreign visitors.
 - It is a good place to learn how payment, metro, and hotel flows work in China.
+- For a deeper route, read the [Shanghai travel guide for first-time visitors](/china-travel/articles/shanghai-travel-guide-first-time-visitors/).
 
 Watch out for:
 
@@ -112,6 +113,7 @@ If you want the strongest visual surprise, add Chongqing after one easier city.
 ## Related Guides
 
 - [Best Places to Visit in China for First-Time Visitors](/china-travel/articles/best-places-to-visit-in-china-first-time/)
+- [Shanghai Travel Guide for First-Time Visitors](/china-travel/articles/shanghai-travel-guide-first-time-visitors/)
 - [Chengdu Travel Guide for First-Time Visitors](/china-travel/articles/chengdu-travel-guide-first-time-visitors/)
 - [Best China Itineraries by Travel Style](/china-travel/articles/best-china-itineraries-by-travel-style/)
 - [China City Picker](/tools/china-city-picker/)

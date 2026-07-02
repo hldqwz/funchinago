@@ -202,11 +202,11 @@ export const travelPaymentSpotlight = [
 ] as const;
 
 export const featuredCity = {
-  city: 'Chengdu',
+  city: 'Shanghai',
   eyebrow: 'This week',
-  title: "This Week's City Pick: Chengdu",
-  text: 'Chengdu is a gentle first-China city for travelers who want pandas, hotpot, tea houses, and a slower introduction to urban China.',
-  href: '/china-travel/articles/chengdu-travel-guide-first-time-visitors/',
-  image: '/china-travel/images/chengdu-peoples-park-teahouse.jpg',
-  alt: "People drinking tea at a traditional teahouse in People's Park, Chengdu",
+  title: "This Week's City Pick: Shanghai",
+  text: "Shanghai is the easiest first-China city for many travelers: skyline views, old streets, strong metro access, food, museums, and a softer landing into China's big-city rhythm.",
+  href: '/china-travel/articles/shanghai-travel-guide-first-time-visitors/',
+  image: '/china-travel/images/shanghai-bund-skyline.jpg',
+  alt: 'Shanghai skyline seen from the Bund across the Huangpu River',
 } as const;
