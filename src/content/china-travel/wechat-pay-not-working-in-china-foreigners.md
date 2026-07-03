@@ -1,8 +1,8 @@
 ---
-title: "WeChat Pay Not Working in China for Foreigners: What to Do"
+title: "WeChat Pay Not Working in China for Foreigners: What to Try First"
 date: 2026-06-15
-updatedAt: 2026-06-15
-description: "What foreign visitors should do if WeChat Pay is not working in China, including common reasons, immediate recovery steps, backup payment options, and official checks before travel."
+updatedAt: 2026-07-02
+description: "If WeChat Pay fails in China, the problem may be card support, verification, QR-code type, mini programs, or merchant settings. Here is what foreign tourists can try at the counter."
 stage: "before"
 section: "travel"
 hero_image: "/china-travel/images/article-wechatpay-editorial.png"
@@ -127,3 +127,11 @@ Payment support can change, so check official guidance before relying on one app
 - [Tencent — inbound payment updates](https://www.tencent.com/en-us/articles/2202338.html)
 - [Chinese Government — Guide to Payment Services in China](https://english.www.gov.cn/news/202404/11/content_WS6617c858c6d0868f4e8e5f4d.html)
 - [China Travel Made Easy — official source library](/china-travel/sources/)
+
+## Related Guides
+
+- [How to Pay in China as a Tourist](/china-travel/articles/how-to-pay-in-china-tourist/)
+- [How to Use WeChat Pay in China as a Foreigner](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/)
+- [How to Use Alipay in China as a Foreigner](/china-travel/articles/how-to-use-alipay-in-china-foreigner/)
+- [Alipay Not Working in China for Foreign Tourists](/china-travel/articles/alipay-not-working-in-china-foreign-tourists/)
+- [China Travel Checklist Before You Fly](/china-travel/articles/china-travel-checklist-before-you-fly/)

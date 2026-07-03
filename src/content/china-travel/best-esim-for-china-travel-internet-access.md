@@ -1,7 +1,7 @@
 ---
 title: "Best eSIMs for China Travel and Internet Access"
 date: 2026-06-02
-updatedAt: 2026-06-02
+updatedAt: 2026-07-02
 description: "A practical guide to choosing internet access for China travel, comparing eSIM, roaming, local SIM cards, data needs, and backup plans."
 stage: "before"
 section: "travel"
@@ -17,7 +17,7 @@ If your phone has no data after landing, many other systems become harder at the
 
 ## Quick Answer
 
-Most first-time visitors should choose an internet option before arrival: eSIM, international roaming, or a local SIM. eSIM can be convenient if your phone supports it, roaming is often the simplest but may cost more, and local SIM cards can be useful but may require more setup.
+Most first-time visitors should choose an internet option before arrival: eSIM, international roaming, or a local SIM. eSIM can be convenient if your phone supports it, roaming is often the simplest but may cost more, and local SIM cards can be useful but may require more setup. Your internet plan also affects [Alipay](/china-travel/articles/how-to-use-alipay-in-china-foreigner/), [WeChat Pay](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/), maps, translation, and bank verification.
 
 ## Why Internet Matters So Much
 
@@ -33,6 +33,8 @@ Your phone may be needed for:
 - Bank verification.
 
 A weak data plan can turn small problems into stressful problems.
+
+If payment is one of your main worries, pair this internet guide with [How to Pay in China as a Tourist](/china-travel/articles/how-to-pay-in-china-tourist/). Payment apps are much easier to troubleshoot when your phone has stable data.
 
 ## eSIM
 
@@ -116,3 +118,6 @@ Internet access rules, eSIM provider coverage, and service availability can chan
 - [Best Apps for Traveling in China](/china-travel/articles/best-apps-for-traveling-in-china/)
 - [Do You Need a VPN in China? A Traveler's Guide](/china-travel/articles/do-you-need-a-vpn-in-china-travel/)
 - [China Travel Checklist: What to Prepare Before You Fly](/china-travel/articles/china-travel-checklist-before-you-fly/)
+- [How to Pay in China as a Tourist](/china-travel/articles/how-to-pay-in-china-tourist/)
+- [How to Use Alipay in China as a Foreigner](/china-travel/articles/how-to-use-alipay-in-china-foreigner/)
+- [How to Use WeChat Pay in China as a Foreigner](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/)

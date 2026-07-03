@@ -1,8 +1,8 @@
 ---
-title: "Alipay Not Working in China for Foreign Tourists: What to Do"
+title: "Alipay Not Working in China for Foreign Tourists: Common Fixes and Backup Options"
 date: 2026-06-15
-updatedAt: 2026-06-15
-description: "What foreign tourists should do if Alipay stops working in China, including common reasons, quick recovery steps, backup payment options, and official checks before travel."
+updatedAt: 2026-07-02
+description: "Alipay is useful for tourists in China, but foreign cards, verification, QR-code payments, and mini programs can still fail. Learn what to check and what backup payment method to use."
 stage: "before"
 section: "travel"
 hero_image: "/china-travel/images/article-alipay-editorial.png"
@@ -124,3 +124,11 @@ Support rules and visitor flows can change, so verify them before departure.
 - [Alipay+ — Pay in the Chinese mainland](https://www.alipayplus.com/my/pay-in-the-chinese-mainland/)
 - [Chinese Government — Guide to Payment Services in China](https://english.www.gov.cn/news/202404/11/content_WS6617c858c6d0868f4e8e5f4d.html)
 - [China Travel Made Easy — official source library](/china-travel/sources/)
+
+## Related Guides
+
+- [How to Pay in China as a Tourist](/china-travel/articles/how-to-pay-in-china-tourist/)
+- [How to Use Alipay in China as a Foreigner](/china-travel/articles/how-to-use-alipay-in-china-foreigner/)
+- [How to Use WeChat Pay in China as a Foreigner](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/)
+- [WeChat Pay Not Working in China for Foreigners](/china-travel/articles/wechat-pay-not-working-in-china-foreigners/)
+- [China Travel Checklist Before You Fly](/china-travel/articles/china-travel-checklist-before-you-fly/)

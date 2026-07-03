@@ -6,7 +6,6 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) =>
-        page === "https://funchinago.com/" ||
         page.includes("/china-travel/") ||
         page.includes("/tools/china-"),
     }),

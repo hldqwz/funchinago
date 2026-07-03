@@ -181,6 +181,18 @@ export const paymentQuickLinks = [
     text: 'A little cash can still save your first day when data, cards, or app linking gets messy.',
     href: '/china-travel/articles/do-you-need-cash-in-china-as-a-tourist/',
   },
+  {
+    eyebrow: 'Compare apps',
+    title: 'Alipay vs WeChat Pay',
+    text: 'Decide which payment app to set up first and why most tourists should prepare both.',
+    href: '/china-travel/articles/wechat-pay-vs-alipay-for-tourists-china/',
+  },
+  {
+    eyebrow: 'Troubleshooting',
+    title: 'Payment not working?',
+    text: 'Jump to practical fixes for Alipay or WeChat Pay failures at counters, taxis, and QR menus.',
+    href: '/china-travel/articles/alipay-not-working-in-china-foreign-tourists/',
+  },
 ] as const;
 
 export const travelPaymentSpotlight = [
@@ -198,6 +210,44 @@ export const travelPaymentSpotlight = [
     title: 'Can you use Apple Pay or Google Pay in China?',
     text: 'Helpful for long-tail searchers comparing contactless wallets with local QR payment apps.',
     href: '/china-travel/articles/can-you-use-apple-pay-or-google-pay-in-china/',
+  },
+  {
+    title: 'WeChat Pay vs Alipay for tourists',
+    text: 'Use this comparison when deciding whether to set up Alipay, WeChat Pay, or both before flying.',
+    href: '/china-travel/articles/wechat-pay-vs-alipay-for-tourists-china/',
+  },
+] as const;
+
+export const paymentGuideLinks = [
+  {
+    title: 'How to Pay in China as a Tourist',
+    text: 'The hub for Alipay, WeChat Pay, cards, cash, and payment failures.',
+    href: '/china-travel/articles/how-to-pay-in-china-tourist/',
+  },
+  {
+    title: 'Alipay Guide',
+    text: 'Set up Alipay first and know where it can still fail.',
+    href: '/china-travel/articles/how-to-use-alipay-in-china-foreigner/',
+  },
+  {
+    title: 'WeChat Pay Guide',
+    text: 'Prepare WeChat Pay as backup and for mini-program flows.',
+    href: '/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/',
+  },
+  {
+    title: 'Apple Pay / Google Pay Guide',
+    text: 'Understand why phone wallets are not enough for daily payments.',
+    href: '/china-travel/articles/can-you-use-apple-pay-or-google-pay-in-china/',
+  },
+  {
+    title: 'Payment Not Working Guides',
+    text: 'Quick fixes for Alipay and WeChat Pay failures in real checkout situations.',
+    href: '/china-travel/articles/wechat-pay-not-working-in-china-foreigners/',
+  },
+  {
+    title: 'Alipay vs WeChat Pay',
+    text: 'Choose the first app to set up and prepare the right backup.',
+    href: '/china-travel/articles/wechat-pay-vs-alipay-for-tourists-china/',
   },
 ] as const;
 

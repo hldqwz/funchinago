@@ -1,1 +1,4 @@
+/ /china-travel/ 301
+http://funchinago.com/* https://funchinago.com/:splat 301
+https://www.funchinago.com/* https://funchinago.com/:splat 301
 /zh/*     /:splat     301

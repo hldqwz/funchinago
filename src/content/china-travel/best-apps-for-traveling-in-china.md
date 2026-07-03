@@ -1,7 +1,7 @@
 ---
 title: "Best Apps for Traveling in China"
 date: 2026-06-02
-updatedAt: 2026-06-02
+updatedAt: 2026-07-02
 description: "A practical app checklist for China travel, organized by payment, translation, maps, trains, messaging, food, and backup needs."
 stage: "before"
 section: "travel"
@@ -17,7 +17,7 @@ Install the critical apps before you fly. Some setup steps are harder after arri
 
 ## Quick Answer
 
-Prepare apps for payment, translation, maps, messaging, train tickets, booking, and ride-hailing. At minimum, first-time visitors should prepare mobile payment, a translation app, a map option, hotel booking access, and a train-ticket plan if traveling between cities.
+Prepare apps for payment, translation, maps, messaging, train tickets, booking, and ride-hailing. At minimum, first-time visitors should prepare [Alipay](/china-travel/articles/how-to-use-alipay-in-china-foreigner/), [WeChat Pay](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/), a translation app, a map option, hotel booking access, and a train-ticket plan if traveling between cities.
 
 ## Payment Apps
 
@@ -25,12 +25,14 @@ Payment is the first category to solve.
 
 Prepare:
 
-- Alipay.
-- WeChat / WeChat Pay.
+- [Alipay as your first payment app](/china-travel/articles/how-to-use-alipay-in-china-foreigner/).
+- [WeChat / WeChat Pay as backup and communication layer](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/).
 - Your bank app for fraud alerts.
 - A backup card or cash plan.
 
 Do not assume international credit cards will work everywhere. Daily China travel often moves through QR payments.
+
+If payment is your main worry, start with [How to Pay in China as a Tourist](/china-travel/articles/how-to-pay-in-china-tourist/) before choosing the rest of your app stack.
 
 ## Translation Apps
 
@@ -82,5 +84,7 @@ Before departure, prepare:
 ## Related Guides
 
 - [How to Pay in China as a Tourist](/china-travel/articles/how-to-pay-in-china-tourist/)
+- [How to Use Alipay in China as a Foreigner](/china-travel/articles/how-to-use-alipay-in-china-foreigner/)
+- [How to Use WeChat Pay in China as a Foreigner](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/)
 - [How to Book High-Speed Train Tickets in China as a Foreigner](/china-travel/articles/how-to-book-high-speed-train-tickets-china-foreigner/)
 - [China Travel Mistakes to Avoid on Your First Trip](/china-travel/articles/china-travel-mistakes-first-trip/)
