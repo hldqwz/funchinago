@@ -25,6 +25,8 @@ Beijing is the clearest first stop for history. It gives you imperial landmarks,
 
 Xi'an pairs well with Beijing because it adds ancient capital history, the Terracotta Warriors, the city wall, and a very different food culture. The combination feels classic without requiring too many cities.
 
+For the capital itself, the [Beijing travel guide for first-time visitors](/china-travel/articles/beijing-travel-guide-first-time-visitors/) explains the Forbidden City reservation, a full Great Wall day, hutong etiquette, food, transport, and where to stay.
+
 Choose this route if you want:
 
 - Historic sites and museums.

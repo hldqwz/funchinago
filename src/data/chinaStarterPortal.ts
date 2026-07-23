@@ -252,11 +252,12 @@ export const paymentGuideLinks = [
 ] as const;
 
 export const featuredCity = {
-  city: 'Shanghai',
+  city: 'Beijing',
   eyebrow: 'This week',
-  title: "This Week's City Pick: Shanghai",
-  text: "Shanghai is the easiest first-China city for many travelers: skyline views, old streets, strong metro access, food, museums, and a softer landing into China's big-city rhythm.",
-  href: '/china-travel/articles/shanghai-travel-guide-first-time-visitors/',
-  image: '/china-travel/images/shanghai-bund-skyline.jpg',
-  alt: 'Shanghai skyline seen from the Bund across the Huangpu River',
+  title: "This Week's City Pick: Beijing",
+  text: 'Beijing gives a first China trip its historical weight: imperial palaces, the Great Wall, hutong mornings, monumental distances, and days that reward careful planning.',
+  href: '/china-travel/articles/beijing-travel-guide-first-time-visitors/',
+  image: '/china-travel/images/beijing-forbidden-city-hero.jpg',
+  alt: "Red walls and traditional roofs inside Beijing's Forbidden City",
+  cta: 'Read the Beijing guide',
 } as const;

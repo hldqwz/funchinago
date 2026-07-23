@@ -37,6 +37,8 @@ Suggested pace:
 - 2 days Xi'an
 - 4 days Shanghai
 
+Use the [Beijing travel guide for first-time visitors](/china-travel/articles/beijing-travel-guide-first-time-visitors/) to turn those four capital days into a realistic Forbidden City, Great Wall, Temple of Heaven, and hutong plan.
+
 ## Route B: Shanghai + Chengdu + Beijing
 
 Best for: food, city contrast, and a balanced first trip.

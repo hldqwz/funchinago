@@ -81,7 +81,18 @@ const articleSchema = {
           </time>
           {article.data.tags.map((tag) => <span>{tag}</span>)}
         </div>
-        {article.data.hero_image && <img class="hero-image" src={article.data.hero_image} alt={article.data.hero_alt ?? `Hero image for ${article.data.title}`} />}
+        {article.data.hero_image && (
+          <img
+            class="hero-image"
+            src={article.data.hero_image}
+            alt={article.data.hero_alt ?? `Hero image for ${article.data.title}`}
+            width={article.data.hero_width}
+            height={article.data.hero_height}
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        )}
       </header>
 
       <aside class="accuracy-note">
@@ -123,7 +134,7 @@ const articleSchema = {
           <div class="related-grid">
             {relatedArticles.map((related) => (
               <a class="related-card" href={`/china-travel/articles/${articleSlug(related.id)}/`}>
-                {related.data.hero_image && <img src={related.data.hero_image} alt={`Cover image for ${related.data.title}`} />}
+                {related.data.hero_image && <img src={related.data.hero_image} alt={`Cover image for ${related.data.title}`} loading="lazy" decoding="async" />}
                 <div class="related-copy">
                   <span>{related.data.stage.replace('-', ' ')}</span>
                   <h3>{related.data.title}</h3>

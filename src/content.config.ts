@@ -12,6 +12,8 @@ const chinaTravelCollection = defineCollection({
     tags: z.array(z.string()).default([]),
     hero_image: z.string().optional(),
     hero_alt: z.string().optional(),
+    hero_width: z.number().int().positive().optional(),
+    hero_height: z.number().int().positive().optional(),
     officialSources: z.array(z.string()).default([]),
     relatedTools: z.array(z.object({
       title: z.string(),

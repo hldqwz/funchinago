@@ -4,8 +4,10 @@ import path from 'node:path';
 
 const portalDataPath = path.resolve('src/data/chinaStarterPortal.ts');
 const homepagePath = path.resolve('src/pages/china-travel.astro');
+const citiesPath = path.resolve('src/pages/china-travel/cities.astro');
 const portalData = fs.readFileSync(portalDataPath, 'utf8');
 const homepage = fs.readFileSync(homepagePath, 'utf8');
+const citiesPage = fs.readFileSync(citiesPath, 'utf8');
 
 function readExportedArray(source, exportName) {
   const match = source.match(new RegExp(`export const ${exportName}\\s*=\\s*(\\[[\\s\\S]*?\\])\\s*as const;`));
@@ -115,11 +117,24 @@ for (const tool of homepageTools) {
 }
 
 const featuredCity = readExportedObject(portalData, 'featuredCity');
-assert.equal(featuredCity.city, 'Shanghai', 'featured city should show Shanghai as the current weekly visual highlight');
+assert.equal(featuredCity.city, 'Beijing', 'featured city should show Beijing as the current weekly visual highlight');
 assertRealRoute(featuredCity.href, 'featured city');
 assertImageExists(featuredCity.image, 'featured city');
-assert.match(featuredCity.href, /shanghai-travel-guide-first-time-visitors\/$/, 'featured city should link to the current Shanghai guide');
-assert.ok(featuredCity.title.includes('Shanghai'), 'featured city title should name Shanghai');
-assert.ok(featuredCity.alt.includes('Shanghai'), 'featured city image alt text should name Shanghai');
+assert.match(featuredCity.href, /beijing-travel-guide-first-time-visitors\/$/, 'featured city should link to the current Beijing guide');
+assert.ok(featuredCity.title.includes('Beijing'), 'featured city title should name Beijing');
+assert.ok(featuredCity.alt.includes('Forbidden City'), 'featured city image alt text should describe the Forbidden City');
+assert.equal(featuredCity.cta, 'Read the Beijing guide', 'featured city data should own the shared call-to-action');
+assert.match(
+  homepage,
+  /href=\{featuredCity\.href\}>\{featuredCity\.cta\}<\/a>/,
+  'homepage must render the featured city link and call-to-action from the shared object',
+);
+assert.match(
+  citiesPage,
+  /href=\{featuredCity\.href\}>\{featuredCity\.cta\}<\/a>/,
+  'Cities page must render the featured city link and call-to-action from the shared object',
+);
+assert.doesNotMatch(homepage, /Read the Shanghai guide/, 'homepage must not hard-code the previous featured city');
+assert.doesNotMatch(citiesPage, /Read the Shanghai guide/, 'Cities page must not hard-code the previous featured city');
 
 console.log('chinaStarterPortalRoutes tests passed');

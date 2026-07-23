@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-02",
+  "updatedAt": "2026-07-23",
   "sources": [
     {
       "id": "nia-240h-transit-2025",
@@ -320,6 +320,76 @@
       "trustLevel": "official",
       "useFor": "Official Shanghai Maglev operating hours, ticket price and airport transfer information",
       "lastChecked": "2026-07-02"
+    },
+    {
+      "id": "beijing-foreign-traveler-guide",
+      "title": "Foreigner's Guide to Travelling in Beijing",
+      "url": "https://english.beijing.gov.cn/travellinginbeijing/quickguideontravelservices/index.html",
+      "authority": "The People's Government of Beijing Municipality",
+      "category": "city",
+      "trustLevel": "official",
+      "useFor": "Official visitor guidance covering hotels, transportation, attractions, dining and practical travel services in Beijing",
+      "lastChecked": "2026-07-23"
+    },
+    {
+      "id": "beijing-attraction-ticketing",
+      "title": "Beijing Attraction Ticketing Guide",
+      "url": "https://english.beijing.gov.cn/specials/ticketing/index.html",
+      "authority": "The People's Government of Beijing Municipality",
+      "category": "ticketing",
+      "trustLevel": "official",
+      "useFor": "Official navigation portal for attraction ticketing and reservation channels in Beijing",
+      "lastChecked": "2026-07-23"
+    },
+    {
+      "id": "palace-museum-ticketing",
+      "title": "The Palace Museum Official Ticketing",
+      "url": "https://ticket.dpm.org.cn/",
+      "authority": "The Palace Museum",
+      "category": "ticketing",
+      "trustLevel": "official",
+      "useFor": "Current real-name booking, passport, advance-sale, entrance, exit and visitor-flow rules for the Forbidden City",
+      "lastChecked": "2026-07-23"
+    },
+    {
+      "id": "palace-museum-international",
+      "title": "The Palace Museum International Visitor Information",
+      "url": "https://intl.dpm.org.cn/visit",
+      "authority": "The Palace Museum",
+      "category": "ticketing",
+      "trustLevel": "official",
+      "useFor": "English-language opening, ticketing, passport and visitor information for the Forbidden City",
+      "lastChecked": "2026-07-23"
+    },
+    {
+      "id": "tiananmen-square-reservation",
+      "title": "Which Attractions in Beijing Still Require Reservations?",
+      "url": "https://english.beijing.gov.cn/whatson/events/travelling/202406/t20240627_3730064.html",
+      "authority": "The People's Government of Beijing Municipality",
+      "category": "ticketing",
+      "trustLevel": "official",
+      "useFor": "Official reservation channels and advance-booking guidance for Tiananmen Square, the Palace Museum and major Beijing museums",
+      "lastChecked": "2026-07-23"
+    },
+    {
+      "id": "mutianyu-great-wall",
+      "title": "Mutianyu Great Wall Notice to Visitors",
+      "url": "https://en.mutianyugreatwall.com/article/4DlCYuBZ75h",
+      "authority": "Mutianyu Great Wall Scenic Area",
+      "category": "ticketing",
+      "trustLevel": "official",
+      "useFor": "Real-name reservations, passport entry, shuttle bus, cable car, ropeway, slide and visitor guidance for Mutianyu",
+      "lastChecked": "2026-07-23"
+    },
+    {
+      "id": "beijing-airport",
+      "title": "Beijing Airport Visitor Information",
+      "url": "https://english.beijing.gov.cn/travellinginbeijing/transportation/airport/index.html",
+      "authority": "The People's Government of Beijing Municipality",
+      "category": "transport",
+      "trustLevel": "official",
+      "useFor": "Official updates and visitor guidance for Beijing Capital International Airport and Beijing Daxing International Airport",
+      "lastChecked": "2026-07-23"
     }
   ]
 }

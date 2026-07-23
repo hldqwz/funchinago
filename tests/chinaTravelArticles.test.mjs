@@ -10,6 +10,9 @@ const sourceIds = new Set(sources.sources.map((source) => source.id));
 const validSections = new Set(['start-here', 'travel', 'cities', 'life-culture', 'tools']);
 const portalData = fs.readFileSync(portalDataPath, 'utf8');
 const expectedPortalSlugs = ['start-here', 'travel', 'cities', 'life-culture', 'tools'];
+const beijingGuideFile = 'beijing-travel-guide-first-time-visitors.md';
+const beijingGuidePath = path.join(articlesDir, beijingGuideFile);
+const beijingGuideHref = '/china-travel/articles/beijing-travel-guide-first-time-visitors/';
 const knownPortalHrefs = new Set([
   '/china-travel/',
   '/china-travel/start-here/',
@@ -79,10 +82,11 @@ for (const card of startHereCards) {
 
 const files = fs.readdirSync(articlesDir).filter((file) => file.endsWith('.md'));
 assert.ok(files.length >= 12, 'China Travel should have at least 12 starter articles after the second batch');
+assert.ok(files.includes(beijingGuideFile), 'China Travel must include the Beijing first-time visitor guide');
 
 function readFrontmatter(file) {
   const text = fs.readFileSync(path.join(articlesDir, file), 'utf8');
-  const match = text.match(/^---\n([\s\S]*?)\n---/);
+  const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   assert.ok(match, `${file} must include frontmatter`);
   return match[1];
 }
@@ -139,6 +143,85 @@ for (const file of files) {
       assert.ok(sourceIds.has(id), `${file} cites unknown source id: ${id}`);
     }
   }
+}
+
+const beijingGuide = fs.readFileSync(beijingGuidePath, 'utf8');
+const beijingBody = beijingGuide.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '');
+const beijingWords = beijingBody
+  .replace(/<[^>]+>/g, ' ')
+  .replace(/\[[^\]]+\]\([^)]+\)/g, ' ')
+  .match(/[A-Za-z]+(?:['’-][A-Za-z]+)*/g) ?? [];
+assert.ok(
+  beijingWords.length >= 2300 && beijingWords.length <= 3000,
+  `Beijing guide should contain 2,300-3,000 English words; found ${beijingWords.length}`,
+);
+
+for (const heading of [
+  '## Quick Answer',
+  '## Why Beijing Matters on a First China Trip',
+  '## Who Should Visit Beijing?',
+  '## How Many Days Do You Need in Beijing?',
+  '## Best Time to Visit Beijing',
+  '## Best Things to Do in Beijing',
+  '## A Realistic Four-Day Beijing Itinerary',
+  '## What to Eat in Beijing',
+  '## Where to Stay in Beijing',
+  '## Practical Tips: Reservations, Passport, Metro, Payment and Language',
+  '## Common Mistakes First-Time Visitors Make in Beijing',
+  '## Beijing vs Shanghai, Chengdu and Guangzhou',
+  '## What Visitors Often Miss About Beijing',
+  '## Check Official Sources Before You Travel',
+  '## Final Thoughts',
+]) {
+  assert.ok(beijingGuide.includes(heading), `Beijing guide missing required heading: ${heading}`);
+}
+
+for (const image of [
+  'beijing-forbidden-city-hero.jpg',
+  'beijing-great-wall-mutianyu.jpg',
+  'beijing-hutong.jpg',
+  'beijing-temple-of-heaven.jpg',
+  'beijing-jingshan-view.jpg',
+]) {
+  assert.ok(
+    fs.existsSync(path.resolve('public/china-travel/images', image)),
+    `Beijing guide image is missing: ${image}`,
+  );
+}
+
+const bodyImages = [...beijingGuide.matchAll(/<img\s+[^>]*src="(\/china-travel\/images\/beijing-[^"]+)"[^>]*>/g)];
+assert.ok(bodyImages.length >= 4, 'Beijing guide must include at least four real body images');
+for (const [, src] of bodyImages) {
+  const tag = bodyImages.find((match) => match[1] === src)?.[0] ?? '';
+  assert.match(tag, /\balt="[^"]+"/, `${src} must include descriptive alt text`);
+  assert.match(tag, /\bloading="lazy"/, `${src} must lazy-load in the article body`);
+  assert.match(tag, /\bwidth="\d+"/, `${src} must include a width attribute`);
+  assert.match(tag, /\bheight="\d+"/, `${src} must include a height attribute`);
+}
+
+for (const href of [
+  '/tools/china-city-picker/',
+  '/china-travel/articles/beijing-shanghai-chengdu-or-chongqing-which-city-to-visit-first/',
+  '/china-travel/articles/best-places-to-visit-in-china-first-time/',
+  '/china-travel/articles/china-travel-checklist-before-you-fly/',
+  '/china-travel/articles/how-to-pay-in-china-tourist/',
+  '/china-travel/articles/best-apps-for-traveling-in-china/',
+  '/china-travel/articles/how-to-book-high-speed-train-tickets-china-foreigner/',
+  '/china-travel/articles/china-240-hour-visa-free-transit/',
+]) {
+  assert.ok(beijingGuide.includes(`](${href})`), `Beijing guide must link to ${href}`);
+}
+
+for (const referringFile of [
+  'beijing-shanghai-chengdu-or-chongqing-which-city-to-visit-first.md',
+  'best-places-to-visit-in-china-first-time.md',
+  'ten-days-in-china-first-time-itinerary.md',
+]) {
+  const referringContent = fs.readFileSync(path.join(articlesDir, referringFile), 'utf8');
+  assert.ok(
+    referringContent.includes(beijingGuideHref),
+    `${referringFile} must link back to the Beijing guide`,
+  );
 }
 
 console.log('chinaTravel article tests passed');
