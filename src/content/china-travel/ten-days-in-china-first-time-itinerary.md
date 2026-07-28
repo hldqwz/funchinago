@@ -39,6 +39,8 @@ Suggested pace:
 
 Use the [Beijing travel guide for first-time visitors](/china-travel/articles/beijing-travel-guide-first-time-visitors/) to turn those four capital days into a realistic Forbidden City, Great Wall, Temple of Heaven, and hutong plan.
 
+Use the [Xi'an travel guide for first-time visitors](/china-travel/articles/xian-travel-guide-first-time-visitors/) to decide whether two days is enough for your pace, reserve the Terracotta Warriors and Shaanxi History Museum, and plan the city wall and old-city food lanes without compressing everything into one evening.
+
 ## Route B: Shanghai + Chengdu + Beijing
 
 Best for: food, city contrast, and a balanced first trip.

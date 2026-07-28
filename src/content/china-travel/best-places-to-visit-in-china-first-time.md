@@ -27,6 +27,8 @@ Xi'an pairs well with Beijing because it adds ancient capital history, the Terra
 
 For the capital itself, the [Beijing travel guide for first-time visitors](/china-travel/articles/beijing-travel-guide-first-time-visitors/) explains the Forbidden City reservation, a full Great Wall day, hutong etiquette, food, transport, and where to stay.
 
+For the second stop, the [Xi'an travel guide for first-time visitors](/china-travel/articles/xian-travel-guide-first-time-visitors/) covers real-name Terracotta Warriors tickets, the city wall, Shaanxi History Museum reservations, Muslim Quarter lanes, local food, and a realistic three-day plan.
+
 Choose this route if you want:
 
 - Historic sites and museums.
@@ -112,4 +114,5 @@ If you want the strongest visual surprise, choose Shanghai and Chongqing, but pr
 - [China Travel Mistakes to Avoid on Your First Trip](/china-travel/articles/china-travel-mistakes-first-trip/)
 - [Beijing, Shanghai, Chengdu, or Chongqing: Which Chinese City Should You Visit First?](/china-travel/articles/beijing-shanghai-chengdu-or-chongqing-which-city-to-visit-first/)
 - [Shanghai Travel Guide for First-Time Visitors](/china-travel/articles/shanghai-travel-guide-first-time-visitors/)
+- [Xi'an Travel Guide for First-Time Visitors](/china-travel/articles/xian-travel-guide-first-time-visitors/)
 - [10 Days in China: First-Time Itinerary](/china-travel/articles/ten-days-in-china-first-time-itinerary/)

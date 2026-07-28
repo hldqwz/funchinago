@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23",
+  "updatedAt": "2026-07-28",
   "sources": [
     {
       "id": "nia-240h-transit-2025",
@@ -390,6 +390,56 @@
       "trustLevel": "official",
       "useFor": "Official updates and visitor guidance for Beijing Capital International Airport and Beijing Daxing International Airport",
       "lastChecked": "2026-07-23"
+    },
+    {
+      "id": "shaanxi-official-xian-travel",
+      "title": "Xi'an Attractions and Travel Information",
+      "url": "https://en.shaanxi.gov.cn/tourism/aic/xa_2120/",
+      "authority": "The People's Government of Shaanxi Province",
+      "category": "city",
+      "trustLevel": "official",
+      "useFor": "Official travel context and attraction information for Xi'an",
+      "lastChecked": "2026-07-28"
+    },
+    {
+      "id": "terracotta-warriors-ticketing",
+      "title": "Emperor Qinshihuang's Mausoleum Site Museum Ticket Information",
+      "url": "https://www.bmy.com.cn/jingtai/bmyweb/ticketing.html",
+      "authority": "Emperor Qinshihuang's Mausoleum Site Museum",
+      "category": "ticketing",
+      "trustLevel": "official",
+      "useFor": "Real-name reservations, passport entry, ticket scope, time slots and current visitor rules for the Terracotta Warriors",
+      "lastChecked": "2026-07-28"
+    },
+    {
+      "id": "shaanxi-history-museum",
+      "title": "Shaanxi History Museum Visitor Information",
+      "url": "https://en.sxhm.com/en/new/visit.html",
+      "authority": "Shaanxi History Museum",
+      "category": "culture",
+      "trustLevel": "official",
+      "useFor": "Current reservation, identity-document, admission, venue and visitor guidance for Shaanxi History Museum",
+      "lastChecked": "2026-07-28"
+    },
+    {
+      "id": "xian-city-wall",
+      "title": "Xi'an City Wall",
+      "url": "https://en.shaanxi.gov.cn/tourism/aic/xa_2120/201712/t20171210_1595308.html",
+      "authority": "The People's Government of Shaanxi Province",
+      "category": "culture",
+      "trustLevel": "official",
+      "useFor": "Official historical context, visitor gates and practical information for Xi'an City Wall",
+      "lastChecked": "2026-07-28"
+    },
+    {
+      "id": "unesco-silk-roads-changan",
+      "title": "Silk Roads: the Routes Network of Chang'an-Tianshan Corridor",
+      "url": "https://whc.unesco.org/en/list/1442/",
+      "authority": "UNESCO World Heritage Centre",
+      "category": "culture",
+      "trustLevel": "official",
+      "useFor": "Official World Heritage context for Chang'an and the transnational Silk Roads corridor",
+      "lastChecked": "2026-07-28"
     }
   ]
 }

@@ -38,6 +38,7 @@ Why choose it:
 - It gives you the clearest "China" first trip experience.
 - It connects well to Xi'an and Shanghai.
 - Use the dedicated [Beijing travel guide for first-time visitors](/china-travel/articles/beijing-travel-guide-first-time-visitors/) to plan the Forbidden City, Great Wall, hutongs, reservations, and a realistic four-day stay.
+- Continue with the [Xi'an travel guide for first-time visitors](/china-travel/articles/xian-travel-guide-first-time-visitors/) if you want the Terracotta Warriors, a walkable old city, northwest food, and a compact second history stop.
 
 Watch out for:
 

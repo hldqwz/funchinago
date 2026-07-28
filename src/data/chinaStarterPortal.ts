@@ -252,12 +252,12 @@ export const paymentGuideLinks = [
 ] as const;
 
 export const featuredCity = {
-  city: 'Beijing',
+  city: "Xi'an",
   eyebrow: 'This week',
-  title: "This Week's City Pick: Beijing",
-  text: 'Beijing gives a first China trip its historical weight: imperial palaces, the Great Wall, hutong mornings, monumental distances, and days that reward careful planning.',
-  href: '/china-travel/articles/beijing-travel-guide-first-time-visitors/',
-  image: '/china-travel/images/beijing-forbidden-city-hero.jpg',
-  alt: "Red walls and traditional roofs inside Beijing's Forbidden City",
-  cta: 'Read the Beijing guide',
+  title: "This Week's City Pick: Xi'an",
+  text: "Xi'an turns ancient China into a walkable first trip: Terracotta Warriors, a complete city wall, noodle shops, mosque lanes, and history that stays alive after dark.",
+  href: '/china-travel/articles/xian-travel-guide-first-time-visitors/',
+  image: '/china-travel/images/xian-bell-tower-night.jpg',
+  alt: "Xi'an Bell Tower glowing at night amid the modern city",
+  cta: "Read the Xi'an guide",
 } as const;

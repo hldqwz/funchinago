@@ -13,6 +13,9 @@ const expectedPortalSlugs = ['start-here', 'travel', 'cities', 'life-culture', '
 const beijingGuideFile = 'beijing-travel-guide-first-time-visitors.md';
 const beijingGuidePath = path.join(articlesDir, beijingGuideFile);
 const beijingGuideHref = '/china-travel/articles/beijing-travel-guide-first-time-visitors/';
+const xianGuideFile = 'xian-travel-guide-first-time-visitors.md';
+const xianGuidePath = path.join(articlesDir, xianGuideFile);
+const xianGuideHref = '/china-travel/articles/xian-travel-guide-first-time-visitors/';
 const knownPortalHrefs = new Set([
   '/china-travel/',
   '/china-travel/start-here/',
@@ -83,6 +86,7 @@ for (const card of startHereCards) {
 const files = fs.readdirSync(articlesDir).filter((file) => file.endsWith('.md'));
 assert.ok(files.length >= 12, 'China Travel should have at least 12 starter articles after the second batch');
 assert.ok(files.includes(beijingGuideFile), 'China Travel must include the Beijing first-time visitor guide');
+assert.ok(files.includes(xianGuideFile), "China Travel must include the Xi'an first-time visitor guide");
 
 function readFrontmatter(file) {
   const text = fs.readFileSync(path.join(articlesDir, file), 'utf8');
@@ -222,6 +226,69 @@ for (const referringFile of [
     referringContent.includes(beijingGuideHref),
     `${referringFile} must link back to the Beijing guide`,
   );
+}
+
+const xianGuide = fs.readFileSync(xianGuidePath, 'utf8');
+const xianBody = xianGuide.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '');
+const xianWords = xianBody
+  .replace(/<[^>]+>/g, ' ')
+  .replace(/\[[^\]]+\]\([^)]+\)/g, ' ')
+  .match(/[A-Za-z]+(?:['’-][A-Za-z]+)*/g) ?? [];
+assert.ok(
+  xianWords.length >= 2300 && xianWords.length <= 3200,
+  `Xi'an guide should contain 2,300-3,200 English words; found ${xianWords.length}`,
+);
+
+for (const heading of [
+  '## Quick Answer',
+  "## Why Xi'an Belongs on a First China Trip",
+  "## Who Should Visit Xi'an?",
+  "## How Many Days Do You Need in Xi'an?",
+  "## Best Time to Visit Xi'an",
+  "## Best Things to Do in Xi'an",
+  "## A Realistic Three-Day Xi'an Itinerary",
+  "## What to Eat in Xi'an",
+  "## Where to Stay in Xi'an",
+  '## Practical Tips: Reservations, Transport, Payment and Language',
+  "## Common Mistakes First-Time Visitors Make in Xi'an",
+  "## Xi'an vs Beijing, Shanghai, Chengdu and Guangzhou",
+  "## What Visitors Often Miss About Xi'an",
+  '## Check Official Sources Before You Travel',
+  '## Final Thoughts',
+]) {
+  assert.ok(xianGuide.includes(heading), `Xi'an guide missing required heading: ${heading}`);
+}
+
+for (const image of [
+  'xian-bell-tower-night.jpg',
+  'xian-terracotta-warriors.jpg',
+  'xian-city-wall.jpg',
+  'xian-muslim-quarter.jpg',
+  'xian-giant-wild-goose-pagoda.jpg',
+]) {
+  assert.ok(
+    fs.existsSync(path.resolve('public/china-travel/images', image)),
+    `Xi'an guide image is missing: ${image}`,
+  );
+}
+
+const xianBodyImages = [...xianGuide.matchAll(/<img\s+[^>]*src="(\/china-travel\/images\/xian-[^"]+)"[^>]*>/g)];
+assert.ok(xianBodyImages.length >= 4, "Xi'an guide must include at least four real body images");
+for (const match of xianBodyImages) {
+  const tag = match[0];
+  assert.match(tag, /\balt="[^"]+"/, `${match[1]} must include descriptive alt text`);
+  assert.match(tag, /\bloading="lazy"/, `${match[1]} must lazy-load in the article body`);
+  assert.match(tag, /\bwidth="\d+"/, `${match[1]} must include a width attribute`);
+  assert.match(tag, /\bheight="\d+"/, `${match[1]} must include a height attribute`);
+}
+
+for (const referringFile of [
+  'beijing-shanghai-chengdu-or-chongqing-which-city-to-visit-first.md',
+  'best-places-to-visit-in-china-first-time.md',
+  'ten-days-in-china-first-time-itinerary.md',
+]) {
+  const referringContent = fs.readFileSync(path.join(articlesDir, referringFile), 'utf8');
+  assert.ok(referringContent.includes(xianGuideHref), `${referringFile} must link back to the Xi'an guide`);
 }
 
 console.log('chinaTravel article tests passed');

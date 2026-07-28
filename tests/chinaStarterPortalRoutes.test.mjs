@@ -117,13 +117,13 @@ for (const tool of homepageTools) {
 }
 
 const featuredCity = readExportedObject(portalData, 'featuredCity');
-assert.equal(featuredCity.city, 'Beijing', 'featured city should show Beijing as the current weekly visual highlight');
+assert.equal(featuredCity.city, "Xi'an", "featured city should show Xi'an as the current weekly visual highlight");
 assertRealRoute(featuredCity.href, 'featured city');
 assertImageExists(featuredCity.image, 'featured city');
-assert.match(featuredCity.href, /beijing-travel-guide-first-time-visitors\/$/, 'featured city should link to the current Beijing guide');
-assert.ok(featuredCity.title.includes('Beijing'), 'featured city title should name Beijing');
-assert.ok(featuredCity.alt.includes('Forbidden City'), 'featured city image alt text should describe the Forbidden City');
-assert.equal(featuredCity.cta, 'Read the Beijing guide', 'featured city data should own the shared call-to-action');
+assert.match(featuredCity.href, /xian-travel-guide-first-time-visitors\/$/, "featured city should link to the current Xi'an guide");
+assert.ok(featuredCity.title.includes("Xi'an"), "featured city title should name Xi'an");
+assert.ok(featuredCity.alt.includes('Bell Tower'), "featured city image alt text should describe Xi'an's Bell Tower");
+assert.equal(featuredCity.cta, "Read the Xi'an guide", 'featured city data should own the shared call-to-action');
 assert.match(
   homepage,
   /href=\{featuredCity\.href\}>\{featuredCity\.cta\}<\/a>/,
@@ -134,7 +134,7 @@ assert.match(
   /href=\{featuredCity\.href\}>\{featuredCity\.cta\}<\/a>/,
   'Cities page must render the featured city link and call-to-action from the shared object',
 );
-assert.doesNotMatch(homepage, /Read the Shanghai guide/, 'homepage must not hard-code the previous featured city');
-assert.doesNotMatch(citiesPage, /Read the Shanghai guide/, 'Cities page must not hard-code the previous featured city');
+assert.doesNotMatch(homepage, /Read the Beijing guide/, 'homepage must not hard-code the previous featured city');
+assert.doesNotMatch(citiesPage, /Read the Beijing guide/, 'Cities page must not hard-code the previous featured city');
 
 console.log('chinaStarterPortalRoutes tests passed');
