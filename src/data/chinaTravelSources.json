@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-28",
+  "updatedAt": "2026-08-04",
   "sources": [
     {
       "id": "nia-240h-transit-2025",
@@ -39,7 +39,7 @@
       "category": "payments",
       "trustLevel": "official",
       "useFor": "Official payment options for visitors, including bank cards, mobile payments, cash, and account services",
-      "lastChecked": "2026-06-02"
+      "lastChecked": "2026-08-04"
     },
     {
       "id": "gov-payment-optimization-2024",
@@ -49,7 +49,7 @@
       "category": "payments",
       "trustLevel": "official",
       "useFor": "Policy background on improving payment convenience for foreigners and elderly users",
-      "lastChecked": "2026-06-02"
+      "lastChecked": "2026-08-04"
     },
     {
       "id": "alipayplus-mainland-guide",
@@ -58,8 +58,8 @@
       "authority": "Alipay+",
       "category": "payments",
       "trustLevel": "platform-official",
-      "useFor": "Platform-official Alipay+ guidance for overseas users paying in the Chinese mainland",
-      "lastChecked": "2026-06-02"
+      "useFor": "International-card linking, daily merchant purchases, unsupported wallet functions, exchange-rate handling, and visitor support phone numbers and hours",
+      "lastChecked": "2026-08-04"
     },
     {
       "id": "railway-12306-en",
@@ -114,12 +114,12 @@
     {
       "id": "tencent-weixin-pay-overseas-users-2023",
       "title": "Tencent enhances mobile payment experience for overseas users visiting China",
-      "url": "https://www.tencent.com.cn/en-us/articles/2201652.html",
+      "url": "https://www.tencent.com/en-us/articles/2201652.html",
       "authority": "Tencent / Weixin Pay",
       "category": "payments",
       "trustLevel": "platform-official",
       "useFor": "Weixin Pay setup context for overseas users, international card linking, and visitor payment experience",
-      "lastChecked": "2026-06-02"
+      "lastChecked": "2026-08-04"
     },
     {
       "id": "tencent-inbound-payments-apec-2026",
@@ -128,8 +128,8 @@
       "authority": "Tencent / Weixin Pay",
       "category": "payments",
       "trustLevel": "platform-official",
-      "useFor": "Recent Tencent context on PayPal World integration, international card fee waiver, overseas wallets, and multilingual guidance for visitors",
-      "lastChecked": "2026-06-02"
+      "useFor": "PayPal World phased rollout, first-time international-card fee waiver conditions, Shenzhen/APEC multilingual guidance, and visitor-support context",
+      "lastChecked": "2026-08-04"
     },
     {
       "id": "railway-12306-account-center-en",
@@ -199,7 +199,7 @@
       "category": "payments",
       "trustLevel": "platform-official",
       "useFor": "Official Apple Pay setup guidance, including China mainland notes and cross-border card context",
-      "lastChecked": "2026-06-15"
+      "lastChecked": "2026-08-04"
     },
     {
       "id": "apple-pay-where-to-use-2026",
@@ -209,7 +209,7 @@
       "category": "payments",
       "trustLevel": "platform-official",
       "useFor": "Official Apple Pay merchant acceptance and NFC use guidance, including China mainland notes",
-      "lastChecked": "2026-06-15"
+      "lastChecked": "2026-08-04"
     },
     {
       "id": "google-wallet-supported-countries-2026",
@@ -219,17 +219,17 @@
       "category": "payments",
       "trustLevel": "platform-official",
       "useFor": "Official Google Wallet country and tap-to-pay support context for traveler payment planning",
-      "lastChecked": "2026-06-15"
+      "lastChecked": "2026-08-04"
     },
     {
       "id": "google-wallet-pay-in-store-2026",
-      "title": "Pay in store with Google Wallet",
-      "url": "https://support.google.com/wallet/answer/14188457?hl=en",
+      "title": "Make contactless payments with Google Wallet",
+      "url": "https://support.google.com/wallet/answer/12060043?hl=en",
       "authority": "Google Wallet Help",
       "category": "payments",
       "trustLevel": "platform-official",
-      "useFor": "Official Google Wallet contactless in-store payment guidance for NFC-capable devices",
-      "lastChecked": "2026-06-15"
+      "useFor": "Official Google Wallet contactless payment requirements, merchant symbols, NFC setup, and issuer approval context",
+      "lastChecked": "2026-08-04"
     },
     {
       "id": "chengdu-panda-base",

@@ -2,6 +2,7 @@
 import Layout from '../../../layouts/ChinaTravelLayout.astro';
 import { getCollection, render } from 'astro:content';
 import sourceRegistry from '../../../data/chinaTravelSources.json';
+import { formatTravelStage } from '../../../data/chinaTravelPresentation';
 
 function articleSlug(id: string) {
   return id.replace(/\.md$/, '');
@@ -24,20 +25,53 @@ const { Content } = await render(article);
 const sources = article.data.officialSources
   .map((id) => sourceRegistry.sources.find((source) => source.id === id))
   .filter(Boolean);
-const relatedArticles = allArticles
-  .filter((candidate) => candidate.id !== article.id)
-  .map((candidate) => {
-    let score = 0;
-    if (candidate.data.section === article.data.section) score += 4;
-    if (candidate.data.stage === article.data.stage) score += 2;
-    const sharedTags = candidate.data.tags.filter((tag) => article.data.tags.includes(tag)).length;
-    score += sharedTags * 3;
-    return { candidate, score };
-  })
-  .filter(({ score }) => score > 0)
-  .sort((a, b) => b.score - a.score)
-  .slice(0, 3)
-  .map(({ candidate }) => candidate);
+const paymentRelatedBySlug: Record<string, string[]> = {
+  'how-to-pay-in-china-tourist': [
+    'how-to-use-alipay-in-china-foreigner',
+    'how-to-use-wechat-pay-in-china-foreigner',
+    'wechat-pay-vs-alipay-for-tourists-china',
+  ],
+  'how-to-use-alipay-in-china-foreigner': [
+    'how-to-pay-in-china-tourist',
+    'how-to-use-wechat-pay-in-china-foreigner',
+    'alipay-not-working-in-china-foreign-tourists',
+  ],
+  'how-to-use-wechat-pay-in-china-foreigner': [
+    'how-to-pay-in-china-tourist',
+    'how-to-use-alipay-in-china-foreigner',
+    'wechat-pay-not-working-in-china-foreigners',
+  ],
+  'can-you-use-apple-pay-or-google-pay-in-china': [
+    'how-to-pay-in-china-tourist',
+    'can-foreign-credit-cards-work-in-china',
+    'wechat-pay-vs-alipay-for-tourists-china',
+  ],
+  'wechat-pay-vs-alipay-for-tourists-china': [
+    'how-to-pay-in-china-tourist',
+    'how-to-use-alipay-in-china-foreigner',
+    'how-to-use-wechat-pay-in-china-foreigner',
+  ],
+};
+const curatedRelatedSlugs = paymentRelatedBySlug[articleSlug(article.id)] ?? [];
+const relatedArticles = curatedRelatedSlugs.length > 0
+  ? curatedRelatedSlugs.flatMap((relatedSlug) => {
+      const candidate = allArticles.find((entry) => articleSlug(entry.id) === relatedSlug);
+      return candidate ? [candidate] : [];
+    })
+  : allArticles
+      .filter((candidate) => candidate.id !== article.id)
+      .map((candidate) => {
+        let score = 0;
+        if (candidate.data.section === article.data.section) score += 4;
+        if (candidate.data.stage === article.data.stage) score += 2;
+        const sharedTags = candidate.data.tags.filter((tag) => article.data.tags.includes(tag)).length;
+        score += sharedTags * 3;
+        return { candidate, score };
+      })
+      .filter(({ score }) => score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 3)
+      .map(({ candidate }) => candidate);
 
 const siteUrl = Astro.site ?? new URL("https://funchinago.com");
 const articleUrl = new URL(`/china-travel/articles/${articleSlug(article.id)}/`, siteUrl).toString();
@@ -62,7 +96,7 @@ const articleSchema = {
 ---
 
 <Layout
-  title={article.data.title}
+  title={article.data.seoTitle ?? article.data.title}
   description={article.data.description}
   ogImage={article.data.hero_image}
   pageType="article"
@@ -72,7 +106,7 @@ const articleSchema = {
     <article class="article-wrap">
       <a class="back-link" href="/china-travel/articles/">← All China Travel articles</a>
       <header class="article-header">
-        <p class="stage">{article.data.stage.replace('-', ' ')}</p>
+        <p class="stage">{formatTravelStage(article.data.stage)}</p>
         <h1>{article.data.title}</h1>
         <p class="description">{article.data.description}</p>
         <div class="meta">
@@ -128,7 +162,7 @@ const articleSchema = {
       {relatedArticles.length > 0 && (
         <section class="related-box">
           <div class="related-header">
-            <h2>Keep planning from here</h2>
+            <h2>{curatedRelatedSlugs.length > 0 ? 'Related payment guides' : 'Keep planning from here'}</h2>
             <a class="related-archive" href="/china-travel/articles/">See all guides</a>
           </div>
           <div class="related-grid">
@@ -136,7 +170,7 @@ const articleSchema = {
               <a class="related-card" href={`/china-travel/articles/${articleSlug(related.id)}/`}>
                 {related.data.hero_image && <img src={related.data.hero_image} alt={`Cover image for ${related.data.title}`} loading="lazy" decoding="async" />}
                 <div class="related-copy">
-                  <span>{related.data.stage.replace('-', ' ')}</span>
+                  <span>{formatTravelStage(related.data.stage)}</span>
                   <h3>{related.data.title}</h3>
                   <p>{related.data.description}</p>
                 </div>

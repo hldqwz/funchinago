@@ -291,4 +291,40 @@ for (const referringFile of [
   assert.ok(referringContent.includes(xianGuideHref), `${referringFile} must link back to the Xi'an guide`);
 }
 
+const contentSchemaSource = fs.readFileSync(path.resolve('src/content.config.ts'), 'utf8');
+const articleRouteSource = fs.readFileSync(path.resolve('src/pages/china-travel/articles/[slug].astro'), 'utf8');
+const articleArchiveSource = fs.readFileSync(path.resolve('src/pages/china-travel/articles/index.astro'), 'utf8');
+const travelPageSource = fs.readFileSync(path.resolve('src/pages/china-travel/travel.astro'), 'utf8');
+const presentationPath = path.resolve('src/data/chinaTravelPresentation.ts');
+
+assert.ok(
+  contentSchemaSource.includes('seoTitle: z.string().optional()'),
+  'China Travel schema must accept an optional seoTitle',
+);
+assert.ok(
+  articleRouteSource.includes('article.data.seoTitle ?? article.data.title'),
+  'article metadata must fall back from seoTitle to title',
+);
+assert.ok(
+  articleRouteSource.includes('"headline": article.data.title'),
+  'Article JSON-LD headline must continue to use the visible article title',
+);
+assert.ok(fs.existsSync(presentationPath), 'shared China Travel presentation mapping must exist');
+
+if (fs.existsSync(presentationPath)) {
+  const presentationSource = fs.readFileSync(presentationPath, 'utf8');
+  for (const label of ['Explore', 'Before You Go', 'While You Are in China']) {
+    assert.ok(presentationSource.includes(label), `stage presentation mapping missing: ${label}`);
+  }
+}
+
+for (const [source, label] of [
+  [articleRouteSource, 'article route'],
+  [articleArchiveSource, 'article archive'],
+  [travelPageSource, 'Travel page'],
+]) {
+  assert.ok(source.includes('formatTravelStage'), `${label} must use the shared stage formatter`);
+  assert.ok(!source.includes("data.stage.replace"), `${label} must not render raw stage values`);
+}
+
 console.log('chinaTravel article tests passed');

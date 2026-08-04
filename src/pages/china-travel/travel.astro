@@ -1,18 +1,37 @@
 ---
 import Layout from "../../layouts/ChinaTravelLayout.astro";
 import { getCollection } from "astro:content";
-import { travelPaymentSpotlight } from "../../data/chinaStarterPortal";
+import { formatTravelStage, travelArticleGroups } from "../../data/chinaTravelPresentation";
 
 const articleSlug = (id: string) => id.replace(/\.md$/, "");
 
 const travelArticles = (await getCollection("china-travel"))
   .filter((article) => article.data.section === "travel")
   .sort((a, b) => b.data.updatedAt.getTime() - a.data.updatedAt.getTime());
+
+const travelArticleBySlug = new Map(
+  travelArticles.map((article) => [articleSlug(article.id), article]),
+);
+
+const groupedTravelSlugs = new Set(
+  travelArticleGroups.flatMap((group) => [...group.slugs]),
+);
+
+const groupedTravel = travelArticleGroups.map((group) => ({
+  ...group,
+  articles: group.slugs
+    .map((slug) => travelArticleBySlug.get(slug))
+    .filter((article) => article !== undefined),
+}));
+
+const ungroupedTravelArticles = travelArticles.filter(
+  (article) => !groupedTravelSlugs.has(articleSlug(article.id)),
+);
 ---
 
 <Layout
-  title="Travel"
-  description="Practical China travel planning for first-time visitors: visas, payments, apps, trains, internet, and preparation."
+  title="China Travel Essentials: Payments, Apps, Trains & Entry"
+  description="Prepare for a first trip to China with practical guides to payments, essential apps, internet access, entry documents, trains, and route planning."
 >
   <main class="section-page">
     <section class="section-hero">
@@ -36,36 +55,54 @@ const travelArticles = (await getCollection("china-travel"))
       />
     </section>
 
-    <section class="payment-spotlight feature-accent" aria-labelledby="payment-spotlight-title">
-      <div class="payment-spotlight-copy">
-        <p class="eyebrow">Payment planning</p>
-        <h2 id="payment-spotlight-title">Start here if payment is one of your biggest pre-trip questions.</h2>
-        <p class="lede compact">
-          Payment is one of the first practical concerns for many visitors to China. Start here if you want to prepare Alipay, WeChat Pay, cards, cash, and backup options before arrival.
-        </p>
-      </div>
-      <div class="payment-spotlight-grid">
-        {travelPaymentSpotlight.map((item) => (
-          <a class="payment-spotlight-card" href={item.href}>
-            <strong>{item.title}</strong>
-            <p>{item.text}</p>
-          </a>
-        ))}
-      </div>
-    </section>
-
-    <section class="article-grid" aria-label="Travel planning guides">
-      {travelArticles.map((article) => (
-        <a class="article-card" href={`/china-travel/articles/${articleSlug(article.id)}/`}>
-          {article.data.hero_image && <img src={article.data.hero_image} alt={`Cover image for ${article.data.title}`} loading="lazy" />}
-          <div>
-            <span>{article.data.stage.replace("-", " ")}</span>
-            <h2>{article.data.title}</h2>
-            <p>{article.data.description}</p>
+    <div class="travel-topic-list">
+      {groupedTravel.map((group) => (
+        <section class="travel-topic feature-accent" aria-labelledby={`${group.id}-title`}>
+          <div class="topic-heading">
+            <p class="eyebrow">Travel essentials</p>
+            <h2 id={`${group.id}-title`}>{group.title}</h2>
+            <p class="lede compact">{group.description}</p>
           </div>
-        </a>
+          <div class="article-grid">
+            {group.articles.map((article) => (
+              <a
+                class:list={{ "article-card": true, "primary-card": articleSlug(article.id) === group.primarySlug }}
+                href={`/china-travel/articles/${articleSlug(article.id)}/`}
+              >
+                {article.data.hero_image && <img src={article.data.hero_image} alt={`Cover image for ${article.data.title}`} loading="lazy" />}
+                <div>
+                  <span>{formatTravelStage(article.data.stage)}</span>
+                  <h3>{article.data.title}</h3>
+                  <p>{article.data.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
       ))}
-    </section>
+    </div>
+
+    {ungroupedTravelArticles.length > 0 && (
+      <section class="travel-topic feature-accent" aria-labelledby="unclassified-travel-title">
+        <div class="topic-heading">
+          <p class="eyebrow">More planning guides</p>
+          <h2 id="unclassified-travel-title">Additional travel preparation</h2>
+          <p class="lede compact">These guides remain available while their best planning category is reviewed.</p>
+        </div>
+        <div class="article-grid">
+          {ungroupedTravelArticles.map((article) => (
+            <a class="article-card" href={`/china-travel/articles/${articleSlug(article.id)}/`}>
+              {article.data.hero_image && <img src={article.data.hero_image} alt={`Cover image for ${article.data.title}`} loading="lazy" />}
+              <div>
+                <span>{formatTravelStage(article.data.stage)}</span>
+                <h3>{article.data.title}</h3>
+                <p>{article.data.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
 
     <section class="source-callout feature-accent" aria-labelledby="travel-sources-title">
       <div>
@@ -166,51 +203,17 @@ const travelArticles = (await getCollection("china-travel"))
     gap: 1rem;
   }
 
-  .payment-spotlight {
+  .travel-topic-list {
     display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    gap: 1rem;
-    margin-bottom: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .travel-topic {
     padding: clamp(1.2rem, 3vw, 1.8rem);
   }
 
-  .payment-spotlight-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.8rem;
-  }
-
-  .payment-spotlight-card {
-    display: block;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    background: var(--surface-strong);
-    color: var(--text);
-    text-decoration: none;
-    padding: 1rem;
-    box-shadow: var(--shadow);
-    transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
-  }
-
-  .payment-spotlight-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--accent);
-    box-shadow: var(--shadow-lg);
-    text-decoration: none;
-  }
-
-  .payment-spotlight-card strong {
-    display: block;
-    font-size: 1rem;
-    line-height: 1.22;
-    letter-spacing: 0;
-  }
-
-  .payment-spotlight-card p {
-    margin-top: 0.4rem;
-    color: var(--text-secondary);
-    font-size: 0.92rem;
-    line-height: 1.52;
+  .topic-heading {
+    margin-bottom: 1rem;
   }
 
   .article-card {
@@ -253,7 +256,7 @@ const travelArticles = (await getCollection("china-travel"))
     text-transform: uppercase;
   }
 
-  .article-card h2 {
+  .article-card h3 {
     margin-bottom: 0.4rem;
     font-size: 1.08rem;
     line-height: 1.15;
@@ -262,6 +265,18 @@ const travelArticles = (await getCollection("china-travel"))
 
   .article-card p {
     color: var(--text-secondary);
+  }
+
+  .article-card.primary-card {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: minmax(220px, 0.85fr) minmax(0, 1.15fr);
+    align-items: stretch;
+  }
+
+  .article-card.primary-card img {
+    height: 100%;
+    min-height: 240px;
   }
 
   .source-callout {
@@ -281,16 +296,12 @@ const travelArticles = (await getCollection("china-travel"))
       grid-template-columns: 1fr;
     }
 
-    .payment-spotlight {
-      grid-template-columns: 1fr;
-    }
-
-    .payment-spotlight-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-
     .article-grid {
       grid-template-columns: 1fr 1fr;
+    }
+
+    .article-card.primary-card {
+      grid-column: 1 / -1;
     }
   }
 
@@ -299,12 +310,18 @@ const travelArticles = (await getCollection("china-travel"))
       padding: 1.35rem 1rem 3rem;
     }
 
-    .payment-spotlight-grid {
+    .article-grid {
       grid-template-columns: 1fr;
     }
 
-    .article-grid {
-      grid-template-columns: 1fr;
+    .article-card.primary-card {
+      display: block;
+      grid-column: auto;
+    }
+
+    .article-card.primary-card img {
+      height: 210px;
+      min-height: 0;
     }
 
     h1 {

@@ -1,5 +1,3 @@
-import { execFileSync } from "node:child_process";
-
 const rawUrl = process.argv[2];
 
 if (!rawUrl) {
@@ -38,31 +36,29 @@ const pages = [
 
 const checks = [];
 
-function readPage(url) {
-  return execFileSync("curl", ["-sL", url], {
-    encoding: "utf8",
-    maxBuffer: 1024 * 1024 * 8,
-  });
-}
+async function readPage(url) {
+  let lastError;
 
-function readStatus(url) {
-  const headers = execFileSync("curl", ["-I", "-L", "-s", url], {
-    encoding: "utf8",
-    maxBuffer: 1024 * 1024,
-  });
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      const response = await fetch(url, {
+        redirect: "follow",
+        signal: AbortSignal.timeout(30_000),
+      });
+      return { status: response.status, html: await response.text(), finalUrl: response.url };
+    } catch (error) {
+      lastError = error;
+      if (attempt < 3) await new Promise((resolve) => setTimeout(resolve, 500 * attempt));
+    }
+  }
 
-  const lines = headers.trim().split("\n").filter(Boolean);
-  const httpLine = [...lines].reverse().find((line) => line.startsWith("HTTP/"));
-  if (!httpLine) return 0;
-  const match = httpLine.match(/^HTTP\/\S+\s+(\d+)/);
-  return match ? Number(match[1]) : 0;
+  throw lastError;
 }
 
 for (const page of pages) {
   const url = `${baseUrl}${page}`;
-  const status = readStatus(url);
-  const html = readPage(url);
-  const canonicalOk = html.includes(`<link rel="canonical" href="${url}"`);
+  const { status, html, finalUrl } = await readPage(url);
+  const canonicalOk = html.includes(`<link rel="canonical" href="${finalUrl}"`);
   const titleOk = html.includes("<title>");
 
   checks.push({
@@ -74,8 +70,7 @@ for (const page of pages) {
 }
 
 const sitemapUrl = `${baseUrl}/sitemap-index.xml`;
-const sitemapStatus = readStatus(sitemapUrl);
-const sitemapText = readPage(sitemapUrl);
+const { status: sitemapStatus, html: sitemapText } = await readPage(sitemapUrl);
 const sitemapOk = sitemapStatus === 200 && sitemapText.includes(baseUrl);
 
 console.log("站点复查结果:");

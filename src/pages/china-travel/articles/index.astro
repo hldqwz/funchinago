@@ -2,17 +2,12 @@
 import Layout from '../../../layouts/ChinaTravelLayout.astro';
 import { getCollection } from 'astro:content';
 import { portalSections } from '../../../data/chinaStarterPortal';
+import { formatTravelStage } from '../../../data/chinaTravelPresentation';
 
 const articleSlug = (id: string) => id.replace(/\.md$/, '');
 
 const articles = (await getCollection('china-travel'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-
-const stageLabels = {
-  discover: 'Discover China',
-  before: 'Before You Go',
-  'in-china': 'In China',
-};
 
 const stageDescriptions = {
   discover: 'Choose where to go and what kind of China trip fits you.',
@@ -20,7 +15,8 @@ const stageDescriptions = {
   'in-china': 'Solve practical problems once you are on the ground.',
 };
 
-const groups = ['discover', 'before', 'in-china'].map((stage) => {
+const stageOrder = ['discover', 'before', 'in-china'] as const;
+const groups = stageOrder.map((stage) => {
   const stageArticles = articles.filter((article) => article.data.stage === stage);
   return {
     stage,
@@ -99,7 +95,7 @@ const cityCount = new Set(
       <section class="stage-section">
         <div class="stage-heading">
           <div>
-            <p>{stageLabels[group.stage]}</p>
+            <p>{formatTravelStage(group.stage)}</p>
             <h2>{stageDescriptions[group.stage]}</h2>
           </div>
           <span class="stage-count">{group.count} guides</span>
@@ -110,7 +106,7 @@ const cityCount = new Set(
             <a class="featured-card" href={`/china-travel/articles/${articleSlug(group.featured.id)}/`}>
               {group.featured.data.hero_image && <img src={group.featured.data.hero_image} alt={`Featured cover for ${group.featured.data.title}`} />}
               <div>
-                <span>{stageLabels[group.stage]}</span>
+                <span>{formatTravelStage(group.stage)}</span>
                 <h3>{group.featured.data.title}</h3>
                 <p>{group.featured.data.description}</p>
                 <time datetime={group.featured.data.updatedAt.toISOString()}>

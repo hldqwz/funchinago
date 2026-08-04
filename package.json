@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "rm -rf .astro dist && astro build",
+    "build": "node -e \"const fs=require('node:fs'); for (const dir of ['.astro','dist']) fs.rmSync(dir,{recursive:true,force:true})\" && astro build",
     "preview": "astro preview",
     "test": "node tests/chinaCityPicker.test.mjs && node tests/chinaStarterPortalRoutes.test.mjs && node tests/chinaTransitPolicy.test.mjs && node tests/chinaTravelArticles.test.mjs && node tests/chinaTravelChecklist.test.mjs && node tests/chinaTravelSources.test.mjs && node tests/chinaTravelPaymentCluster.test.mjs",
     "set-site-url": "node scripts/set-site-url.mjs",

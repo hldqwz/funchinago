@@ -1,8 +1,9 @@
 ---
-title: "How to Use Alipay in China as a Foreigner: Setup, Cards and Tourist Tips"
+title: "How to Use Alipay in China as a Foreigner"
+seoTitle: "How to Use Alipay in China as a Foreigner (2026)"
 date: 2026-06-02
-updatedAt: 2026-07-02
-description: "Alipay is often the easiest payment app for foreign tourists in China. Learn how to set it up, link an international card, avoid common failures, and prepare backup payment options."
+updatedAt: 2026-08-04
+description: "Learn how foreign visitors can set up Alipay, link an international card, scan merchant QR codes, and recover when a payment fails in China."
 stage: "before"
 section: "travel"
 hero_image: "/china-travel/images/article-alipay-editorial.png"
@@ -16,6 +17,17 @@ For many first-time visitors, Alipay is one of the most practical apps to prepar
 ## Quick Answer
 
 For many first-time visitors, Alipay is usually the first payment app to prepare before traveling to China, with WeChat Pay as a useful backup. You may be able to use Alipay by registering, linking a supported international card, and completing the app's verification steps before arrival.
+
+- **Can foreign visitors use it?** Often yes, for eligible merchant purchases with a supported international card.
+- **When should you set it up?** Before departure, while SMS, bank approval, and identity checks are easier to solve.
+- **How do you pay?** Either show your payment code for the merchant to scan or scan the merchant's QR code.
+- **What is limited?** An international card can support daily purchases but not every domestic-wallet function.
+- **What if it fails?** Retry once, check data and bank alerts, then switch to WeChat Pay, a physical card, or cash.
+
+<aside class="trust-module">
+  <strong>Checked against Alipay+ and Chinese government guidance.</strong>
+  <p>Last checked: August 4, 2026. Payment features may change. Verify app and card support before travel.</p>
+</aside>
 
 ## Is Alipay Easier Than WeChat Pay for Foreign Tourists?
 
@@ -61,11 +73,51 @@ A practical setup sequence is:
 
 If the first card fails, try another one while you still have time. It is usually much easier to troubleshoot at home than at a checkout counter.
 
+## How to pay at a merchant
+
+<div class="payment-flow">
+  <section>
+    <h3>Merchant scans you</h3>
+    <p>Open Alipay's payment code and let the cashier scan it. Check the amount and confirmation screen before leaving the counter.</p>
+  </section>
+  <section>
+    <h3>You scan the merchant</h3>
+    <p>Use Scan in Alipay, point it at the merchant's QR code, enter the amount only if the merchant asks you to, and verify the merchant name before confirming.</p>
+  </section>
+</div>
+
+## What an international card can and cannot do
+
+Alipay+'s current visitor guidance says an overseas traveler can link an international bank card in the international Alipay app and use it for daily purchases. It also lists important exclusions: the international-card route does not support person-to-person transfers, red packets, wealth management, insurance, or other financial services.
+
+<table class="payment-table">
+  <thead><tr><th>Use</th><th>What to expect</th></tr></thead>
+  <tbody>
+    <tr><td>Merchant purchases</td><td>Supported for everyday purchases when your card, account, and merchant flow are eligible.</td></tr>
+    <tr><td>Transfers and red packets</td><td>Not supported through the international-bank-card visitor route.</td></tr>
+    <tr><td>Exchange rate</td><td>Set by the card scheme and issuing bank; check your card statement for the final rate and any issuer charges.</td></tr>
+    <tr><td>Card acceptance</td><td>Can still vary by issuer, card, merchant, and security review.</td></tr>
+  </tbody>
+</table>
+
+This is why Alipay can be a strong merchant-payment tool without replacing every domestic wallet function. Keep the [payment hub and backup plan](/china-travel/articles/how-to-pay-in-china-tourist/) available during your trip.
+
 ## Where Alipay Usually Works
 
-Alipay is often useful for restaurants, convenience stores, shopping malls, attraction ticket flows, ride-hailing, and other QR-code payments. It can also help when a local service expects an app-based flow rather than a foreign card at a terminal.
+Alipay is often useful in six common visitor settings:
+
+- shops and convenience stores,
+- restaurants and café counters,
+- taxis and ride-hailing,
+- public-transport payment flows,
+- flights and hotels,
+- attraction tickets and other app-based bookings.
 
 This does not mean every merchant, card, or mini program will work. It means Alipay is usually a strong first app to prepare.
+
+## Official Alipay support
+
+The current Alipay+ visitor page lists `0571-2688 6000` for calls made locally and `+86 571 2688 6000` from overseas. It gives service hours as Monday through Sunday, 08:00–24:00 GMT+8. Save the overseas-format number before departure, and use the Help or customer-service area inside the official app for the latest route.
 
 ## Alipay Not Working in China: Common Reasons
 
@@ -123,21 +175,4 @@ Usually yes. Cash is still a useful backup option when the network is weak, your
 
 ### What if Alipay works in one shop but not another?
 
-That can happen. Merchant setup, QR method, card handling, and network stability may differ from place to place.
-
-## Check Official Sources Before You Travel
-
-Visitor payment support can change, so check official guidance before relying on one app.
-
-- [Alipay+ — Pay in the Chinese mainland](https://www.alipayplus.com/my/pay-in-the-chinese-mainland/)
-- [Chinese Government — Guide to Payment Services in China](https://english.www.gov.cn/news/202404/11/content_WS6617c858c6d0868f4e8e5f4d.html)
-- [China Travel Made Easy — official source library](/china-travel/sources/)
-
-## Related Guides
-
-- [How to pay in China as a tourist](/china-travel/articles/how-to-pay-in-china-tourist/)
-- [How to use WeChat Pay in China as a foreigner](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/)
-- [Does Apple Pay or Google Pay work in China?](/china-travel/articles/can-you-use-apple-pay-or-google-pay-in-china/)
-- [What to do if Alipay fails in China](/china-travel/articles/alipay-not-working-in-china-foreign-tourists/)
-- [Build a payment backup plan before flying to China](/china-travel/articles/china-travel-checklist-before-you-fly/)
-- [China Travel Made Easy official source library](/china-travel/sources/)
+That can happen. Merchant setup, QR method, card handling, and network stability may differ from place to place. If you are comparing fallbacks, review [Apple Pay and Google Wallet in China](/china-travel/articles/can-you-use-apple-pay-or-google-pay-in-china/). The references used here also appear in the [official source library](/china-travel/sources/), followed below by a curated set of related payment guides.

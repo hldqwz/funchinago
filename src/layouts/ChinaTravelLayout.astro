@@ -65,7 +65,7 @@ const orgSchema = {
   "url": new URL("/china-travel/", siteUrl).toString(),
   "logo": new URL("/images/logo.svg", siteUrl).toString(),
   "image": new URL("/images/logo.svg", siteUrl).toString(),
-  "description": "Practical China travel guides for first-time visitors, anchored by official sources.",
+  "description": "Practical China travel guides for international first-time visitors, anchored by official sources.",
   "foundingDate": "2025",
 };
 
@@ -95,19 +95,19 @@ const navItems = [
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title} | China Travel Made Easy</title>
-  <meta name="description" content={description || "Practical China travel guides for first-time visitors."} />
+  <title>{title}</title>
+  <meta name="description" content={description || "Practical China travel guides for international first-time visitors."} />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href={canonicalUrl.toString()} />
   <meta property="og:title" content={title} />
-  <meta property="og:description" content={description || "Practical China travel guides for first-time visitors."} />
+  <meta property="og:description" content={description || "Practical China travel guides for international first-time visitors."} />
   <meta property="og:type" content={pageType} />
   <meta property="og:url" content={canonicalUrl.toString()} />
   <meta property="og:image" content={socialImageUrl.toString()} />
   <meta property="og:site_name" content="China Travel Made Easy" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description || "Practical China travel guides for first-time visitors."} />
+  <meta name="twitter:description" content={description || "Practical China travel guides for international first-time visitors."} />
   <meta name="twitter:image" content={socialImageUrl.toString()} />
   <meta name="theme-color" content="#a14d2b" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🇨🇳</text></svg>">
@@ -535,6 +535,93 @@ const navItems = [
     select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
     option { background: var(--surface-strong); color: var(--text); }
 
+    .payment-steps {
+      counter-reset: payment-step;
+      display: grid;
+      gap: 0.8rem;
+      list-style: none;
+      padding: 0 !important;
+    }
+
+    .payment-steps li {
+      counter-increment: payment-step;
+      position: relative;
+      min-height: 3rem;
+      margin: 0 !important;
+      padding: 0.85rem 1rem 0.85rem 3.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface-strong);
+    }
+
+    .payment-steps li::before {
+      content: counter(payment-step);
+      position: absolute;
+      top: 0.75rem;
+      left: 0.85rem;
+      display: grid;
+      width: 2rem;
+      height: 2rem;
+      place-items: center;
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      font-weight: 800;
+    }
+
+    .payment-flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin: 1rem 0 1.4rem;
+    }
+
+    .payment-flow section {
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface-strong);
+    }
+
+    .payment-flow h3 { margin-top: 0 !important; }
+    .payment-flow p:last-child { margin-bottom: 0 !important; }
+
+    .payment-table {
+      width: 100%;
+      margin: 1rem 0 1.4rem;
+      border-collapse: collapse;
+      border: 1px solid var(--border);
+      background: var(--surface-strong);
+      font-size: 0.94rem;
+    }
+
+    .payment-table th,
+    .payment-table td {
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .payment-table th {
+      background: var(--accent-soft);
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .trust-module {
+      margin: 1.25rem 0;
+      padding: 1rem 1.1rem;
+      border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--border));
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius-md);
+      background: var(--accent-soft);
+      color: var(--text-secondary);
+    }
+
+    .trust-module strong { color: var(--text); }
+    .trust-module p { margin: 0.35rem 0 0 !important; }
+
     @media (max-width: 960px) {
       .site-header .container {
         flex-direction: column;
@@ -610,6 +697,14 @@ const navItems = [
       .footer-links {
         font-size: 0.88rem;
       }
+
+      .payment-flow { grid-template-columns: 1fr; }
+
+      .payment-table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+      }
     }
   </style>
 </head>
@@ -622,7 +717,7 @@ const navItems = [
           <a href="/china-travel/" class="logo">
             <span class="logo-eyebrow">China Starter Portal</span>
             <span class="logo-title">China Travel Made Easy</span>
-            <span class="logo-subtitle">A calm, practical starting point for Western visitors.</span>
+            <span class="logo-subtitle">A calm, practical starting point for international first-time visitors.</span>
           </a>
         </div>
 
@@ -648,7 +743,7 @@ const navItems = [
 
     <footer class="site-footer">
       <div class="container">
-        <p>China Travel Made Easy is evolving into a practical starter portal with route planning, city basics, and culture-friendly guidance anchored by official sources.</p>
+        <p>China Travel Made Easy is a practical starter portal for international first-time visitors, with route planning, city basics, and source-backed guidance.</p>
         <div class="footer-links" aria-label="Footer">
           <a href="/china-travel/">Home</a>
           <a href="/china-travel/start-here/">Start Here</a>

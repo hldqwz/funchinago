@@ -4,6 +4,7 @@ const chinaTravelCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    seoTitle: z.string().optional(),
     date: z.coerce.date(),
     updatedAt: z.coerce.date(),
     description: z.string(),

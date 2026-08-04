@@ -18,6 +18,38 @@ function assertFrontmatterValue(article, key, expected, label) {
   assert.equal(match[1], expected, `${label} has unexpected ${key}`);
 }
 
+for (const [slug, seoTitle, description] of [
+  [
+    'how-to-pay-in-china-tourist',
+    'How to Pay in China as a Tourist (2026): Apps, Cards & Cash',
+    'Set up Alipay and WeChat Pay, understand foreign-card limits, carry the right cash backup, and know what to do when a payment fails in China.',
+  ],
+  [
+    'how-to-use-alipay-in-china-foreigner',
+    'How to Use Alipay in China as a Foreigner (2026)',
+    'Learn how foreign visitors can set up Alipay, link an international card, scan merchant QR codes, and recover when a payment fails in China.',
+  ],
+  [
+    'how-to-use-wechat-pay-in-china-foreigner',
+    'WeChat Pay for Foreigners in China (2026): Setup & Fixes',
+    'Set up WeChat Pay with an international card, understand current fees and limitations, and fix common QR-code or mini-program failures in China.',
+  ],
+  [
+    'can-you-use-apple-pay-or-google-pay-in-china',
+    'Do Apple Pay and Google Pay Work in China? Card Guide',
+    'See when Apple Pay or Google Wallet may work in China, why foreign cards still fail, and which Alipay, WeChat Pay, card, and cash backups to prepare.',
+  ],
+  [
+    'wechat-pay-vs-alipay-for-tourists-china',
+    'Alipay vs WeChat Pay for Tourists in China (2026)',
+    'Compare Alipay and WeChat Pay for foreign tourists, including setup, merchant use, mini programs, limitations, and the safest payment backup plan.',
+  ],
+]) {
+  const article = readArticle(slug);
+  assertFrontmatterValue(article, 'seoTitle', seoTitle, `${slug} article`);
+  assertFrontmatterValue(article, 'description', description, `${slug} article`);
+}
+
 const wechat = readArticle('how-to-use-wechat-pay-in-china-foreigner');
 assertFrontmatterValue(
   wechat,
@@ -28,7 +60,7 @@ assertFrontmatterValue(
 assertFrontmatterValue(
   wechat,
   'description',
-  'Foreign tourists can often use WeChat Pay in China with an international card, but setup, verification, card support, and QR-code payments can still fail. Here is what to prepare and what to do when it does not work.',
+  'Set up WeChat Pay with an international card, understand current fees and limitations, and fix common QR-code or mini-program failures in China.',
   'wechat article',
 );
 for (const heading of [
@@ -56,13 +88,13 @@ const alipay = readArticle('how-to-use-alipay-in-china-foreigner');
 assertFrontmatterValue(
   alipay,
   'title',
-  'How to Use Alipay in China as a Foreigner: Setup, Cards and Tourist Tips',
+  'How to Use Alipay in China as a Foreigner',
   'alipay article',
 );
 assertFrontmatterValue(
   alipay,
   'description',
-  'Alipay is often the easiest payment app for foreign tourists in China. Learn how to set it up, link an international card, avoid common failures, and prepare backup payment options.',
+  'Learn how foreign visitors can set up Alipay, link an international card, scan merchant QR codes, and recover when a payment fails in China.',
   'alipay article',
 );
 for (const heading of [
@@ -182,25 +214,44 @@ assertFrontmatterValue(
 assertFrontmatterValue(
   paymentHub,
   'description',
-  'Most tourists in China should prepare Alipay first, WeChat Pay as backup, one physical card, and a small amount of cash. Learn what works, what fails, and what to do when payment apps do not work.',
+  'Set up Alipay and WeChat Pay, understand foreign-card limits, carry the right cash backup, and know what to do when a payment fails in China.',
   'payment hub',
 );
 assertIncludes(paymentHub, 'If payment fails', 'payment hub');
 assertIncludes(paymentHub, 'Compare Alipay and WeChat Pay', 'payment hub');
 for (const heading of [
   '## Quick Answer',
+  '## 60-Second Payment Plan',
   '## The Safest Payment Setup Before You Fly',
+  '## Payment decision guide',
+  '<h3>Before You Fly</h3>',
+  '<h3>At Checkout</h3>',
+  '<h3>If It Fails</h3>',
   '## Alipay vs WeChat Pay: Which One Should Tourists Prepare First?',
   '## Can You Use Apple Pay or Google Pay in China?',
   '## Can Foreign Credit Cards Work in China?',
   '## When Cash Still Helps',
   '## What to Do When Payment Fails',
   '## Common Mistakes',
-  '## Official Sources to Check Before You Travel',
-  '## Related Payment Guides',
 ]) {
   assertIncludes(paymentHub, heading, 'payment hub structure');
 }
+assert.ok(
+  !paymentHub.includes('## Official Sources to Check Before You Travel'),
+  'payment hub must use the shared source module instead of a duplicate manual source section',
+);
+assert.ok(
+  !paymentHub.includes('## Related Payment Guides'),
+  'payment hub must use the shared related-guides module instead of a duplicate manual section',
+);
+const paymentSteps = paymentHub.match(/<ol class="payment-steps">([\s\S]*?)<\/ol>/)?.[1] ?? '';
+assert.equal((paymentSteps.match(/<li>/g) ?? []).length, 5, 'payment hub must contain five quick-plan steps');
+const paymentDecisionTable = paymentHub.match(/<table class="payment-table">([\s\S]*?)<\/table>/)?.[1] ?? '';
+assert.equal(
+  (paymentDecisionTable.match(/<tbody>[\s\S]*?<\/tbody>/)?.[0].match(/<tr>/g) ?? []).length,
+  5,
+  'payment hub decision table must contain five situations',
+);
 for (const href of [
   '/china-travel/articles/how-to-use-alipay-in-china-foreigner/',
   '/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/',
@@ -266,13 +317,96 @@ for (const [slug, expectedTitle, requiredHrefs] of [
     '## Quick Answer',
     '## What Travelers Usually Expect',
     '## Practical Backup Plan',
-    '## Check Official Sources Before You Travel',
   ]) {
     assertIncludes(article, heading, `${slug} article`);
   }
   for (const href of requiredHrefs) {
     assertIncludes(article, href, `${slug} article links`);
   }
+}
+
+for (const [article, label, headings] of [
+  [
+    alipay,
+    'alipay article',
+    [
+      '<h3>Merchant scans you</h3>',
+      '<h3>You scan the merchant</h3>',
+      '## What an international card can and cannot do',
+      '## Official Alipay support',
+    ],
+  ],
+  [
+    wechat,
+    'wechat article',
+    [
+      '## 2026 visitor payment update',
+      '## PayPal payments through Weixin Pay: current availability',
+      '## Official support and language help',
+    ],
+  ],
+  [
+    readArticle('can-you-use-apple-pay-or-google-pay-in-china'),
+    'phone wallet article',
+    ['## Apple Pay in China', '## Google Wallet in China', '## If a phone-wallet payment fails'],
+  ],
+  [
+    readArticle('wechat-pay-vs-alipay-for-tourists-china'),
+    'payment comparison article',
+    ['## Only time for one app?', '## Three-question decision'],
+  ],
+]) {
+  for (const heading of headings) assertIncludes(article, heading, label);
+}
+
+const phoneWalletArticle = readArticle('can-you-use-apple-pay-or-google-pay-in-china');
+const phoneWalletFailureSteps = phoneWalletArticle.match(/## If a phone-wallet payment fails[\s\S]*?<ol class="payment-steps">([\s\S]*?)<\/ol>/)?.[1] ?? '';
+assert.equal(
+  (phoneWalletFailureSteps.match(/<li>/g) ?? []).length,
+  5,
+  'phone wallet failure plan must contain five steps',
+);
+
+const comparisonArticle = readArticle('wechat-pay-vs-alipay-for-tourists-china');
+const comparisonTable = comparisonArticle.match(/<table class="payment-table">([\s\S]*?)<\/table>/)?.[1] ?? '';
+assert.equal(
+  (comparisonTable.match(/<tbody>[\s\S]*?<\/tbody>/)?.[0].match(/<tr>/g) ?? []).length,
+  7,
+  'Alipay vs WeChat Pay table must compare seven decision factors',
+);
+
+for (const [slug, label] of [
+  ['how-to-pay-in-china-tourist', 'payment hub'],
+  ['how-to-use-alipay-in-china-foreigner', 'alipay article'],
+  ['how-to-use-wechat-pay-in-china-foreigner', 'wechat article'],
+  ['can-you-use-apple-pay-or-google-pay-in-china', 'phone wallet article'],
+  ['wechat-pay-vs-alipay-for-tourists-china', 'payment comparison article'],
+]) {
+  const article = readArticle(slug);
+  assertIncludes(article, '<aside class="trust-module">', `${label} trust module`);
+  assertIncludes(article, 'Last checked: August 4, 2026', `${label} review date`);
+  assertIncludes(
+    article,
+    'Payment features may change. Verify app and card support before travel.',
+    `${label} change warning`,
+  );
+}
+
+for (const slug of [
+  'how-to-use-alipay-in-china-foreigner',
+  'how-to-use-wechat-pay-in-china-foreigner',
+  'can-you-use-apple-pay-or-google-pay-in-china',
+  'wechat-pay-vs-alipay-for-tourists-china',
+  'can-foreign-credit-cards-work-in-china',
+  'do-you-need-cash-in-china-as-a-tourist',
+  'alipay-not-working-in-china-foreign-tourists',
+  'wechat-pay-not-working-in-china-foreigners',
+]) {
+  assertIncludes(
+    readArticle(slug),
+    '/china-travel/articles/how-to-pay-in-china-tourist/',
+    `${slug} payment hub backlink`,
+  );
 }
 
 const apps = readArticle('best-apps-for-traveling-in-china');
@@ -297,6 +431,13 @@ for (const [article, label] of [
 
 const homepage = fs.readFileSync(path.resolve('src/pages/china-travel.astro'), 'utf8');
 const portalData = fs.readFileSync(path.resolve('src/data/chinaStarterPortal.ts'), 'utf8');
+const presentationData = fs.readFileSync(path.resolve('src/data/chinaTravelPresentation.ts'), 'utf8');
+const sharedLayout = fs.readFileSync(path.resolve('src/layouts/ChinaTravelLayout.astro'), 'utf8');
+assertIncludes(sharedLayout, '<title>{title}</title>', 'exact SEO title rendering');
+for (const className of ['payment-steps', 'payment-flow', 'payment-table', 'trust-module']) {
+  assertIncludes(sharedLayout, `.${className}`, `shared payment component style ${className}`);
+}
+assert.ok(!sharedLayout.includes('<title>{title} |'), 'layout must not append a suffix to an explicit SEO title');
 for (const marker of [
   '/china-travel/articles/how-to-pay-in-china-tourist/',
   '/china-travel/articles/how-to-use-alipay-in-china-foreigner/',
@@ -314,15 +455,47 @@ for (const marker of [
 }
 
 const travelPage = fs.readFileSync(path.resolve('src/pages/china-travel/travel.astro'), 'utf8');
+for (const heading of [
+  'Payments in China',
+  'Internet and Essential Apps',
+  'Entry and Documents',
+  'Trains and Routes',
+]) {
+  assert.ok(
+    travelPage.includes(heading) || presentationData.includes(heading),
+    `Travel information architecture missing: ${heading}`,
+  );
+}
+for (const slug of [
+  'how-to-pay-in-china-tourist',
+  'how-to-use-alipay-in-china-foreigner',
+  'how-to-use-wechat-pay-in-china-foreigner',
+  'wechat-pay-vs-alipay-for-tourists-china',
+  'can-you-use-apple-pay-or-google-pay-in-china',
+  'can-foreign-credit-cards-work-in-china',
+  'do-you-need-cash-in-china-as-a-tourist',
+  'alipay-not-working-in-china-foreign-tourists',
+  'wechat-pay-not-working-in-china-foreigners',
+]) {
+  assertIncludes(presentationData, slug, 'Travel payment group');
+}
+assertIncludes(travelPage, 'travelArticleGroups.map', 'Travel grouped rendering');
+assertIncludes(travelPage, 'groupedTravelSlugs', 'Travel duplicate exclusion');
+assertIncludes(travelPage, 'ungroupedTravelArticles.map', 'Travel ungrouped fallback rendering');
+assert.ok(!sharedLayout.includes('Western visitors'), 'shared layout must address international visitors inclusively');
+assertIncludes(sharedLayout, 'international first-time visitors', 'shared layout audience wording');
+assertIncludes(homepage, 'China Travel Guide for First-Time Visitors (2026)', 'homepage SEO title');
+assertIncludes(homepage, 'payments, apps, trains, cities', 'homepage SEO description');
+assertIncludes(travelPage, 'China Travel Essentials: Payments, Apps, Trains & Entry', 'Travel SEO title');
 for (const marker of [
-  'Payment planning',
+  'Payments in China',
   '/china-travel/articles/how-to-pay-in-china-tourist/',
   '/china-travel/articles/can-foreign-credit-cards-work-in-china/',
   '/china-travel/articles/can-you-use-apple-pay-or-google-pay-in-china/',
   '/china-travel/articles/wechat-pay-vs-alipay-for-tourists-china/',
 ]) {
   assert.ok(
-    travelPage.includes(marker) || portalData.includes(marker),
+    travelPage.includes(marker) || portalData.includes(marker) || presentationData.includes(marker),
     `travel page payment spotlight missing: ${marker}`,
   );
 }
