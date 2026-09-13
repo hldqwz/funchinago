@@ -5,7 +5,7 @@ export const portalSections = [
     href: '/china-travel/start-here/',
     eyebrow: 'First step',
     description: 'Begin with the big-picture guides that explain why China is worth the effort and how to choose your first route.',
-    image: '/china-travel/images/hero-china-portal-editorial.png',
+    image: '/china-travel/images/hero-hongyadong.jpg',
   },
   {
     slug: 'travel',
