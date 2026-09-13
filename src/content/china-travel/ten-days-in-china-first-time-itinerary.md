@@ -72,6 +72,10 @@ Suggested pace:
 - 2 days Hangzhou or Suzhou
 - 4 days Beijing
 
+## Coastal Ending Option: Add Zhuhai
+
+If your ten days route through the south, consider swapping the final two days for Zhuhai: sea air on Lovers' Road, the Sun Moon Shells opera house at night, and a full day at Chimelong Ocean Kingdom, with Macau across the border as an optional day trip. Use the [Zhuhai travel guide for first-time visitors](/china-travel/articles/zhuhai-travel-guide-first-time-visitors/) to plan the three-day coastal sequence, where to stay, and the Macau crossing paperwork.
+
 ## When To Use High-Speed Rail
 
 High-speed rail is ideal when:
@@ -102,5 +106,6 @@ China rewards slower routes. Give the cities time to feel different instead of t
 
 - [Best China Itineraries by Travel Style](/china-travel/articles/best-china-itineraries-by-travel-style/)
 - [Best Places to Visit in China for First-Time Visitors](/china-travel/articles/best-places-to-visit-in-china-first-time/)
+- [Zhuhai Travel Guide for First-Time Visitors](/china-travel/articles/zhuhai-travel-guide-first-time-visitors/)
 - [How to Book High-Speed Train Tickets in China as a Foreigner](/china-travel/articles/how-to-book-high-speed-train-tickets-china-foreigner/)
 - [China Travel Checklist: What to Prepare Before You Fly](/china-travel/articles/china-travel-checklist-before-you-fly/)

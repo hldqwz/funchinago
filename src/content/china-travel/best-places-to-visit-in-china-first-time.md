@@ -105,6 +105,8 @@ If you want an easier modern start, choose Shanghai, Suzhou or Hangzhou, and Bei
 
 If you want food and a softer pace, choose Chengdu plus Beijing or Shanghai.
 
+If you want a coastal break with sea air, island promenades, and a world-class ocean park, add Zhuhai — the [Zhuhai travel guide for first-time visitors](/china-travel/articles/zhuhai-travel-guide-first-time-visitors/) covers Lovers' Road, the Sun Moon Shells, Chimelong, Macau connections, and a no-backtracking three-day plan.
+
 If you want the strongest visual surprise, choose Shanghai and Chongqing, but prepare your maps, payment, and translation apps carefully.
 
 ## Related Guides
@@ -115,4 +117,5 @@ If you want the strongest visual surprise, choose Shanghai and Chongqing, but pr
 - [Beijing, Shanghai, Chengdu, or Chongqing: Which Chinese City Should You Visit First?](/china-travel/articles/beijing-shanghai-chengdu-or-chongqing-which-city-to-visit-first/)
 - [Shanghai Travel Guide for First-Time Visitors](/china-travel/articles/shanghai-travel-guide-first-time-visitors/)
 - [Xi'an Travel Guide for First-Time Visitors](/china-travel/articles/xian-travel-guide-first-time-visitors/)
+- [Zhuhai Travel Guide for First-Time Visitors](/china-travel/articles/zhuhai-travel-guide-first-time-visitors/)
 - [10 Days in China: First-Time Itinerary](/china-travel/articles/ten-days-in-china-first-time-itinerary/)

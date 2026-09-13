@@ -112,11 +112,14 @@ If you want the most enjoyable food-first trip, start with Chengdu.
 
 If you want the strongest visual surprise, add Chongqing after one easier city.
 
+If you want a coastal break with sea air and a slower pace, add Zhuhai after Guangzhou or Macau — the [Zhuhai travel guide for first-time visitors](/china-travel/articles/zhuhai-travel-guide-first-time-visitors/) covers Lovers' Road, the Sun Moon Shells opera house, Chimelong Ocean Kingdom, and a realistic three-day plan.
+
 ## Related Guides
 
 - [Best Places to Visit in China for First-Time Visitors](/china-travel/articles/best-places-to-visit-in-china-first-time/)
 - [Shanghai Travel Guide for First-Time Visitors](/china-travel/articles/shanghai-travel-guide-first-time-visitors/)
 - [Chengdu Travel Guide for First-Time Visitors](/china-travel/articles/chengdu-travel-guide-first-time-visitors/)
+- [Zhuhai Travel Guide for First-Time Visitors](/china-travel/articles/zhuhai-travel-guide-first-time-visitors/)
 - [Best China Itineraries by Travel Style](/china-travel/articles/best-china-itineraries-by-travel-style/)
 - [China City Picker](/tools/china-city-picker/)
 - [How to Book High-Speed Train Tickets in China as a Foreigner](/china-travel/articles/how-to-book-high-speed-train-tickets-china-foreigner/)
