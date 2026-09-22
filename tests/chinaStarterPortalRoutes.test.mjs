@@ -117,13 +117,13 @@ for (const tool of homepageTools) {
 }
 
 const featuredCity = readExportedObject(portalData, 'featuredCity');
-assert.equal(featuredCity.city, "Xi'an", "featured city should show Xi'an as the current weekly visual highlight");
+assert.equal(featuredCity.city, 'Zhuhai', 'featured city should show Zhuhai as the current highlight');
 assertRealRoute(featuredCity.href, 'featured city');
 assertImageExists(featuredCity.image, 'featured city');
-assert.match(featuredCity.href, /xian-travel-guide-first-time-visitors\/$/, "featured city should link to the current Xi'an guide");
-assert.ok(featuredCity.title.includes("Xi'an"), "featured city title should name Xi'an");
-assert.ok(featuredCity.alt.includes('Bell Tower'), "featured city image alt text should describe Xi'an's Bell Tower");
-assert.equal(featuredCity.cta, "Read the Xi'an guide", 'featured city data should own the shared call-to-action');
+assert.match(featuredCity.href, /zhuhai-travel-guide-first-time-visitors\/$/, 'featured city should link to the current Zhuhai guide');
+assert.ok(featuredCity.title.includes('Zhuhai'), 'featured city title should name Zhuhai');
+assert.ok(featuredCity.alt.includes('Opera House'), "featured city image alt text should describe Zhuhai's Opera House");
+assert.equal(featuredCity.cta, 'Read the Zhuhai guide', 'featured city data should own the shared call-to-action');
 assert.match(
   homepage,
   /href=\{featuredCity\.href\}>\{featuredCity\.cta\}<\/a>/,

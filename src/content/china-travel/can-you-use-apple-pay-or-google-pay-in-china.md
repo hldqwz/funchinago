@@ -14,7 +14,7 @@ relatedTools: []
 
 ## Quick Answer
 
-If you are visiting China for the first time, do not treat Apple Pay or Google Pay as your main payment method. They may help in some hotels, airports, malls, or international-facing card terminals, but everyday payments in China are usually built around Alipay and WeChat Pay QR-code flows.
+Apple Pay and Google Pay work at hotels, airports, malls, and international-facing card terminals in China. They do not cover everyday spending. Daily payments run through Alipay and WeChat Pay QR flows, and a phone wallet does not reach those. Set up both apps and treat the wallet as a backup for the few places that accept it.
 
 Start with [How to Pay in China as a Tourist](/china-travel/articles/how-to-pay-in-china-tourist/) if you need a full setup, then use this page to decide how much your phone wallet matters.
 
@@ -25,7 +25,7 @@ Start with [How to Pay in China as a Tourist](/china-travel/articles/how-to-pay-
 
 ## What Travelers Usually Expect
 
-Travelers often expect Apple Pay or Google Pay to replace a physical card. In China, that expectation is usually too optimistic.
+A phone wallet does not replace a physical card in China. It adds a contactless layer on top of one, and only at merchants with a compatible terminal.
 
 Apple Pay and Google Pay depend on supported cards, devices, wallet availability, and merchant terminals. China also has a separate everyday payment habit: QR codes inside Alipay, WeChat Pay, and mini programs.
 
@@ -80,7 +80,7 @@ If the merchant is built around QR payment, a Western phone wallet may not solve
 
 ## Why QR-Code Payments Matter More in Daily Life
 
-In China, payment is often connected to ordering, booking, identity checks, coupons, mini programs, and local service flows. A restaurant may not just ask you to tap a terminal. It may ask you to scan a QR code, order in a mini program, and pay inside the app.
+In China, payment is wired into ordering, booking, identity checks, coupons, mini programs, and local service flows. A restaurant does not ask you to tap a terminal. It asks you to scan a QR code, order inside a mini program, and pay inside the app. A phone wallet reaches none of that.
 
 That is why [Alipay for foreign visitors](/china-travel/articles/how-to-use-alipay-in-china-foreigner/) and [WeChat Pay for tourists](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/) deserve more attention than Apple Pay or Google Pay for a first trip.
 

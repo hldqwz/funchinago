@@ -252,12 +252,12 @@ export const paymentGuideLinks = [
 ] as const;
 
 export const featuredCity = {
-  city: "Xi'an",
-  eyebrow: 'This week',
-  title: "This Week's City Pick: Xi'an",
-  text: "Xi'an turns ancient China into a walkable first trip: Terracotta Warriors, a complete city wall, noodle shops, mosque lanes, and history that stays alive after dark.",
-  href: '/china-travel/articles/xian-travel-guide-first-time-visitors/',
-  image: '/china-travel/images/xian-bell-tower-night.jpg',
-  alt: "Xi'an Bell Tower glowing at night amid the modern city",
-  cta: "Read the Xi'an guide",
+  city: 'Zhuhai',
+  eyebrow: 'Featured city',
+  title: 'Featured City: Zhuhai',
+  text: "Zhuhai is the low-effort coastal add-on to a Macau or Hong Kong trip: a long seaside promenade, the Hong Kong-Zhuhai-Macau Bridge gateway, island waterfronts, and a noticeably slower pace than China's big inland cities.",
+  href: '/china-travel/articles/zhuhai-travel-guide-first-time-visitors/',
+  image: '/china-travel/images/zhuhai-opera-house-hero.jpg',
+  alt: 'Zhuhai Opera House Sun Moon Shells beside a traditional pavilion on the Yeli Island waterfront',
+  cta: 'Read the Zhuhai guide',
 } as const;

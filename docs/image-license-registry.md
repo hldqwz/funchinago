@@ -1,6 +1,6 @@
 # FunChinaGo Image License Registry
 
-Updated: 2026-07-28
+Updated: 2026-09-22
 
 ## Purpose
 
@@ -13,6 +13,15 @@ Before adding a city image:
 3. Add the required credit in the article when the license requires attribution.
 4. Do not use images copied from social media, review platforms, or personal blogs without explicit reuse permission.
 5. Do not describe an image as public domain unless the source page explicitly says so.
+
+## AI-generated images
+
+These images were generated with an AI image model rather than sourced from a photographer. They carry no third-party copyright. Record the generation date and the model used. Do not label them as photographs, and do not register them as licensed photos.
+
+| Image file | Generated | Description | Used in |
+| --- | --- | --- | --- |
+| `hero-liriver-mist.jpg` | 2026-09-22 | Li River at dawn near Guilin: layered karst peaks in morning mist, bamboo raft with cormorant fisherman | Homepage hero (`src/pages/china-travel.astro`) |
+| `og-liriver-mist.jpg` | 2026-09-22 | 1200x630 social share crop of the same generation | Homepage `ogImage` and layout default |
 
 ## Registered Images
 

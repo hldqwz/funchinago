@@ -16,9 +16,9 @@ For many first-time visitors, Alipay is one of the most practical apps to prepar
 
 ## Quick Answer
 
-For many first-time visitors, Alipay is usually the first payment app to prepare before traveling to China, with WeChat Pay as a useful backup. You may be able to use Alipay by registering, linking a supported international card, and completing the app's verification steps before arrival.
+Set up Alipay before you fly. Register, link a supported international card, and finish verification while you still have reliable SMS and bank access at home.
 
-- **Can foreign visitors use it?** Often yes, for eligible merchant purchases with a supported international card.
+- **Can foreign visitors use it?** Yes. With a linked international card, you can pay at eligible merchants across China.
 - **When should you set it up?** Before departure, while SMS, bank approval, and identity checks are easier to solve.
 - **How do you pay?** Either show your payment code for the merchant to scan or scan the merchant's QR code.
 - **What is limited?** An international card can support daily purchases but not every domestic-wallet function.
@@ -31,15 +31,15 @@ For many first-time visitors, Alipay is usually the first payment app to prepare
 
 ## Is Alipay Easier Than WeChat Pay for Foreign Tourists?
 
-Often, yes.
+Yes, for one job in particular: paying at a counter. You scan the merchant's QR code, or the merchant scans yours, and the payment clears.
 
-For many first-time visitors, Alipay usually feels easier when the goal is simple: pay at shops, restaurants, and everyday counters. WeChat Pay may still matter because local service flows and mini programs often live inside WeChat, but many travelers start with Alipay as their main setup.
+WeChat Pay earns its place somewhere else. Mini programs, ride-hailing, and in-chat service flows live inside WeChat, not inside a checkout counter, and Alipay does not reach them.
 
-A practical way to compare them:
+So split the work:
 
-- Alipay often works well as the main payment app to prepare before arrival.
-- WeChat Pay is often useful as a backup and service-layer app.
-- The safest setup is usually both apps plus another fallback.
+- **Alipay** — set it up first, use it as your main payment app.
+- **WeChat Pay** — set it up second, use it as backup and for WeChat-native services.
+- **Card plus cash** — keep both as your third layer, because both apps fail sometimes.
 
 If you want the broader framework first, start with [how to pay in China as a tourist](/china-travel/articles/how-to-pay-in-china-tourist/).
 
@@ -151,7 +151,7 @@ Useful steps are:
 
 Real situations where this matters:
 
-- In a restaurant, the QR menu may work but the payment step may fail.
+- In a restaurant, the QR menu loads fine and the payment step still fails.
 - In a convenience store, the first scan may fail simply because the network is slow.
 - At a counter, the merchant may be used to scanning your code rather than showing their own code.
 - In a taxi or Didi flow, confirm whether the ride is paid, pending, or waiting for another card approval.
@@ -167,7 +167,7 @@ For many visitors, yes, but not as the only plan. It usually works best with ano
 
 ### Does Alipay always work better than WeChat Pay?
 
-Not always. For many travelers it may feel easier as a main setup, but results can vary by card, merchant, city, and payment flow.
+No. Alipay handles most tourist payments, but the result depends on your card issuer, the merchant's terminal, and whether the flow runs through a mini program. Keep WeChat Pay, a physical card, and cash as fallbacks.
 
 ### Should I still carry cash if Alipay is ready?
 

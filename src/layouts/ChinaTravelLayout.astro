@@ -12,7 +12,7 @@ const currentPath = Astro.url.pathname;
 const siteUrl = Astro.site ?? new URL("https://funchinago.com");
 const canonicalUrl = new URL(currentPath, siteUrl);
 const socialImageUrl = new URL(
-  ogImage || "/china-travel/images/hero-hongyadong.jpg",
+  ogImage || "/china-travel/images/og-liriver-mist.jpg",
   siteUrl
 );
 
@@ -460,7 +460,7 @@ const navItems = [
       border: 1px solid var(--border);
       background: var(--surface);
       box-shadow: var(--shadow);
-      transition: all 0.15s;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
       cursor: pointer;
     }
 
@@ -518,7 +518,7 @@ const navItems = [
       font-weight: 600;
       border: none;
       cursor: pointer;
-      transition: all 0.15s;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
     }
 
     .btn-primary { background: var(--accent); color: white; }
@@ -713,9 +713,14 @@ const navItems = [
     <header class="site-header">
       <div class="container">
         <div class="brand-lockup">
-          <div class="brand-mark" aria-hidden="true">🧭</div>
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M14.8 9.2 13.4 13.4 9.2 14.8 10.6 10.6Z" />
+            </svg>
+          </div>
           <a href="/china-travel/" class="logo">
-            <span class="logo-eyebrow">China Starter Portal</span>
+            <span class="logo-eyebrow">FunChinaGo</span>
             <span class="logo-title">China Travel Made Easy</span>
             <span class="logo-subtitle">A calm, practical starting point for international first-time visitors.</span>
           </a>

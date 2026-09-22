@@ -2,7 +2,7 @@
 title: "Do You Need Cash in China as a Tourist? Where Cash Still Helps"
 date: 2026-06-15
 updatedAt: 2026-06-15
-description: "A practical guide to when foreign tourists still need cash in China, where mobile payment may fail, and how much backup cash usually makes sense."
+description: "A practical guide to when foreign tourists still need cash in China, where mobile payment fails, and how much backup cash to carry."
 stage: "before"
 section: "travel"
 hero_image: "/china-travel/images/article-payment-editorial.png"

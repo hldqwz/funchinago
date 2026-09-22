@@ -376,7 +376,6 @@ assert.equal(
 );
 
 for (const [slug, label] of [
-  ['how-to-pay-in-china-tourist', 'payment hub'],
   ['how-to-use-alipay-in-china-foreigner', 'alipay article'],
   ['how-to-use-wechat-pay-in-china-foreigner', 'wechat article'],
   ['can-you-use-apple-pay-or-google-pay-in-china', 'phone wallet article'],
@@ -390,6 +389,15 @@ for (const [slug, label] of [
     'Payment features may change. Verify app and card support before travel.',
     `${label} change warning`,
   );
+}
+
+{
+  const hub = readArticle('how-to-pay-in-china-tourist');
+  assertIncludes(hub, '<aside class="trust-module">', 'payment hub trust module');
+  assertIncludes(hub, 'Last checked: September 22, 2026', 'payment hub review date');
+  assertIncludes(hub, "People's Bank of China", 'payment hub attributes its limits to an official source');
+  assertIncludes(hub, 'USD 5,000', 'payment hub states the single-transaction limit');
+  assertIncludes(hub, 'USD 50,000', 'payment hub states the annual limit');
 }
 
 for (const slug of [

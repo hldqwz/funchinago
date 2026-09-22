@@ -1,7 +1,7 @@
 ---
 title: "China 240-Hour Visa-Free Transit Explained"
 date: 2026-06-02
-updatedAt: 2026-06-02
+updatedAt: 2026-09-22
 description: "A plain-English explanation of China’s 240-hour visa-free transit policy, including the third-country rule, eligible passports, onward tickets, and official-source cautions."
 stage: "before"
 section: "travel"
@@ -19,9 +19,9 @@ This guide explains the idea in plain English. For final decisions, use the Nati
 
 ## Quick Answer
 
-China’s 240-hour visa-free transit is for eligible passport holders who transit through China to a third country or region, enter through approved ports, stay within permitted areas, and hold a confirmed onward ticket within the allowed time.
+China's 240-hour visa-free transit is for eligible passport holders who transit through China to a third country or region, enter through approved ports, stay within permitted areas, and hold a confirmed onward ticket within the allowed time. As of August 20, 2026, the policy covers 57 countries and 65 open ports across 24 provincial-level regions, with a maximum stay of 240 hours.
 
-It is not a universal 10-day tourist visa-free rule for everyone.
+It is not a universal 10-day tourist visa-free rule for everyone. Your route must be Country A → China → Country B, and your passport must be on the eligible list.
 
 ## The Core Conditions
 

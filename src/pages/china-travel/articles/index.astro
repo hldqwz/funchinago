@@ -110,7 +110,7 @@ const cityCount = new Set(
                 <h3>{group.featured.data.title}</h3>
                 <p>{group.featured.data.description}</p>
                 <time datetime={group.featured.data.updatedAt.toISOString()}>
-                  Updated {group.featured.data.updatedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                  Updated {group.featured.data.updatedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                 </time>
               </div>
             </a>
@@ -126,7 +126,7 @@ const cityCount = new Set(
                     <h3><a href={`/china-travel/articles/${articleSlug(article.id)}/`}>{article.data.title}</a></h3>
                     <p>{article.data.description}</p>
                     <time datetime={article.data.updatedAt.toISOString()}>
-                      Updated {article.data.updatedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                      Updated {article.data.updatedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                     </time>
                   </div>
                 </article>

@@ -1,7 +1,7 @@
 ---
 title: "China Visa-Free Travel Guide 2026"
 date: 2026-06-02
-updatedAt: 2026-06-02
+updatedAt: 2026-09-22
 description: "A cautious first-time guide to China visa-free travel, including how to think about unilateral visa-free access, mutual visa-free access, and 240-hour transit."
 stage: "before"
 section: "travel"
@@ -13,9 +13,7 @@ relatedTools:
     href: "/tools/china-transit-checker/"
 ---
 
-Visa-free travel to China can be simple, but only if you use the correct rule for your nationality, purpose, route, and travel dates. This is one of the topics where you should not rely on a random blog post as the final answer, including this one.
-
-Use this guide to understand the categories. Then verify the latest details with official Chinese sources, the National Immigration Administration, or the Chinese embassy or consulate that applies to you.
+Visa-free travel to China can be simple, but only if you use the correct rule for your nationality, purpose, route, and travel dates. This guide gives you the categories and the right questions to ask. Confirm your own case against the official sources linked at the bottom before you book.
 
 ## Quick Answer
 
@@ -25,21 +23,21 @@ China visa-free travel depends on your passport, purpose of visit, entry route, 
 
 ### Unilateral Visa-Free Access
 
-This is when China allows passport holders from certain countries to enter visa-free for eligible short-term purposes, often for tourism, business, visiting relatives, transit, or exchange. The country list and stay period can change, so this needs fresh verification before every trip.
+This is when China allows passport holders from certain countries to enter visa-free for eligible short-term purposes: tourism, business, visiting relatives, exchange, and transit. As of September 2026, unilateral visa-free entry covers 49 countries for stays of up to 30 days, and the current arrangement runs through December 31, 2026. China has expanded this list repeatedly over the past two years, so treat the number as a snapshot and re-check it before you book.
 
 ### Mutual Visa-Free Access
 
-This is based on an agreement between China and another country. The rules may differ by nationality and agreement. Check the relevant official government or embassy page.
+This comes from a bilateral agreement between China and another country: both sides waive visa requirements for each other's passport holders. The allowed stay, permitted purposes, and entry conditions are set by that specific agreement rather than by a general rule, so two travelers who are both "visa-free" can still face different limits depending on their passport. Confirm the agreement covering your nationality on the embassy or consulate page for your country.
 
 ### 240-Hour Visa-Free Transit
 
-This is not the same as ordinary visa-free tourism. It is for eligible travelers transiting through China to a third country or region through approved ports and within permitted stay areas.
+This is not the same as ordinary visa-free tourism. It is for eligible travelers transiting through China to a third country or region through approved ports and within permitted stay areas. As of August 20, 2026, it covers 57 countries, 65 open ports across 24 provincial-level regions, and a stay of up to 240 hours (10 days). Tourism, business, visits, and family visits are permitted; work, study, and journalism are not.
 
 If your route is Country A → China → Country B, you may be closer to a transit case. If your route is Country A → China → Country A, do not assume the transit rule applies.
 
 ## Why People Get Confused
 
-The search results often mix several policies together. A traveler may read “visa-free China” and assume it applies to every short trip. That is risky.
+Most confusion comes from one move: treating “visa-free China” as a single rule. It is not. Unilateral access, mutual agreements, and 240-hour transit are three different rules with different conditions, and travel articles routinely blend them into one headline.
 
 Ask yourself:
 

@@ -1,6 +1,36 @@
 {
-  "updatedAt": "2026-08-04",
+  "updatedAt": "2026-09-22",
   "sources": [
+    {
+      "id": "gov-payment-optimization-2024-en",
+      "title": "Making payment easier for foreign visitors in China",
+      "url": "https://www.gov.cn/yaowen/liebiao/202407/content_6962450.htm",
+      "authority": "The State Council, The People's Republic of China",
+      "category": "payment",
+      "trustLevel": "official",
+      "useFor": "State Council guidance on foreign-card binding, identity verification simplification, and the USD 5,000 / USD 50,000 transaction limit increase",
+      "lastChecked": "2026-09-22"
+    },
+    {
+      "id": "pbc-mobile-payment-limits-2024",
+      "title": "Payment service upgrades support \"China travel\" spending (中国人民银行)",
+      "url": "https://www.pbc.gov.cn/redianzhuanti/118742/5275415/5275421/5426108/index.html",
+      "authority": "People's Bank of China",
+      "category": "payment",
+      "trustLevel": "official",
+      "useFor": "Official confirmation that single-transaction limits for foreign-card mobile payments were raised to USD 5,000 and annual cumulative limits to USD 50,000",
+      "lastChecked": "2026-09-22"
+    },
+    {
+      "id": "nia-240h-transit-2026-08",
+      "title": "Announcement on Adding Kyrgyzstan and Vietnam to the 240-Hour Visa-Free Transit and Hainan 30-Day Visa-Free Entry Lists (Announcement No. 4 of 2026)",
+      "url": "https://en.nia.gov.cn/n147418/n147468/c217849/content.html",
+      "authority": "National Immigration Administration, P.R. China",
+      "category": "visa-entry",
+      "trustLevel": "official",
+      "useFor": "Current 240-hour transit country count (57), open ports (65), provincial regions (24), and Hainan 30-day entry list (61), effective August 20, 2026",
+      "lastChecked": "2026-09-22"
+    },
     {
       "id": "nia-240h-transit-2025",
       "title": "Conditions for Foreign Nationals Applying for 240-Hour Visa-Free Transit Policy",
@@ -9,7 +39,7 @@
       "category": "visa-entry",
       "trustLevel": "official",
       "useFor": "240-hour visa-free transit rules, eligible countries, core conditions, eligible ports, permitted stay areas, arrival card links",
-      "lastChecked": "2026-06-02"
+      "lastChecked": "2026-09-22"
     },
     {
       "id": "gov-visa-free-access-2025",
@@ -19,7 +49,7 @@
       "category": "visa-entry",
       "trustLevel": "official",
       "useFor": "Context on China visa-free access expansion and official policy direction",
-      "lastChecked": "2026-06-02"
+      "lastChecked": "2026-09-22"
     },
     {
       "id": "nia-arrival-card-online",

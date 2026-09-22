@@ -2,13 +2,13 @@
 title: "How to Pay in China as a Tourist: Alipay, WeChat Pay, Cards and Cash"
 seoTitle: "How to Pay in China as a Tourist (2026): Apps, Cards & Cash"
 date: 2026-06-02
-updatedAt: 2026-08-04
+updatedAt: 2026-09-22
 description: "Set up Alipay and WeChat Pay, understand foreign-card limits, carry the right cash backup, and know what to do when a payment fails in China."
 stage: "before"
 section: "travel"
 hero_image: "/china-travel/images/article-payment-editorial.png"
 tags: ["payment", "Alipay", "WeChat Pay"]
-officialSources: ["gov-payment-guide-2024", "gov-payment-optimization-2024", "alipayplus-mainland-guide", "tencent-weixin-pay-overseas-users-2023"]
+officialSources: ["pbc-mobile-payment-limits-2024", "gov-payment-optimization-2024-en", "gov-payment-guide-2024", "alipayplus-mainland-guide", "tencent-weixin-pay-overseas-users-2023"]
 relatedTools: []
 ---
 
@@ -22,8 +22,16 @@ If payment fails, skip the theory and move to the scenario guide below. If you a
 
 <aside class="trust-module">
   <strong>Checked against official guidance.</strong>
-  <p>Last checked: August 4, 2026. This guide uses current Chinese government, Alipay+, and Tencent guidance. Payment features may change. Verify app and card support before travel.</p>
+  <p>Last checked: September 22, 2026. Limits and fees verified against People's Bank of China and State Council guidance. Payment features change often — confirm the current notice inside your app before you rely on it.</p>
 </aside>
+
+## Limits And Fees: The Numbers That Matter
+
+Two limits decide whether your setup holds up on a bigger purchase.
+
+**The regulatory ceiling.** Under guidance from the People's Bank of China, mobile payments made by foreign visitors through Alipay and WeChat Pay carry a single-transaction limit of USD 5,000 and a cumulative annual limit of USD 50,000. Both were raised from USD 1,000 and USD 10,000 in March 2024 precisely to make card-linked payment workable for tourists. Your own bank's daily cap binds first in most cases, so check it before you fly.
+
+**The platform fee.** Both apps waive their service fee on single transactions of ¥200 or less. Above ¥200, a cross-border service fee of roughly 3% applies. Metro rides, street food, and convenience-store runs stay under the threshold without any effort. Hotel bills and big-ticket shopping do not — pay those with your physical card instead. Fee rules have changed before, so treat the notice inside the app as the final word.
 
 ## 60-Second Payment Plan
 

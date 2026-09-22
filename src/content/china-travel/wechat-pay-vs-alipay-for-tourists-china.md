@@ -14,9 +14,9 @@ relatedTools: []
 
 ## Quick Answer
 
-Most first-time visitors should set up Alipay first, then prepare WeChat Pay as a backup if possible. Alipay often feels easier for direct tourist payments, while WeChat Pay is useful because local communication, mini programs, restaurant flows, and services often live inside WeChat.
+Set up Alipay first, then WeChat Pay as backup. Alipay handles direct tourist payments — the counter, the shop, the restaurant QR. WeChat Pay handles what lives inside WeChat: mini programs, restaurant ordering, ride-hailing, and chat-led services.
 
-The safest answer is not choosing one app forever. It is preparing both, plus a physical card and some cash.
+Do not pick one app for the whole trip. Prepare both, plus a physical card and some cash.
 
 <aside class="trust-module">
   <strong>Checked against current Alipay+, Tencent, and Chinese government guidance.</strong>
@@ -34,13 +34,13 @@ For the full payment stack, read [How to Pay in China as a Tourist](/china-trave
 <table class="payment-table">
   <thead><tr><th>Decision</th><th>Alipay</th><th>WeChat Pay</th></tr></thead>
   <tbody>
-    <tr><td>Setup and verification</td><td>Often the cleaner first setup for visitors</td><td>Worth testing early because account and card checks can vary</td></tr>
-    <tr><td>First app for a new visitor</td><td>Usually the simpler starting point</td><td>Prepare second if possible</td></tr>
+    <tr><td>Setup and verification</td><td>Cleaner first setup</td><td>Test early; account and card checks differ by issuer</td></tr>
+    <tr><td>First app for a new visitor</td><td>Simpler starting point</td><td>Prepare second</td></tr>
     <tr><td>Everyday merchant QR payments</td><td>Strong primary option</td><td>Strong backup option</td></tr>
-    <tr><td>WeChat mini programs and chat-led services</td><td>May not cover the flow</td><td>Often more relevant</td></tr>
-    <tr><td>International-card limits</td><td>Merchant purchases, not every wallet function</td><td>Merchant support and card handling can vary</td></tr>
+    <tr><td>WeChat mini programs and chat-led services</td><td>Does not cover these flows</td><td>Covers these flows</td></tr>
+    <tr><td>International-card limits</td><td>Merchant purchases, not every wallet function</td><td>Merchant purchases; issuer limits apply</td></tr>
     <tr><td>When the first app fails</td><td>Switch to WeChat Pay, card, or cash</td><td>Switch to Alipay, card, or cash</td></tr>
-    <tr><td>Best role</td><td>Primary app for many visitors</td><td>Second app and service-layer backup</td></tr>
+    <tr><td>Best role</td><td>Primary payment app</td><td>Second app and service-layer backup</td></tr>
   </tbody>
 </table>
 
@@ -63,9 +63,9 @@ For the full payment stack, read [How to Pay in China as a Tourist](/china-trave
 
 ## What Travelers Usually Expect
 
-Many visitors expect one app to solve everything. In practice, China payment is more situational.
+One app does not solve everything in China. Payment here is situational, and the situation changes every few hours.
 
-One restaurant may work better with Alipay. Another may use a WeChat mini program. A taxi flow may depend on the ride-hailing app. A hotel deposit may still use a physical card. That is why the best China payment app is often the one that works in that specific moment.
+One restaurant runs on Alipay. The next one takes your order through a WeChat mini program. A taxi payment depends on the ride-hailing app. A hotel deposit goes on a physical card. The best China payment app is whichever one that specific moment requires — which is why you carry all of them.
 
 ## When Alipay Is Easier
 
