@@ -124,11 +124,28 @@ assert.match(featuredCity.href, /zhuhai-travel-guide-first-time-visitors\/$/, 'f
 assert.ok(featuredCity.title.includes('Zhuhai'), 'featured city title should name Zhuhai');
 assert.ok(featuredCity.alt.includes('Opera House'), "featured city image alt text should describe Zhuhai's Opera House");
 assert.equal(featuredCity.cta, 'Read the Zhuhai guide', 'featured city data should own the shared call-to-action');
+assert.match(homepage, /href=\{featuredCity\.href\}/, 'homepage must link the featured city from the shared object');
+assert.match(homepage, /\{featuredCity\.cta\}/, 'homepage must render the featured city call-to-action from the shared object');
+assert.match(homepage, /class="city-slider"/, 'homepage must render the city spotlight slider');
 assert.match(
   homepage,
-  /href=\{featuredCity\.href\}>\{featuredCity\.cta\}<\/a>/,
-  'homepage must render the featured city link and call-to-action from the shared object',
+  /citySpotlightCards\.map/,
+  'homepage must render the supporting city cards from shared data, not hard-coded markup',
 );
+
+const citySpotlightCards = readExportedArray(portalData, 'citySpotlightCards');
+assert.equal(citySpotlightCards.length, 5, 'city spotlight should list five supporting city guides');
+for (const card of citySpotlightCards) {
+  assertRealRoute(card.href, `city spotlight ${card.city}`);
+  assertImageExists(card.image, `city spotlight ${card.city}`);
+  assert.ok(card.text.length <= 130, `city spotlight ${card.city} copy should stay card-sized`);
+}
+assert.doesNotMatch(
+  homepage,
+  /class="featured-city"/,
+  'homepage should use the slider layout instead of the old two-column featured block',
+);
+
 assert.match(
   citiesPage,
   /href=\{featuredCity\.href\}>\{featuredCity\.cta\}<\/a>/,

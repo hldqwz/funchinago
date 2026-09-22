@@ -251,6 +251,49 @@ export const paymentGuideLinks = [
   },
 ] as const;
 
+export const citySpotlightCards = [
+  {
+    city: 'Beijing',
+    pace: 'Culture-heavy',
+    text: 'Forbidden City, hutong lanes, and the Great Wall within day-trip reach.',
+    image: '/china-travel/images/beijing-forbidden-city-hero.jpg',
+    alt: 'Forbidden City rooftops and courtyards in Beijing',
+    href: '/china-travel/articles/beijing-travel-guide-first-time-visitors/',
+  },
+  {
+    city: 'Shanghai',
+    pace: 'Polished, international',
+    text: 'The Bund, art deco streets, and the easiest metro days in China.',
+    image: '/china-travel/images/shanghai-bund-skyline.jpg',
+    alt: 'Shanghai Bund skyline across the river in daylight',
+    href: '/china-travel/articles/shanghai-travel-guide-first-time-visitors/',
+  },
+  {
+    city: 'Chengdu',
+    pace: 'Slow, food-first',
+    text: 'Giant pandas, hotpot, teahouses, and a gentler daily rhythm.',
+    image: '/china-travel/images/chengdu-panda-base.jpg',
+    alt: 'Giant panda at the Chengdu panda base',
+    href: '/china-travel/articles/chengdu-travel-guide-first-time-visitors/',
+  },
+  {
+    city: "Xi'an",
+    pace: 'Ancient, walkable',
+    text: 'Terracotta Warriors, a complete city wall, and noodle streets.',
+    image: '/china-travel/images/xian-bell-tower-night.jpg',
+    alt: "Xi'an Bell Tower illuminated at night",
+    href: '/china-travel/articles/xian-travel-guide-first-time-visitors/',
+  },
+  {
+    city: 'Guangzhou',
+    pace: 'Warm, best-value',
+    text: 'Cantonese food, river nights, and the cheapest tier-1 city base.',
+    image: '/china-travel/images/article-weekly-guangzhou.jpg',
+    alt: 'Guangzhou cityscape along the Pearl River',
+    href: '/china-travel/articles/guangzhou-travel-guide-first-time-visitors/',
+  },
+] as const;
+
 export const featuredCity = {
   city: 'Zhuhai',
   eyebrow: 'Featured city',
