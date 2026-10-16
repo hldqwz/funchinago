@@ -2,10 +2,14 @@
 title: "China 240-Hour Visa-Free Transit Explained"
 date: 2026-06-02
 updatedAt: 2026-09-22
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A plain-English explanation of China’s 240-hour visa-free transit policy, including the third-country rule, eligible passports, onward tickets, and official-source cautions."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-08-240-hour-transit.png"
+hero_image: "/china-travel/images/article-08-240-hour-transit.webp"
 tags: ["240-hour transit", "visa-free", "entry"]
 officialSources: ["nia-240h-transit-2025", "shanghai-240h-transit-guide"]
 relatedTools:

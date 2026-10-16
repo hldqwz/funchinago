@@ -3,10 +3,14 @@ title: "Does Apple Pay or Google Pay Work in China? What Tourists Should Know"
 seoTitle: "Do Apple Pay and Google Pay Work in China? Card Guide"
 date: 2026-06-15
 updatedAt: 2026-08-04
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "See when Apple Pay or Google Wallet may work in China, why foreign cards still fail, and which Alipay, WeChat Pay, card, and cash backups to prepare."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-payment-editorial.png"
+hero_image: "/china-travel/images/article-payment-editorial.webp"
 tags: ["Apple Pay", "Google Pay", "payment"]
 officialSources: ["gov-payment-guide-2024", "apple-pay-setup-2026", "apple-pay-where-to-use-2026", "google-wallet-supported-countries-2026", "google-wallet-pay-in-store-2026"]
 relatedTools: []

@@ -26,40 +26,30 @@ import {
           Pick a city, sort the essentials, and understand how modern China works before you land.
         </p>
         <div class="hero-actions" aria-label="Primary homepage actions">
-          <a class="button primary" href="#start-here">Start here</a>
-          <a class="button secondary" href="#cities">Compare cities</a>
+          <a class="hero-cta" href="#start-here">Start here</a>
+          <a class="hero-textlink" href="#cities">Compare cities →</a>
         </div>
-        <div class="hero-trust-row" aria-label="Trust and archive links">
-          <span>Use the portal for orientation, then go deeper with source-backed guides.</span>
-          <div class="hero-trust-links">
-            <a href="/china-travel/sources/">Open source library</a>
-            <a href="/china-travel/articles/">Browse all guides</a>
-          </div>
-        </div>
-        <div class="hero-payment-strip" aria-label="Payment quick start">
-          {paymentQuickLinks.map((item) => (
-            <a class="payment-chip" href={item.href}>
-              <span>{item.eyebrow}</span>
-              <strong>{item.title}</strong>
-              <p>{item.text}</p>
-            </a>
-          ))}
-        </div>
+        <p class="hero-verified mono-meta verified-dot">
+          VERIFIED · 17 OCT 2026 · 31 GUIDES · 24 SOURCES
+        </p>
       </div>
 
-      <div class="hero-image-card" aria-label="Featured China travel planning visual">
+      <figure class="hero-visual">
         <img
           src="/china-travel/images/hero-liriver-mist.jpg"
-          alt="Li River at dawn near Guilin, China - layered karst peaks rising through morning mist with a bamboo raft and cormorant fisherman on still water"
+          alt="Illustration: Li River karst landscape at dawn with mist and a bamboo raft"
+          width="1800"
+          height="1119"
+          fetchpriority="high"
+          decoding="async"
         />
-        <div class="hero-route-card">
-          <span>Most visitors need</span>
-          <strong>city choice + payment setup + train confidence</strong>
-        </div>
-      </div>
+        <figcaption class="mono-meta">
+          Most visitors need: city choice + payment setup + train confidence
+        </figcaption>
+      </figure>
     </section>
 
-    <section id="payment-guides" class="portal-section payment-guides-section" aria-labelledby="payment-guides-title">
+    <section id="payment-guides" class="portal-section payment-section reveal" aria-labelledby="payment-guides-title">
       <div class="section-heading">
         <p class="portal-kicker">Payment Guides</p>
         <div class="section-heading-copy">
@@ -67,6 +57,20 @@ import {
           <p>Start with the hub, then use the app, wallet, and troubleshooting guides when your situation gets specific.</p>
         </div>
       </div>
+
+      <ul class="payment-quick-row" role="list">
+        {paymentQuickLinks.map((item) => (
+          <li>
+            <a class="payment-quick" href={item.href}>
+              <span class="payment-chip">
+                <span class="payment-chip-eyebrow">{item.eyebrow}</span>
+                <strong>{item.title}</strong>
+              </span>
+              <span class="payment-quick-text">{item.text}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
 
       <div class="payment-guides-grid">
         {paymentGuideLinks.map((guide) => (
@@ -76,19 +80,26 @@ import {
           </a>
         ))}
       </div>
+
+      <div class="section-foot-links mono-meta">
+        <a href="/china-travel/articles/">Browse all guides</a>
+        <a href="/china-travel/sources/">Open source library</a>
+      </div>
     </section>
 
-    <section id="start-here" class="portal-section start-section" aria-labelledby="start-title">
-      <div class="section-heading compact">
+    <section id="start-here" class="portal-section start-section reveal" aria-labelledby="start-title">
+      <div class="section-heading">
         <p class="portal-kicker">Start here</p>
-        <h2 id="start-title">Three doors into your first China trip.</h2>
+        <div class="section-heading-copy">
+          <h2 id="start-title">Three doors into your first China trip.</h2>
+        </div>
       </div>
 
       <div class="start-grid">
         {startHereCards.map((card) => (
           <a class="start-card" href={card.href}>
-            <img src={card.image} alt={card.alt} />
-            <div>
+            <img src={card.image} alt={card.alt} loading="lazy" />
+            <div class="start-card-copy">
               <span>{card.label}</span>
               <h3>{card.title}</h3>
               <p>{card.text}</p>
@@ -98,7 +109,7 @@ import {
       </div>
     </section>
 
-    <section id="cities" class="portal-section cities-section" aria-labelledby="cities-title">
+    <section id="cities" class="portal-section cities-section reveal" aria-labelledby="cities-title">
       <div class="section-heading">
         <p class="portal-kicker">Cities</p>
         <div class="section-heading-copy">
@@ -110,7 +121,7 @@ import {
       <div class="city-grid">
         {cityComparisonCards.map((city) => (
           <a class="city-card" href={city.href}>
-            <img src={city.image} alt={`${city.city} travel planning visual`} />
+            <img src={city.image} alt={`${city.city} travel planning visual`} loading="lazy" />
             <div class="city-card-copy">
               <span>{city.pace}</span>
               <h3>{city.city}</h3>
@@ -126,17 +137,19 @@ import {
       </div>
     </section>
 
-    <section id="life-culture" class="portal-section culture-section" aria-labelledby="culture-title">
-      <div class="section-heading compact">
-        <p class="portal-kicker">Life & Culture</p>
-        <h2 id="culture-title">Feel prepared for daily China, not just landmarks.</h2>
+    <section id="life-culture" class="portal-section culture-section reveal" aria-labelledby="culture-title">
+      <div class="section-heading">
+        <p class="portal-kicker">Life &amp; Culture</p>
+        <div class="section-heading-copy">
+          <h2 id="culture-title">Feel prepared for daily China, not just landmarks.</h2>
+        </div>
       </div>
 
       <div class="culture-grid">
         {lifeCultureDoorways.map((doorway) => (
           <a class="culture-card" href={doorway.href}>
-            <img src={doorway.image} alt={`${doorway.theme} doorway for China travel`} />
-            <div>
+            <img src={doorway.image} alt={`${doorway.theme} doorway for China travel`} loading="lazy" />
+            <div class="culture-card-copy">
               <span>{doorway.theme}</span>
               <h3>{doorway.title}</h3>
               <p>{doorway.text}</p>
@@ -146,7 +159,7 @@ import {
       </div>
     </section>
 
-    <section id="tools" class="portal-section tools-section" aria-labelledby="tools-title">
+    <section id="tools" class="portal-section tools-section reveal" aria-labelledby="tools-title">
       <div class="tools-intro">
         <p class="portal-kicker">Tools</p>
         <h2 id="tools-title">Helpful when you are ready to act.</h2>
@@ -156,16 +169,18 @@ import {
       <div class="tool-grid">
         {homepageTools.map((tool) => (
           <a class="tool-card" href={tool.href}>
-            <img src={tool.image} alt={`${tool.title} tool preview`} />
-            <h3>{tool.title}</h3>
-            <p>{tool.text}</p>
-            <span>{tool.label}</span>
+            <img src={tool.image} alt={`${tool.title} tool preview`} loading="lazy" />
+            <div class="tool-card-copy">
+              <h3>{tool.title}</h3>
+              <p>{tool.text}</p>
+              <span>{tool.label}</span>
+            </div>
           </a>
         ))}
       </div>
     </section>
 
-    <section id="featured-city" class="city-spotlight" aria-labelledby="featured-title">
+    <section id="featured-city" class="city-spotlight reveal" aria-labelledby="featured-title">
       <div class="spotlight-head">
         <div>
           <p class="portal-kicker">City spotlight</p>
@@ -223,6 +238,16 @@ import {
             </a>
           </li>
         ))}
+        <li class="city-slide city-slide-end">
+          <a href="/china-travel/cities/">
+            <div class="city-slide-copy">
+              <span class="city-slide-tag mono-meta">End of list</span>
+              <h3>Every city guide</h3>
+              <p>That is the full first-time shortlist. See the rest of the city library from here.</p>
+              <span class="city-slide-cta">Open the city index →</span>
+            </div>
+          </a>
+        </li>
       </ul>
     </section>
   </main>
@@ -260,433 +285,461 @@ import {
     window.addEventListener("resize", sync);
     sync();
   });
+
+  // Fallback for .reveal entrance animation in case no IntersectionObserver is
+  // registered elsewhere on the page. Safe to drop once the layout owns it.
+  const revealed = document.querySelectorAll<HTMLElement>(".reveal");
+  if (window.IntersectionObserver) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.classList.add("is-in");
+          observer.unobserve(entry.target);
+        }
+      },
+      { rootMargin: "0px 0px -8% 0px" },
+    );
+    revealed.forEach((el) => observer.observe(el));
+  } else {
+    revealed.forEach((el) => el.classList.add("is-in"));
+  }
 </script>
 
 <style>
   .portal-page {
-    max-width: 1180px;
+    max-width: var(--measure-wide);
     margin: 0 auto;
-    padding: 2.5rem 1.5rem 4rem;
+    padding: var(--space-tight) 1.5rem var(--space-base);
+    overflow-x: clip;
   }
 
   .portal-kicker {
-    color: var(--accent);
-    font-size: 0.72rem;
-    font-weight: 900;
-    letter-spacing: 0.12em;
-    margin-bottom: 0.65rem;
+    margin-bottom: 0.75rem;
+    color: var(--seal);
+    font-family: var(--font-mono);
+    font-size: var(--fs-mono);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.14em;
     text-transform: uppercase;
   }
 
+  /* ---------------------------------------------------------------- hero */
+
   .portal-hero {
     display: grid;
-    grid-template-columns: minmax(0, 0.92fr) minmax(340px, 1.08fr);
-    gap: 1.25rem;
-    align-items: center;
-    margin-bottom: 1.25rem;
-  }
-
-  .hero-copy,
-  .hero-image-card,
-  .portal-section,
-  .city-spotlight {
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    background: var(--surface);
-    box-shadow: var(--shadow-lg);
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: stretch;
+    gap: var(--grid-gap);
+    /* 视觉区右出血：补掉容器左右 padding 后贴到视口右缘 */
+    margin-right: calc(50% - 50vw);
+    margin-bottom: var(--space-tight);
   }
 
   .hero-copy {
     display: flex;
-    min-height: 430px;
     flex-direction: column;
     justify-content: center;
-    padding: clamp(1.5rem, 4vw, 3rem);
+    padding-right: clamp(0rem, 2vw, 2rem);
   }
 
   .hero-copy h1 {
-    max-width: 620px;
-    margin-bottom: 1rem;
-    font-size: clamp(2.4rem, 6vw, 5rem);
-    letter-spacing: 0;
-    line-height: 0.95;
+    max-width: 16ch;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-display);
+    font-size: var(--fs-display);
+    font-weight: var(--fw-medium);
+    line-height: 0.96;
   }
 
   .hero-lede {
-    max-width: 560px;
-    color: var(--text-secondary);
-    font-size: clamp(1rem, 2vw, 1.16rem);
-    line-height: 1.65;
+    max-width: 46ch;
+    color: var(--ink-70);
+    font-size: var(--fs-lede);
+    line-height: 1.6;
   }
 
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 1.6rem;
-  }
-
-  .hero-trust-row {
-    display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    gap: 0.85rem;
-    margin-top: 1rem;
-    padding-top: 0.95rem;
-    border-top: 1px solid var(--border);
-    color: var(--text-secondary);
-    font-size: 0.92rem;
+    gap: 1.5rem;
+    margin-top: 2rem;
   }
 
-  .hero-trust-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  .hero-trust-links a {
-    color: var(--utility);
-    font-weight: 850;
-  }
-
-  .hero-payment-strip {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.8rem;
-    margin-top: 1rem;
-  }
-
-  .payment-chip {
-    display: block;
-    padding: 0.95rem 1rem;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    background: var(--surface-muted);
-    color: var(--text);
-    text-decoration: none;
-    transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
-  }
-
-  .payment-chip:hover {
-    transform: translateY(-1px);
-    border-color: var(--accent);
-    box-shadow: var(--shadow);
-    text-decoration: none;
-  }
-
-  .payment-chip span {
-    display: inline-flex;
-    margin-bottom: 0.35rem;
-    color: var(--accent);
-    font-size: 0.7rem;
-    font-weight: 900;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .payment-chip strong {
-    display: block;
-    font-size: 1rem;
-    line-height: 1.2;
-    letter-spacing: 0;
-  }
-
-  .payment-chip p {
-    margin-top: 0.35rem;
-    color: var(--text-secondary);
-    font-size: 0.92rem;
-    line-height: 1.5;
-  }
-
-  .button {
+  .hero-cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: 44px;
-    border-radius: 999px;
-    padding: 0.72rem 1.08rem;
-    border: 1px solid var(--border-strong);
-    font-size: 0.92rem;
-    font-weight: 850;
+    padding: 0.7rem 1.6rem;
+    border: 1px solid var(--seal);
+    border-radius: var(--r-none);
+    background: var(--seal);
+    color: var(--paper);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.01em;
     text-decoration: none;
-    transition: transform 0.16s ease, border-color 0.16s ease, opacity 0.16s ease;
+    transition: background-color var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
   }
 
-  .button:hover {
-    transform: translateY(-1px);
+  .hero-cta:hover {
+    background: var(--seal-deep);
+    border-color: var(--seal-deep);
     text-decoration: none;
   }
 
-  .button.primary {
-    border-color: var(--text);
-    background: var(--text);
-    color: var(--surface-strong);
+  .hero-textlink {
+    color: var(--celadon);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    text-underline-offset: 4px;
   }
 
-  .button.secondary {
-    background: var(--surface-strong);
-    color: var(--text);
+  .hero-textlink:hover {
+    color: var(--seal);
+    text-decoration: underline;
   }
 
-  .button.primary:hover {
-    opacity: 0.9;
+  .hero-verified {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--hairline);
+    color: var(--celadon);
   }
 
-  .hero-image-card {
-    position: relative;
-    aspect-ratio: 8 / 5;
-    overflow: hidden;
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    min-height: 360px;
+    margin: 0;
   }
 
-  .hero-image-card img {
+  .hero-visual img {
+    flex: 1 1 auto;
     width: 100%;
-    height: 100%;
+    min-height: 0;
     object-fit: cover;
-    display: block;
+    border-radius: var(--r-media);
   }
 
-  .hero-image-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 38%, rgba(13, 28, 26, 0.66));
+  .hero-visual figcaption {
+    flex: none;
+    padding-top: 0.7rem;
+    color: var(--ink-45);
   }
 
-  .hero-route-card {
-    position: absolute;
-    left: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    z-index: 1;
-    border: 1px solid rgba(255, 255, 255, 0.26);
-    border-radius: 18px;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.84);
-    color: #17302d;
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-  }
-
-  .hero-route-card span {
-    display: block;
-    margin-bottom: 0.25rem;
-    color: #6f3426;
-    font-size: 0.72rem;
-    font-weight: 900;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .hero-route-card strong {
-    display: block;
-    font-size: 1.04rem;
-    line-height: 1.35;
-  }
+  /* ------------------------------------------------------------ sections */
 
   .portal-section {
-    padding: clamp(1.15rem, 3vw, 1.6rem);
-    margin-bottom: 1.25rem;
+    padding-top: var(--space-tight);
+    border-top: 1px solid var(--hairline);
+    margin-bottom: var(--space-base);
   }
 
   .section-heading {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
+    gap: var(--grid-gap);
+    align-items: start;
+    margin-bottom: var(--space-tight);
   }
 
-  .section-heading.compact {
-    display: block;
-    max-width: 760px;
+  .section-heading .portal-kicker {
+    margin-bottom: 0;
+    padding-top: 0.35rem;
   }
 
   .section-heading-copy {
-    max-width: 480px;
+    max-width: var(--measure-read);
   }
 
-  .section-heading h2,
-  .tools-intro h2,
-  .featured-copy h2 {
-    font-size: clamp(1.55rem, 3vw, 2.25rem);
-    line-height: 1.05;
-    letter-spacing: 0;
+  .section-heading h2 {
+    max-width: 26ch;
+    font-family: var(--font-display);
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-medium);
+    line-height: 1.08;
   }
 
-  .section-heading p:not(.portal-kicker),
-  .tools-intro p,
-  .featured-copy p {
-    max-width: 470px;
-    color: var(--text-secondary);
+  .section-heading p:not(.portal-kicker) {
+    max-width: 52ch;
+    margin-top: 0.75rem;
+    color: var(--ink-70);
   }
 
-  .start-grid {
+  .section-foot-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: var(--space-tight);
+    padding-top: 1rem;
+    border-top: 1px solid var(--hairline);
+  }
+
+  /* --------------------------------------------------- payment quick row */
+
+  .payment-quick-row {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.9rem;
+    gap: 1.25rem var(--grid-gap);
+    margin-bottom: var(--space-tight);
+    padding: 0;
+    list-style: none;
   }
+
+  .payment-quick {
+    display: block;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .payment-quick:hover {
+    text-decoration: none;
+  }
+
+  .payment-chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    max-width: 100%;
+    padding: 0.3rem 0.85rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-pill);
+    background: var(--surface);
+    transition: border-color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+  }
+
+  .payment-quick:hover .payment-chip {
+    border-color: var(--seal);
+    background: var(--seal-tint);
+  }
+
+  .payment-chip-eyebrow {
+    flex: none;
+    color: var(--seal);
+    font-family: var(--font-mono);
+    font-size: var(--fs-mono);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .payment-chip strong {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    line-height: 1.3;
+  }
+
+  .payment-quick-text {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--ink-45);
+    font-size: var(--fs-sm);
+    line-height: 1.5;
+  }
+
+  /* ------------------------------------------------ payment guide cards */
+  /* 7 / 5 非等分，打破连续三等分 */
 
   .payment-guides-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.85rem;
+    grid-template-columns: 7fr 5fr;
+    gap: var(--grid-gap);
   }
 
   .payment-guide-card {
-    display: block;
-    min-height: 142px;
-    padding: 1rem;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    background: var(--surface-strong);
-    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 128px;
+    padding: 1.15rem 1.25rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--surface);
+    color: var(--ink);
     text-decoration: none;
-    box-shadow: var(--shadow);
-    transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+    transition: border-color var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
   }
 
   .payment-guide-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--accent);
-    box-shadow: var(--shadow-lg);
+    border-color: var(--seal);
+    box-shadow: var(--sh-sm);
     text-decoration: none;
   }
 
   .payment-guide-card h3 {
-    margin-bottom: 0.45rem;
-    font-size: 1.05rem;
-    line-height: 1.22;
+    margin-bottom: 0.4rem;
+    font-size: var(--fs-h4);
+    font-weight: var(--fw-semibold);
+    line-height: 1.25;
   }
 
   .payment-guide-card p {
-    color: var(--text-secondary);
-    font-size: 0.92rem;
-    line-height: 1.52;
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+    line-height: 1.55;
   }
 
-  .start-card,
-  .city-card,
-  .culture-card,
-  .tool-card {
-    display: block;
+  /* ------------------------------------------------------------ 卡片差异 */
+  /* start-card：最大权重，图上文下，硬边投影 */
+
+  .start-grid {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: var(--grid-gap);
+  }
+
+  .start-card {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    background: var(--surface-strong);
-    color: var(--text);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--surface);
+    color: var(--ink);
     text-decoration: none;
-    box-shadow: var(--shadow);
-    transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+    transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
   }
 
-  .start-card,
-  .city-card,
-  .culture-card {
-    position: relative;
-  }
-
-  .start-card:hover,
-  .city-card:hover,
-  .culture-card:hover,
-  .tool-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--accent);
-    box-shadow: var(--shadow-lg);
+  .start-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--sh-hard);
     text-decoration: none;
   }
 
   .start-card img {
+    flex: none;
     width: 100%;
-    height: 260px;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
-    display: block;
   }
 
-  .start-card div,
-  .city-card-copy,
-  .culture-card div {
+  .start-card:first-child {
+    grid-row: span 2;
+  }
+
+  .start-card:first-child img {
+    flex: 1 1 auto;
+    min-height: 240px;
+    aspect-ratio: auto;
+  }
+
+  .start-card-copy {
+    flex: none;
+    padding: 1.15rem 1.25rem 1.35rem;
+  }
+
+  .start-card span {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--seal);
+    font-family: var(--font-mono);
+    font-size: var(--fs-mono);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .start-card h3 {
+    margin-bottom: 0.45rem;
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-semibold);
+    line-height: 1.2;
+  }
+
+  .start-card p {
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+    line-height: 1.55;
+  }
+
+  /* city-card：文字压图，青瓷描边，图片微缩放 */
+
+  .city-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1fr;
+    gap: var(--grid-gap);
+  }
+
+  .city-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    color: var(--ink);
+    text-decoration: none;
+    transition: border-color var(--dur-base) var(--ease-out);
+  }
+
+  .city-card:hover {
+    border-color: var(--celadon);
+    text-decoration: none;
+  }
+
+  .city-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--dur-enter) var(--ease-out);
+  }
+
+  .city-card:hover img {
+    filter: brightness(1.06) saturate(1.04);
+  }
+
+  .city-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(12, 20, 19, 0.05) 30%, rgba(12, 20, 19, 0.82));
+  }
+
+  .city-card-copy {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 1rem;
-    background: linear-gradient(180deg, rgba(10, 16, 16, 0.02), rgba(10, 16, 16, 0.78) 72%);
     z-index: 1;
+    padding: 1.1rem 1.2rem;
   }
 
-  .start-card::after,
-  .city-card::after,
-  .culture-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.18) 48%, rgba(0, 0, 0, 0.55));
-    pointer-events: none;
-  }
-
-  .start-card span,
-  .city-card span,
-  .culture-card span {
-    display: inline-flex;
-    margin-bottom: 0.45rem;
-    color: rgba(255, 247, 240, 0.94);
-    font-size: 0.7rem;
-    font-weight: 900;
-    letter-spacing: 0.09em;
+  .city-card span {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: rgba(247, 250, 249, 0.82);
+    font-family: var(--font-mono);
+    font-size: var(--fs-mono);
+    letter-spacing: 0.06em;
     text-transform: uppercase;
   }
 
-  .start-card h3,
-  .city-card h3,
-  .culture-card h3,
-  .tool-card h3 {
-    margin-bottom: 0.35rem;
-    font-size: 1.08rem;
-    line-height: 1.2;
-    letter-spacing: 0;
-  }
-
-  .start-card h3,
-  .city-card h3,
-  .culture-card h3 {
+  .city-card h3 {
+    margin-bottom: 0.3rem;
     color: #fff8f3;
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-semibold);
+    line-height: 1.15;
   }
 
-  .start-card p,
-  .city-card p,
-  .culture-card p,
-  .tool-card p {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    line-height: 1.52;
-  }
-
-  .start-card p,
-  .city-card p,
-  .culture-card p {
+  .city-card p {
     color: rgba(247, 250, 249, 0.88);
-  }
-
-  .city-grid {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr 0.85fr;
-    gap: 0.9rem;
+    font-size: var(--fs-sm);
+    line-height: 1.5;
   }
 
   .city-card:first-child {
+    grid-column: span 2;
     grid-row: span 2;
+    min-height: 380px;
   }
 
-  .city-card img {
-    width: 100%;
-    height: 210px;
-    object-fit: cover;
-    display: block;
-  }
-
-  .city-card:first-child img {
-    height: 430px;
+  .city-card:last-child {
+    grid-column: 1 / -1;
   }
 
   .section-cta-strip {
@@ -694,107 +747,229 @@ import {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    margin-top: 0.9rem;
-    padding: 0.85rem 1rem;
-    border-radius: 16px;
-    background: var(--utility-soft);
-    color: var(--text-secondary);
-    font-weight: 750;
+    margin-top: var(--grid-gap);
+    padding: 0.9rem 1.25rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--celadon-tint);
+    color: var(--ink-70);
+    font-weight: var(--fw-medium);
   }
 
   .section-cta-strip a {
-    color: var(--utility);
-    font-weight: 900;
+    color: var(--celadon);
+    font-weight: var(--fw-semibold);
   }
+
+  /* culture-card：内嵌圆角图，青瓷上边线 */
 
   .culture-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.9rem;
+    grid-template-columns: 4fr 8fr;
+    gap: var(--grid-gap);
+  }
+
+  .culture-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 0.75rem 0;
+    border: 1px solid var(--hairline);
+    border-top: 2px solid transparent;
+    border-radius: var(--r-sm);
+    background: var(--surface);
+    color: var(--ink);
+    text-decoration: none;
+    transition: border-color var(--dur-base) var(--ease-out);
+  }
+
+  .culture-card:hover {
+    border-color: var(--hairline);
+    border-top-color: var(--celadon);
+    text-decoration: none;
   }
 
   .culture-card img {
     width: 100%;
-    height: 260px;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
-    display: block;
+    border-radius: var(--r-media);
   }
+
+  .culture-card-copy {
+    padding: 0.9rem 0.25rem 1.1rem;
+  }
+
+  .culture-card:first-child {
+    grid-row: span 2;
+  }
+
+  .culture-card:first-child img {
+    flex: 1 1 auto;
+    min-height: 180px;
+    aspect-ratio: auto;
+  }
+
+  .culture-card:not(:first-child) {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+  }
+
+  .culture-card:not(:first-child) img {
+    flex: 0 0 38%;
+    aspect-ratio: 4 / 3;
+    height: 100%;
+    min-height: 140px;
+  }
+
+  .culture-card:not(:first-child) .culture-card-copy {
+    padding: 0 0.5rem 0 0;
+  }
+
+  .culture-card span {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--celadon);
+    font-family: var(--font-mono);
+    font-size: var(--fs-mono);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .culture-card h3 {
+    margin-bottom: 0.35rem;
+    font-size: var(--fs-h4);
+    font-weight: var(--fw-semibold);
+    line-height: 1.3;
+  }
+
+  .culture-card p {
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+    line-height: 1.55;
+  }
+
+  /* tool-card：最轻，纸暗底，横向细图条 */
 
   .tools-section {
     display: grid;
-    grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
-    gap: 1rem;
-    align-items: stretch;
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+    gap: var(--grid-gap);
+    align-items: start;
+    margin-bottom: var(--space-feature);
   }
 
   .tools-intro {
-    border-radius: 20px;
-    padding: 1.15rem;
-    background: var(--feature-accent-bg);
+    padding: 1.35rem;
+    border-radius: var(--r-sm);
+    background: var(--celadon-tint);
+  }
+
+  .tools-intro h2 {
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-medium);
+    line-height: 1.15;
+  }
+
+  .tools-intro p {
+    margin-top: 0.6rem;
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
   }
 
   .tool-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.75rem;
+    gap: var(--grid-gap);
+    /* 整行下沉 32px，制造错落节奏 */
+    margin-top: 32px;
   }
 
   .tool-card {
     display: flex;
-    min-height: 100%;
     flex-direction: column;
-    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--surface);
+    color: var(--ink);
+    text-decoration: none;
+    transition: border-color var(--dur-base) var(--ease-out);
+  }
+
+  .tool-card:hover {
+    border-color: var(--celadon);
+    text-decoration: none;
   }
 
   .tool-card img {
-    width: 100%;
-    height: 150px;
+    width: calc(100% - 1.5rem);
+    margin: 0.75rem 0.75rem 0;
+    aspect-ratio: 21 / 9;
     object-fit: cover;
-    display: block;
+    border-radius: var(--r-media);
   }
 
-  .tool-card h3,
-  .tool-card p,
-  .tool-card span {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  .tool-card-copy {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 0.9rem 1.25rem 1.25rem;
   }
 
   .tool-card h3 {
-    margin-top: 0.9rem;
+    margin-bottom: 0.35rem;
+    font-size: var(--fs-h4);
+    font-weight: var(--fw-semibold);
+    line-height: 1.3;
   }
 
   .tool-card p {
     flex: 1;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.85rem;
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+    line-height: 1.5;
   }
 
   .tool-card span {
-    display: inline-flex;
     align-self: flex-start;
-    margin: 0 0 1rem 0;
-    color: var(--accent);
-    font-size: 0.72rem;
-    font-weight: 900;
-    letter-spacing: 0.08em;
+    padding: 0.2rem 0.7rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-pill);
+    color: var(--celadon);
+    font-family: var(--font-mono);
+    font-size: var(--fs-mono);
+    letter-spacing: 0.06em;
     text-transform: uppercase;
   }
 
+  /* ------------------------------------------------------- city spotlight */
+
   .city-spotlight {
-    padding: clamp(1.35rem, 3vw, 2.2rem);
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--surface);
   }
 
   .spotlight-head {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: flex-end;
     justify-content: space-between;
     gap: 0.75rem 1.5rem;
-    margin-bottom: 1.15rem;
+    margin-bottom: 1.5rem;
   }
 
   .spotlight-head h2 {
-    margin-top: 0.3rem;
+    font-family: var(--font-display);
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-medium);
+    line-height: 1.08;
   }
 
   .spotlight-controls {
@@ -805,8 +980,8 @@ import {
 
   .spotlight-hint {
     margin: 0;
-    font-size: 0.82rem;
-    color: var(--text-secondary);
+    color: var(--ink-45);
+    font-size: var(--fs-sm);
   }
 
   .slider-nav {
@@ -818,24 +993,24 @@ import {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
+    width: 40px;
+    height: 40px;
     padding: 0;
-    border: 1px solid var(--border);
-    border-radius: 999px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-none);
     background: var(--surface);
-    color: var(--text-primary);
+    color: var(--ink);
     cursor: pointer;
-    transition: border-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+    transition: border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out);
   }
 
   .slider-arrow:hover:not(:disabled) {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--seal);
+    color: var(--seal);
   }
 
   .slider-arrow:disabled {
-    opacity: 0.35;
+    opacity: 0.3;
     cursor: default;
   }
 
@@ -860,25 +1035,25 @@ import {
     display: flex;
     flex-direction: column;
     height: 100%;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    background: var(--background);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--surface);
     overflow: hidden;
     text-decoration: none;
     color: inherit;
-    transition: border-color 0.15s ease, transform 0.15s ease;
+    transition: border-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
   }
 
   .city-slide a:hover {
-    border-color: var(--accent);
+    border-color: var(--seal);
     transform: translateY(-2px);
+    text-decoration: none;
   }
 
   .city-slide img {
     width: 100%;
     aspect-ratio: 3 / 2;
     object-fit: cover;
-    display: block;
   }
 
   .city-slide-copy {
@@ -890,30 +1065,31 @@ import {
   }
 
   .city-slide-tag {
-    font-size: 0.7rem;
+    color: var(--ink-45);
+    font-size: var(--fs-meta);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--text-secondary);
   }
 
   .city-slide h3 {
     margin: 0;
-    font-size: 1.05rem;
+    font-size: var(--fs-h4);
+    font-weight: var(--fw-semibold);
   }
 
   .city-slide p {
     margin: 0;
-    font-size: 0.86rem;
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
     line-height: 1.5;
-    color: var(--text-secondary);
   }
 
   .city-slide-cta {
     margin-top: auto;
     padding-top: 0.5rem;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--accent);
+    color: var(--celadon);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
   }
 
   .city-slide-featured {
@@ -921,35 +1097,44 @@ import {
   }
 
   .city-slide-featured a {
-    border-color: var(--accent);
+    border-color: var(--seal);
+  }
+
+  .city-slide-end a {
+    justify-content: center;
+    border-style: dashed;
+    background: var(--paper-dim);
+  }
+
+  /* ------------------------------------------------------------ responsive */
+
+  @media (max-width: 1080px) {
+    .payment-quick-row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   @media (max-width: 980px) {
-    .portal-hero,
+    .portal-hero {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+      min-height: 300px;
+    }
+
+    .hero-visual img {
+      aspect-ratio: 16 / 9;
+      flex: none;
+    }
+
+    .section-heading,
     .tools-section {
       grid-template-columns: 1fr;
     }
 
-    .hero-copy {
-      min-height: auto;
-    }
-
-    .hero-image-card {
-      aspect-ratio: 16 / 9;
-    }
-
-    .section-heading {
-      display: block;
-    }
-
-    .section-heading p:not(.portal-kicker) {
-      margin-top: 0.55rem;
-    }
-
-    .start-grid,
-    .culture-grid,
     .tool-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 0;
     }
 
     .city-grid {
@@ -957,55 +1142,89 @@ import {
     }
 
     .city-card:first-child {
+      grid-column: 1 / -1;
+      grid-row: auto;
+      min-height: 300px;
+    }
+
+    .city-card:last-child {
+      grid-column: 1 / -1;
+    }
+
+    .culture-card:not(:first-child) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .culture-card:not(:first-child) img {
+      flex: none;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+    }
+
+    .culture-card:not(:first-child) .culture-card-copy {
+      padding: 0.9rem 0.25rem 1.1rem;
+    }
+
+    .culture-card:first-child {
       grid-row: auto;
     }
 
-    .city-card:first-child img,
-    .city-card img {
-      height: 210px;
+    .culture-card:first-child img {
+      flex: none;
+      aspect-ratio: 16 / 9;
     }
   }
 
-  @media (max-width: 620px) {
+  @media (max-width: 720px) {
     .portal-page {
-      padding: 1.35rem 1rem 3rem;
+      padding: 2rem 1rem var(--space-base);
     }
 
-    .hero-image-card {
-      aspect-ratio: 4 / 3;
-    }
-
-    .hero-copy h1 {
-      font-size: 2.45rem;
-    }
-
-    .hero-trust-row {
-      display: block;
-    }
-
-    .hero-trust-links {
-      margin-top: 0.55rem;
-    }
-
-    .hero-payment-strip {
-      grid-template-columns: 1fr 1fr;
+    .hero-actions {
+      gap: 1rem;
     }
 
     .start-grid,
-    .city-grid,
     .culture-grid,
-    .tool-grid,
-    .payment-guides-grid {
-      grid-template-columns: 1fr;
+    .payment-guides-grid,
+    .payment-quick-row {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .start-card:first-child,
+    .culture-card:first-child {
+      grid-row: auto;
+    }
+
+    .start-card:first-child img,
+    .culture-card:first-child img {
+      flex: none;
+      aspect-ratio: 4 / 3;
+    }
+
+    .city-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .city-card:first-child {
+      min-height: 260px;
+    }
+
+    .tool-grid {
+      grid-template-columns: minmax(0, 1fr);
     }
 
     .section-cta-strip {
       align-items: flex-start;
       flex-direction: column;
+      gap: 0.5rem;
     }
 
     .city-slide,
-    .city-slide-featured {
+    .city-slide-featured,
+    .city-slide-end {
       flex-basis: 78%;
     }
 

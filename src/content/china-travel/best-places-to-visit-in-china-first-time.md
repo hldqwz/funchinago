@@ -2,10 +2,14 @@
 title: "Best Places to Visit in China for First-Time Visitors"
 date: 2026-06-02
 updatedAt: 2026-06-02
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A practical first-time guide to choosing where to go in China by travel style, trip length, and first-time difficulty."
 stage: "discover"
 section: "cities"
-hero_image: "/china-travel/images/article-best-places-editorial.png"
+hero_image: "/china-travel/images/article-best-places-editorial.webp"
 tags: ["first trip", "cities", "itinerary"]
 officialSources: ["official-travel-china"]
 relatedTools: []

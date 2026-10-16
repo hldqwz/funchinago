@@ -2,10 +2,14 @@
 title: "Best eSIMs for China Travel and Internet Access"
 date: 2026-06-02
 updatedAt: 2026-07-02
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A practical guide to choosing internet access for China travel, comparing eSIM, roaming, local SIM cards, data needs, and backup plans."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-esim-editorial.png"
+hero_image: "/china-travel/images/article-esim-editorial.webp"
 tags: ["eSIM", "internet", "apps"]
 officialSources: ["apple-esim-support", "google-translate-offline-help"]
 relatedTools: []

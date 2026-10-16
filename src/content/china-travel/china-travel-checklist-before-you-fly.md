@@ -2,10 +2,14 @@
 title: "China Travel Checklist Before You Fly: Apps, Payments, Internet & Documents"
 date: 2026-06-02
 updatedAt: 2026-06-15
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A practical China travel checklist for first-time visitors, covering payment apps, internet access, documents, transport, hotels, and arrival-day backups."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-checklist-editorial.png"
+hero_image: "/china-travel/images/article-checklist-editorial.webp"
 tags: ["checklist", "preparation", "first trip"]
 officialSources: ["nia-arrival-card-online", "gov-payment-guide-2024", "alipayplus-mainland-guide", "railway-12306-en", "google-translate-offline-help"]
 relatedTools:

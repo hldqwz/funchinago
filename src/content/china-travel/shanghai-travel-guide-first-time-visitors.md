@@ -2,11 +2,17 @@
 title: "Shanghai Travel Guide for First-Time Visitors: Skyline, Old Streets and Easy First Steps"
 date: 2026-07-02
 updatedAt: 2026-07-02
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A practical and human Shanghai travel guide for first-time visitors to China, covering the Bund, Yu Garden, French Concession walks, food, transport, payment, where to stay and common mistakes."
 stage: "discover"
 section: "cities"
 hero_image: "/china-travel/images/shanghai-bund-skyline.jpg"
 hero_alt: "Shanghai skyline seen from the Bund across the Huangpu River"
+hero_width: 1800
+hero_height: 1013
 tags: ["Shanghai", "city guide", "first-time", "metro", "food"]
 officialSources: ["shanghai-official-travel", "meet-in-shanghai", "shanghai-museum", "shanghai-airport", "shanghai-maglev", "railway-12306-en", "gov-payment-guide-2024"]
 relatedTools:
@@ -105,7 +111,7 @@ The important thing is to see both sides of the river. From the Bund, Pudong loo
 
 If the weather is foggy or rainy, think carefully before paying for an observation deck. The view may disappear into gray. Shanghai is beautiful in mist, but a clouded observation deck can be disappointing.
 
-![The Bund in Shanghai at night](/china-travel/images/shanghai-bund-night.jpg)
+![The Bund in Shanghai at night](/china-travel/images/shanghai-bund-night.webp)
 
 ### 3. Visit Yu Garden and the Old City, but know what you are visiting
 
@@ -117,7 +123,7 @@ The garden itself is a ticketed classical space. The surrounding area is a busy 
 
 Go early if you want a calmer visit. Give yourself time to actually look at the garden details rather than only walking through for photos. If you are tired, crowded, or hungry, the area can feel overwhelming. A slower visit works better.
 
-![Yu Garden in Shanghai with classical buildings and a pond](/china-travel/images/shanghai-yu-garden.jpg)
+![Yu Garden in Shanghai with classical buildings and a pond](/china-travel/images/shanghai-yu-garden.webp)
 
 ### 4. Walk through the former French Concession
 
@@ -129,7 +135,7 @@ Wukang Road, Anfu Road, Fuxing Road, Sinan Road, and nearby streets are good sta
 
 This is also where Shanghai feels less like a mega-city and more like a series of rooms. One street is busy, the next is calm. One corner looks international, another suddenly feels local. The pleasure is in moving between them.
 
-![Historic building in Shanghai's former French Concession](/china-travel/images/shanghai-french-concession.jpg)
+![Historic building in Shanghai's former French Concession](/china-travel/images/shanghai-french-concession.webp)
 
 ### 5. Spend an evening on Nanjing Road
 
@@ -139,7 +145,7 @@ You do not need to shop. Walk it as a city experience. Watch the signs, the crow
 
 If you dislike crowds, do not build your whole evening around Nanjing Road. Use it as a short walk rather than the main event.
 
-![East Nanjing Road at night in Shanghai](/china-travel/images/shanghai-nanjing-road-night.jpg)
+![East Nanjing Road at night in Shanghai](/china-travel/images/shanghai-nanjing-road-night.webp)
 
 ### 6. Choose one museum or art stop
 

@@ -2,10 +2,14 @@
 title: "Can Foreign Credit Cards Work in China? What Tourists Should Expect"
 date: 2026-06-15
 updatedAt: 2026-09-22
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A realistic guide to where foreign credit cards may work in China, where they often do not, and why tourists still need app and cash backups."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-payment-editorial.png"
+hero_image: "/china-travel/images/article-payment-editorial.webp"
 tags: ["cards", "payment", "tourist"]
 officialSources: ["pbc-mobile-payment-limits-2024", "gov-payment-optimization-2024-en", "gov-payment-guide-2024", "alipayplus-mainland-guide"]
 relatedTools: []

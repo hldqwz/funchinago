@@ -2,10 +2,17 @@
 title: "Chengdu Travel Guide for First-Time Visitors: Pandas, Hotpot and Tea Houses"
 date: 2026-06-22
 updatedAt: 2026-06-23
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A practical and human Chengdu travel guide for first-time visitors to China, covering pandas, hotpot, teahouses, neighborhoods, day trips, transport, payment and common mistakes."
 stage: "discover"
 section: "cities"
-hero_image: "/china-travel/images/chengdu-peoples-park-teahouse.jpg"
+hero_image: "/china-travel/images/chengdu-peoples-park-teahouse.webp"
+hero_alt: "Bamboo chairs and tea pots at a tea house in Chengdu People's Park"
+hero_width: 1800
+hero_height: 1232
 tags: ["Chengdu", "city guide", "pandas", "food", "first-time"]
 officialSources: ["chengdu-panda-base", "unesco-qingcheng-dujiangyan", "chengdu-airport", "railway-12306-en", "gov-payment-guide-2024", "unesco-chengdu-creative-city-gastronomy"]
 relatedTools:
@@ -111,6 +118,8 @@ At first, it may feel like nothing is happening. Then you start to notice everyt
 
 For many foreign visitors, this is the moment Chengdu makes sense. The city is not asking you to consume another attraction. It is asking whether you can sit still long enough to feel the local rhythm.
 
+![Bamboo chairs and tea service at a tea house in Chengdu People's Park](/china-travel/images/chengdu-peoples-park-teahouse.webp)
+
 ### 3. Eat hotpot, but respect the spice
 
 Chengdu hotpot is not just dinner. It is atmosphere.
@@ -121,7 +130,7 @@ If you do not eat very spicy food, do not try to prove yourself. Ask for a split
 
 Hotpot is better when you stop treating it as a challenge. It is not a test of toughness. It is a shared table.
 
-![Chengdu hotpot with red spicy broth](/china-travel/images/chengdu-hotpot.jpg)
+![Chengdu hotpot with red spicy broth](/china-travel/images/chengdu-hotpot.webp)
 
 ### 4. Walk through Jinli or Kuanzhai Alley, but keep expectations realistic
 
@@ -133,7 +142,7 @@ Go in the late afternoon or evening if you want atmosphere. Walk slowly. Try a s
 
 If you want a stronger sense of everyday life, pair them with a tea house, a park, a local noodle shop, or a neighborhood walk away from the main tourist drag.
 
-![Jinli Street in Chengdu](/china-travel/images/chengdu-jinli-street.jpg)
+![Jinli Street in Chengdu](/china-travel/images/chengdu-jinli-street.webp)
 
 ### 5. Spend an evening around Taikoo Li and Chunxi Road
 
@@ -143,11 +152,15 @@ This area is useful for first-time visitors because it is easy. There are hotels
 
 It also shows something important: Chengdu's relaxed personality does not mean the city is old-fashioned. It is modern, but it is modern in a way that still makes room for tea, food, and hanging out.
 
+![The giant climbing panda sculpture on the IFS building in Chengdu](/china-travel/images/chengdu-ifs-panda.webp)
+
 ## A Simple 3-Day Chengdu Itinerary
 
 ### Day 1: Pandas, tea, and hotpot
 
 Start with the Panda Base in the morning. Go early, wear comfortable shoes, and keep your schedule light afterward.
+
+![Bamboo paths and panda enclosures at the Chengdu Research Base](/china-travel/images/chengdu-panda-base.webp)
 
 In the afternoon, go to People's Park for tea. Do not rush this part. If you sit for only 15 minutes, you may miss the point. Give it at least an hour.
 
@@ -169,7 +182,7 @@ Leshan is best if you want a major cultural sight and do not mind a full travel 
 
 Do not try to do too much in one day. Chengdu is not a city that rewards rushing.
 
-![Mount Qingcheng near Chengdu](/china-travel/images/chengdu-mount-qingcheng.jpg)
+![Mount Qingcheng near Chengdu](/china-travel/images/chengdu-mount-qingcheng.webp)
 
 ## What to Eat in Chengdu
 

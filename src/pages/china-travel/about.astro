@@ -1,0 +1,453 @@
+---
+import Layout from "../../layouts/ChinaTravelLayout.astro";
+import { getCollection } from "astro:content";
+import sourceRegistry from "../../data/chinaTravelSources.json";
+
+const title = "About FunChinaGo";
+const description =
+  "FunChinaGo is a process-driven reference site for international first-time visitors to China: what it publishes, who it is for, how it relates to official sources, and what it deliberately does not do.";
+
+const articles = await getCollection("china-travel");
+const guideCount = articles.length;
+const sourceCount = sourceRegistry.sources.length;
+const officialCount = sourceRegistry.sources.filter(
+  (source) => source.trustLevel === "official"
+).length;
+
+const identity = [
+  {
+    label: "It is",
+    items: [
+      "A reference library of {count} practical guides for international visitors to China.",
+      "A documented verification process, published on the methodology page.",
+      "A tracked source library of {sources} official and platform-authoritative references."
+    ]
+  },
+  {
+    label: "It is not",
+    items: [
+      "A personal travel blog. There are no bylines, no author stories, and no first-person trip diaries.",
+      "A travel agency. Nothing is booked, sold, or brokered, and no supplier is promoted.",
+      "An official government site. It is independent and not affiliated with any Chinese authority.",
+      "A news site. Policy news is read to keep guides current, not reported for its own sake."
+    ]
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <main class="doc">
+    <header class="doc-head reveal">
+      <p class="mono-meta doc-kicker"><span class="verified-dot">About this site</span></p>
+      <h1>About FunChinaGo</h1>
+      <p class="doc-lede">
+        FunChinaGo publishes practical China travel guides for international visitors who are
+        arriving for the first time. It is built as a reference library with a documented
+        verification process, not as a personal blog.
+      </p>
+      <div class="doc-facts">
+        <span><strong>{guideCount}</strong> guides</span>
+        <span><strong>{sourceCount}</strong> tracked sources</span>
+        <span><strong>{officialCount}</strong> official-tier sources</span>
+      </div>
+    </header>
+
+    <section class="quick-answer reveal" aria-labelledby="quick-answer">
+      <h2 id="quick-answer">Quick answer</h2>
+      <p>
+        FunChinaGo is an independent, process-driven reference site for first-time international
+        visitors to China. Every policy claim is checked against an official Chinese source, every
+        guide carries a last-verified date, and policy guides are re-checked every 90 days. It has
+        no individual authors, sells nothing, and is not affiliated with any government body.
+      </p>
+    </section>
+
+    <section class="reveal" aria-labelledby="why">
+      <h2 id="why">Why this site exists</h2>
+      <p>
+        The practical questions a first-time visitor asks before arriving in China are mostly
+        policy questions wearing a travel costume. Can I enter without a visa for these
+        connecting tickets? Will my card work at a noodle stand? Do I need to register my
+        passport? These questions have official answers, and those answers change.
+      </p>
+      <p>
+        What is scarce is not information but dated information. Search results mix an official
+        notice from last year with a forum thread from three years ago and an app store review
+        from last week, with no way to tell which one is current. This site exists to close that
+        gap: a small library where each claim can be traced to a named official source and a
+        checkable date.
+      </p>
+    </section>
+
+    <section class="reveal" aria-labelledby="who">
+      <h2 id="who">Who it is for</h2>
+      <ul class="audience-list">
+        <li>
+          <h3>First-time international visitors</h3>
+          <p>
+            Travellers who have never been to China and are doing the preparation themselves:
+            entry documents, payment setup, internet access, and the first 48 hours on the ground.
+          </p>
+        </li>
+        <li>
+          <h3>Transit and short-stay travellers</h3>
+          <p>
+            Visitors using visa-free transit or a short unilateral visa-free stay, where the rules
+            are specific about onward tickets, ports, and duration.
+          </p>
+        </li>
+        <li>
+          <h3>People planning around uncertainty</h3>
+          <p>
+            Travellers who want to know not just what the rule is, but how confident that answer
+            is and where to confirm it before departure.
+          </p>
+        </li>
+      </ul>
+      <p class="audience-note">
+        It is not written for long-term residents, work visa applicants, or anyone relocating to
+        China. Those paths have document requirements that sit outside the scope of these guides.
+      </p>
+    </section>
+
+    <section class="reveal" aria-labelledby="identity">
+      <h2 id="identity">What this site is, and is not</h2>
+      <div class="identity-grid">
+        {identity.map((block) => (
+          <article class:list={["identity-card", block.label === "It is not" ? "identity-not" : "identity-yes"]}>
+            <h3>{block.label}</h3>
+            <ul>
+              {block.items.map((item) => (
+                <li>
+                  {item
+                    .replace("{count}", String(guideCount))
+                    .replace("{sources}", String(sourceCount))}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+      <p class="identity-note">
+        There are no named authors on this site on purpose. A name you do not recognise does not
+        create trust, and a name cannot be audited. The verification process can be, so the
+        process is what we publish.
+      </p>
+    </section>
+
+    <section class="reveal" aria-labelledby="relationship">
+      <h2 id="relationship">How the content relates to official sources</h2>
+      <p>
+        Official sources decide the facts. This site reads them, translates them into the
+        situation a visitor is actually in, and shows its work. When an official notice sets a
+        rule, that rule is quoted with its source and its checked date.
+      </p>
+      <ul class="relationship-list">
+        <li>
+          <h3>Where official sources decide</h3>
+          <p>
+            Entry eligibility, transit windows, payment limits, ID requirements, and transport
+            booking rules. These come from the National Immigration Administration, the People's
+            Bank of China, gov.cn and the State Council, and platform-official documentation.
+          </p>
+        </li>
+        <li>
+          <h3>Where official sources inform</h3>
+          <p>
+            City guides and cultural pages. Attractions, opening information, and transport
+            logistics are checked against municipal and venue sources; observations about pace,
+            crowding, and what a first-timer notices are written as expectation, not as rule.
+          </p>
+        </li>
+        <li>
+          <h3>Where this site only explains</h3>
+          <p>
+            Anything that is not a rule — how to phrase a request at a counter, what to do when a
+            scan fails, which order to set apps up in — is practical guidance drawn from the
+            documented process above.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="reveal" aria-labelledby="how-it-runs">
+      <h2 id="how-it-runs">How it runs</h2>
+      <p>
+        The site is a static site built with Astro and served from Cloudflare Pages at
+        funchinago.com. It carries no advertising and no affiliate booking links. There is no
+        account system, no newsletter signup, and no analytics profile built around individual
+        readers — traffic measurement is aggregate only.
+      </p>
+    </section>
+
+    <section class="closing reveal" aria-labelledby="next">
+      <h2 id="next">Where to go next</h2>
+      <p>
+        The verification process is published in full, the source library is public, and
+        corrections are accepted by email.
+      </p>
+      <div class="cta-row">
+        <a class="cta cta-primary" href="/china-travel/methodology/">How we verify</a>
+        <a class="cta cta-ghost" href="/china-travel/sources/">Source library</a>
+        <a class="cta cta-ghost" href="/china-travel/start-here/">Start here</a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .doc {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: var(--space-tight) 1.5rem var(--space-base);
+  }
+
+  .doc-kicker {
+    color: var(--celadon);
+    margin: 0 0 0.75rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: var(--fs-h2);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 0 0 1rem;
+    max-width: 22ch;
+  }
+
+  .doc-lede {
+    font-size: var(--fs-lede);
+    color: var(--ink-70);
+    margin: 0 0 1.5rem;
+    max-width: var(--measure-read);
+  }
+
+  .doc-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-bottom: var(--space-tight);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .doc-facts span {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-pill);
+    background: var(--surface);
+    font-size: var(--fs-sm);
+    color: var(--ink-70);
+  }
+
+  .doc-facts strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  section {
+    padding-top: var(--space-tight);
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+  }
+
+  h3 {
+    font-size: var(--fs-h4);
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0 0 0.35rem;
+  }
+
+  p {
+    font-size: var(--fs-body);
+    color: var(--ink-70);
+    margin: 0 0 0.9rem;
+    max-width: var(--measure-read);
+  }
+
+  p strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .quick-answer {
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--hairline);
+    border-left: 4px solid var(--celadon);
+    border-radius: var(--r-sm);
+    background: var(--celadon-tint);
+  }
+
+  .quick-answer h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .quick-answer p {
+    color: var(--ink);
+    margin-bottom: 0;
+  }
+
+  .audience-list,
+  .relationship-list {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .audience-list li,
+  .relationship-list li {
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--surface);
+  }
+
+  .audience-list p,
+  .relationship-list p {
+    margin-bottom: 0;
+    font-size: var(--fs-sm);
+  }
+
+  .audience-note {
+    padding: 0.9rem 1.1rem;
+    border-left: 4px solid var(--seal);
+    background: var(--seal-tint);
+    font-size: var(--fs-sm);
+    color: var(--ink);
+    margin-bottom: 0;
+  }
+
+  .identity-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .identity-card {
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--surface);
+  }
+
+  .identity-yes {
+    border-left: 4px solid var(--celadon);
+  }
+
+  .identity-not {
+    border-left: 4px solid var(--seal);
+  }
+
+  .identity-card h3 {
+    margin-bottom: 0.6rem;
+  }
+
+  .identity-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .identity-card li {
+    position: relative;
+    padding-left: 1rem;
+    font-size: var(--fs-sm);
+    color: var(--ink-70);
+  }
+
+  .identity-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 5px;
+    height: 5px;
+    border-radius: var(--r-pill);
+    background: var(--ink-45);
+  }
+
+  .identity-yes li::before {
+    background: var(--celadon);
+  }
+
+  .identity-not li::before {
+    background: var(--seal);
+  }
+
+  .identity-note {
+    margin: 1rem 0 0;
+    font-size: var(--fs-sm);
+    color: var(--ink-45);
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.6rem 1.15rem;
+    border-radius: var(--r-none);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+  }
+
+  .cta-primary {
+    background: var(--seal);
+    color: var(--paper);
+    border: 1px solid var(--seal);
+  }
+
+  .cta-primary:hover {
+    background: var(--seal-deep);
+    border-color: var(--seal-deep);
+    text-decoration: none;
+  }
+
+  .cta-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--hairline);
+  }
+
+  .cta-ghost:hover {
+    border-color: var(--seal);
+    color: var(--seal);
+    text-decoration: none;
+  }
+
+  @media (max-width: 720px) {
+    .doc {
+      padding-top: 2rem;
+    }
+
+    h1 {
+      max-width: none;
+    }
+
+    .identity-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>

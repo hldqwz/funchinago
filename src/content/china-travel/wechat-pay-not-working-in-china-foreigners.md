@@ -2,10 +2,14 @@
 title: "WeChat Pay Not Working in China for Foreigners: What to Try First"
 date: 2026-06-15
 updatedAt: 2026-07-02
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "If WeChat Pay fails in China, the problem may be card support, verification, QR-code type, mini programs, or merchant settings. Here is what foreign tourists can try at the counter."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-wechatpay-editorial.png"
+hero_image: "/china-travel/images/article-wechatpay-editorial.webp"
 tags: ["WeChat Pay", "payment", "troubleshooting"]
 officialSources: ["gov-payment-guide-2024", "tencent-weixin-pay-overseas-users-2023", "tencent-inbound-payments-apec-2026"]
 relatedTools: []

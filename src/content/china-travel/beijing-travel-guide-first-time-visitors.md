@@ -2,6 +2,10 @@
 title: "Beijing Travel Guide for First-Time Visitors: Forbidden City, Great Wall and Hutong Life"
 date: 2026-07-23
 updatedAt: 2026-07-23
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A practical and human Beijing travel guide for first-time visitors to China, covering the Forbidden City, Great Wall, hutongs, food, transport, reservations, where to stay and common mistakes."
 stage: "discover"
 section: "cities"

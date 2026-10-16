@@ -7,6 +7,14 @@ const chinaTravelCollection = defineCollection({
     seoTitle: z.string().optional(),
     date: z.coerce.date(),
     updatedAt: z.coerce.date(),
+    lastChecked: z.coerce.date(),
+    changelog: z.array(
+      z.object({
+        date: z.coerce.date(),
+        note: z.string(),
+      }),
+    ),
+    reviewer: z.string().optional(),
     description: z.string(),
     stage: z.enum(['discover', 'before', 'in-china']),
     section: z.enum(['start-here', 'travel', 'cities', 'life-culture', 'tools']),

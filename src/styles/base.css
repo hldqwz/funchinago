@@ -1,0 +1,183 @@
+/* ==========================================================================
+   FunChinaGo · Base layer
+   reset / 排版 / 焦点 / 动效 / 无障碍
+   ========================================================================== */
+
+/* ---- 自托管字体（文件就位后生效，缺文件时自动回退系统栈） ---- */
+@font-face {
+  font-family: "Newsreader";
+  src: url("/fonts/newsreader-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/fonts/source-sans-3-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/fonts/source-sans-3-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---- reset ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--paper);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: 1.65;
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--dur-base) ease, color var(--dur-base) ease;
+}
+
+/* ---- 排版 ---- */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+}
+
+h1 {
+  font-size: var(--fs-display);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+h4 {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  line-height: 1.4;
+}
+
+a {
+  color: var(--celadon);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+/* ---- 无障碍：可见焦点（此前全站仅 1 处 select:focus） ---- */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--seal);
+  outline-offset: 2px;
+  border-radius: var(--r-sm);
+}
+
+/* ---- 触控目标 ≥44px ---- */
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"] {
+  min-height: 44px;
+}
+
+/* ---- 核验元数据：等宽字体，天然带「已技术性校对」语义 ---- */
+.mono-meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.verified-dot::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 0.45em;
+  border-radius: 50%;
+  background: var(--celadon);
+  vertical-align: middle;
+}
+
+/* ---- 滚动揭示（渐进增强：无 JS 时内容必须保持可见） ---- */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.js .reveal.is-in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity var(--dur-enter) var(--ease-out),
+    transform var(--dur-enter) var(--ease-out);
+}
+
+/* ---- 无障碍：尊重减少动态偏好 ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

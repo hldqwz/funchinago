@@ -2,10 +2,14 @@
 title: "How to Order Food in China Without Speaking Chinese"
 date: 2026-06-03
 updatedAt: 2026-06-03
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A practical guide to ordering food in China using QR menus, translation apps, pictures, and a few useful phrases."
 stage: "in-china"
 section: "life-culture"
-hero_image: "/china-travel/images/article-18-order-food-china.png"
+hero_image: "/china-travel/images/article-18-order-food-china.webp"
 tags: ["food", "translation", "practical tips"]
 officialSources: ["google-translate-offline-help", "official-travel-china", "peoples-daily-living-like-local"]
 relatedTools: []

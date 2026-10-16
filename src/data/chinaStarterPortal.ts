@@ -5,7 +5,7 @@ export const portalSections = [
     href: '/china-travel/start-here/',
     eyebrow: 'First step',
     description: 'Begin with the big-picture guides that explain why China is worth the effort and how to choose your first route.',
-    image: '/china-travel/images/hero-hongyadong.jpg',
+    image: '/china-travel/images/hero-hongyadong.webp',
   },
   {
     slug: 'travel',
@@ -13,7 +13,7 @@ export const portalSections = [
     href: '/china-travel/travel/',
     eyebrow: 'Plan the trip',
     description: 'Handle visas, payments, trains, apps, internet, and the practical setup that makes the trip run smoothly.',
-    image: '/china-travel/images/article-checklist-editorial.png',
+    image: '/china-travel/images/article-checklist-editorial.webp',
   },
   {
     slug: 'cities',
@@ -21,7 +21,7 @@ export const portalSections = [
     href: '/china-travel/cities/',
     eyebrow: 'Pick your stops',
     description: 'Compare major China destinations and decide which city mix fits your first visit best.',
-    image: '/china-travel/images/article-best-places-editorial.png',
+    image: '/china-travel/images/article-best-places-editorial.webp',
   },
   {
     slug: 'life-culture',
@@ -29,7 +29,7 @@ export const portalSections = [
     href: '/china-travel/life-culture/',
     eyebrow: 'Feel the rhythm',
     description: 'Understand food, daily habits, and the on-the-ground experience that first-time visitors usually notice most.',
-    image: '/china-travel/images/start-modern-china-editorial.png',
+    image: '/china-travel/images/start-modern-china-editorial.webp',
   },
   {
     slug: 'tools',
@@ -37,7 +37,7 @@ export const portalSections = [
     href: '/china-travel/tools/',
     eyebrow: 'Use the helpers',
     description: 'Jump into the current planning tools for checklists, city picking, and transit screening when you are ready to act.',
-    image: '/china-travel/images/article-city-comparison-editorial.png',
+    image: '/china-travel/images/article-city-comparison-editorial.webp',
   },
 ] as const;
 
@@ -47,7 +47,7 @@ export const startHereCards = [
     href: '/china-travel/articles/china-travel-checklist-before-you-fly/',
     text: 'Entry, payments, apps, internet, trains, and documents in one clean setup guide.',
     label: 'Trip setup',
-    image: '/china-travel/images/article-checklist-editorial.png',
+    image: '/china-travel/images/article-checklist-editorial.webp',
     alt: 'Illustrated China travel checklist with documents, apps, and train planning',
   },
   {
@@ -55,7 +55,7 @@ export const startHereCards = [
     href: '/china-travel/articles/beijing-shanghai-chengdu-or-chongqing-which-city-to-visit-first/',
     text: 'Compare the most first-time-friendly cities before you lock your route.',
     label: 'City match',
-    image: '/china-travel/images/article-city-comparison-editorial.png',
+    image: '/china-travel/images/article-city-comparison-editorial.webp',
     alt: 'Illustrated China city picker card with first-time destination choices',
   },
   {
@@ -63,7 +63,7 @@ export const startHereCards = [
     href: '/china-travel/articles/what-china-is-really-like-for-first-time-visitors/',
     text: 'Get a quick feel for daily life, speed, food, apps, and city rhythm.',
     label: 'On the ground',
-    image: '/china-travel/images/start-modern-china-editorial.png',
+    image: '/china-travel/images/start-modern-china-editorial.webp',
     alt: 'Illustrated modern China street scene for first-time visitors',
   },
 ] as const;
@@ -83,28 +83,28 @@ export const cityComparisonCards = [
     bestFor: 'History, hutongs, museums, and a classic first China route.',
     pace: 'Big, structured, culture-heavy',
     href: '/china-travel/articles/beijing-shanghai-chengdu-or-chongqing-which-city-to-visit-first/',
-    image: '/china-travel/images/city-beijing-editorial.png',
+    image: '/china-travel/images/city-beijing-editorial.webp',
   },
   {
     city: 'Shanghai',
     bestFor: 'Skylines, design, cafes, easy metro days, and a soft landing.',
     pace: 'Fast, polished, international',
     href: '/china-travel/articles/beijing-shanghai-chengdu-or-chongqing-which-city-to-visit-first/',
-    image: '/china-travel/images/city-shanghai-editorial.png',
+    image: '/china-travel/images/city-shanghai-editorial.webp',
   },
   {
     city: 'Chengdu',
     bestFor: 'Pandas, spicy food, tea houses, and slower daily life.',
     pace: 'Relaxed, food-first, local',
     href: '/china-travel/articles/beijing-shanghai-chengdu-or-chongqing-which-city-to-visit-first/',
-    image: '/china-travel/images/city-chengdu-editorial.png',
+    image: '/china-travel/images/city-chengdu-editorial.webp',
   },
   {
     city: 'Guangzhou',
     bestFor: 'Cantonese food, warm weather, value, markets, and river nights.',
     pace: 'Practical, tropical, delicious',
     href: '/china-travel/articles/guangzhou-travel-guide-first-time-visitors/',
-    image: '/china-travel/images/article-weekly-guangzhou.jpg',
+    image: '/china-travel/images/article-weekly-guangzhou.webp',
   },
 ] as const;
 
@@ -114,21 +114,21 @@ export const lifeCultureDoorways = [
     title: 'Eat your way into the culture',
     text: 'Learn what to order, how meals work, and why every city tastes different.',
     href: '/china-travel/articles/what-to-eat-in-china/',
-    image: '/china-travel/images/life-food-editorial.png',
+    image: '/china-travel/images/life-food-editorial.webp',
   },
   {
     theme: 'Daily Life',
     title: 'Move through China with less friction',
     text: 'Payments, apps, delivery, and transit shape the trip as much as landmarks do.',
     href: '/china-travel/articles/how-to-order-food-in-china-without-speaking-chinese/',
-    image: '/china-travel/images/life-daily-editorial.png',
+    image: '/china-travel/images/life-daily-editorial.webp',
   },
   {
     theme: 'Modern China',
     title: 'Know what will feel different',
     text: 'A practical orientation to the speed, convenience, and surprises visitors notice first.',
     href: '/china-travel/articles/what-china-is-really-like-for-first-time-visitors/',
-    image: '/china-travel/images/start-modern-china-editorial.png',
+    image: '/china-travel/images/start-modern-china-editorial.webp',
   },
 ] as const;
 
@@ -137,21 +137,21 @@ export const homepageTools = [
     title: 'Transit self-check',
     href: '/tools/china-transit-checker/',
     text: 'Screen a 240-hour visa-free transit route before you rely on it.',
-    image: '/china-travel/images/article-08-240-hour-transit.png',
+    image: '/china-travel/images/article-08-240-hour-transit.webp',
     label: 'Transit',
   },
   {
     title: 'Travel checklist',
     href: '/tools/china-travel-checklist/',
     text: 'Generate a prep list for your trip stage, cities, payments, internet, and trains.',
-    image: '/china-travel/images/article-checklist-editorial.png',
+    image: '/china-travel/images/article-checklist-editorial.webp',
     label: 'Prep',
   },
   {
     title: 'City picker',
     href: '/tools/china-city-picker/',
     text: 'Answer a few questions and get a first-city recommendation.',
-    image: '/china-travel/images/article-city-comparison-editorial.png',
+    image: '/china-travel/images/article-city-comparison-editorial.webp',
     label: 'Cities',
   },
 ] as const;
@@ -272,7 +272,7 @@ export const citySpotlightCards = [
     city: 'Chengdu',
     pace: 'Slow, food-first',
     text: 'Giant pandas, hotpot, teahouses, and a gentler daily rhythm.',
-    image: '/china-travel/images/chengdu-panda-base.jpg',
+    image: '/china-travel/images/chengdu-panda-base.webp',
     alt: 'Giant panda at the Chengdu panda base',
     href: '/china-travel/articles/chengdu-travel-guide-first-time-visitors/',
   },
@@ -288,7 +288,7 @@ export const citySpotlightCards = [
     city: 'Guangzhou',
     pace: 'Warm, best-value',
     text: 'Cantonese food, river nights, and the cheapest tier-1 city base.',
-    image: '/china-travel/images/article-weekly-guangzhou.jpg',
+    image: '/china-travel/images/article-weekly-guangzhou.webp',
     alt: 'Guangzhou cityscape along the Pearl River',
     href: '/china-travel/articles/guangzhou-travel-guide-first-time-visitors/',
   },

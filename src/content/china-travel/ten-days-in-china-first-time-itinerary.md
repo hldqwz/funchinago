@@ -2,10 +2,14 @@
 title: "10 Days in China: First-Time Itinerary"
 date: 2026-06-03
 updatedAt: 2026-06-03
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A realistic 10-day China itinerary for first-time visitors who want a balanced trip with only two or three cities."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-10-days-china-editorial.png"
+hero_image: "/china-travel/images/article-10-days-china-editorial.webp"
 tags: ["itinerary", "10 days", "route"]
 officialSources: ["official-travel-china", "railway-12306-en", "shanghai-240h-transit-guide", "gov-visa-free-access-2025"]
 relatedTools:

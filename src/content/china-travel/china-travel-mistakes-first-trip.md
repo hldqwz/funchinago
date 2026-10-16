@@ -2,10 +2,14 @@
 title: "China Travel Mistakes to Avoid on Your First Trip"
 date: 2026-06-02
 updatedAt: 2026-07-02
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "The most common first-time China travel mistakes, from payment setup and train stations to overpacked itineraries and missing translation tools."
 stage: "in-china"
 section: "travel"
-hero_image: "/china-travel/images/article-travel-mistakes-editorial.png"
+hero_image: "/china-travel/images/article-travel-mistakes-editorial.webp"
 tags: ["mistakes", "first trip", "checklist"]
 officialSources: ["gov-payment-guide-2024", "railway-12306-en", "nia-240h-transit-2025"]
 relatedTools:

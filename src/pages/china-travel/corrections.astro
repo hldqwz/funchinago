@@ -1,0 +1,417 @@
+---
+import Layout from "../../layouts/ChinaTravelLayout.astro";
+
+const title = "Report a Correction";
+const description =
+  "Found an error in a FunChinaGo guide? Send the page URL, the incorrect sentence, and the official source, and the claim will be re-checked against the source library.";
+
+const correctionsEmail = "corrections@funchinago.com";
+const mailtoHref =
+  "mailto:" +
+  correctionsEmail +
+  "?subject=" +
+  encodeURIComponent("Correction report") +
+  "&body=" +
+  encodeURIComponent(
+    "Page URL:\nWhat looks wrong:\nWhat it should say:\nSource (optional):\nDate you noticed it:\n"
+  );
+
+const fields = [
+  {
+    name: "Page URL",
+    required: true,
+    body: "The full address of the page, for example the guide you were reading. This is the single most useful piece of information, because claims are tracked per page."
+  },
+  {
+    name: "What looks wrong",
+    required: true,
+    body: "Quote the sentence or number you think is incorrect. A short quote is enough — no need to explain the whole article."
+  },
+  {
+    name: "What it should say",
+    required: true,
+    body: "Tell us what you believe to be correct. If a limit, duration, or eligibility rule has changed, give the new value."
+  },
+  {
+    name: "Source",
+    required: false,
+    body: "The official page, notice, or in-app screen that contradicts us. Optional, but it is what lets us close the report quickly."
+  },
+  {
+    name: "When you noticed it",
+    required: false,
+    body: "A date, and if relevant where you were — an airport counter, a station gate, a payment screen. Useful for platform rules that roll out gradually."
+  }
+];
+
+const process = [
+  {
+    name: "The report is logged",
+    body: "Corrections are read as tickets, not as comments. The affected page and claim are identified first."
+  },
+  {
+    name: "The claim is re-checked",
+    body: "The statement is compared against the tracked official and platform-official sources for that topic. Where no source supports the claim, it is treated as unverified."
+  },
+  {
+    name: "The page is corrected, or the uncertainty is stated",
+    body: "If the error is confirmed, the text is fixed and the page's verified date is refreshed. If the official sources disagree, the page is rewritten to say so instead of picking one quietly."
+  },
+  {
+    name: "You hear back when a source is needed",
+    body: "If your report needs a source we cannot find, we reply asking for it. Reports without any source may take longer to close, but they are not discarded."
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <main class="doc">
+    <header class="doc-head reveal">
+      <p class="mono-meta doc-kicker"><span class="verified-dot">Corrections</span></p>
+      <h1>Report a correction</h1>
+      <p class="doc-lede">
+        Corrections are the fastest trigger this site has. If a fact here no longer matches the
+        official source it came from, send it in and the claim gets re-checked against the source
+        library.
+      </p>
+    </header>
+
+    <section class="quick-answer reveal" aria-labelledby="quick-answer">
+      <h2 id="quick-answer">Quick answer</h2>
+      <p>
+        Email <strong>corrections@funchinago.com</strong> with the page URL, the sentence that
+        looks wrong, and what it should say. A source is optional but speeds everything up. There
+        is no form to fill in — plain email is the whole process.
+      </p>
+      <div class="cta-row">
+        <a class="cta cta-primary" href={mailtoHref}>Email a correction</a>
+        <a class="cta cta-ghost" href="/china-travel/methodology/">Read the verification process</a>
+      </div>
+    </section>
+
+    <section class="notice reveal" aria-labelledby="address-note">
+      <h2 id="address-note">About the address</h2>
+      <p>
+        <strong>{correctionsEmail}</strong> is currently a placeholder address and is being
+        replaced with a monitored mailbox. Until that change lands, a correction sent here may not
+        reach us. If the address does not work, send the same report to
+        <strong>hello@funchinago.com</strong> instead — that inbox is checked for corrections as
+        well. The page will be updated as soon as the dedicated address is live.
+      </p>
+    </section>
+
+    <section class="reveal" aria-labelledby="what-to-include">
+      <h2 id="what-to-include">What to include</h2>
+      <p class="section-lede">
+        Five fields. The first three are enough to open a report; the last two decide how fast it
+        can be closed.
+      </p>
+      <ol class="field-list">
+        {fields.map((field, index) => (
+          <li>
+            <div class="field-head">
+              <p class="mono-meta step-index">Field {index + 1}</p>
+              <span class:list={["req", { "req-optional": !field.required }]}>
+                {field.required ? "Required" : "Optional"}
+              </span>
+            </div>
+            <h3>{field.name}</h3>
+            <p>{field.body}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="reveal" aria-labelledby="template">
+      <h2 id="template">Copy this template</h2>
+      <p class="section-lede">
+        Paste into an email to {correctionsEmail} and fill in the blanks.
+      </p>
+      <pre class="template-box">Page URL:
+What looks wrong:
+What it should say:
+Source (optional):
+Date you noticed it:</pre>
+      <p class="template-note">
+        The button at the top of this page opens a draft email with the same fields already in
+        place.
+      </p>
+    </section>
+
+    <section class="reveal" aria-labelledby="what-happens">
+      <h2 id="what-happens">What happens next</h2>
+      <ul class="process-list">
+        {process.map((step) => (
+          <li>
+            <h3>{step.name}</h3>
+            <p>{step.body}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="reveal" aria-labelledby="out-of-scope">
+      <h2 id="out-of-scope">What we cannot help with</h2>
+      <div class="scope-box">
+        <p>
+          This site publishes reference guides. It cannot check your individual visa application,
+          intervene in a booking or refund dispute, or give a real-time answer about a specific
+          flight, train, or border crossing. Those questions go to the authority or operator that
+          owns the decision.
+        </p>
+        <p>
+          For entry and transit questions, use the National Immigration Administration or your
+          airline and the Chinese embassy or consulate in your country. For payment problems, use
+          the in-app support of the platform you are trying to pay with.
+        </p>
+      </div>
+    </section>
+
+    <section class="closing reveal" aria-labelledby="other">
+      <h2 id="other">Other ways to reach us</h2>
+      <p>
+        Corrections go to the corrections address. Everything else — questions about a guide, a
+        topic you think is missing, or a source you think should be tracked — goes to the general
+        contact address.
+      </p>
+      <div class="cta-row">
+        <a class="cta cta-primary" href={mailtoHref}>Email a correction</a>
+        <a class="cta cta-ghost" href="/china-travel/contact/">General contact</a>
+        <a class="cta cta-ghost" href="/china-travel/sources/">Source library</a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .doc {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: var(--space-tight) 1.5rem var(--space-base);
+  }
+
+  .doc-kicker {
+    color: var(--celadon);
+    margin: 0 0 0.75rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: var(--fs-h2);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 0 0 1rem;
+    max-width: 22ch;
+  }
+
+  .doc-lede {
+    font-size: var(--fs-lede);
+    color: var(--ink-70);
+    margin: 0 0 1.5rem;
+    max-width: var(--measure-read);
+  }
+
+  section {
+    padding-top: var(--space-tight);
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+  }
+
+  h3 {
+    font-size: var(--fs-h4);
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0 0 0.35rem;
+  }
+
+  p {
+    font-size: var(--fs-body);
+    color: var(--ink-70);
+    margin: 0 0 0.9rem;
+    max-width: var(--measure-read);
+  }
+
+  p strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .section-lede {
+    font-size: var(--fs-lede);
+    color: var(--ink-45);
+    margin-bottom: 1.25rem;
+  }
+
+  .quick-answer {
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--hairline);
+    border-left: 4px solid var(--celadon);
+    border-radius: var(--r-sm);
+    background: var(--celadon-tint);
+  }
+
+  .quick-answer h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .quick-answer p {
+    color: var(--ink);
+  }
+
+  .notice {
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--hairline);
+    border-left: 4px solid var(--seal);
+    border-radius: var(--r-sm);
+    background: var(--seal-tint);
+  }
+
+  .notice p {
+    color: var(--ink);
+    margin-bottom: 0;
+  }
+
+  .field-list,
+  .process-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .field-list li,
+  .process-list li {
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--surface);
+  }
+
+  .field-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .step-index {
+    margin: 0;
+    color: var(--seal);
+    font-size: var(--fs-meta);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .req {
+    font-family: var(--font-mono);
+    font-size: var(--fs-mono);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--celadon);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-pill);
+    padding: 0.15rem 0.5rem;
+  }
+
+  .req-optional {
+    color: var(--ink-45);
+  }
+
+  .field-list p:last-child,
+  .process-list p:last-child {
+    margin-bottom: 0;
+  }
+
+  .template-box {
+    margin: 0 0 0.9rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--paper-dim);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    line-height: 1.7;
+    overflow-x: auto;
+    white-space: pre-wrap;
+  }
+
+  .template-note {
+    font-size: var(--fs-sm);
+    color: var(--ink-45);
+    margin-bottom: 0;
+  }
+
+  .scope-box {
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--paper-dim);
+  }
+
+  .scope-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.6rem 1.15rem;
+    border-radius: var(--r-none);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+  }
+
+  .cta-primary {
+    background: var(--seal);
+    color: var(--paper);
+    border: 1px solid var(--seal);
+  }
+
+  .cta-primary:hover {
+    background: var(--seal-deep);
+    border-color: var(--seal-deep);
+    text-decoration: none;
+  }
+
+  .cta-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--hairline);
+  }
+
+  .cta-ghost:hover {
+    border-color: var(--seal);
+    color: var(--seal);
+    text-decoration: none;
+  }
+
+  @media (max-width: 720px) {
+    .doc {
+      padding-top: 2rem;
+    }
+
+    h1 {
+      max-width: none;
+    }
+  }
+</style>

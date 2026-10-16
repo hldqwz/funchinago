@@ -2,10 +2,14 @@
 title: "Why Visit China in 2026? What First-Time Travelers Should Know"
 date: 2026-06-03
 updatedAt: 2026-06-03
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A practical first look at why China is worth visiting in 2026, what has become easier, and what still needs preparation before your first trip."
 stage: "discover"
 section: "start-here"
-hero_image: "/china-travel/images/article-why-visit-china-2026-editorial.png"
+hero_image: "/china-travel/images/article-why-visit-china-2026-editorial.webp"
 tags: ["2026", "inspiration", "first trip"]
 officialSources: ["scio-inbound-tourism-2026", "gov-visa-free-access-2025", "gov-payment-guide-2024", "peoples-daily-living-like-local"]
 relatedTools:

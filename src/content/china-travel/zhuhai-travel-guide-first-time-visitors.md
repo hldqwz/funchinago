@@ -2,6 +2,10 @@
 title: "Zhuhai Travel Guide for First-Time Visitors: Lovers' Road, Sun Moon Shells and Chimelong"
 date: 2026-09-13
 updatedAt: 2026-09-13
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A practical Zhuhai travel guide for first-time visitors to China: a no-backtracking three-day itinerary along Lovers' Road, the Sun Moon Shells opera house, old-town Xiangzhou, Chimelong Ocean Kingdom, seafood, hotels, Macau connections and common mistakes."
 stage: "discover"
 section: "cities"
@@ -79,6 +83,8 @@ A white, lighthouse-style novelty post office near the beach end of the promenad
 ### 4. Cross to Yeli Island and the Sun Moon Shells
 
 Yeli Island (野狸岛) is a small near-shore island reached by causeway, ringed by a shaded cycling path through dense greenery. At its tip stands the Zhuhai Opera House (日月贝): twin shell forms rising from the water, spectacular in daylight and floodlit after dark. Time your visit so you are on the island's waterfront plaza at blue hour, roughly 7 PM onward when the lights come on.
+
+![The Sun Moon Shells of Zhuhai Opera House on the Yeli Island waterfront](/china-travel/images/zhuhai-opera-house-hero.jpg)
 
 ### 5. Climb Jingshan Park
 

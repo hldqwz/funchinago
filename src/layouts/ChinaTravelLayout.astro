@@ -1,4 +1,7 @@
 ---
+import "../styles/tokens.css";
+import "../styles/base.css";
+
 export interface Props {
   title: string;
   description?: string;
@@ -15,6 +18,8 @@ const socialImageUrl = new URL(
   ogImage || "/china-travel/images/og-liriver-mist.jpg",
   siteUrl
 );
+
+const lastVerified = "17 OCT 2026";
 
 const sectionBreadcrumbMap: Record<string, { name: string }> = {
   "/china-travel/start-here/": { name: "Start Here" },
@@ -57,6 +62,8 @@ if (matchedSection) {
   breadcrumbItems.push({ "@type": "ListItem", position: 3, name: title });
 }
 
+const methodologyUrl = new URL("/china-travel/methodology/", siteUrl).toString();
+
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -67,6 +74,8 @@ const orgSchema = {
   "image": new URL("/images/logo.svg", siteUrl).toString(),
   "description": "Practical China travel guides for international first-time visitors, anchored by official sources.",
   "foundingDate": "2025",
+  "publishingPrinciples": methodologyUrl,
+  "ethicsPolicy": methodologyUrl,
 };
 
 const breadcrumbSchema = {
@@ -82,12 +91,22 @@ const allSchemas = [...defaultSchemas, ...extraSchemas];
 const navItems = [
   { href: "/china-travel/", label: "Home", match: (path: string) => path === "/china-travel/" },
   { href: "/china-travel/start-here/", label: "Start Here", match: (path: string) => path.includes("/china-travel/start-here/") },
-  { href: "/china-travel/travel/", label: "Travel", match: (path: string) => path.includes("/china-travel/travel/") },
   { href: "/china-travel/cities/", label: "Cities", match: (path: string) => path.includes("/china-travel/cities/") },
-  { href: "/china-travel/life-culture/", label: "Life & Culture", match: (path: string) => path.includes("/china-travel/life-culture/") },
   { href: "/china-travel/tools/", label: "Tools", match: (path: string) => path.includes("/china-travel/tools/") || path.includes("/tools/china-") },
   { href: "/china-travel/sources/", label: "Sources", match: (path: string) => path.includes("/china-travel/sources/") },
 ];
+
+const footerExplore = [
+  { label: "Start Here", href: "/china-travel/start-here/" },
+  { label: "Travel", href: "/china-travel/travel/" },
+  { label: "Payment", href: "/china-travel/travel/#payments" },
+  { label: "Transport", href: "/china-travel/travel/#trains-routes" },
+  { label: "Apps & VPN", href: "/china-travel/travel/#internet-apps" },
+  { label: "Life & Culture", href: "/china-travel/life-culture/" },
+  { label: "Articles", href: "/china-travel/articles/" },
+];
+
+const footerCities = ["Beijing", "Shanghai", "Xi'an", "Chengdu", "Zhuhai"];
 ---
 
 <!DOCTYPE html>
@@ -109,213 +128,84 @@ const navItems = [
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description || "Practical China travel guides for international first-time visitors."} />
   <meta name="twitter:image" content={socialImageUrl.toString()} />
-  <meta name="theme-color" content="#a14d2b" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🇨🇳</text></svg>">
+  <meta name="theme-color" content="#b23a2b" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23b23a2b'/%3E%3Ccircle cx='16' cy='16' r='8.5' fill='none' stroke='%23f7f4ec' stroke-width='1.8'/%3E%3Cpath d='M16 7.4 18.7 16 16 24.6 13.3 16Z' fill='%23f7f4ec'/%3E%3C/svg%3E" />
   <!-- Cloudflare Web Analytics -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "53776ca23b6448c6a4527a04a6b1b66a"}'></script>
+    <script>document.documentElement.classList.add("js");</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "53776ca23b6448c6a4527a04a6b1b66a"}'></script>
 
   {allSchemas.map((schema) => (
     <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
   ))}
 
   <style is:global>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #eef1eb;
-      --bg-accent: radial-gradient(circle at top left, rgba(171, 72, 47, 0.12), transparent 34%), radial-gradient(circle at 85% 10%, rgba(39, 84, 92, 0.08), transparent 24%), linear-gradient(180deg, #f8f8f4 0%, #edf0ea 55%, #e6ebe4 100%);
-      --surface: rgba(255, 255, 252, 0.9);
-      --surface-strong: #ffffff;
-      --surface-muted: rgba(245, 247, 243, 0.88);
-      --surface-hover: rgba(255, 255, 255, 0.96);
-      --text: #1d2c2a;
-      --text-secondary: #556764;
-      --text-tertiary: #7a8782;
-      --border: rgba(44, 69, 67, 0.15);
-      --border-strong: rgba(37, 64, 61, 0.24);
-      --accent: #b14f33;
-      --accent-hover: #8f3f28;
-      --accent-soft: rgba(177, 79, 51, 0.12);
-      --accent-strong: #7b2818;
-      --utility: #2f5d62;
-      --utility-soft: rgba(47, 93, 98, 0.12);
-      --success: #2d7a53;
-      --warning: #b06a1d;
-      --radius-sm: 10px;
-      --radius: 16px;
-      --radius-lg: 24px;
-      --shadow: 0 8px 24px rgba(19, 35, 33, 0.06);
-      --shadow-lg: 0 20px 48px rgba(19, 35, 33, 0.1);
-      --header-bg: rgba(248, 248, 244, 0.84);
-      --header-line: linear-gradient(90deg, rgba(177, 79, 51, 0.14), rgba(47, 93, 98, 0.16), rgba(177, 79, 51, 0.08));
-      --feature-accent-bg: linear-gradient(135deg, rgba(177, 79, 51, 0.12), rgba(47, 93, 98, 0.08) 55%, rgba(255, 255, 255, 0.7));
-      --feature-accent-line: linear-gradient(180deg, rgba(177, 79, 51, 0.95), rgba(47, 93, 98, 0.8));
-      --feature-accent-chip: rgba(255, 255, 255, 0.72);
-      --search-bg: rgba(255, 255, 255, 0.92);
-    }
-
-    [data-theme="dark"] {
-      --bg: #16211f;
-      --bg-accent: radial-gradient(circle at top left, rgba(203, 108, 81, 0.16), transparent 34%), radial-gradient(circle at 85% 10%, rgba(82, 136, 142, 0.16), transparent 28%), linear-gradient(180deg, #101716 0%, #16211f 55%, #192825 100%);
-      --surface: rgba(22, 31, 30, 0.9);
-      --surface-strong: #1d2827;
-      --surface-muted: rgba(29, 40, 39, 0.86);
-      --surface-hover: rgba(33, 46, 45, 0.96);
-      --text: #e8efe9;
-      --text-secondary: #acbcb6;
-      --text-tertiary: #87968f;
-      --border: rgba(186, 209, 201, 0.14);
-      --border-strong: rgba(186, 209, 201, 0.22);
-      --accent: #d87957;
-      --accent-hover: #e49174;
-      --accent-soft: rgba(216, 121, 87, 0.16);
-      --accent-strong: #f0b094;
-      --utility: #79aeb2;
-      --utility-soft: rgba(121, 174, 178, 0.14);
-      --success: #62c68b;
-      --warning: #f2b163;
-      --shadow: 0 10px 32px rgba(0, 0, 0, 0.22);
-      --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.28);
-      --header-bg: rgba(16, 23, 22, 0.82);
-      --header-line: linear-gradient(90deg, rgba(216, 121, 87, 0.26), rgba(121, 174, 178, 0.28), rgba(216, 121, 87, 0.16));
-      --feature-accent-bg: linear-gradient(135deg, rgba(216, 121, 87, 0.16), rgba(121, 174, 178, 0.14) 55%, rgba(29, 40, 39, 0.84));
-      --feature-accent-line: linear-gradient(180deg, rgba(216, 121, 87, 0.96), rgba(121, 174, 178, 0.84));
-      --feature-accent-chip: rgba(29, 40, 39, 0.74);
-      --search-bg: rgba(29, 40, 39, 0.92);
-    }
-
     html {
-      background: var(--bg);
+      background: var(--paper);
     }
 
     body {
-      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-      background: var(--bg-accent);
-      color: var(--text);
-      line-height: 1.6;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
-      transition: background 0.2s, color 0.2s;
+      transition: background-color var(--dur-base) ease, color var(--dur-base) ease;
       min-height: 100vh;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(47, 93, 98, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(47, 93, 98, 0.035) 1px, transparent 1px);
-      background-size: 28px 28px;
-      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.42), transparent 80%);
-      z-index: -1;
-    }
-
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    .container { max-width: var(--measure-wide); margin: 0 auto; padding: 0 1.5rem; }
     .container-narrow { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
 
     .site-shell {
       position: relative;
     }
 
-    .site-shell::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 220px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent 100%);
-      pointer-events: none;
-      z-index: -1;
+    /* ---- 顶栏 utility strip ---- */
+    .utility-strip {
+      border-bottom: 1px solid var(--hairline);
+      background: var(--paper-dim);
+      color: var(--ink-45);
     }
 
-    /* Shared feature accent utility for future highlighted blocks */
-    .feature-accent,
-    .feature-accent-card,
-    .feature-accent-panel {
-      position: relative;
-      background: var(--feature-accent-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      isolation: isolate;
+    .utility-strip .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
 
-    .feature-accent::before,
-    .feature-accent-card::before,
-    .feature-accent-panel::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 5px;
-      background: var(--feature-accent-line);
-    }
-
-    .feature-accent::after,
-    .feature-accent-card::after,
-    .feature-accent-panel::after {
-      content: "";
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      width: 82px;
-      height: 82px;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.42), transparent 68%);
-      opacity: 0.85;
-      pointer-events: none;
-    }
-
-    .feature-accent > *,
-    .feature-accent-card > *,
-    .feature-accent-panel > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .feature-accent-chip {
+    .utility-meta {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      background: var(--feature-accent-chip);
-      border: 1px solid var(--border);
-      color: var(--accent-strong);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
       text-transform: uppercase;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      color: var(--celadon);
     }
 
+    .utility-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ---- header ---- */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
-      padding: 0.9rem 0;
+      padding: 0.85rem 0;
       background: var(--header-bg);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      transition: background 0.2s, border-color 0.2s;
+      border-bottom: 1px solid transparent;
+      transition: background-color var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
     }
 
-    .site-header::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 1px;
-      background: var(--header-line);
-      opacity: 0.9;
+    .site-header.is-scrolled {
+      background-color: rgba(247, 244, 236, 0.96);
+      border-bottom-color: var(--hairline);
+    }
+
+    [data-theme="dark"] .site-header.is-scrolled {
+      background-color: rgba(18, 24, 22, 0.96);
     }
 
     .site-header .container {
@@ -336,12 +226,12 @@ const navItems = [
     .brand-mark {
       width: 2.7rem;
       height: 2.7rem;
-      border-radius: 0.9rem;
+      border-radius: var(--r-media);
       display: grid;
       place-items: center;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 244, 239, 0.92));
-      border: 1px solid rgba(177, 79, 51, 0.2);
-      box-shadow: var(--shadow);
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      color: var(--seal);
       font-size: 1.2rem;
       flex-shrink: 0;
     }
@@ -351,7 +241,7 @@ const navItems = [
       flex-direction: column;
       gap: 0.15rem;
       min-width: 0;
-      color: var(--text);
+      color: var(--ink);
       text-decoration: none;
     }
 
@@ -360,31 +250,34 @@ const navItems = [
     }
 
     .logo-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--utility);
+      font-family: var(--font-mono);
+      font-size: var(--fs-meta);
       font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--celadon);
     }
 
     .logo-title {
-      font-size: 1.05rem;
-      font-weight: 800;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      line-height: 1.15;
       letter-spacing: 0;
-      color: var(--text);
-      line-height: 1.1;
+      color: var(--ink);
     }
 
     .logo-subtitle {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      line-height: 1.2;
+      font-size: var(--fs-sm);
+      font-weight: 400;
+      color: var(--ink-70);
+      line-height: 1.3;
     }
 
     .header-right {
       display: flex;
       align-items: center;
-      gap: 0.85rem;
+      gap: 1.25rem;
       flex: 1 1 auto;
       justify-content: flex-end;
       min-width: 0;
@@ -394,7 +287,7 @@ const navItems = [
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 0.3rem;
+      gap: 0.25rem;
       flex-wrap: wrap;
       min-width: 0;
     }
@@ -404,47 +297,50 @@ const navItems = [
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 2.5rem;
-      padding: 0.55rem 0.88rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
+      min-height: 44px;
+      padding: 0.5rem 0.7rem;
+      border: 0;
+      border-radius: var(--r-sm);
+      font-size: var(--fs-sm);
       font-weight: 600;
-      color: var(--text-secondary);
-      border: 1px solid transparent;
-      transition: color 0.15s, background 0.15s, border-color 0.15s, transform 0.15s;
+      color: var(--ink-70);
       white-space: nowrap;
+      transition: color var(--dur-fast) var(--ease-out);
+    }
+
+    .site-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0.7rem;
+      right: 0.7rem;
+      bottom: 0.55rem;
+      height: 1px;
+      background: currentColor;
+      opacity: 0;
+      transition: opacity var(--dur-fast) var(--ease-out);
     }
 
     .site-nav a:hover {
-      color: var(--text);
-      background: var(--surface);
-      border-color: var(--border);
+      color: var(--ink);
       text-decoration: none;
-      transform: translateY(-1px);
+    }
+
+    .site-nav a:hover::after {
+      opacity: 1;
     }
 
     .site-nav a.active {
-      color: var(--text);
-      background: var(--surface-strong);
-      border-color: var(--border-strong);
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+      color: var(--seal);
     }
 
     .site-nav a.active::after {
-      content: "";
-      position: absolute;
-      left: 0.75rem;
-      right: 0.75rem;
-      bottom: 0.35rem;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent), var(--utility));
+      opacity: 1;
     }
 
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 0.55rem;
+      gap: 0.5rem;
       flex-shrink: 0;
     }
 
@@ -452,88 +348,182 @@ const navItems = [
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 2.7rem;
-      height: 2.7rem;
-      border-radius: 999px;
-      font-size: 1rem;
-      color: var(--text-secondary);
-      border: 1px solid var(--border);
-      background: var(--surface);
-      box-shadow: var(--shadow);
-      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+      gap: 0.4rem;
+      min-height: 44px;
+      padding: 0 0.7rem;
+      border-radius: var(--r-sm);
+      font-family: var(--font-mono);
+      font-size: var(--fs-mono);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink-70);
+      border: 1px solid var(--hairline);
+      background: transparent;
+      transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
       cursor: pointer;
     }
 
     .theme-toggle:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-1px);
+      border-color: var(--seal);
+      color: var(--seal);
+    }
+
+    .theme-icon {
+      flex-shrink: 0;
+    }
+
+    .theme-icon-sun {
+      display: none;
+    }
+
+    html[data-theme="dark"] .theme-icon-moon {
+      display: none;
+    }
+
+    html[data-theme="dark"] .theme-icon-sun {
+      display: block;
+    }
+
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      gap: 0.45rem;
+      min-height: 44px;
+      padding: 0 0.75rem;
+      border-radius: var(--r-sm);
+      border: 1px solid var(--hairline);
+      background: transparent;
+      color: var(--ink-70);
+      font-family: var(--font-mono);
+      font-size: var(--fs-mono);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+    }
+
+    .nav-toggle:hover {
+      border-color: var(--seal);
+      color: var(--seal);
+    }
+
+    .nav-toggle-bars {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+      width: 16px;
+      height: 16px;
+    }
+
+    .nav-toggle-bars span {
+      display: block;
+      height: 1.5px;
+      background: currentColor;
     }
 
     main {
       display: block;
     }
 
+    /* ---- footer ---- */
     .site-footer {
-      margin-top: 4rem;
-      padding: 2.75rem 0;
-      border-top: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.36);
-      color: var(--text-secondary);
-      text-align: center;
-      transition: border-color 0.2s, background 0.2s;
+      margin-top: var(--space-tight);
+      padding: var(--space-tight) 0 0;
+      border-top: 1px solid var(--hairline);
+      background: var(--paper-dim);
+      color: var(--ink-70);
+      transition: border-color var(--dur-base) ease, background-color var(--dur-base) ease;
     }
 
-    .site-footer p {
-      max-width: 50rem;
-      margin-left: auto;
-      margin-right: auto;
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 4fr 3fr 3fr 2fr;
+      gap: var(--grid-gap-lg);
+      padding-bottom: var(--space-tight);
     }
 
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.45rem 0.75rem;
-      margin-top: 0.95rem;
-      font-size: 0.92rem;
+    .footer-col {
+      min-width: 0;
     }
 
-    .footer-links a {
-      color: var(--text-secondary);
+    .footer-heading {
+      margin: 0 0 0.35rem;
+      font-family: var(--font-mono);
+      font-size: var(--fs-meta);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
     }
 
-    .footer-links a:hover {
-      color: var(--accent);
+    .footer-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-list a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-size: var(--fs-sm);
+      font-weight: 400;
+      color: var(--ink-70);
+      transition: color var(--dur-fast) var(--ease-out);
+    }
+
+    .footer-list a:hover {
+      color: var(--seal);
       text-decoration: none;
     }
 
+    .footer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      padding: 1rem 0;
+      border-top: 1px solid var(--hairline);
+      color: var(--ink-45);
+      text-transform: uppercase;
+    }
+
+    .footer-bar p {
+      margin: 0;
+    }
+
+    /* ---- shared bits used by article / section pages ---- */
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 0.375rem;
+      min-height: 44px;
       padding: 0.5rem 1rem;
-      border-radius: 999px;
-      font-size: 0.875rem;
+      border-radius: var(--r-pill);
+      font-size: var(--fs-sm);
       font-weight: 600;
       border: none;
       cursor: pointer;
-      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+      transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease;
     }
 
-    .btn-primary { background: var(--accent); color: white; }
-    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-primary { background: var(--seal); color: var(--paper); }
+    .btn-primary:hover { background: var(--seal-deep); }
 
     select {
+      min-height: 44px;
       background: var(--search-bg);
-      color: var(--text);
-      border: 1px solid var(--border);
-      outline: none;
-      border-radius: var(--radius-sm);
+      color: var(--ink);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-sm);
     }
 
-    select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-    option { background: var(--surface-strong); color: var(--text); }
+    select:focus { border-color: var(--seal); box-shadow: 0 0 0 3px var(--seal-tint); }
+    option { background: var(--surface); color: var(--ink); }
 
     .payment-steps {
       counter-reset: payment-step;
@@ -549,9 +539,9 @@ const navItems = [
       min-height: 3rem;
       margin: 0 !important;
       padding: 0.85rem 1rem 0.85rem 3.75rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      background: var(--surface-strong);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-sm);
+      background: var(--surface);
     }
 
     .payment-steps li::before {
@@ -563,10 +553,10 @@ const navItems = [
       width: 2rem;
       height: 2rem;
       place-items: center;
-      border-radius: 999px;
-      background: var(--accent);
-      color: white;
-      font-weight: 800;
+      border-radius: var(--r-pill);
+      background: var(--seal);
+      color: var(--paper);
+      font-weight: 700;
     }
 
     .payment-flow {
@@ -578,9 +568,9 @@ const navItems = [
 
     .payment-flow section {
       padding: 1rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      background: var(--surface-strong);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-sm);
+      background: var(--surface);
     }
 
     .payment-flow h3 { margin-top: 0 !important; }
@@ -590,51 +580,105 @@ const navItems = [
       width: 100%;
       margin: 1rem 0 1.4rem;
       border-collapse: collapse;
-      border: 1px solid var(--border);
-      background: var(--surface-strong);
-      font-size: 0.94rem;
+      border: 1px solid var(--hairline);
+      background: var(--surface);
+      font-size: var(--fs-sm);
     }
 
     .payment-table th,
     .payment-table td {
       padding: 0.75rem;
-      border: 1px solid var(--border);
+      border: 1px solid var(--hairline);
       text-align: left;
       vertical-align: top;
     }
 
     .payment-table th {
-      background: var(--accent-soft);
-      color: var(--text);
-      font-weight: 800;
+      background: var(--seal-tint);
+      color: var(--ink);
+      font-weight: 700;
     }
 
     .trust-module {
       margin: 1.25rem 0;
       padding: 1rem 1.1rem;
-      border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--border));
-      border-left: 4px solid var(--accent);
-      border-radius: var(--radius-md);
-      background: var(--accent-soft);
-      color: var(--text-secondary);
+      border: 1px solid var(--hairline);
+      border-left: 4px solid var(--seal);
+      border-radius: var(--r-sm);
+      background: var(--seal-tint);
+      color: var(--ink-70);
     }
 
-    .trust-module strong { color: var(--text); }
+    .trust-module strong { color: var(--ink); }
     .trust-module p { margin: 0.35rem 0 0 !important; }
 
+    /* ---- 保留的高亮块（去掉光斑装饰，仅留左侧色条） ---- */
+    .feature-accent {
+      position: relative;
+      background: var(--feature-accent-bg);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-media);
+    }
+
+    .feature-accent::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: var(--feature-accent-line);
+    }
+
+    .feature-accent > * {
+      position: relative;
+      z-index: 1;
+    }
+
     @media (max-width: 960px) {
+      .nav-toggle {
+        display: inline-flex;
+      }
+
       .site-header .container {
-        flex-direction: column;
-        align-items: stretch;
+        flex-wrap: wrap;
       }
 
       .header-right {
+        display: none;
         width: 100%;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        padding-top: 0.5rem;
+      }
+
+      .header-right.is-open {
+        display: flex;
       }
 
       .site-nav {
+        flex-direction: column;
+        align-items: stretch;
         justify-content: flex-start;
+      }
+
+      .site-nav a {
+        justify-content: flex-start;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .site-nav a::after {
+        left: 0;
+        right: auto;
+        width: 1.5rem;
+      }
+
+      .header-actions {
+        justify-content: flex-start;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -642,7 +686,7 @@ const navItems = [
       .container, .container-narrow { padding: 0 1rem; }
 
       .site-header {
-        padding: 0.8rem 0;
+        padding: 0.75rem 0;
       }
 
       .brand-lockup {
@@ -652,50 +696,23 @@ const navItems = [
       .brand-mark {
         width: 2.45rem;
         height: 2.45rem;
-        border-radius: 0.8rem;
       }
 
       .logo-title {
-        font-size: 1rem;
+        font-size: 1.15rem;
       }
 
       .logo-subtitle {
         font-size: 0.8rem;
       }
 
-      .header-right {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.7rem;
-      }
-
-      .site-nav {
-        justify-content: flex-start;
-        gap: 0.4rem;
-      }
-
-      .site-nav a {
-        min-height: 2.35rem;
-        padding: 0.5rem 0.78rem;
-        font-size: 0.84rem;
-      }
-
-      .header-actions {
-        justify-content: flex-end;
-      }
-
-      .theme-toggle {
-        width: 2.55rem;
-        height: 2.55rem;
+      .footer-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--grid-gap);
       }
 
       .site-footer {
-        margin-top: 2.75rem;
-        padding: 2rem 0;
-      }
-
-      .footer-links {
-        font-size: 0.88rem;
+        margin-top: var(--space-tight);
       }
 
       .payment-flow { grid-template-columns: 1fr; }
@@ -710,6 +727,30 @@ const navItems = [
 </head>
 <body>
   <div class="site-shell">
+    <div class="utility-strip">
+      <div class="container">
+        <p class="mono-meta utility-meta"><span class="verified-dot">VERIFIED · {lastVerified}</span></p>
+        <div class="utility-actions">
+          <button
+            id="theme-btn"
+            class="theme-toggle"
+            type="button"
+            aria-label="Dark theme"
+            aria-pressed="false"
+          >
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z" />
+            </svg>
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" />
+            </svg>
+            <span class="theme-label">Dark</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <header class="site-header">
       <div class="container">
         <div class="brand-lockup">
@@ -726,7 +767,23 @@ const navItems = [
           </a>
         </div>
 
-        <div class="header-right">
+        <button
+          id="nav-toggle"
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open navigation menu"
+        >
+          <span class="nav-toggle-bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="nav-toggle-text">Menu</span>
+        </button>
+
+        <div class="header-right" id="primary-nav">
           <nav class="site-nav" aria-label="Primary">
             {navItems.map((item) => (
               <a href={item.href} class:list={{ active: item.match(currentPath) }} aria-current={item.match(currentPath) ? "page" : undefined}>
@@ -734,12 +791,6 @@ const navItems = [
               </a>
             ))}
           </nav>
-
-          <div class="header-actions">
-            <button id="theme-btn" class="theme-toggle" aria-label="Toggle dark mode">
-              🌙
-            </button>
-          </div>
         </div>
       </div>
     </header>
@@ -748,24 +799,60 @@ const navItems = [
 
     <footer class="site-footer">
       <div class="container">
-        <p>China Travel Made Easy is a practical starter portal for international first-time visitors, with route planning, city basics, and source-backed guidance.</p>
-        <div class="footer-links" aria-label="Footer">
-          <a href="/china-travel/">Home</a>
-          <a href="/china-travel/start-here/">Start Here</a>
-          <a href="/china-travel/travel/">Travel</a>
-          <a href="/china-travel/cities/">Cities</a>
-          <a href="/china-travel/life-culture/">Life &amp; Culture</a>
-          <a href="/china-travel/tools/">Tools</a>
-          <a href="/china-travel/sources/">Source Library</a>
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h2 class="footer-heading">Trust &amp; Verify</h2>
+            <ul class="footer-list">
+              <li><a href="/china-travel/methodology/">How we verify</a></li>
+              <li><a href="/china-travel/sources/">Source Library</a></li>
+              <li><a href="/china-travel/methodology/#verification-log">Verification log</a></li>
+              <li><a href="/china-travel/corrections/">Report a correction</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h2 class="footer-heading">Explore</h2>
+            <ul class="footer-list">
+              {footerExplore.map((item) => (
+                <li><a href={item.href}>{item.label}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h2 class="footer-heading">Cities</h2>
+            <ul class="footer-list">
+              {footerCities.map((city) => (
+                <li><a href="/china-travel/cities/">{city}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h2 class="footer-heading">Site</h2>
+            <ul class="footer-list">
+              <li><a href="/china-travel/about/">About</a></li>
+              <li><a href="/china-travel/contact/">Contact</a></li>
+              <li><a href="/china-travel/articles/">Articles</a></li>
+              <li><a href="/china-travel/tools/">Tools</a></li>
+              <li><a href="/china-travel/sources/">Sources</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bar mono-meta">
+          <p>© 2026 FunChinaGo</p>
+          <p>Last verified {lastVerified}</p>
         </div>
       </div>
     </footer>
   </div>
 
   <script>
-    (function() {
+    (function () {
+      /* ---------------- 主题切换 ---------------- */
       const btn = document.getElementById("theme-btn");
-      if (!btn) return;
+      const label = btn && btn.querySelector(".theme-label");
 
       const STORAGE_KEY = "china-travel-theme";
       const DARK = "dark";
@@ -778,29 +865,139 @@ const navItems = [
       }
 
       function applyTheme(theme) {
-        if (theme === DARK) {
+        const isDark = theme === DARK;
+        if (isDark) {
           document.documentElement.setAttribute("data-theme", DARK);
-          btn.textContent = "☀️";
         } else {
           document.documentElement.removeAttribute("data-theme");
-          btn.textContent = "🌙";
+        }
+        if (btn) {
+          btn.setAttribute("aria-pressed", String(isDark));
+          btn.setAttribute("aria-label", isDark ? "Dark theme" : "Light theme");
+        }
+        if (label) {
+          label.textContent = isDark ? "Dark" : "Light";
         }
       }
 
-      applyTheme(getPreferredTheme());
+      if (btn) {
+        applyTheme(getPreferredTheme());
 
-      btn.addEventListener("click", () => {
-        const current = document.documentElement.getAttribute("data-theme") === DARK ? DARK : LIGHT;
-        const next = current === DARK ? LIGHT : DARK;
-        localStorage.setItem(STORAGE_KEY, next);
-        applyTheme(next);
-      });
+        btn.addEventListener("click", () => {
+          const current =
+            document.documentElement.getAttribute("data-theme") === DARK ? DARK : LIGHT;
+          const next = current === DARK ? LIGHT : DARK;
+          localStorage.setItem(STORAGE_KEY, next);
+          applyTheme(next);
+        });
 
-      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
-        if (!localStorage.getItem(STORAGE_KEY)) {
-          applyTheme(e.matches ? DARK : LIGHT);
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+          if (!localStorage.getItem(STORAGE_KEY)) {
+            applyTheme(e.matches ? DARK : LIGHT);
+          }
+        });
+      }
+
+      /* ---------------- 移动端导航 ---------------- */
+      const navToggle = document.getElementById("nav-toggle");
+      const navPanel = document.getElementById("primary-nav");
+      const navText = navToggle && navToggle.querySelector(".nav-toggle-text");
+
+      function setNavOpen(open) {
+        if (!navToggle || !navPanel) return;
+        navPanel.classList.toggle("is-open", open);
+        navToggle.setAttribute("aria-expanded", String(open));
+        navToggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+        if (navText) navText.textContent = open ? "Close" : "Menu";
+      }
+
+      if (navToggle && navPanel) {
+        navToggle.addEventListener("click", () => {
+          setNavOpen(navToggle.getAttribute("aria-expanded") !== "true");
+        });
+
+        navPanel.addEventListener("click", (event) => {
+          if (event.target instanceof Element && event.target.closest("a")) {
+            setNavOpen(false);
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") setNavOpen(false);
+        });
+
+        window.matchMedia("(min-width: 961px)").addEventListener("change", (e) => {
+          if (e.matches) setNavOpen(false);
+        });
+      }
+
+      /* ---------------- Header 滚动反馈（仅底色 / 边框，不改高度） ---------------- */
+      const header = document.querySelector(".site-header");
+      if (header) {
+        let queued = false;
+        const sync = () => {
+          queued = false;
+          header.classList.toggle("is-scrolled", window.scrollY > 24);
+        };
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (queued) return;
+            queued = true;
+            requestAnimationFrame(sync);
+          },
+          { passive: true }
+        );
+        sync();
+      }
+
+      /* ---------------- 入场动效（一次性触发） ---------------- */
+      (function revealOnScroll() {
+        const items = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+        if (!items.length) return;
+
+        const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (prefersReduced || !("IntersectionObserver" in window)) {
+          items.forEach((el) => el.classList.add("is-in"));
+          return;
         }
-      });
+
+        const STAGGER = 70;
+        const MAX_STAGGER = 6;
+
+        function enter(el, delay) {
+          if (delay > 0) el.style.transitionDelay = delay + "ms";
+          el.classList.add("is-in");
+        }
+
+        // 首屏前 2 个元素：加载即入，delay 60ms
+        const firstScreen = items.filter((el) => {
+          const rect = el.getBoundingClientRect();
+          return rect.top < window.innerHeight && rect.bottom > 0;
+        });
+        const immediate = firstScreen.slice(0, 2);
+        immediate.forEach((el, i) => enter(el, 60 * (i + 1)));
+
+        const groupCounts = new Map();
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              const el = entry.target;
+              obs.unobserve(el);
+              const parent = el.parentElement;
+              const seen = groupCounts.get(parent) || 0;
+              groupCounts.set(parent, seen + 1);
+              enter(el, Math.min(seen, MAX_STAGGER - 1) * STAGGER);
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        items.forEach((el) => {
+          if (immediate.indexOf(el) === -1) observer.observe(el);
+        });
+      })();
     })();
   </script>
 </body>

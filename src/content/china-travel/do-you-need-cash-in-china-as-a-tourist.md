@@ -2,10 +2,14 @@
 title: "Do You Need Cash in China as a Tourist? Where Cash Still Helps"
 date: 2026-06-15
 updatedAt: 2026-06-15
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A practical guide to when foreign tourists still need cash in China, where mobile payment fails, and how much backup cash to carry."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-payment-editorial.png"
+hero_image: "/china-travel/images/article-payment-editorial.webp"
 tags: ["cash", "payment", "tourist"]
 officialSources: ["gov-payment-guide-2024", "gov-payment-optimization-2024"]
 relatedTools: []

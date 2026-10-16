@@ -2,10 +2,14 @@
 title: "Alipay Not Working in China for Foreign Tourists: Common Fixes and Backup Options"
 date: 2026-06-15
 updatedAt: 2026-07-02
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "Alipay is useful for tourists in China, but foreign cards, verification, QR-code payments, and mini programs can still fail. Learn what to check and what backup payment method to use."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-alipay-editorial.png"
+hero_image: "/china-travel/images/article-alipay-editorial.webp"
 tags: ["Alipay", "payment", "troubleshooting"]
 officialSources: ["alipayplus-mainland-guide", "gov-payment-guide-2024", "gov-payment-optimization-2024"]
 relatedTools: []

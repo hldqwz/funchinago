@@ -2,10 +2,14 @@
 title: "China Visa-Free Travel Guide 2026"
 date: 2026-06-02
 updatedAt: 2026-09-22
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A cautious first-time guide to China visa-free travel, including how to think about unilateral visa-free access, mutual visa-free access, and 240-hour transit."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-visa-free-editorial.png"
+hero_image: "/china-travel/images/article-visa-free-editorial.webp"
 tags: ["visa-free", "entry", "policy"]
 officialSources: ["gov-visa-free-access-2025", "nia-240h-transit-2025", "nia-arrival-card-online"]
 relatedTools:

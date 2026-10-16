@@ -2,10 +2,14 @@
 title: "How to Book High-Speed Train Tickets in China as a Foreigner"
 date: 2026-06-02
 updatedAt: 2026-06-02
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A practical guide for foreign visitors booking China high-speed train tickets, using passports, entering stations, and avoiding common mistakes."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-train-editorial.png"
+hero_image: "/china-travel/images/article-train-editorial.webp"
 tags: ["high-speed rail", "train", "transport"]
 officialSources: ["railway-12306-en", "railway-12306-account-center-en"]
 relatedTools: []

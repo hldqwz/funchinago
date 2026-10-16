@@ -1,0 +1,481 @@
+---
+import Layout from "../../layouts/ChinaTravelLayout.astro";
+
+const title = "Contact FunChinaGo";
+const description =
+  "How to reach FunChinaGo by email: what kinds of messages get a reply, what response time to expect, and which questions should go to an official authority instead.";
+
+const contactEmail = "hello@funchinago.com";
+const correctionsEmail = "corrections@funchinago.com";
+const mailtoHref =
+  "mailto:" +
+  contactEmail +
+  "?subject=" +
+  encodeURIComponent("Question about a China travel guide");
+
+const channels = [
+  {
+    name: "General questions",
+    address: contactEmail,
+    body: "Anything about a guide, a topic you think is missing, a source you think should be tracked, or how to use the site."
+  },
+  {
+    name: "Corrections",
+    address: correctionsEmail,
+    body: "A fact on a page that no longer matches the official source. See the corrections page for the fields to include."
+  }
+];
+
+const replyScope = [
+  {
+    name: "We reply to",
+    items: [
+      "Questions about something specific on a published guide.",
+      "Correction reports with a page URL and a contradicting source.",
+      "Requests to add a topic or an official source to the library.",
+      "Reports of a broken page, a wrong link, or an accessibility problem."
+    ]
+  },
+  {
+    name: "We do not reply to",
+    items: [
+      "Individual visa or entry eligibility questions. Only the issuing authority can answer those.",
+      "Booking, refund, or payment disputes with a platform or operator.",
+      "Real-time questions about a specific flight, train, or border crossing.",
+      "Advertising, guest post, and link placement requests."
+    ]
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <main class="doc">
+    <header class="doc-head reveal">
+      <p class="mono-meta doc-kicker"><span class="verified-dot">Contact</span></p>
+      <h1>Contact</h1>
+      <p class="doc-lede">
+        FunChinaGo is reachable by email. There is no phone line, no live chat, and no contact
+        form — email is the only channel, and it is read as tickets rather than as correspondence.
+      </p>
+    </header>
+
+    <section class="quick-answer reveal" aria-labelledby="quick-answer">
+      <h2 id="quick-answer">Quick answer</h2>
+      <p>
+        Email <strong>{contactEmail}</strong> for general questions and
+        <strong>{correctionsEmail}</strong> for a factual error on a page. Expect a reply within a
+        few business days if the question is in scope. Visa and entry decisions are not answered
+        here — those go to the official authority.
+      </p>
+      <div class="cta-row">
+        <a class="cta cta-primary" href={mailtoHref}>Email hello@funchinago.com</a>
+        <a class="cta cta-ghost" href="/china-travel/corrections/">Report a correction</a>
+      </div>
+    </section>
+
+    <section class="notice reveal" aria-labelledby="address-note">
+      <h2 id="address-note">About the address</h2>
+      <p>
+        <strong>{contactEmail}</strong> is currently a placeholder address and is being replaced
+        with a monitored mailbox. Until that change lands, a message sent here may not reach us.
+        This page will be updated as soon as the address is live.
+      </p>
+    </section>
+
+    <section class="reveal" aria-labelledby="channels">
+      <h2 id="channels">Which address to use</h2>
+      <div class="channel-grid">
+        {channels.map((channel) => (
+          <article>
+            <h3>{channel.name}</h3>
+            <p class="channel-address mono-meta">{channel.address}</p>
+            <p>{channel.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="reveal" aria-labelledby="response">
+      <h2 id="response">Response time</h2>
+      <p class="section-lede">
+        There is no support desk on standby. These are the realistic windows.
+      </p>
+      <table class="response-table">
+        <thead>
+          <tr>
+            <th scope="col">Message type</th>
+            <th scope="col">Expected response</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Correction with a source</th>
+            <td>Fastest path. Checked against the source library, then the page is fixed or the uncertainty is stated on the page.</td>
+          </tr>
+          <tr>
+            <th scope="row">Question about a published guide</th>
+            <td>A few business days. If the answer requires re-checking an official source, it is handled in the next verification pass.</td>
+          </tr>
+          <tr>
+            <th scope="row">Broken page or accessibility problem</th>
+            <td>A few business days.</td>
+          </tr>
+          <tr>
+            <th scope="row">Advertising or guest post requests</th>
+            <td>No reply.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="response-note">
+        A non-reply usually means the question is out of scope, not that it was missed. If your
+        question is about your own visa or entry, that is always out of scope — see below for where
+        it should go instead.
+      </p>
+    </section>
+
+    <section class="reveal" aria-labelledby="scope">
+      <h2 id="scope">What gets a reply</h2>
+      <div class="scope-grid">
+        {replyScope.map((block) => (
+          <article class:list={["scope-card", block.name === "We reply to" ? "scope-yes" : "scope-no"]}>
+            <h3>{block.name}</h3>
+            <ul>
+              {block.items.map((item) => <li>{item}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="reveal" aria-labelledby="instead">
+      <h2 id="instead">Where official questions should go</h2>
+      <div class="official-box">
+        <p>
+          Some questions have one correct recipient, and it is not this site.
+        </p>
+        <ul>
+          <li>
+            <strong>Visa-free entry, transit eligibility, and port rules.</strong> The National
+            Immigration Administration, and your airline before departure.
+          </li>
+          <li>
+            <strong>Document requirements for your nationality.</strong> The Chinese embassy or
+            consulate in your country.
+          </li>
+          <li>
+            <strong>Payment failures and account verification.</strong> The in-app support of
+            Alipay or WeChat Pay, and your card issuer.
+          </li>
+          <li>
+            <strong>Train and flight bookings.</strong> China Railway 12306 and the airline or
+            booking platform you used.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="closing reveal" aria-labelledby="next">
+      <h2 id="next">Before you write</h2>
+      <p>
+        Most factual questions are already answered on the page that raised them, with the source
+        and the last-verified date next to the claim. The verification process explains how those
+        answers were produced.
+      </p>
+      <div class="cta-row">
+        <a class="cta cta-primary" href={mailtoHref}>Email hello@funchinago.com</a>
+        <a class="cta cta-ghost" href="/china-travel/methodology/">How we verify</a>
+        <a class="cta cta-ghost" href="/china-travel/about/">About this site</a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .doc {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: var(--space-tight) 1.5rem var(--space-base);
+  }
+
+  .doc-kicker {
+    color: var(--celadon);
+    margin: 0 0 0.75rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: var(--fs-h2);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 0 0 1rem;
+    max-width: 22ch;
+  }
+
+  .doc-lede {
+    font-size: var(--fs-lede);
+    color: var(--ink-70);
+    margin: 0 0 1.5rem;
+    max-width: var(--measure-read);
+  }
+
+  section {
+    padding-top: var(--space-tight);
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+  }
+
+  h3 {
+    font-size: var(--fs-h4);
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0 0 0.35rem;
+  }
+
+  p {
+    font-size: var(--fs-body);
+    color: var(--ink-70);
+    margin: 0 0 0.9rem;
+    max-width: var(--measure-read);
+  }
+
+  p strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .section-lede {
+    font-size: var(--fs-lede);
+    color: var(--ink-45);
+    margin-bottom: 1.25rem;
+  }
+
+  .quick-answer {
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--hairline);
+    border-left: 4px solid var(--celadon);
+    border-radius: var(--r-sm);
+    background: var(--celadon-tint);
+  }
+
+  .quick-answer h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .quick-answer p {
+    color: var(--ink);
+  }
+
+  .notice {
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--hairline);
+    border-left: 4px solid var(--seal);
+    border-radius: var(--r-sm);
+    background: var(--seal-tint);
+  }
+
+  .notice p {
+    color: var(--ink);
+    margin-bottom: 0;
+  }
+
+  .channel-grid,
+  .scope-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .channel-grid article,
+  .scope-card {
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--surface);
+  }
+
+  .channel-address {
+    margin: 0 0 0.6rem;
+    color: var(--celadon);
+    font-size: var(--fs-sm);
+  }
+
+  .channel-grid p:last-child {
+    margin-bottom: 0;
+    font-size: var(--fs-sm);
+  }
+
+  .scope-yes {
+    border-left: 4px solid var(--celadon);
+  }
+
+  .scope-no {
+    border-left: 4px solid var(--seal);
+  }
+
+  .scope-card h3 {
+    margin-bottom: 0.6rem;
+  }
+
+  .scope-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .scope-card li {
+    position: relative;
+    padding-left: 1rem;
+    font-size: var(--fs-sm);
+    color: var(--ink-70);
+  }
+
+  .scope-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 5px;
+    height: 5px;
+    border-radius: var(--r-pill);
+    background: var(--ink-45);
+  }
+
+  .scope-yes li::before {
+    background: var(--celadon);
+  }
+
+  .scope-no li::before {
+    background: var(--seal);
+  }
+
+  .response-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--hairline);
+    background: var(--surface);
+    font-size: var(--fs-sm);
+  }
+
+  .response-table th,
+  .response-table td {
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--hairline);
+    text-align: left;
+    vertical-align: top;
+    color: var(--ink-70);
+    font-weight: 400;
+  }
+
+  .response-table thead th {
+    background: var(--paper-dim);
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .response-table tbody th {
+    color: var(--ink);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .response-note {
+    margin: 0.9rem 0 0;
+    font-size: var(--fs-sm);
+    color: var(--ink-45);
+  }
+
+  .official-box {
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--paper-dim);
+  }
+
+  .official-box ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .official-box li {
+    font-size: var(--fs-sm);
+    color: var(--ink-70);
+  }
+
+  .official-box strong {
+    color: var(--ink);
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.6rem 1.15rem;
+    border-radius: var(--r-none);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+  }
+
+  .cta-primary {
+    background: var(--seal);
+    color: var(--paper);
+    border: 1px solid var(--seal);
+  }
+
+  .cta-primary:hover {
+    background: var(--seal-deep);
+    border-color: var(--seal-deep);
+    text-decoration: none;
+  }
+
+  .cta-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--hairline);
+  }
+
+  .cta-ghost:hover {
+    border-color: var(--seal);
+    color: var(--seal);
+    text-decoration: none;
+  }
+
+  @media (max-width: 720px) {
+    .doc {
+      padding-top: 2rem;
+    }
+
+    h1 {
+      max-width: none;
+    }
+
+    .channel-grid,
+    .scope-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .response-table {
+      display: block;
+      overflow-x: auto;
+    }
+  }
+</style>

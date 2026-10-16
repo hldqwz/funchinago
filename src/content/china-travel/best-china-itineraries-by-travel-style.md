@@ -2,10 +2,14 @@
 title: "Best China Itineraries by Travel Style: Culture, Food, Nature, Cities"
 date: 2026-06-03
 updatedAt: 2026-06-03
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A route-planning guide for first-time visitors who want to choose a China itinerary by travel style instead of trying to see everything."
 stage: "discover"
 section: "start-here"
-hero_image: "/china-travel/images/article-itineraries-by-style-editorial.png"
+hero_image: "/china-travel/images/article-itineraries-by-style-editorial.webp"
 tags: ["itinerary", "route planning", "first trip"]
 officialSources: ["official-travel-china", "railway-12306-en", "gov-visa-free-access-2025", "shanghai-240h-transit-guide"]
 relatedTools:

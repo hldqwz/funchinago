@@ -3,10 +3,14 @@ title: "WeChat Pay vs Alipay for Tourists in China: Which Should You Set Up Firs
 seoTitle: "Alipay vs WeChat Pay for Tourists in China (2026)"
 date: 2026-07-02
 updatedAt: 2026-08-04
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "Compare Alipay and WeChat Pay for foreign tourists, including setup, merchant use, mini programs, limitations, and the safest payment backup plan."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-payment-editorial.png"
+hero_image: "/china-travel/images/article-payment-editorial.webp"
 tags: ["payment", "Alipay", "WeChat Pay"]
 officialSources: ["gov-payment-guide-2024", "alipayplus-mainland-guide", "tencent-weixin-pay-overseas-users-2023", "tencent-inbound-payments-apec-2026"]
 relatedTools: []

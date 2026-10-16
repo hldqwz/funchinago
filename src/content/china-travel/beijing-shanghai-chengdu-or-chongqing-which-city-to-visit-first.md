@@ -2,10 +2,17 @@
 title: "Beijing, Shanghai, Chengdu, or Chongqing: Which Chinese City Should You Visit First?"
 date: 2026-06-03
 updatedAt: 2026-06-03
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A practical comparison of Beijing, Shanghai, Chengdu, and Chongqing for first-time visitors choosing their first city in China."
 stage: "discover"
 section: "cities"
-hero_image: "/china-travel/images/article-city-comparison-editorial.png"
+hero_image: "/china-travel/images/article-city-comparison-editorial.webp"
+hero_alt: "Illustrated comparison artwork for choosing Beijing, Shanghai, Chengdu or Chongqing as a first city in China"
+hero_width: 1672
+hero_height: 941
 tags: ["city choice", "first trip", "comparison"]
 officialSources: ["official-travel-china", "railway-12306-en", "gov-visa-free-access-2025", "shanghai-240h-transit-guide"]
 relatedTools:

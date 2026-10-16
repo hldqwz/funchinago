@@ -2,10 +2,14 @@
 title: "Do You Need a VPN in China? A Traveler’s Guide"
 date: 2026-06-02
 updatedAt: 2026-07-02
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A cautious travel-preparation guide to internet access in China, focused on communication, maps, translation, work backups, and compliance-minded planning."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-vpn-editorial.png"
+hero_image: "/china-travel/images/article-vpn-editorial.webp"
 tags: ["internet", "VPN", "preparation"]
 officialSources: ["apple-esim-support", "google-translate-offline-help"]
 relatedTools: []

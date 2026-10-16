@@ -3,10 +3,14 @@ title: "How to Pay in China as a Tourist: Alipay, WeChat Pay, Cards and Cash"
 seoTitle: "How to Pay in China as a Tourist (2026): Apps, Cards & Cash"
 date: 2026-06-02
 updatedAt: 2026-09-22
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "Set up Alipay and WeChat Pay, understand foreign-card limits, carry the right cash backup, and know what to do when a payment fails in China."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-payment-editorial.png"
+hero_image: "/china-travel/images/article-payment-editorial.webp"
 tags: ["payment", "Alipay", "WeChat Pay"]
 officialSources: ["pbc-mobile-payment-limits-2024", "gov-payment-optimization-2024-en", "gov-payment-guide-2024", "alipayplus-mainland-guide", "tencent-weixin-pay-overseas-users-2023"]
 relatedTools: []

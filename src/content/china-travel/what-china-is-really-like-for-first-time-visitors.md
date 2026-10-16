@@ -2,10 +2,14 @@
 title: "China for First-Time Travelers: What It's Really Like"
 date: 2026-06-03
 updatedAt: 2026-06-03
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A grounded look at what first-time visitors usually notice in China, from payments and transport to language, food, and daily convenience."
 stage: "discover"
 section: "life-culture"
-hero_image: "/china-travel/images/article-modern-china-editorial.png"
+hero_image: "/china-travel/images/article-modern-china-editorial.webp"
 tags: ["first trip", "reality check", "travel tips"]
 officialSources: ["official-travel-china", "gov-payment-guide-2024", "gov-payment-optimization-2024", "peoples-daily-living-like-local"]
 relatedTools:

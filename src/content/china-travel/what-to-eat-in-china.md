@@ -2,10 +2,14 @@
 title: "What to Eat in China: Food Guide for First-Time Visitors"
 date: 2026-06-03
 updatedAt: 2026-06-03
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A first-time food guide to China covering safe starter dishes, regional highlights, spice levels, and what to try first."
 stage: "in-china"
 section: "life-culture"
-hero_image: "/china-travel/images/article-what-to-eat-editorial.png"
+hero_image: "/china-travel/images/article-what-to-eat-editorial.webp"
 tags: ["food", "restaurant guide", "first trip"]
 officialSources: ["official-travel-china", "peoples-daily-living-like-local"]
 relatedTools: []

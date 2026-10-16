@@ -1,0 +1,671 @@
+---
+import Layout from "../../layouts/ChinaTravelLayout.astro";
+import { getCollection } from "astro:content";
+import sourceRegistry from "../../data/chinaTravelSources.json";
+
+const title = "How We Verify China Travel Information";
+const description =
+  "The verification process behind FunChinaGo: how policy claims are checked against official Chinese sources, how often guides are refreshed, what triggers an update, and what this site does not do.";
+
+const articles = await getCollection("china-travel");
+const guideCount = articles.length;
+const sourceCount = sourceRegistry.sources.length;
+const officialCount = sourceRegistry.sources.filter(
+  (source) => source.trustLevel === "official"
+).length;
+const platformCount = sourceRegistry.sources.filter(
+  (source) => source.trustLevel === "platform-official"
+).length;
+const lastVerified = "17 OCT 2026";
+
+const steps = [
+  {
+    name: "Classify the claim",
+    body: "Every factual statement is sorted into one of three buckets before it is written: a policy rule (visa-free entry, transit windows, customs), a platform rule (Alipay or WeChat Pay limits, verification steps, ticket booking), or on-the-ground practical detail (station layout, queue behaviour, what a counter clerk asks for). Policy and platform rules are treated as checkable facts. Practical detail is written as expectation, not as rule."
+  },
+  {
+    name: "Find the primary source",
+    body: "For policy claims we go to the issuing authority first. Visa-free entry, transit duration, and entry-port rules are checked against the National Immigration Administration (NIA). Payment limits, foreign-card binding, and cash rules are checked against the People's Bank of China (PBOC) and the State Council guidance published on gov.cn. Anything that affects entry eligibility is re-read in Chinese when an English page exists, because English summaries are sometimes published later than the original notice."
+  },
+  {
+    name: "Cross-check before publishing",
+    body: "A single page is not treated as sufficient for a policy claim. We look for a second official or platform-official confirmation — a ministry notice plus the State Council summary, or an NIA announcement plus the airport or railway operator's own passenger notice. Where two official sources disagree in wording, we describe the safer interpretation and say so on the page."
+  },
+  {
+    name: "Record what was checked and when",
+    body: "Each guide carries a last-verified date and a source list. Each tracked source in the library carries its own last-checked date. This is what lets us tell you how old a claim is instead of asking you to trust an undated page."
+  },
+  {
+    name: "Re-check on schedule",
+    body: "Verification is a cycle, not a one-time event. Policy guides are re-checked every 90 days, city guides every 180 days, and anything is re-checked immediately when a trigger fires (see below). If a page cannot be re-verified before its deadline, the uncertain part is softened or removed rather than left standing."
+  }
+];
+
+const cadence = [
+  {
+    scope: "Policy guides",
+    detail: "Visa-free entry, 240-hour transit, payment limits, ID and registration rules",
+    sla: "90 days"
+  },
+  {
+    scope: "Platform guides",
+    detail: "Alipay, WeChat Pay, 12306 train booking, eSIM and app setup",
+    sla: "90 days"
+  },
+  {
+    scope: "City guides",
+    detail: "Beijing, Shanghai, Xi'an, Chengdu, Guangzhou, Zhuhai and comparison pages",
+    sla: "180 days"
+  },
+  {
+    scope: "Source library",
+    detail: "The tracked official and platform-authoritative source list",
+    sla: "On source change"
+  }
+];
+
+const triggers = [
+  {
+    name: "An official announcement changes",
+    body: "A new NIA notice, a State Council policy statement, a PBOC payment rule, or a revised port or airline requirement."
+  },
+  {
+    name: "A platform changes its own rules",
+    body: "Alipay, WeChat Pay, 12306, or an app store changes verification steps, fees, or foreign-card support."
+  },
+  {
+    name: "A reader reports an error",
+    body: "Corrections sent to the corrections address are reviewed against the source library. Confirmed errors are fixed and the page's verified date is refreshed."
+  },
+  {
+    name: "A scheduled cycle comes due",
+    body: "The 90-day and 180-day timers expire and the page is re-read against current sources even if nothing appears to have changed."
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <main class="doc">
+    <header class="doc-head reveal">
+      <p class="mono-meta doc-kicker"><span class="verified-dot">Verification standard</span></p>
+      <h1>How we verify China travel information</h1>
+      <p class="doc-lede">
+        FunChinaGo is a process-driven reference site. This page explains exactly how a claim on
+        this site gets checked, how often it gets re-checked, which sources count as evidence, and
+        where our limits are. If you only read one thing, read the quick answer below.
+      </p>
+      <div class="doc-facts">
+        <span><strong>{guideCount}</strong> verified guides</span>
+        <span><strong>{sourceCount}</strong> tracked sources</span>
+        <span><strong>{officialCount}</strong> official-tier sources</span>
+        <span>Current cycle <strong>{lastVerified}</strong></span>
+      </div>
+    </header>
+
+    <section class="quick-answer reveal" aria-labelledby="quick-answer">
+      <h2 id="quick-answer">Quick answer</h2>
+      <p>
+        Policy claims on this site are checked against the authority that issues them — the
+        National Immigration Administration for entry rules, the People's Bank of China and
+        gov.cn for payment rules, and official platform documentation for app behaviour. Policy
+        and platform guides are re-checked every <strong>90 days</strong>; city guides every
+        <strong>180 days</strong>. Every source is logged with a last-checked date, and we do not
+        use social media, review platforms, or personal blogs as a factual basis. This site does
+        not provide legal or visa advice, and nothing here replaces the decision of an official
+        authority.
+      </p>
+    </section>
+
+    <section class="reveal" aria-labelledby="process">
+      <h2 id="process">The verification process</h2>
+      <p class="section-lede">
+        Five steps run for every policy-sensitive claim. Guides that carry an entry, payment, or
+        transport rule go through all five; lighter cultural pages go through the first three.
+      </p>
+      <ol class="step-list">
+        {steps.map((step, index) => (
+          <li>
+            <p class="step-index mono-meta">Step {index + 1}</p>
+            <h3>{step.name}</h3>
+            <p>{step.body}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="reveal" aria-labelledby="sources-we-check">
+      <h2 id="sources-we-check">The sources we check against</h2>
+      <p class="section-lede">
+        These are the authorities named on pages across the site. Each one is used for the
+        specific category it actually governs.
+      </p>
+      <div class="authority-grid">
+        <article>
+          <h3>National Immigration Administration (NIA)</h3>
+          <p>
+            Visa-free entry lists, mutual and unilateral visa-free arrangements, 240-hour
+            visa-free transit, eligible ports, and entry document requirements.
+          </p>
+        </article>
+        <article>
+          <h3>People's Bank of China (PBOC)</h3>
+          <p>
+            Mobile payment transaction limits for foreign cards, foreign-card binding rules, cash
+            withdrawal and currency-service guidance.
+          </p>
+        </article>
+        <article>
+          <h3>gov.cn and the State Council</h3>
+          <p>
+            Cross-ministry policy statements on making payment, entry, and travel services easier
+            for foreign visitors, including English-language summaries.
+          </p>
+        </article>
+        <article>
+          <h3>Platform-official documentation</h3>
+          <p>
+            Alipay, WeChat Pay, China Railway 12306, and airport or municipal portals for the
+            rules they operate themselves, such as verification steps and booking windows.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="reveal" aria-labelledby="cadence">
+      <h2 id="cadence">How often pages are updated</h2>
+      <p class="section-lede">
+        Each category has a refresh target. The target is a maximum age, not a promise that
+        something changed.
+      </p>
+      <table class="cadence-table">
+        <thead>
+          <tr>
+            <th scope="col">Scope</th>
+            <th scope="col">What it covers</th>
+            <th scope="col">Refresh target</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cadence.map((row) => (
+            <tr>
+              <th scope="row">{row.scope}</th>
+              <td>{row.detail}</td>
+              <td class="mono-meta">{row.sla}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="reveal" aria-labelledby="triggers">
+      <h2 id="triggers">What triggers an update</h2>
+      <p class="section-lede">
+        A scheduled cycle is the slowest path to a change. In practice, most updates are triggered
+        by an event.
+      </p>
+      <ul class="trigger-list">
+        {triggers.map((trigger) => (
+          <li>
+            <h3>{trigger.name}</h3>
+            <p>{trigger.body}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="reveal" aria-labelledby="source-standard">
+      <h2 id="source-standard">How sources are selected</h2>
+      <p>
+        Every entry in the source library carries a trust level. The level decides how much weight
+        a source can carry, not whether it is allowed to appear.
+      </p>
+      <ul class="tier-list">
+        <li>
+          <span class="mono-meta tier-tag">official</span>
+          <p>
+            <strong>Decides the answer.</strong> {officialCount} of {sourceCount} tracked sources
+            sit at this tier. A policy claim is not published unless an official source supports
+            it.
+          </p>
+        </li>
+        <li>
+          <span class="mono-meta tier-tag">platform-official</span>
+          <p>
+            <strong>Decides app behaviour.</strong> {platformCount} sources at this tier. Used for
+            the rules a platform sets about its own product, such as verification steps or card
+            support.
+          </p>
+        </li>
+        <li>
+          <span class="mono-meta tier-tag">media-context</span>
+          <p>
+            <strong>Background only.</strong> Used to understand how a policy is being reported
+            and what travellers are reacting to. Never used as the factual basis for a rule.
+          </p>
+        </li>
+        <li>
+          <span class="mono-meta tier-tag">community-signal</span>
+          <p>
+            <strong>Question generator only.</strong> Community discussion tells us what confuses
+            people. It never decides an answer; it sends us back to an official source.
+          </p>
+        </li>
+      </ul>
+      <div class="exclude-box">
+        <h3>Sources we do not use as evidence</h3>
+        <p>
+          Social media posts, travel review platforms, forum threads, aggregator blogs, and
+          personal travel diaries are not treated as a factual basis for any policy, fee, or
+          eligibility claim on this site. They may be read to find out what travellers are
+          confused about, and the resulting question is then answered from an official or
+          platform-official source.
+        </p>
+      </div>
+    </section>
+
+    <section class="reveal" id="verification-log" aria-labelledby="log">
+      <h2 id="log">Verification log</h2>
+      <p class="section-lede">
+        The current state of the verification cycle. Per-page dates appear on each guide; per-source
+        dates appear in the source library.
+      </p>
+      <div class="log-card">
+        <dl>
+          <div>
+            <dt class="mono-meta">Current cycle</dt>
+            <dd>{lastVerified}</dd>
+          </div>
+          <div>
+            <dt class="mono-meta">Guides in scope</dt>
+            <dd>{guideCount}</dd>
+          </div>
+          <div>
+            <dt class="mono-meta">Sources in scope</dt>
+            <dd>{sourceCount}</dd>
+          </div>
+          <div>
+            <dt class="mono-meta">Source library updated</dt>
+            <dd>{sourceRegistry.updatedAt}</dd>
+          </div>
+        </dl>
+        <p class="log-note">
+          Individual guides show their own last-verified date rather than this summary date, so the
+          age of any single claim can be checked where it appears.
+        </p>
+      </div>
+    </section>
+
+    <section class="reveal" aria-labelledby="limits">
+      <h2 id="limits">Limits and disclaimer</h2>
+      <div class="disclaimer">
+        <p>
+          <strong>This site does not provide legal or visa advice.</strong> FunChinaGo is an
+          independent reference site. It is not affiliated with, endorsed by, or operated by any
+          Chinese government body, immigration authority, payment platform, or transport operator.
+        </p>
+        <p>
+          Entry decisions are made by border officers, airlines, and consular officials at the time
+          you travel. Before you fly, confirm your own eligibility with the official authority that
+          governs it — the National Immigration Administration for entry and transit rules, and
+          your airline or the Chinese embassy or consulate in your country for document
+          requirements. Payment rules can also change inside a platform's terms without a public
+          announcement, so treat the platform's own in-app guidance as final at the counter.
+        </p>
+        <p>
+          Where a rule is genuinely unsettled or changes frequently, we say so on the page instead
+          of giving you a confident number. If you find a claim here that no longer matches the
+          official source, please report it.
+        </p>
+      </div>
+    </section>
+
+    <section class="closing reveal" aria-labelledby="report">
+      <h2 id="report">Found something wrong?</h2>
+      <p>
+        Corrections are the fastest trigger we have. Send the page URL, the sentence that looks
+        wrong, and the official source that contradicts it, and the claim will be re-checked
+        against the source library.
+      </p>
+      <div class="cta-row">
+        <a class="cta cta-primary" href="/china-travel/corrections/">Report a correction</a>
+        <a class="cta cta-ghost" href="/china-travel/sources/">Browse the source library</a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .doc {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: var(--space-tight) 1.5rem var(--space-base);
+  }
+
+  .doc-kicker {
+    color: var(--celadon);
+    margin: 0 0 0.75rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: var(--fs-h2);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 0 0 1rem;
+    max-width: 22ch;
+  }
+
+  .doc-lede {
+    font-size: var(--fs-lede);
+    color: var(--ink-70);
+    margin: 0 0 1.5rem;
+    max-width: var(--measure-read);
+  }
+
+  .doc-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-bottom: var(--space-tight);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .doc-facts span {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-pill);
+    background: var(--surface);
+    font-size: var(--fs-sm);
+    color: var(--ink-70);
+  }
+
+  .doc-facts strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  section {
+    padding-top: var(--space-tight);
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+  }
+
+  h3 {
+    font-size: var(--fs-h4);
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0 0 0.35rem;
+  }
+
+  p {
+    font-size: var(--fs-body);
+    color: var(--ink-70);
+    margin: 0 0 0.9rem;
+    max-width: var(--measure-read);
+  }
+
+  p strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .section-lede {
+    font-size: var(--fs-lede);
+    color: var(--ink-45);
+    margin-bottom: 1.25rem;
+  }
+
+  .quick-answer {
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--hairline);
+    border-left: 4px solid var(--celadon);
+    border-radius: var(--r-sm);
+    background: var(--celadon-tint);
+  }
+
+  .quick-answer h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .quick-answer p {
+    color: var(--ink);
+    margin-bottom: 0;
+  }
+
+  .step-list,
+  .trigger-list,
+  .tier-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .step-list li,
+  .trigger-list li,
+  .tier-list li {
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--surface);
+  }
+
+  .step-index {
+    margin: 0 0 0.4rem;
+    color: var(--seal);
+    font-size: var(--fs-meta);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .step-list p:last-child,
+  .trigger-list p:last-child,
+  .tier-list p:last-child {
+    margin-bottom: 0;
+  }
+
+  .authority-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .authority-grid article {
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--surface);
+  }
+
+  .authority-grid p {
+    margin-bottom: 0;
+    font-size: var(--fs-sm);
+  }
+
+  .cadence-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--hairline);
+    background: var(--surface);
+    font-size: var(--fs-sm);
+  }
+
+  .cadence-table th,
+  .cadence-table td {
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--hairline);
+    text-align: left;
+    vertical-align: top;
+    color: var(--ink-70);
+    font-weight: 400;
+  }
+
+  .cadence-table thead th {
+    background: var(--paper-dim);
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .cadence-table tbody th {
+    color: var(--ink);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .cadence-table td.mono-meta {
+    color: var(--celadon);
+    white-space: nowrap;
+  }
+
+  .tier-tag {
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    padding: 0.15rem 0.5rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-pill);
+    background: var(--paper-dim);
+    color: var(--celadon);
+    font-size: var(--fs-meta);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .exclude-box {
+    margin-top: 0.75rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--hairline);
+    border-left: 4px solid var(--seal);
+    border-radius: var(--r-sm);
+    background: var(--seal-tint);
+  }
+
+  .exclude-box h3 {
+    color: var(--seal);
+  }
+
+  .exclude-box p {
+    margin-bottom: 0;
+  }
+
+  .log-card {
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--surface);
+  }
+
+  .log-card dl {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0 0 1rem;
+  }
+
+  .log-card dt {
+    color: var(--ink-45);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  .log-card dd {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--fs-h4);
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .log-note {
+    margin: 0;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--hairline);
+    font-size: var(--fs-sm);
+    color: var(--ink-45);
+  }
+
+  .disclaimer {
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--paper-dim);
+  }
+
+  .disclaimer p:last-child {
+    margin-bottom: 0;
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.6rem 1.15rem;
+    border-radius: var(--r-none);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+  }
+
+  .cta-primary {
+    background: var(--seal);
+    color: var(--paper);
+    border: 1px solid var(--seal);
+  }
+
+  .cta-primary:hover {
+    background: var(--seal-deep);
+    border-color: var(--seal-deep);
+    text-decoration: none;
+  }
+
+  .cta-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--hairline);
+  }
+
+  .cta-ghost:hover {
+    border-color: var(--seal);
+    color: var(--seal);
+    text-decoration: none;
+  }
+
+  @media (max-width: 720px) {
+    .doc {
+      padding-top: 2rem;
+    }
+
+    h1 {
+      max-width: none;
+    }
+
+    .authority-grid,
+    .log-card dl {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .cadence-table {
+      display: block;
+      overflow-x: auto;
+    }
+  }
+</style>

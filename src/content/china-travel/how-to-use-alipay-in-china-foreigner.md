@@ -3,10 +3,14 @@ title: "How to Use Alipay in China as a Foreigner"
 seoTitle: "How to Use Alipay in China as a Foreigner (2026)"
 date: 2026-06-02
 updatedAt: 2026-08-04
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "Learn how foreign visitors can set up Alipay, link an international card, scan merchant QR codes, and recover when a payment fails in China."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-alipay-editorial.png"
+hero_image: "/china-travel/images/article-alipay-editorial.webp"
 tags: ["Alipay", "payment", "apps"]
 officialSources: ["alipayplus-mainland-guide", "gov-payment-guide-2024", "gov-payment-optimization-2024"]
 relatedTools: []

@@ -1,0 +1,76 @@
+# FunChinaGo
+
+> Practical China travel guides for first-time international visitors, verified against official Chinese sources and refreshed on a published schedule.
+
+FunChinaGo is an independent reference site for international visitors arriving in China for the first time. Policy claims are checked against the National Immigration Administration, the People's Bank of China, gov.cn and the State Council, plus platform-official documentation for Alipay, WeChat Pay and China Railway 12306. Policy guides are re-checked every 90 days and city guides every 180 days. The site has no individual bylines, sells nothing, and is not affiliated with any government body. It does not provide legal or visa advice.
+
+## Trust and process
+
+- [How We Verify China Travel Information](https://funchinago.com/china-travel/methodology/): The verification process behind the site: how policy claims are checked against official Chinese sources, refresh targets, source tiers, and stated limits.
+- [China Travel Official Sources Library](https://funchinago.com/china-travel/sources/): The tracked official and platform-authoritative sources used across the guides, each with its authority, use case, and last-checked date.
+- [Report a Correction](https://funchinago.com/china-travel/corrections/): How to submit a factual error by email, the fields to include, and what happens after a report is logged.
+- [About FunChinaGo](https://funchinago.com/china-travel/about/): What this site is and is not, who the guides are written for, and how the content relates to official sources.
+- [Contact](https://funchinago.com/china-travel/contact/): Which email address to use, expected response times, and which questions belong to an official authority instead.
+
+## Entry points
+
+- [FunChinaGo Home](https://funchinago.com/): Entry page for the site, covering payments, apps, trains, cities, entry rules, and preparation for international first-time visitors to China.
+- [China Travel Guide for First-Time Visitors (2026)](https://funchinago.com/china-travel/): Plan a first China trip with practical guides to payments, apps, trains, cities, entry rules, internet access, and preparation for international visitors.
+- [All China Articles](https://funchinago.com/china-travel/articles/): Browse the full article archive by trip stage, city choice, planning topic, and practical first-time visitor questions.
+- [Start Here](https://funchinago.com/china-travel/start-here/): The easiest way to begin understanding China: plan your trip, choose a city, and get oriented before you go deeper.
+- [China Travel Essentials: Payments, Apps, Trains & Entry](https://funchinago.com/china-travel/travel/): Prepare for a first trip to China with practical guides to payments, essential apps, internet access, entry documents, trains, and route planning.
+- [Cities](https://funchinago.com/china-travel/cities/): Compare first-time-friendly China cities and choose the destination mix that fits your trip style.
+- [Life & Culture](https://funchinago.com/china-travel/life-culture/): Food, daily habits, and practical cultural context for first-time visitors trying to understand modern China.
+
+## Payments and money
+
+- [How to Pay in China as a Tourist: Alipay, WeChat Pay, Cards and Cash](https://funchinago.com/china-travel/articles/how-to-pay-in-china-tourist/): Set up Alipay and WeChat Pay, understand foreign-card limits, carry the right cash backup, and know what to do when a payment fails in China.
+- [How to Use Alipay in China as a Foreigner](https://funchinago.com/china-travel/articles/how-to-use-alipay-in-china-foreigner/): Learn how foreign visitors can set up Alipay, link an international card, scan merchant QR codes, and recover when a payment fails in China.
+- [How to Use WeChat Pay in China as a Foreigner: Setup, Cards and Common Problems](https://funchinago.com/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/): Set up WeChat Pay with an international card, understand current fees and limitations, and fix common QR-code or mini-program failures in China.
+- [WeChat Pay vs Alipay for Tourists in China: Which Should You Set Up First?](https://funchinago.com/china-travel/articles/wechat-pay-vs-alipay-for-tourists-china/): Compare Alipay and WeChat Pay for foreign tourists, including setup, merchant use, mini programs, limitations, and the safest payment backup plan.
+- [WeChat Pay Not Working in China for Foreigners: What to Try First](https://funchinago.com/china-travel/articles/wechat-pay-not-working-in-china-foreigners/): If WeChat Pay fails in China, the problem may be card support, verification, QR-code type, mini programs, or merchant settings. Here is what foreign tourists can try at the counter.
+- [Alipay Not Working in China for Foreign Tourists: Common Fixes and Backup Options](https://funchinago.com/china-travel/articles/alipay-not-working-in-china-foreign-tourists/): Alipay is useful for tourists in China, but foreign cards, verification, QR-code payments, and mini programs can still fail. Learn what to check and what backup payment method to use.
+- [Can Foreign Credit Cards Work in China? What Tourists Should Expect](https://funchinago.com/china-travel/articles/can-foreign-credit-cards-work-in-china/): A realistic guide to where foreign credit cards may work in China, where they often do not, and why tourists still need app and cash backups.
+- [Does Apple Pay or Google Pay Work in China? What Tourists Should Know](https://funchinago.com/china-travel/articles/can-you-use-apple-pay-or-google-pay-in-china/): See when Apple Pay or Google Wallet may work in China, why foreign cards still fail, and which Alipay, WeChat Pay, card, and cash backups to prepare.
+- [Do You Need Cash in China as a Tourist? Where Cash Still Helps](https://funchinago.com/china-travel/articles/do-you-need-cash-in-china-as-a-tourist/): A practical guide to when foreign tourists still need cash in China, where mobile payment fails, and how much backup cash to carry.
+
+## Visa and entry
+
+- [China Visa-Free Travel Guide 2026](https://funchinago.com/china-travel/articles/china-visa-free-travel-guide/): A cautious first-time guide to China visa-free travel, including how to think about unilateral visa-free access, mutual visa-free access, and 240-hour transit.
+- [China 240-Hour Visa-Free Transit Explained](https://funchinago.com/china-travel/articles/china-240-hour-visa-free-transit/): A plain-English explanation of China’s 240-hour visa-free transit policy, including the third-country rule, eligible passports, onward tickets, and official-source cautions.
+
+## Cities
+
+- [Beijing Travel Guide for First-Time Visitors: Forbidden City, Great Wall and Hutong Life](https://funchinago.com/china-travel/articles/beijing-travel-guide-first-time-visitors/): A practical and human Beijing travel guide for first-time visitors to China, covering the Forbidden City, Great Wall, hutongs, food, transport, reservations, where to stay and common mistakes.
+- [Shanghai Travel Guide for First-Time Visitors: Skyline, Old Streets and Easy First Steps](https://funchinago.com/china-travel/articles/shanghai-travel-guide-first-time-visitors/): A practical and human Shanghai travel guide for first-time visitors to China, covering the Bund, Yu Garden, French Concession walks, food, transport, payment, where to stay and common mistakes.
+- [Xi'an Travel Guide for First-Time Visitors: Terracotta Warriors, City Walls and Street Food](https://funchinago.com/china-travel/articles/xian-travel-guide-first-time-visitors/): A practical and human Xi'an travel guide for first-time visitors to China, covering the Terracotta Warriors, city wall, Muslim Quarter, food, reservations, transport and common mistakes.
+- [Chengdu Travel Guide for First-Time Visitors: Pandas, Hotpot and Tea Houses](https://funchinago.com/china-travel/articles/chengdu-travel-guide-first-time-visitors/): A practical and human Chengdu travel guide for first-time visitors to China, covering pandas, hotpot, teahouses, neighborhoods, day trips, transport, payment and common mistakes.
+- [Guangzhou Travel Guide for First-Time Visitors](https://funchinago.com/china-travel/articles/guangzhou-travel-guide-first-time-visitors/): The best-value tier-1 city in China for travelers: world-class Cantonese food at budget prices, slow pace, tropical parks, and one of the easiest Chinese cities for first-time foreign visitors.
+- [Zhuhai Travel Guide for First-Time Visitors: Lovers' Road, Sun Moon Shells and Chimelong](https://funchinago.com/china-travel/articles/zhuhai-travel-guide-first-time-visitors/): A practical Zhuhai travel guide for first-time visitors to China: a no-backtracking three-day itinerary along Lovers' Road, the Sun Moon Shells opera house, old-town Xiangzhou, Chimelong Ocean Kingdom, seafood, hotels, Macau connections and common mistakes.
+- [Best Places to Visit in China for First-Time Visitors](https://funchinago.com/china-travel/articles/best-places-to-visit-in-china-first-time/): A practical first-time guide to choosing where to go in China by travel style, trip length, and first-time difficulty.
+- [Beijing, Shanghai, Chengdu, or Chongqing: Which Chinese City Should You Visit First?](https://funchinago.com/china-travel/articles/beijing-shanghai-chengdu-or-chongqing-which-city-to-visit-first/): A practical comparison of Beijing, Shanghai, Chengdu, and Chongqing for first-time visitors choosing their first city in China.
+
+## Transport and routes
+
+- [How to Book High-Speed Train Tickets in China as a Foreigner](https://funchinago.com/china-travel/articles/how-to-book-high-speed-train-tickets-china-foreigner/): A practical guide for foreign visitors booking China high-speed train tickets, using passports, entering stations, and avoiding common mistakes.
+- [10 Days in China: First-Time Itinerary](https://funchinago.com/china-travel/articles/ten-days-in-china-first-time-itinerary/): A realistic 10-day China itinerary for first-time visitors who want a balanced trip with only two or three cities.
+- [Best China Itineraries by Travel Style: Culture, Food, Nature, Cities](https://funchinago.com/china-travel/articles/best-china-itineraries-by-travel-style/): A route-planning guide for first-time visitors who want to choose a China itinerary by travel style instead of trying to see everything.
+
+## Practical preparation
+
+- [China Travel Checklist Before You Fly: Apps, Payments, Internet & Documents](https://funchinago.com/china-travel/articles/china-travel-checklist-before-you-fly/): A practical China travel checklist for first-time visitors, covering payment apps, internet access, documents, transport, hotels, and arrival-day backups.
+- [Best Apps for Traveling in China](https://funchinago.com/china-travel/articles/best-apps-for-traveling-in-china/): A practical app checklist for China travel, organized by payment, translation, maps, trains, messaging, food, and backup needs.
+- [Best eSIMs for China Travel and Internet Access](https://funchinago.com/china-travel/articles/best-esim-for-china-travel-internet-access/): A practical guide to choosing internet access for China travel, comparing eSIM, roaming, local SIM cards, data needs, and backup plans.
+- [Do You Need a VPN in China? A Traveler’s Guide](https://funchinago.com/china-travel/articles/do-you-need-a-vpn-in-china-travel/): A cautious travel-preparation guide to internet access in China, focused on communication, maps, translation, work backups, and compliance-minded planning.
+- [China Travel Mistakes to Avoid on Your First Trip](https://funchinago.com/china-travel/articles/china-travel-mistakes-first-trip/): The most common first-time China travel mistakes, from payment setup and train stations to overpacked itineraries and missing translation tools.
+- [How to Order Food in China Without Speaking Chinese](https://funchinago.com/china-travel/articles/how-to-order-food-in-china-without-speaking-chinese/): A practical guide to ordering food in China using QR menus, translation apps, pictures, and a few useful phrases.
+- [What to Eat in China: Food Guide for First-Time Visitors](https://funchinago.com/china-travel/articles/what-to-eat-in-china/): A first-time food guide to China covering safe starter dishes, regional highlights, spice levels, and what to try first.
+- [China for First-Time Travelers: What It's Really Like](https://funchinago.com/china-travel/articles/what-china-is-really-like-for-first-time-visitors/): A grounded look at what first-time visitors usually notice in China, from payments and transport to language, food, and daily convenience.
+- [Why Visit China in 2026? What First-Time Travelers Should Know](https://funchinago.com/china-travel/articles/why-visit-china-in-2026/): A practical first look at why China is worth visiting in 2026, what has become easier, and what still needs preparation before your first trip.
+
+## Tools
+
+- [Tools](https://funchinago.com/china-travel/tools/): Simple China travel tools for route checking, planning checklists, and city selection.
+- [China 240-Hour Visa-Free Transit Self-Check](https://funchinago.com/tools/china-transit-checker/): A cautious self-check tool for China's 240-hour visa-free transit policy, with official Chinese government sources.
+- [China City Picker](https://funchinago.com/tools/china-city-picker/): Answer 6 quick questions about your travel style and get a personalized recommendation for the best Chinese city to visit first.
+- [China Travel Checklist Generator](https://funchinago.com/tools/china-travel-checklist/): Generate a personalized pre-travel checklist for your first trip to China based on your trip stage, route, payment setup, and internet needs.

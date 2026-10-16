@@ -1,0 +1,138 @@
+/* ==========================================================================
+   FunChinaGo · Design tokens
+   色彩：宣纸 / 墨 / 朱砂 / 青瓷
+   骨架沿用原有砖红 + 青（演进而非推翻），取值落到具体物质
+   ========================================================================== */
+
+:root {
+  /* ---- 中性色 ---- */
+  --paper: #f7f4ec;           /* 宣纸 · body 底色 */
+  --paper-dim: #efeae0;       /* 宣纸暗 · 交替区块 */
+  --surface: #fffdf9;         /* 卡片面 */
+  --surface-raised: #ffffff;
+  --ink: #1c2321;             /* 墨 · 标题正文 */
+  --ink-70: #4a5754;          /* 次级文 */
+  --ink-45: #7c8a86;          /* 辅助文 · 元信息 */
+  --hairline: #dcd5c8;        /* 发丝线 · 暖调，不用灰蓝 */
+
+  /* ---- 主色 / 辅色 ---- */
+  --seal: #b23a2b;            /* 朱砂 · 主 CTA / 核验标记 */
+  --seal-deep: #8e2c20;       /* :hover / :active */
+  --seal-tint: rgba(178, 58, 43, 0.1);
+  --celadon: #3f7873;         /* 青瓷 · 链接 / 数据 / 核验日期 */
+  --celadon-tint: rgba(63, 120, 115, 0.1);
+  --seal-line: #c77f2a;       /* 赭 · 仅重度警告（核验过期） */
+
+  /* ---- 语义 ---- */
+  --success: #2d6a4f;
+  --warning: var(--seal-line);
+
+  /* ---- 字号阶梯（1.25 比例） ---- */
+  --fs-display: clamp(2.75rem, 7vw, 5.25rem);
+  --fs-h2: clamp(1.9rem, 3.4vw, 2.9rem);
+  --fs-h3: 1.375rem;
+  --fs-h4: 1.125rem;
+  --fs-lede: 1.1875rem;
+  --fs-body: 1.0625rem;       /* 16 → 17px */
+  --fs-sm: 0.9375rem;
+  --fs-meta: 0.75rem;
+  --fs-mono: 0.75rem;
+
+  /* ---- 字重（只允许 4 值） ---- */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ---- 字体族 ---- */
+  /* 自托管就绪后由 base.css 覆盖；当前回退到系统栈保证可用 */
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-sans: "Source Sans 3", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* ---- 圆角（收敛到 4 值） ---- */
+  --r-none: 0;
+  --r-sm: 4px;
+  --r-media: 12px;
+  --r-pill: 999px;
+
+  /* ---- 阴影（分级，默认无阴影） ---- */
+  --sh-sm: 0 2px 8px rgba(28, 35, 33, 0.06);
+  --sh-md: 0 12px 32px rgba(28, 35, 33, 0.1);
+  --sh-hard: 4px 4px 0 var(--seal-tint);
+
+  /* ---- 间距节奏（三级） ---- */
+  --space-tight: 48px;
+  --space-base: 88px;
+  --space-feature: 128px;
+  --grid-gap: 24px;
+  --grid-gap-lg: 32px;
+  --measure-wide: 1280px;
+  --measure-read: 68ch;
+
+  /* ---- 动效 ---- */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur-base: 160ms;
+  --dur-enter: 480ms;
+
+  /* ======================================================================
+     兼容别名：旧变量名指向新体系
+     目的 —— 43 个页面中已有的组件样式无需逐个改写，自动获得新配色
+     ====================================================================== */
+  --bg: var(--paper);
+  --bg-accent: var(--paper);
+  --text: var(--ink);
+  --text-secondary: var(--ink-70);
+  --text-tertiary: var(--ink-45);
+  --text-primary: var(--ink);            /* 修复此前未定义的死变量 */
+  --border: var(--hairline);
+  --border-strong: #c9c0ae;
+  --accent: var(--seal);
+  --accent-hover: var(--seal-deep);
+  --accent-soft: var(--seal-tint);
+  --accent-strong: var(--seal-deep);
+  --utility: var(--celadon);
+  --utility-soft: var(--celadon-tint);
+  --radius-sm: var(--r-sm);
+  --radius: var(--r-sm);
+  --radius-lg: var(--r-media);
+  --shadow: none;
+  --shadow-lg: var(--sh-md);
+  --surface-strong: var(--surface-raised);
+  --surface-muted: var(--paper-dim);
+  --surface-hover: var(--surface-raised);
+  --header-bg: rgba(247, 244, 236, 0.86);
+  --search-bg: var(--surface);
+  --header-line: var(--hairline);
+  --feature-accent-bg: var(--paper-dim);
+  --feature-accent-line: var(--seal);
+  --feature-accent-chip: var(--surface);
+}
+
+[data-theme="dark"] {
+  --paper: #121816;
+  --paper-dim: #161e1c;
+  --surface: #1a221f;
+  --surface-raised: #1f2825;
+  --ink: #e8e4da;
+  --ink-70: #a8b2ae;
+  --ink-45: #7f8a86;
+  --hairline: rgba(232, 228, 218, 0.14);
+
+  --seal: #e0705c;
+  --seal-deep: #ec8474;
+  --seal-tint: rgba(224, 112, 92, 0.14);
+  --celadon: #79b3ae;
+  --celadon-tint: rgba(121, 179, 174, 0.14);
+  --seal-line: #e0a256;
+
+  --success: #62c68b;
+
+  --sh-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --sh-md: 0 12px 32px rgba(0, 0, 0, 0.36);
+  --sh-hard: 4px 4px 0 var(--seal-tint);
+
+  --border-strong: rgba(232, 228, 218, 0.24);
+  --header-bg: rgba(18, 24, 22, 0.86);
+}

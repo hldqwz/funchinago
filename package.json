@@ -12,6 +12,8 @@
     "verify-site-url": "node scripts/verify-site-url.mjs"
   },
   "dependencies": {
+    "@fontsource/newsreader": "^5.3.0",
+    "@fontsource/source-sans-3": "^5.3.1",
     "astro": "^5.0.0"
   },
   "devDependencies": {

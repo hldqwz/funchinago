@@ -3,10 +3,14 @@ title: "How to Use WeChat Pay in China as a Foreigner: Setup, Cards and Common P
 seoTitle: "WeChat Pay for Foreigners in China (2026): Setup & Fixes"
 date: 2026-06-02
 updatedAt: 2026-08-04
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "Set up WeChat Pay with an international card, understand current fees and limitations, and fix common QR-code or mini-program failures in China."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-wechatpay-editorial.png"
+hero_image: "/china-travel/images/article-wechatpay-editorial.webp"
 tags: ["WeChat Pay", "payment", "apps"]
 officialSources: ["gov-payment-guide-2024", "tencent-weixin-pay-overseas-users-2023", "tencent-inbound-payments-apec-2026"]
 relatedTools: []

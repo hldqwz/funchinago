@@ -2,6 +2,10 @@
 title: "Xi'an Travel Guide for First-Time Visitors: Terracotta Warriors, City Walls and Street Food"
 date: 2026-07-28
 updatedAt: 2026-07-28
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A practical and human Xi'an travel guide for first-time visitors to China, covering the Terracotta Warriors, city wall, Muslim Quarter, food, reservations, transport and common mistakes."
 stage: "discover"
 section: "cities"

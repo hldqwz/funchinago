@@ -2,10 +2,14 @@
 title: "Best Apps for Traveling in China"
 date: 2026-06-02
 updatedAt: 2026-07-02
+lastChecked: 2026-10-17
+changelog:
+  - date: 2026-10-17
+    note: "Refreshed verification metadata and image optimisation pass"
 description: "A practical app checklist for China travel, organized by payment, translation, maps, trains, messaging, food, and backup needs."
 stage: "before"
 section: "travel"
-hero_image: "/china-travel/images/article-apps-editorial.png"
+hero_image: "/china-travel/images/article-apps-editorial.webp"
 tags: ["apps", "preparation", "first trip"]
 officialSources: ["alipayplus-mainland-guide", "tencent-weixin-pay-overseas-users-2023", "railway-12306-en", "google-translate-offline-help", "apple-maps-china-support"]
 relatedTools: []
