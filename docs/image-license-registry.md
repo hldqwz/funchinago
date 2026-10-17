@@ -22,10 +22,10 @@ Before adding a city image:
 
 These images were generated with an AI image model rather than sourced from a photographer. They carry no third-party copyright. The exact generation date and model are unknown for the batch below: the files entered the repository on 2026-09-22 with no generation metadata, and a spot check (`hero-china-portal-editorial.webp`, an AI-rendered Bund waterfront corridor) confirmed that this family is AI-generated rather than photographic. Do not label them as photographs, and do not register them as licensed photos.
 
+> **Site owner feedback (2026-10-17):** these assets were reported as collected from public platforms rather than generated in-house. The AI-generation reading above is based on one spot check and may be wrong for the rest of the batch. Until the exact source page, author and license are supplied for each file, they stay in this section and must not be described as cleared licensed photographs.
+
 | Image file | Generated | Model | Description | Used in |
 | --- | --- | --- | --- | --- |
-| `hero-liriver-mist.jpg` | 2026-09-22 | unknown (site-built AI generation) | Li River at dawn near Guilin: layered karst peaks in morning mist, bamboo raft with cormorant fisherman | Homepage hero (`src/pages/china-travel.astro`) |
-| `og-liriver-mist.jpg` | 2026-09-22 | unknown (site-built AI generation) | 1200x630 social share crop of the same generation | Homepage `ogImage` and layout default |
 | `article-10-days-china-editorial.webp` | unknown (in repository since 2026-09-22) | unknown (site-built AI generation) | Illustrated route artwork for the ten-day first-time China itinerary | `ten-days-in-china-first-time-itinerary.md` |
 | `article-alipay-editorial.webp` | unknown (in repository since 2026-09-22) | unknown (site-built AI generation) | Illustrated editorial artwork for setting up and using Alipay as a foreign visitor | `alipay-not-working-in-china-foreign-tourists.md`, `how-to-use-alipay-in-china-foreigner.md` |
 | `article-apps-editorial.webp` | unknown (in repository since 2026-09-22) | unknown (site-built AI generation) | Illustrated editorial artwork for the travel-app stack visitors need in China | `best-apps-for-traveling-in-china.md` |
@@ -70,9 +70,11 @@ Externally sourced photographs with a confirmed source page, author, and license
 
 ## Site-owned photographs and graphics pending provenance check
 
-These files were already in the repository when this registry was extended on 2026-10-17. They are treated as site-owned working assets, **not** as cleared licensed photographs. No source page, author, or license is recorded, and none should be described as public domain or CC-licensed until the provenance check is done. They are listed here so the folder has 100% registry coverage.
+These files were already in the repository when this registry was extended on 2026-10-17. The site owner confirmed on 2026-10-17 that they were collected from public platforms and are not considered infringing. They are treated as site-owned working assets, **not** as cleared licensed photographs: no source page, author or license is recorded yet, so none should be described as public domain or CC-licensed until the provenance check is done. They are listed here so the folder has 100% registry coverage.
 
 | Image file | Kind | Description | Status | Used in |
+| `hero-shanghai-bund-night.jpg` | photograph | The Bund waterfront in Shanghai at night, historic buildings lit in gold along the Huangpu River | public platform origin, source pending | Homepage hero (`src/pages/china-travel.astro`) |
+| `og-shanghai-bund-night.jpg` | photograph | 1200x630 social share crop of the Bund night skyline | public platform origin, source pending | Homepage `ogImage` and layout default |
 | --- | --- | --- | --- | --- |
 | `beijing-forbidden-city-hero.jpg` | Photograph | Forbidden City rooftops and red walls, Beijing | Source unconfirmed - provenance check required | `beijing-travel-guide-first-time-visitors.md` |
 | `beijing-great-wall-mutianyu.jpg` | Photograph | Great Wall climbing a green ridge at Mutianyu | Source unconfirmed - provenance check required | `beijing-travel-guide-first-time-visitors.md` |

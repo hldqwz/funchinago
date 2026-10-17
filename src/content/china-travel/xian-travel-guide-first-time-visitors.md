@@ -198,7 +198,7 @@ Mobile data matters for maps, translation, ride-hailing and bookings. Save desti
 
 ## Xi'an vs Beijing, Shanghai, Chengdu and Guangzhou
 
-Choose Xi'an for archaeology, ancient-capital history, city walls, noodles and a compact historic core. Choose Beijing for imperial scale, the Great Wall and major national museums. Choose Shanghai for the easiest international landing, skyline and polished urban days. Choose Chengdu for pandas, hotpot, tea houses and a slower rhythm. Choose Guangzhou for Cantonese food, warm weather and southern city life.
+Choose Xi'an for archaeology, ancient-capital history, city walls, noodles and a compact historic core. Choose [Beijing](/china-travel/articles/beijing-travel-guide-first-time-visitors/) for imperial scale, the Great Wall and major national museums. Choose [Shanghai](/china-travel/articles/shanghai-travel-guide-first-time-visitors/) for the easiest international landing, skyline and polished urban days. Choose [Chengdu](/china-travel/articles/chengdu-travel-guide-first-time-visitors/) for pandas, hotpot, tea houses and a slower rhythm. Choose [Guangzhou](/china-travel/articles/guangzhou-travel-guide-first-time-visitors/) for Cantonese food, warm weather and southern city life.
 
 Xi'an is less overwhelming than Beijing but less frictionless than Shanghai. It is ideal when you want history without giving every day to monumental distances. The [city comparison guide](/china-travel/articles/beijing-shanghai-chengdu-or-chongqing-which-city-to-visit-first/) helps place the other major options around it.
 

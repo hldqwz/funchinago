@@ -21,28 +21,28 @@ function assertFrontmatterValue(article, key, expected, label) {
 for (const [slug, seoTitle, description] of [
   [
     'how-to-pay-in-china-tourist',
-    'How to Pay in China as a Tourist (2026): Apps, Cards & Cash',
-    'Set up Alipay and WeChat Pay, understand foreign-card limits, carry the right cash backup, and know what to do when a payment fails in China.',
+    'How to Pay in China as a Tourist Without a Chinese Bank Account (2026)',
+    'Pay in China without a Chinese bank account: Alipay and WeChat Pay with a foreign card (USD 5,000 per transaction, USD 50,000 per year), plus the backup order when payment fails at a shop, taxi, or hotel desk.',
   ],
   [
     'how-to-use-alipay-in-china-foreigner',
-    'How to Use Alipay in China as a Foreigner (2026)',
-    'Learn how foreign visitors can set up Alipay, link an international card, scan merchant QR codes, and recover when a payment fails in China.',
+    'How to Use Alipay in China as a Foreigner: Set Up Before You Fly (2026)',
+    'Set up Alipay before you fly: link an international card at home, avoid the 3 failures tourists hit most (bank block, unsupported card, weak network), and keep the backup order — WeChat Pay, then card, then cash.',
   ],
   [
     'how-to-use-wechat-pay-in-china-foreigner',
-    'WeChat Pay for Foreigners in China (2026): Setup & Fixes',
-    'Set up WeChat Pay with an international card, understand current fees and limitations, and fix common QR-code or mini-program failures in China.',
+    'WeChat Pay for Foreigners: International Card Setup & Why Payments Fail',
+    'Link an international card to WeChat Pay before departure: the 2026 fee waiver (90 days, up to RMB 1,000 a day), why cards get declined, and the fix order when a QR menu, taxi, or mini-program payment fails.',
   ],
   [
     'can-you-use-apple-pay-or-google-pay-in-china',
-    'Do Apple Pay and Google Pay Work in China? Card Guide',
-    'See when Apple Pay or Google Wallet may work in China, why foreign cards still fail, and which Alipay, WeChat Pay, card, and cash backups to prepare.',
+    'Can You Use Apple Pay in China? What Works and What Does Not (2026)',
+    'Short answer: yes, but only at hotels, airports, and international card terminals — not for everyday QR payments. Where it works, why foreign cards still fail, and the backup order to prepare.',
   ],
   [
     'wechat-pay-vs-alipay-for-tourists-china',
-    'Alipay vs WeChat Pay for Tourists in China (2026)',
-    'Compare Alipay and WeChat Pay for foreign tourists, including setup, merchant use, mini programs, limitations, and the safest payment backup plan.',
+    'Alipay vs WeChat Pay for Tourists: Which One to Set Up First (2026)',
+    'Alipay vs WeChat Pay for tourists: 7 decision factors compared — Alipay first for shop and counter payments, WeChat Pay second for mini programs, plus the backup plan when either app fails.',
   ],
 ]) {
   const article = readArticle(slug);
@@ -60,7 +60,7 @@ assertFrontmatterValue(
 assertFrontmatterValue(
   wechat,
   'description',
-  'Set up WeChat Pay with an international card, understand current fees and limitations, and fix common QR-code or mini-program failures in China.',
+  'Link an international card to WeChat Pay before departure: the 2026 fee waiver (90 days, up to RMB 1,000 a day), why cards get declined, and the fix order when a QR menu, taxi, or mini-program payment fails.',
   'wechat article',
 );
 for (const heading of [
@@ -94,7 +94,7 @@ assertFrontmatterValue(
 assertFrontmatterValue(
   alipay,
   'description',
-  'Learn how foreign visitors can set up Alipay, link an international card, scan merchant QR codes, and recover when a payment fails in China.',
+  'Set up Alipay before you fly: link an international card at home, avoid the 3 failures tourists hit most (bank block, unsupported card, weak network), and keep the backup order — WeChat Pay, then card, then cash.',
   'alipay article',
 );
 for (const heading of [
@@ -127,7 +127,7 @@ assertFrontmatterValue(
 assertFrontmatterValue(
   checklist,
   'description',
-  'A practical China travel checklist for first-time visitors, covering payment apps, internet access, documents, transport, hotels, and arrival-day backups.',
+  'China pre-flight checklist: 7 things to set up before you fly — documents, Alipay or WeChat Pay, eSIM or roaming, translation, hotel details in Chinese, and arrival-day backups.',
   'checklist article',
 );
 for (const heading of [
@@ -214,7 +214,7 @@ assertFrontmatterValue(
 assertFrontmatterValue(
   paymentHub,
   'description',
-  'Set up Alipay and WeChat Pay, understand foreign-card limits, carry the right cash backup, and know what to do when a payment fails in China.',
+  'Pay in China without a Chinese bank account: Alipay and WeChat Pay with a foreign card (USD 5,000 per transaction, USD 50,000 per year), plus the backup order when payment fails at a shop, taxi, or hotel desk.',
   'payment hub',
 );
 assertIncludes(paymentHub, 'If payment fails', 'payment hub');

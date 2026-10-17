@@ -197,7 +197,7 @@ If your route depends on visa-free transit, read the [240-hour transit guide](/c
 
 ## Beijing vs Shanghai, Chengdu and Guangzhou
 
-Choose Beijing for imperial history, major museums, the Great Wall, and a trip with a strong historical center. Choose Shanghai for a smoother urban landing, skyline, design, and efficient city days. Choose Chengdu for pandas, food, tea houses, and a slower rhythm. Choose Guangzhou for Cantonese food, warm weather, value, and a city that often feels more practical than ceremonial.
+Choose Beijing for imperial history, major museums, the Great Wall, and a trip with a strong historical center. Choose [Shanghai](/china-travel/articles/shanghai-travel-guide-first-time-visitors/) for a smoother urban landing, skyline, design, and efficient city days. Choose [Chengdu](/china-travel/articles/chengdu-travel-guide-first-time-visitors/) for pandas, food, tea houses, and a slower rhythm. Choose [Guangzhou](/china-travel/articles/guangzhou-travel-guide-first-time-visitors/) for Cantonese food, warm weather, value, and a city that often feels more practical than ceremonial.
 
 Beijing is the least forgiving of weak planning, but it may give a first China trip its clearest sense of consequence. Use the [China city picker](/tools/china-city-picker/) or compare [Beijing, Shanghai, Chengdu, and Chongqing](/china-travel/articles/beijing-shanghai-chengdu-or-chongqing-which-city-to-visit-first/) before deciding.
 

@@ -50,6 +50,8 @@ Guangzhou is arguably the **best-value tier-1 city in the world** for travelers.
 
 - **Tianhe District** — Modern business center with international hotels, shopping malls, and the Canton Tower area. Best for comfort and English-speaking service.
 - **Yuexiu District** — Old city center with history, parks, markets, and authentic food at every corner. Best for culture and local vibes.
+
+![Pearl River at night in Guangzhou with lit bridges and tower reflections](/china-travel/images/en-pearl-river.webp)
 - **Haizhu District** — A balance between modern and traditional, along the Pearl River, more affordable.
 - **Liwan District** — The old west side: arcade streets, Yongqing Fang, Shamian Island, and the densest concentration of old Cantonese food. Best for atmosphere, weakest for large international hotels.
 
@@ -194,6 +196,8 @@ Yuexiu Park in the morning for the Five Rams Statue and the old city wall, Beiji
 Use the third day for a proper yum cha breakfast that runs to late morning, a herbal tea stop, one museum or a long park walk, and a Chaoshan beef hotpot dinner. Do not schedule anything tight. The meals are the itinerary.
 
 ## Day Trips and Easy Add-Ons
+
+![Restored lanes and water lanes at Yongqing Fang in Guangzhou](/china-travel/images/en-yongqing-fang.webp)
 
 Guangzhou works well as a base for short hops.
 

@@ -1,13 +1,13 @@
 ---
 title: "Does Apple Pay or Google Pay Work in China? What Tourists Should Know"
-seoTitle: "Do Apple Pay and Google Pay Work in China? Card Guide"
+seoTitle: "Can You Use Apple Pay in China? What Works and What Does Not (2026)"
 date: 2026-06-15
 updatedAt: 2026-08-04
 lastChecked: 2026-10-17
 changelog:
   - date: 2026-10-17
     note: "Refreshed verification metadata and image optimisation pass"
-description: "See when Apple Pay or Google Wallet may work in China, why foreign cards still fail, and which Alipay, WeChat Pay, card, and cash backups to prepare."
+description: "Short answer: yes, but only at hotels, airports, and international card terminals — not for everyday QR payments. Where it works, why foreign cards still fail, and the backup order to prepare."
 stage: "before"
 section: "travel"
 hero_image: "/china-travel/images/article-payment-editorial.webp"
@@ -67,7 +67,7 @@ They may help in places that already look card-terminal friendly:
 - some international-facing restaurants,
 - some stores with supported contactless terminals.
 
-Even there, acceptance may vary by your card issuer, device setup, network, and the merchant's terminal.
+Even there, acceptance may vary by your card issuer, device setup, network, and the merchant's terminal. If your trip continues across the border to Macau, the [Zhuhai travel guide for first-time visitors](/china-travel/articles/zhuhai-travel-guide-first-time-visitors/) explains how mainland payment setups change at the border.
 
 ## Where They Usually Fail
 
@@ -97,6 +97,8 @@ Prepare a local-payment backup stack:
 3. One physical international card.
 4. A small amount of RMB cash.
 5. Reliable mobile data.
+
+For the full app list beyond payments, see [the best apps for traveling in China](/china-travel/articles/best-apps-for-traveling-in-china/).
 
 If you are card-focused, also read [can foreign credit cards work in China?](/china-travel/articles/can-foreign-credit-cards-work-in-china/). If you are worried about cash, read [do you need cash in China as a tourist?](/china-travel/articles/do-you-need-cash-in-china-as-a-tourist/).
 
