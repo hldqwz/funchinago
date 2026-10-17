@@ -1,11 +1,11 @@
 ---
 import Layout from "../../layouts/ChinaTravelLayout.astro";
-import { homepageTools } from "../../data/chinaStarterPortal";
+import { homepageTools, paymentReadinessTools } from "../../data/chinaStarterPortal";
 ---
 
 <Layout
   title="Tools"
-  description="Simple China travel tools for route checking, planning checklists, and city selection."
+  description="Simple China travel tools for payment readiness, route checking, planning checklists, and city selection."
 >
   <main class="section-page">
     <section class="section-hero">
@@ -13,13 +13,14 @@ import { homepageTools } from "../../data/chinaStarterPortal";
         <p class="eyebrow">Tools</p>
         <h1>Small tools that remove first-trip friction.</h1>
         <p class="lede">
-          Use these when you want to turn research into action: check a transit idea,
-          build a prep list, or narrow down your first city.
+          Use these when you want to turn research into action: rank your payment setup,
+          check a transit idea, build a prep list, or narrow down your first city.
         </p>
         <p class="supporting-copy">
           For policy-sensitive questions, pair the tools with the official source library before you book or fly.
         </p>
         <div class="hero-pills" aria-label="Tool use cases">
+          <span>Rank your payment setup</span>
           <span>Check a rule fast</span>
           <span>Build a prep plan</span>
           <span>Choose with less guesswork</span>
@@ -33,7 +34,7 @@ import { homepageTools } from "../../data/chinaStarterPortal";
     </section>
 
     <section class="tool-grid" aria-label="China tools">
-      {homepageTools.map((tool) => (
+      {[...homepageTools, ...paymentReadinessTools].map((tool) => (
         <a class="tool-card" href={tool.href}>
           <img src={tool.image} alt={`${tool.title} planning visual`} loading="lazy" />
           <div>

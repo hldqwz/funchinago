@@ -13,7 +13,11 @@ section: "travel"
 hero_image: "/china-travel/images/article-alipay-editorial.webp"
 tags: ["Alipay", "payment", "apps"]
 officialSources: ["alipayplus-mainland-guide", "gov-payment-guide-2024", "gov-payment-optimization-2024"]
-relatedTools: []
+relatedTools:
+  - title: "Payment Readiness Self-Check"
+    href: "/tools/china-payment-readiness-checker/"
+  - title: "China Travel Checklist Generator"
+    href: "/tools/china-travel-checklist/"
 ---
 
 For many first-time visitors, Alipay is one of the most practical apps to prepare before a China trip. It often feels simpler than WeChat Pay for straightforward merchant payments, but that does not mean it will work perfectly in every shop, city, or payment flow.

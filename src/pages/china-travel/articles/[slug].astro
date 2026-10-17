@@ -159,6 +159,218 @@ const articleSchema = {
   "publisher": { "@type": "Organization", "@id": orgId, "name": "China Travel Made Easy" },
   "mainEntityOfPage": { "@type": "WebPage", "@id": articleUrl },
 };
+
+/* --------------------------------------------------------------------------
+   页面级核验信息条（h1 + description 下方）
+   固定格式：Last checked 17 Oct 2026 · 5 official sources · Updated when policy changes
+   短月份标题体（Oct），与右轨的 17 OCT 2026 全大写记录体错开，读作「摘要」而非「日志」
+   -------------------------------------------------------------------------- */
+const META_MONTH_LABELS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+function formatMetaDate(value: Date | string | undefined) {
+  if (!value) return '—';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '—';
+  return `${date.getUTCDate()} ${META_MONTH_LABELS[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
+}
+
+const verifyCheckedLabel = formatMetaDate(article.data.lastChecked);
+const verifySourceCount = article.data.officialSources.length;
+
+/* --------------------------------------------------------------------------
+   FAQPage JSON-LD
+   content.config.ts 不在本文件改动范围，zod schema 会 strip 未定义的 faq 字段，
+   因此不读 frontmatter，改为直接扫描原始正文（article.body）：
+   匹配问号结尾的 H2/H3 标题，取其后的第一个段落作为答案，
+   自动覆盖各篇已内置的 FAQ 小节；没有问号标题则不输出
+   -------------------------------------------------------------------------- */
+type FaqEntry = { question: string; answer: string };
+
+function stripInlineMarkdown(text: string): string {
+  return text
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/__([^_]+)__/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1')
+    .replace(/_([^_]+)_/g, '$1')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function extractFaqEntries(body: string): FaqEntry[] {
+  const lines = body.split('\n');
+  const entries: FaqEntry[] = [];
+  const seen = new Set<string>();
+
+  for (let i = 0; i < lines.length; i += 1) {
+    const heading = lines[i].match(/^#{2,3}\s+(.+?)\s*$/);
+    if (!heading) continue;
+
+    const question = stripInlineMarkdown(heading[1]);
+    if (!question.endsWith('?')) continue;
+    if (seen.has(question.toLowerCase())) continue;
+
+    /* 答案只取标题后的第一个段落：空行结束，遇到列表 / 引用 / HTML 块即放弃该条 */
+    const paragraph: string[] = [];
+    for (let j = i + 1; j < lines.length; j += 1) {
+      const line = lines[j].trim();
+      if (line === '') {
+        if (paragraph.length > 0) break;
+        continue;
+      }
+      if (/^(#{1,6}\s|[-*+]\s|\d+\.\s|>|<)/.test(line)) break;
+      paragraph.push(line);
+    }
+
+    const answer = stripInlineMarkdown(paragraph.join(' '));
+    if (!answer) continue;
+
+    seen.add(question.toLowerCase());
+    entries.push({ question, answer });
+  }
+
+  return entries;
+}
+
+const faqEntries = extractFaqEntries(article.body);
+const faqSchema = faqEntries.length > 0
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqEntries.map((entry) => ({
+        "@type": "Question",
+        "name": entry.question,
+        "acceptedAnswer": { "@type": "Answer", "text": entry.answer },
+      })),
+    }
+  : null;
+
+/* --------------------------------------------------------------------------
+   HowTo JSON-LD
+   仅对纯流程型文章输出；steps 从正文 Quick Answer / 60-Second 小节的
+   <ol>（或 markdown 编号列表）提取，提取不到就跳过，不硬造
+   -------------------------------------------------------------------------- */
+const HOW_TO_SLUGS = new Set([
+  'how-to-use-alipay-in-china-foreigner',
+  'how-to-use-wechat-pay-in-china-foreigner',
+  'how-to-pay-in-china-tourist',
+]);
+
+type HowToStep = { name: string; text: string };
+type StepBlock = { heading: string; items: string[] };
+
+function stripHtmlTags(html: string): string {
+  return html
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function extractHtmlOrderedBlocks(body: string): StepBlock[] {
+  const headings = [...body.matchAll(/^#{2,3}\s+(.+?)\s*$/gm)].map((match) => ({
+    index: match.index ?? 0,
+    text: stripInlineMarkdown(match[1]),
+  }));
+
+  return [...body.matchAll(/<ol\b[^>]*>([\s\S]*?)<\/ol>/gi)]
+    .map((match) => {
+      const start = match.index ?? 0;
+      let heading = '';
+      for (const entry of headings) {
+        if (entry.index < start) heading = entry.text;
+      }
+      const items = [...match[1].matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)].map((item) => item[1]);
+      return { heading, items };
+    })
+    .filter((block) => block.items.length > 0);
+}
+
+function extractMarkdownOrderedBlocks(body: string): StepBlock[] {
+  const lines = body.split('\n');
+  const blocks: StepBlock[] = [];
+  let current: string[] | null = null;
+  let heading = '';
+
+  const flush = () => {
+    if (current && current.length > 0) blocks.push({ heading, items: current });
+    current = null;
+  };
+
+  for (const line of lines) {
+    const headingMatch = line.match(/^#{2,3}\s+(.+?)\s*$/);
+    if (headingMatch) {
+      flush();
+      heading = stripInlineMarkdown(headingMatch[1]);
+      continue;
+    }
+    const item = line.match(/^\s*\d+\.\s+(.+)$/);
+    if (item) {
+      if (!current) current = [];
+      current.push(item[1]);
+      continue;
+    }
+    if (line.trim() === '') continue;
+    flush();
+  }
+  flush();
+
+  return blocks;
+}
+
+function stepNameFrom(itemHtml: string, text: string): string {
+  const lead = itemHtml.match(/<strong\b[^>]*>([\s\S]*?)<\/strong>/i);
+  if (lead) {
+    const cleaned = stripHtmlTags(lead[1]).replace(/\.\s*$/, '').trim();
+    if (cleaned) return cleaned;
+  }
+  const firstSentence = text.split('. ')[0].replace(/\.\s*$/, '');
+  return firstSentence.length > 90 ? `${firstSentence.slice(0, 87)}...` : firstSentence;
+}
+
+function extractHowToSteps(body: string): HowToStep[] {
+  const blocks = [...extractHtmlOrderedBlocks(body), ...extractMarkdownOrderedBlocks(body)];
+  /* 优先 Quick Answer / 60-Second / step 类小节，其次取全文第一个有序列表 */
+  const preferred = blocks.find((block) => /quick answer|60-second|step/i.test(block.heading)) ?? blocks[0];
+  if (!preferred) return [];
+
+  const steps = preferred.items
+    .map((item) => {
+      const text = stripHtmlTags(item);
+      return text ? { name: stepNameFrom(item, text), text } : null;
+    })
+    .filter((step): step is HowToStep => Boolean(step));
+
+  /* 少于两步不构成流程，跳过 */
+  return steps.length >= 2 ? steps : [];
+}
+
+const howToSteps = HOW_TO_SLUGS.has(articleSlug(article.id)) ? extractHowToSteps(article.body) : [];
+const howToSchema = howToSteps.length > 0
+  ? {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": article.data.seoTitle ?? article.data.title,
+      "description": article.data.description,
+      "step": howToSteps.map((step, index) => ({
+        "@type": "HowToStep",
+        "position": index + 1,
+        "name": step.name,
+        "text": step.text,
+      })),
+    }
+  : null;
+
+/* Article 之外按需追加 FAQPage / HowTo，Layout 会各自渲染成独立的 ld+json script */
+const structuredDataSchemas: Array<Record<string, unknown>> = [articleSchema];
+if (faqSchema) structuredDataSchemas.push(faqSchema);
+if (howToSchema) structuredDataSchemas.push(howToSchema);
 ---
 
 <Layout
@@ -166,7 +378,7 @@ const articleSchema = {
   description={article.data.description}
   ogImage={article.data.hero_image}
   pageType="article"
-  jsonLd={articleSchema}
+  jsonLd={structuredDataSchemas}
 >
   <main class="article-shell">
     <div class="article-grid">
@@ -176,6 +388,13 @@ const articleSchema = {
         <header class="article-header">
           <p class="stage mono-meta">{formatTravelStage(article.data.stage)}</p>
           <h1>{article.data.title}</h1>
+          <p class="verify-strip mono-meta">
+            <span class="verified-dot">Last checked {verifyCheckedLabel}</span>
+            {' · '}
+            {verifySourceCount} official sources
+            {' · '}
+            Updated when policy changes
+          </p>
           <p class="description">{article.data.description}</p>
           <div class="meta mono-meta">
             <span class="verified-dot">VERIFIED {formatStamp(article.data.lastChecked)}</span>
@@ -400,6 +619,17 @@ const articleSchema = {
     font-size: var(--fs-lede);
     line-height: 1.5;
     color: var(--ink-70);
+  }
+
+  /* 页面级核验信息条：发丝线承接 description，等宽小字 + 青瓷圆点，
+     醒目但不抢标题；窄屏自然换行 */
+  .verify-strip {
+    margin-top: 1.1rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--hairline);
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+    font-weight: 500;
   }
 
   .meta {

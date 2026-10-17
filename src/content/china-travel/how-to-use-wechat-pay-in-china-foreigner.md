@@ -13,7 +13,11 @@ section: "travel"
 hero_image: "/china-travel/images/article-wechatpay-editorial.webp"
 tags: ["WeChat Pay", "payment", "apps"]
 officialSources: ["gov-payment-guide-2024", "tencent-weixin-pay-overseas-users-2023", "tencent-inbound-payments-apec-2026"]
-relatedTools: []
+relatedTools:
+  - title: "Payment Readiness Self-Check"
+    href: "/tools/china-payment-readiness-checker/"
+  - title: "China Travel Checklist Generator"
+    href: "/tools/china-travel-checklist/"
 ---
 
 WeChat is often part messaging app, part service hub, and part payment tool in China. For visitors, that can be helpful, but it can also be confusing. The question is not only whether WeChat Pay exists. The real question is whether it works for your account, your card, your phone, and the merchant standing in front of you.

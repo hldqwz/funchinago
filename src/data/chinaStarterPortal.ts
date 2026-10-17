@@ -156,6 +156,16 @@ export const homepageTools = [
   },
 ] as const;
 
+export const paymentReadinessTools = [
+  {
+    title: 'Payment readiness self-check',
+    href: '/tools/china-payment-readiness-checker/',
+    text: 'Answer five questions about your cards, verification, and trip length, and get a ranked payment plan with the failure risk at each step.',
+    image: '/china-travel/images/article-payment-editorial.webp',
+    label: 'Payment',
+  },
+] as const;
+
 export const paymentQuickLinks = [
   {
     eyebrow: 'Payment hub',

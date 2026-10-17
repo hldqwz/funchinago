@@ -13,7 +13,11 @@ section: "travel"
 hero_image: "/china-travel/images/article-payment-editorial.webp"
 tags: ["payment", "Alipay", "WeChat Pay"]
 officialSources: ["pbc-mobile-payment-limits-2024", "gov-payment-optimization-2024-en", "gov-payment-guide-2024", "alipayplus-mainland-guide", "tencent-weixin-pay-overseas-users-2023"]
-relatedTools: []
+relatedTools:
+  - title: "Payment Readiness Self-Check"
+    href: "/tools/china-payment-readiness-checker/"
+  - title: "China Travel Checklist Generator"
+    href: "/tools/china-travel-checklist/"
 ---
 
 ## Quick Answer
