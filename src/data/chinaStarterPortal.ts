@@ -304,6 +304,40 @@ export const citySpotlightCards = [
   },
 ] as const;
 
+
+export const heroCarousel = [
+  {
+    city: 'Shanghai',
+    label: 'Shanghai · The Bund at night',
+    image: '/china-travel/images/hero-carousel-shanghai.jpg',
+    alt: 'The Bund waterfront in Shanghai at night, historic buildings lit in gold along the Huangpu River',
+  },
+  {
+    city: 'Beijing',
+    label: 'Beijing · Great Wall at Mutianyu',
+    image: '/china-travel/images/hero-carousel-great-wall.jpg',
+    alt: 'The Great Wall at Mutianyu climbing through forested ridges outside Beijing',
+  },
+  {
+    city: 'Chengdu',
+    label: 'Chengdu · Giant panda',
+    image: '/china-travel/images/hero-carousel-panda.jpg',
+    alt: 'A giant panda resting on a platform at the Chengdu research base',
+  },
+  {
+    city: "Xi'an",
+    label: "Xi'an · Terracotta Warriors",
+    image: '/china-travel/images/hero-carousel-terracotta.jpg',
+    alt: 'Rows of Terracotta Warriors standing in Pit One near Xi\'an',
+  },
+  {
+    city: 'Beijing',
+    label: 'Beijing · Forbidden City',
+    image: '/china-travel/images/hero-carousel-forbidden-city.jpg',
+    alt: 'Golden rooftops and courtyards of the Forbidden City in Beijing',
+  },
+] as const;
+
 export const featuredCity = {
   city: 'Zhuhai',
   eyebrow: 'Featured city',

@@ -3,6 +3,7 @@ import Layout from "../layouts/ChinaTravelLayout.astro";
 import {
   cityComparisonCards,
   citySpotlightCards,
+  heroCarousel,
   featuredCity,
   homepageTools,
   lifeCultureDoorways,
@@ -34,19 +35,37 @@ import {
         </p>
       </div>
 
-      <figure class="hero-visual">
-        <img
-          src="/china-travel/images/hero-shanghai-bund-night.jpg"
-          alt="The Bund waterfront in Shanghai at night, historic buildings lit in gold along the Huangpu River"
-          width="1800"
-          height="1493"
-          fetchpriority="high"
-          decoding="async"
-        />
-        <figcaption class="mono-meta">
-          Most visitors need: city choice + payment setup + train confidence
+      <figure class="hero-visual hero-carousel" data-carousel aria-label="China travel photo carousel">
+        <div class="carousel-track">
+          {heroCarousel.map((slide, index) => (
+            <img
+              class={index === 0 ? "is-active" : ""}
+              src={slide.image}
+              alt={slide.alt}
+              width="1100"
+              height="1023"
+              loading={index === 0 ? "eager" : "lazy"}
+              fetchpriority={index === 0 ? "high" : undefined}
+              decoding="async"
+            />
+          ))}
+        </div>
+        <figcaption class="mono-meta carousel-bar">
+          <span class="carousel-label" data-carousel-caption aria-live="polite">{heroCarousel[0].label}</span>
+          <span class="carousel-dots">
+            {heroCarousel.map((slide, index) => (
+              <button
+                type="button"
+                class={index === 0 ? "is-active" : ""}
+                data-carousel-dot={index}
+                aria-label={`Show ${slide.label}`}
+                aria-pressed={index === 0}
+              ></button>
+            ))}
+          </span>
         </figcaption>
       </figure>
+      <p class="hero-hint mono-meta">Most visitors need: city choice + payment setup + train confidence</p>
     </section>
 
     <section id="payment-guides" class="portal-section payment-section reveal" aria-labelledby="payment-guides-title">
@@ -428,6 +447,154 @@ import {
     flex: none;
     padding-top: 0.7rem;
     color: var(--ink-45);
+  }
+
+  .hero-hint {
+    margin-top: 0.7rem;
+    color: var(--ink-45);
+  }
+
+  .carousel-track {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    border-radius: var(--r-media);
+    overflow: hidden;
+  }
+
+  .carousel-track img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity var(--dur-enter) var(--ease-out);
+  }
+
+  .carousel-track img.is-active {
+    opacity: 1;
+  }
+
+  .carousel-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex: none;
+    padding-top: 0.7rem;
+  }
+
+  .carousel-label {
+    color: var(--ink-70);
+  }
+
+  .carousel-dots {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .carousel-dots button {
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .carousel-dots button::after {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    background: var(--ink-45);
+    transition: background-color var(--dur-base) ease;
+  }
+
+  .carousel-dots button.is-active::after {
+    background: var(--seal);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .carousel-track img {
+      transition: none;
+    }
+  }
+
+  .hero-hint {
+    margin-top: 0.7rem;
+    color: var(--ink-45);
+  }
+
+  .carousel-track {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    border-radius: var(--r-media);
+    overflow: hidden;
+  }
+
+  .carousel-track img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity var(--dur-enter) var(--ease-out);
+  }
+
+  .carousel-track img.is-active {
+    opacity: 1;
+  }
+
+  .carousel-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex: none;
+    padding-top: 0.7rem;
+  }
+
+  .carousel-label {
+    color: var(--ink-70);
+  }
+
+  .carousel-dots {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .carousel-dots button {
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .carousel-dots button::after {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    background: var(--ink-45);
+    transition: background-color var(--dur-base) ease;
+  }
+
+  .carousel-dots button.is-active::after {
+    background: var(--seal);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .carousel-track img {
+      transition: none;
+    }
   }
 
   /* ------------------------------------------------------------ sections */
@@ -1233,3 +1400,115 @@ import {
     }
   }
 </style>
+
+<script>
+  (function initCarousel() {
+    document.documentElement.classList.add("js");
+    const root = document.querySelector("[data-carousel]");
+    if (!root) return;
+
+    const slides = Array.prototype.slice.call(root.querySelectorAll(".carousel-track img"));
+    const dots = Array.prototype.slice.call(root.querySelectorAll("[data-carousel-dot]"));
+    const caption = root.querySelector("[data-carousel-caption]");
+    if (slides.length < 2) return;
+
+    const labels = slides.map((img) => img.getAttribute("alt") || "");
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let index = 0;
+    let timer = null;
+
+    function show(next) {
+      index = (next + slides.length) % slides.length;
+      slides.forEach((el, i) => el.classList.toggle("is-active", i === index));
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("is-active", i === index);
+        dot.setAttribute("aria-pressed", String(i === index));
+      });
+      if (caption && labels[index]) {
+        caption.textContent = root.querySelectorAll("[data-carousel-dot]")[index].getAttribute("aria-label").replace(/^Show /, "");
+      }
+    }
+
+    function start() {
+      if (reduced || timer) return;
+      timer = window.setInterval(() => show(index + 1), 6000);
+    }
+
+    function stop() {
+      if (timer) window.clearInterval(timer);
+      timer = null;
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        stop();
+        show(i);
+        start();
+      });
+    });
+
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+    root.addEventListener("focusin", stop);
+    root.addEventListener("focusout", start);
+    document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
+
+    start();
+  })();
+</script>
+
+<script>
+  (function initCarousel() {
+    document.documentElement.classList.add("js");
+    const root = document.querySelector("[data-carousel]");
+    if (!root) return;
+
+    const slides = Array.prototype.slice.call(root.querySelectorAll(".carousel-track img"));
+    const dots = Array.prototype.slice.call(root.querySelectorAll("[data-carousel-dot]"));
+    const caption = root.querySelector("[data-carousel-caption]");
+    if (slides.length < 2) return;
+
+    const labels = slides.map((img) => img.getAttribute("alt") || "");
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let index = 0;
+    let timer = null;
+
+    function show(next) {
+      index = (next + slides.length) % slides.length;
+      slides.forEach((el, i) => el.classList.toggle("is-active", i === index));
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("is-active", i === index);
+        dot.setAttribute("aria-pressed", String(i === index));
+      });
+      if (caption && labels[index]) {
+        caption.textContent = root.querySelectorAll("[data-carousel-dot]")[index].getAttribute("aria-label").replace(/^Show /, "");
+      }
+    }
+
+    function start() {
+      if (reduced || timer) return;
+      timer = window.setInterval(() => show(index + 1), 6000);
+    }
+
+    function stop() {
+      if (timer) window.clearInterval(timer);
+      timer = null;
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        stop();
+        show(i);
+        start();
+      });
+    });
+
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+    root.addEventListener("focusin", stop);
+    root.addEventListener("focusout", start);
+    document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
+
+    start();
+  })();
+</script>

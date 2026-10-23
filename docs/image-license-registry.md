@@ -74,6 +74,16 @@ These files were already in the repository when this registry was extended on 20
 
 | Image file | Kind | Description | Status | Used in |
 | `hero-shanghai-bund-night.jpg` | photograph | The Bund waterfront in Shanghai at night, historic buildings lit in gold along the Huangpu River | public platform origin, source pending | Homepage hero (`src/pages/china-travel.astro`) |
+| `guilin-hero.jpg` | photograph | Li River corridor aerial at dusk | Unsplash, source pending | Guilin guide hero |
+| `hero-carousel-shanghai.jpg` | photograph | Bund night, crop of the Shanghai hero | Unsplash, source pending | Homepage hero carousel |
+| `hero-carousel-great-wall.jpg` | photograph | Great Wall at Mutianyu, crop | public platform, source pending | Homepage hero carousel |
+| `hero-carousel-panda.jpg` | photograph | Giant panda, crop | public platform, source pending | Homepage hero carousel |
+| `hero-carousel-terracotta.jpg` | photograph | Terracotta Warriors, crop | public platform, source pending | Homepage hero carousel |
+| `hero-carousel-forbidden-city.jpg` | photograph | Forbidden City rooftops, crop | public platform, source pending | Homepage hero carousel |
+| `guilin-karst-peaks.jpg` | photograph | Karst peaks aerial | Unsplash, source pending | Guilin guide |
+| `guilin-bamboo-raft.jpg` | photograph | Cormorant fisherman on a raft at dusk | Unsplash, source pending | Guilin guide |
+| `guilin-li-river-cruise.jpg` | photograph | Tour boat on the Li River | Unsplash, source pending | Guilin guide |
+| `guilin-longji-rice-terraces.jpg` | photograph | Longji morning terraces | Unsplash, source pending | Guilin guide |
 | `og-shanghai-bund-night.jpg` | photograph | 1200x630 social share crop of the Bund night skyline | public platform origin, source pending | Homepage `ogImage` and layout default |
 | --- | --- | --- | --- | --- |
 | `beijing-forbidden-city-hero.jpg` | Photograph | Forbidden City rooftops and red walls, Beijing | Source unconfirmed - provenance check required | `beijing-travel-guide-first-time-visitors.md` |
