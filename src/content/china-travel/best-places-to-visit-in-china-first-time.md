@@ -85,7 +85,7 @@ Choose Chongqing if you want:
 
 Avoid making Chongqing your only first stop if you want a calm, simple trip.
 
-## Best For Nature: Zhangjiajie, Guilin, Yangshuo, And Huangshan
+## Best For Nature: Zhangjiajie, [Guilin](/china-travel/articles/guilin-travel-guide-first-time-visitors/), Yangshuo, And Huangshan
 
 China’s nature destinations can be spectacular, but they require more planning than major cities. Scenic areas may involve transfers, tickets, weather risk, stairs, cable cars, or limited English support.
 

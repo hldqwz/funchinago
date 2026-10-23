@@ -64,7 +64,7 @@ Best for: scenery and outdoor-oriented travelers.
 Suggested route:
 
 - Shanghai or Beijing as the entry point
-- Guilin/Yangshuo
+- [Guilin](/china-travel/articles/guilin-travel-guide-first-time-visitors/)/Yangshuo
 - Zhangjiajie
 
 Why it works:

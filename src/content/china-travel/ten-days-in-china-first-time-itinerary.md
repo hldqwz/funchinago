@@ -76,6 +76,10 @@ Suggested pace:
 - 2 days Hangzhou or Suzhou
 - 4 days Beijing
 
+## Scenic Alternative: Swap A City For Guilin
+
+If the trip already includes Guangzhou or Shenzhen, trading one city for three days in [Guilin](/china-travel/articles/guilin-travel-guide-first-time-visitors/) buys a completely different China: karst peaks, the Li River, and the Yangshuo countryside instead of another metro. High-speed rail from Guangzhou South runs about 2.5 hours, so the detour costs travel time without breaking the route.
+
 ## Coastal Ending Option: Add Zhuhai
 
 If your ten days route through the south, consider swapping the final two days for Zhuhai: sea air on Lovers' Road, the Sun Moon Shells opera house at night, and a full day at Chimelong Ocean Kingdom, with Macau across the border as an optional day trip. Use the [Zhuhai travel guide for first-time visitors](/china-travel/articles/zhuhai-travel-guide-first-time-visitors/) to plan the three-day coastal sequence, where to stay, and the Macau crossing paperwork.

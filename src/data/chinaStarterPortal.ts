@@ -259,6 +259,13 @@ export const paymentGuideLinks = [
     text: 'Choose the first app to set up and prepare the right backup.',
     href: '/china-travel/articles/wechat-pay-vs-alipay-for-tourists-china/',
   },
+  {
+    city: 'Guilin',
+    bestFor: 'Karst scenery, Li River cruises, and the Yangshuo countryside.',
+    pace: 'Slow, scenic, outdoors',
+    href: '/china-travel/articles/guilin-travel-guide-first-time-visitors/',
+    image: '/china-travel/images/guilin-hero.jpg',
+  },
 ] as const;
 
 export const citySpotlightCards = [

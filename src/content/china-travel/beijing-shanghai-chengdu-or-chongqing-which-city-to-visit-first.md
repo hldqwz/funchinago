@@ -121,6 +121,10 @@ If you want the strongest visual surprise, add Chongqing after one easier city.
 
 If you want a coastal break with sea air and a slower pace, add Zhuhai after Guangzhou or Macau — the [Zhuhai travel guide for first-time visitors](/china-travel/articles/zhuhai-travel-guide-first-time-visitors/) covers Lovers' Road, the Sun Moon Shells opera house, Chimelong Ocean Kingdom, and a realistic three-day plan.
 
+## None Of These Four: When To Pick A Different City
+
+If scenery matters more than skylines, [Guilin](/china-travel/articles/guilin-travel-guide-first-time-visitors/) outranks all four for landscape: karst peaks, the Li River, and the Yangshuo countryside, with high-speed rail from Guangzhou South in about 2.5 hours. It is a slower trip than Beijing or Shanghai, and it needs three days to work.
+
 ## Related Guides
 
 - [Best Places to Visit in China for First-Time Visitors](/china-travel/articles/best-places-to-visit-in-china-first-time/)

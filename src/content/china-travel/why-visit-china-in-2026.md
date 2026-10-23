@@ -48,6 +48,8 @@ China is a good fit if you want:
 
 If you only want a beach vacation with no setup, China is not the easiest first choice. If you want a trip with depth, China is unusually rewarding.
 
+The range surprises people. A single trip can hold the Forbidden City, the Terracotta Warriors, and the karst scenery around [Guilin](/china-travel/articles/guilin-travel-guide-first-time-visitors/), which looks like a different country from the one in the guidebooks.
+
 ## What Has Become Easier
 
 The most important practical improvement is not a shiny new attraction. It is the travel plumbing:
