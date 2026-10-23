@@ -79,6 +79,8 @@ Do not try to “conquer” China on your first trip. Make the first trip smooth
 
 A good China trip is not the one with the longest checklist. It is the one where the basics work, so you can actually enjoy the food, streets, trains, history, and people around you.
 
+If you are still deciding whether a 2026 China trip is worth it, [why visit China in 2026](/china-travel/articles/why-visit-china-in-2026/) makes the case before you plan the details.
+
 ## Related Guides
 
 - [China Travel Checklist: What to Prepare Before You Fly](/china-travel/articles/china-travel-checklist-before-you-fly/)

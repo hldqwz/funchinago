@@ -106,6 +106,13 @@ export const cityComparisonCards = [
     href: '/china-travel/articles/guangzhou-travel-guide-first-time-visitors/',
     image: '/china-travel/images/article-weekly-guangzhou.webp',
   },
+  {
+    city: 'Guilin',
+    bestFor: 'Karst scenery, Li River cruises, and the Yangshuo countryside.',
+    pace: 'Slow, scenic, outdoors',
+    href: '/china-travel/articles/guilin-travel-guide-first-time-visitors/',
+    image: '/china-travel/images/guilin-hero.jpg',
+  },
 ] as const;
 
 export const lifeCultureDoorways = [
@@ -163,6 +170,16 @@ export const paymentReadinessTools = [
     text: 'Answer five questions about your cards, verification, and trip length, and get a ranked payment plan with the failure risk at each step.',
     image: '/china-travel/images/article-payment-editorial.webp',
     label: 'Payment',
+  },
+] as const;
+
+export const budgetPlannerTools = [
+  {
+    title: 'Trip budget calculator',
+    href: '/tools/china-trip-budget-calculator/',
+    text: 'Estimate daily and total China travel costs by budget tier, cities, high-speed rail legs, and flights.',
+    image: '/china-travel/images/article-10-days-china-editorial.webp',
+    label: 'Budget',
   },
 ] as const;
 
@@ -258,13 +275,6 @@ export const paymentGuideLinks = [
     title: 'Alipay vs WeChat Pay',
     text: 'Choose the first app to set up and prepare the right backup.',
     href: '/china-travel/articles/wechat-pay-vs-alipay-for-tourists-china/',
-  },
-  {
-    city: 'Guilin',
-    bestFor: 'Karst scenery, Li River cruises, and the Yangshuo countryside.',
-    pace: 'Slow, scenic, outdoors',
-    href: '/china-travel/articles/guilin-travel-guide-first-time-visitors/',
-    image: '/china-travel/images/guilin-hero.jpg',
   },
 ] as const;
 

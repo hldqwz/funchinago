@@ -1,0 +1,1155 @@
+---
+import Layout from "../../layouts/ChinaTravelLayout.astro";
+
+const title = "China Travel Cost Calculator: Daily Budget by City and Travel Style";
+const description = "Estimate your China travel cost: daily budget ranges in CNY and USD by city, budget tier, high-speed rail legs, and flights, with the full breakdown for hotels, food, transport, and tickets.";
+---
+
+<Layout title={title} description={description}>
+  <main class="budget-page">
+    <section class="hero-panel">
+      <div class="hero-copy">
+        <p class="kicker">China Travel Made Easy · Tools</p>
+        <h1>China trip budget calculator</h1>
+        <p class="lead">
+          What will a trip to China actually cost? Pick your days, budget tier, and cities,
+          and get a daily budget range in CNY and USD, a total for the whole trip, and the
+          breakdown behind every yuan — hotels, food, transport, and tickets.
+        </p>
+        <div class="trust-row" aria-label="Tool properties">
+          <span>5 inputs</span>
+          <span>7 cities</span>
+          <span>CNY + USD</span>
+          <span>No sign-up</span>
+          <span>No data stored</span>
+        </div>
+        <p class="mono-meta verified-dot">VERIFIED · 24 OCT 2026</p>
+      </div>
+      <aside class="intro-card">
+        <p class="eyebrow">How it works</p>
+        <h2>Three tiers, one city index</h2>
+        <p>
+          Each budget tier carries a per-day range built from real hostel, hotel, and
+          restaurant price bands. Your cities adjust it through a blended index — Guilin
+          and Zhuhai run about 15–25% below Beijing and Shanghai — and rail legs or
+          flights are added on top as one-off costs.
+        </p>
+        <p>
+          Every figure is a planning estimate for one traveler, not a quote. Confirm
+          hotel, rail, and ticket prices when you book.
+        </p>
+      </aside>
+    </section>
+
+    <section class="tool-grid">
+      <form class="checker-card" data-budget-form novalidate>
+        <div class="form-header">
+          <p class="eyebrow">Step-by-step estimate</p>
+          <h2>Answer these questions</h2>
+          <p>Everything runs in your browser — nothing is sent anywhere.</p>
+        </div>
+
+        <fieldset>
+          <legend>1. How many days will you spend in China?</legend>
+          <div class="days-row">
+            <input
+              type="range"
+              id="days"
+              name="days"
+              min="1"
+              max="60"
+              step="1"
+              value="10"
+              aria-describedby="days-hint"
+            />
+            <output class="days-value" id="days-output" for="days">10 days</output>
+          </div>
+          <small id="days-hint">From 1 to 60 days. Longer trips spread one-off costs like arrival transport over more days.</small>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Which budget tier fits how you travel?</legend>
+          <label class="option">
+            <input type="radio" name="tier" value="budget" required />
+            <span>
+              <strong>Budget — ¥350–500 per day</strong>
+              Hostels or budget hotels, street food and local diners, metro only.
+            </span>
+          </label>
+          <label class="option">
+            <input type="radio" name="tier" value="mid" checked />
+            <span>
+              <strong>Mid-range — ¥700–1,100 per day</strong>
+              Three- and four-star hotels, restaurants, Didi rides, all the main sights.
+            </span>
+          </label>
+          <label class="option">
+            <input type="radio" name="tier" value="comfortable" />
+            <span>
+              <strong>Comfortable — ¥1,500–2,200 per day</strong>
+              International-brand hotels, nicer restaurants, first-class rail, private drivers.
+            </span>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. Which cities will you visit? (select all that apply)</legend>
+          <div class="chip-group" data-city-group>
+            <label class="chip"><input type="checkbox" name="cities" value="beijing" checked /> Beijing</label>
+            <label class="chip"><input type="checkbox" name="cities" value="shanghai" checked /> Shanghai</label>
+            <label class="chip"><input type="checkbox" name="cities" value="xian" /> Xi'an</label>
+            <label class="chip"><input type="checkbox" name="cities" value="chengdu" /> Chengdu</label>
+            <label class="chip"><input type="checkbox" name="cities" value="guilin" /> Guilin</label>
+            <label class="chip"><input type="checkbox" name="cities" value="guangzhou" /> Guangzhou</label>
+            <label class="chip"><input type="checkbox" name="cities" value="zhuhai" /> Zhuhai</label>
+            <label class="chip"><input type="checkbox" name="cities" value="average" /> Not sure yet — seven-city average</label>
+          </div>
+          <small class="field-error" data-cities-error hidden>Select at least one city, or pick the seven-city average.</small>
+          <small>City choice moves the daily number more than anything else you control: Guilin and Zhuhai sit 15–25% below Beijing and Shanghai.</small>
+        </fieldset>
+
+        <fieldset>
+          <legend>4. Will you take high-speed rail between cities?</legend>
+          <div class="inline-options">
+            <label class="option">
+              <input type="radio" name="rail" value="yes" checked />
+              <span>Yes — include intercity high-speed rail</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="rail" value="no" />
+              <span>No — I will stay in one region</span>
+            </label>
+          </div>
+          <div class="segment-row" data-rail-segments>
+            <label for="rail-segments">Number of rail legs</label>
+            <input type="number" id="rail-segments" name="railSegments" min="1" max="8" step="1" value="2" />
+            <small>Estimated at ¥450–650 per second-class leg (for example Beijing–Shanghai runs about ¥550), or ¥1,000–1,400 in first class on the Comfortable tier.</small>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>5. Include international flights in the total?</legend>
+          <label class="option">
+            <input type="radio" name="flights" value="no" checked />
+            <span>No — flights are booked separately</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="flights" value="yes" />
+            <span>Yes — add a round-trip airfare estimate</span>
+          </label>
+          <small>Economy on Budget and Mid-range, premium cabins on Comfortable. Airfares swing more than anything else here, so treat this as a placeholder.</small>
+        </fieldset>
+
+        <button type="submit" class="button-primary">Calculate my budget estimate</button>
+      </form>
+
+      <div class="result-card result-placeholder" data-budget-result aria-live="polite">
+        <p class="eyebrow">Your budget estimate</p>
+        <h2>Answer the five questions</h2>
+        <p>
+          Your daily budget range, trip total in CNY and USD, the per-category breakdown,
+          and three ways to spend less appear here.
+        </p>
+      </div>
+    </section>
+
+    <section class="explain-grid">
+      <article class="info-card">
+        <p class="eyebrow">What this tool covers</p>
+        <h2>Seven cities, three tiers, five inputs</h2>
+        <ul>
+          <li><strong>Daily bands</strong> — ¥350–500 Budget, ¥700–1,100 Mid-range, ¥1,500–2,200 Comfortable, built from real hostel, hotel, and restaurant prices.</li>
+          <li><strong>City index</strong> — Beijing anchors 1.00; Shanghai runs about 6% higher; Xi'an, Chengdu, Guangzhou, Guilin, and Zhuhai sit below it.</li>
+          <li><strong>Rail legs</strong> — priced per segment in second class, or first class on the Comfortable tier.</li>
+          <li><strong>Attractions</strong> — major sites like the Forbidden City, the Great Wall, and the Terracotta Warriors are inside the daily band at ¥40–120 a ticket, plus ¥100–300 when you add a guide.</li>
+        </ul>
+      </article>
+
+      <article class="info-card caution-card">
+        <p class="eyebrow">Important limitation</p>
+        <h2>Estimates for planning, not quotes</h2>
+        <p>
+          Prices move with season, booking window, and exchange rate. These ranges are
+          planning estimates for one traveler, built from published price bands and
+          competitor-verified cost lines — use them to size a budget, then confirm live
+          prices on your booking platform before you pay.
+        </p>
+      </article>
+    </section>
+
+    <section class="explain-grid explain-grid--three">
+      <article class="info-card">
+        <p class="eyebrow">Real use cases</p>
+        <h2>When to run this calculator</h2>
+        <ul>
+          <li><strong>First rough budget</strong> — You know the dates and the cities and need a number to test against your savings.</li>
+          <li><strong>Comparing tiers</strong> — You are deciding whether Comfortable is worth roughly double the Mid-range daily cost.</li>
+          <li><strong>City trade-offs</strong> — You want to see what swapping one Beijing hotel night for Guilin does to the average.</li>
+          <li><strong>Rail planning</strong> — You have four or more cities and need to know what the high-speed legs add.</li>
+        </ul>
+      </article>
+
+      <article class="info-card caution-card">
+        <p class="eyebrow">Limitation</p>
+        <h2>One traveler, mainland China, no tours</h2>
+        <p>
+          Figures cover one adult traveling independently: no group tours, no domestic
+          flights, no luxury shopping. Visas, travel insurance, and souvenirs sit outside
+          these ranges. The USD conversion uses an estimated ¥7.1 per USD — your card
+          issuer's rate will differ.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <p class="eyebrow">Related tools</p>
+        <h2>Finish the rest of the plan</h2>
+        <ul>
+          <li><a href="/tools/china-payment-readiness-checker/">Payment Readiness Self-Check</a></li>
+          <li><a href="/tools/china-city-picker/">China City Picker</a></li>
+          <li><a href="/china-travel/tools/">All China travel tools</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="related-section">
+      <p class="eyebrow">Related guides</p>
+      <h2>Read the detail behind the numbers</h2>
+      <ul class="related-list">
+        <li>
+          <a href="/china-travel/articles/how-to-pay-in-china-tourist/">
+            <strong>How to Pay in China as a Tourist</strong>
+            <small>The payment hub: Alipay, WeChat Pay, cards, cash, and the backup order when something fails.</small>
+          </a>
+        </li>
+        <li>
+          <a href="/china-travel/articles/china-travel-checklist-before-you-fly/">
+            <strong>China Travel Checklist Before You Fly</strong>
+            <small>Documents, apps, internet, and arrival-day backups — the prep list that comes before the budget.</small>
+          </a>
+        </li>
+        <li>
+          <a href="/china-travel/articles/ten-days-in-china-first-time-itinerary/">
+            <strong>10 Days in China: First-Time Itinerary</strong>
+            <small>A realistic route with days, trains, and pacing you can cost out with this calculator.</small>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const form = document.querySelector('[data-budget-form]');
+    const resultCard = document.querySelector('[data-budget-result]');
+    const placeholderHTML = resultCard.innerHTML;
+    const citiesError = form.querySelector('[data-cities-error]');
+    const averageBox = form.querySelector('input[name="cities"][value="average"]');
+    const cityBoxes = Array.from(form.querySelectorAll('input[name="cities"]:not([value="average"])'));
+    const railYes = form.querySelector('input[name="rail"][value="yes"]');
+    const railNo = form.querySelector('input[name="rail"][value="no"]');
+    const railSegmentsRow = form.querySelector('[data-rail-segments]');
+    const daysInput = form.querySelector('#days');
+    const daysOutput = form.querySelector('#days-output');
+
+    const USD_RATE = 7.1;
+
+    const CITIES = [
+      { id: 'beijing', name: 'Beijing', index: 1.0 },
+      { id: 'shanghai', name: 'Shanghai', index: 1.06 },
+      { id: 'xian', name: "Xi'an", index: 0.88 },
+      { id: 'chengdu', name: 'Chengdu', index: 0.86 },
+      { id: 'guilin', name: 'Guilin', index: 0.8 },
+      { id: 'guangzhou', name: 'Guangzhou', index: 0.84 },
+      { id: 'zhuhai', name: 'Zhuhai', index: 0.78 },
+    ];
+
+    const TIERS = {
+      budget: {
+        label: 'Budget',
+        breakdown: {
+          stay: [160, 230],
+          food: [90, 130],
+          transit: [40, 60],
+          sights: [40, 60],
+          other: [20, 20],
+        },
+        rail: [450, 650],
+        flight: [2800, 4500],
+      },
+      mid: {
+        label: 'Mid-range',
+        breakdown: {
+          stay: [320, 500],
+          food: [150, 230],
+          transit: [80, 120],
+          sights: [100, 180],
+          other: [50, 70],
+        },
+        rail: [450, 650],
+        flight: [4000, 7000],
+      },
+      comfortable: {
+        label: 'Comfortable',
+        breakdown: {
+          stay: [800, 1150],
+          food: [300, 430],
+          transit: [180, 260],
+          sights: [150, 220],
+          other: [70, 140],
+        },
+        rail: [1000, 1400],
+        flight: [8000, 14000],
+      },
+    };
+
+    const BREAKDOWN_LABELS = {
+      stay: 'Accommodation',
+      food: 'Food',
+      transit: 'Local transport',
+      sights: 'Attractions',
+      other: 'Everything else',
+    };
+
+    function roundTo(value, step) {
+      return Math.round(value / step) * step;
+    }
+
+    function formatCny(value) {
+      return `¥${Math.round(value).toLocaleString('en-US')}`;
+    }
+
+    function formatUsd(value) {
+      return `$${Math.round(value).toLocaleString('en-US')}`;
+    }
+
+    function buildEstimate(answers) {
+      const tier = TIERS[answers.tier];
+      const selectedIds = answers.cities.length ? answers.cities : CITIES.map((city) => city.id);
+      const cities = CITIES.filter((city) => selectedIds.includes(city.id));
+      const index = cities.reduce((sum, city) => sum + city.index, 0) / cities.length;
+      const scale = (value) => roundTo(value * index, 10);
+
+      const breakdown = Object.entries(tier.breakdown).map(([key, band]) => {
+        const low = scale(band[0]);
+        const high = scale(band[1]);
+        return {
+          key,
+          label: BREAKDOWN_LABELS[key],
+          low,
+          high,
+        };
+      });
+
+      const dailyLow = breakdown.reduce((sum, row) => sum + row.low, 0);
+      const dailyHigh = breakdown.reduce((sum, row) => sum + row.high, 0);
+      const dailyMid = (dailyLow + dailyHigh) / 2;
+      breakdown.forEach((row) => {
+        row.share = Math.round(((row.low + row.high) / 2 / dailyMid) * 100);
+      });
+
+      const rail = answers.railSegments > 0
+        ? {
+            segments: answers.railSegments,
+            low: roundTo(answers.railSegments * tier.rail[0], 50),
+            high: roundTo(answers.railSegments * tier.rail[1], 50),
+          }
+        : null;
+
+      const flight = answers.flights
+        ? { low: roundTo(tier.flight[0], 50), high: roundTo(tier.flight[1], 50) }
+        : null;
+
+      const totalLow = roundTo(dailyLow * answers.days + (rail ? rail.low : 0) + (flight ? flight.low : 0), 50);
+      const totalHigh = roundTo(dailyHigh * answers.days + (rail ? rail.high : 0) + (flight ? flight.high : 0), 50);
+
+      const tips = buildTips(answers);
+
+      return {
+        days: answers.days,
+        tierLabel: tier.label,
+        cityNames: cities.map((city) => city.name).join(', '),
+        index,
+        dailyLow,
+        dailyHigh,
+        breakdown,
+        rail,
+        flight,
+        totalLow,
+        totalHigh,
+        tips,
+      };
+    }
+
+    function buildTips(answers) {
+      const tips = [];
+      const cheapSelected = answers.cities.filter((id) => ['guilin', 'zhuhai', 'guangzhou'].includes(id));
+
+      if (cheapSelected.length > 0 && cheapSelected.length < answers.cities.length) {
+        tips.push(
+          'Guilin, Zhuhai, and Guangzhou run 15–25% below Beijing and Shanghai on hotels and food — weight your days toward them to pull the daily average down.'
+        );
+      }
+      if (answers.tier === 'budget') {
+        tips.push(
+          'Budget days hold under ¥500 on hostels, street food, and metro only — Didi rides and sit-down restaurants are what push a day past it.'
+        );
+      }
+      if (answers.tier === 'comfortable') {
+        tips.push(
+          'First-class rail fares run about double second class — take the longest high-speed leg in second class and save roughly ¥500–750 per segment.'
+        );
+      }
+      if (answers.days >= 10) {
+        tips.push(
+          'On trips of 10 days or more, book rail the moment the 15-day window opens on 12306 or Trip.com — popular legs sell out, and there are no walk-up discounts.'
+        );
+      }
+      if (answers.railSegments >= 3) {
+        tips.push(
+          'Three or more rail legs: an overnight sleeper replaces a hotel night plus a daytime leg, saving roughly ¥300–400 per swap.'
+        );
+      }
+      if (answers.flights) {
+        tips.push(
+          'International airfares move more than anything else on this page — set a price alert and book economy; a cheap round trip saves more than a week of daily spending.'
+        );
+      }
+
+      const fallbacks = [
+        'Every number here is a planning estimate, not a quote — confirm hotel, rail, and ticket prices when you book.',
+        'City choice moves the daily number more than anything else you control: swapping one Beijing hotel night for Guilin saves about 20%.',
+        'Keep payment simple: one card linked to Alipay or WeChat Pay covers most daily spending — see the payment guide for the setup order.',
+      ];
+
+      return [...tips, ...fallbacks].slice(0, 3);
+    }
+
+    function renderEstimate(estimate) {
+      const rows = estimate.breakdown
+        .map(
+          (row) => `
+          <tr>
+            <th scope="row">${row.label}</th>
+            <td>${formatCny(row.low)}–${formatCny(row.high)}</td>
+            <td>${row.share}%</td>
+          </tr>`
+        )
+        .join('');
+
+      const railLine = estimate.rail
+        ? `<p class="addon-line"><strong>High-speed rail:</strong> ${estimate.rail.segments} leg${estimate.rail.segments > 1 ? 's' : ''} × ${formatCny(estimate.rail.low / estimate.rail.segments)}–${formatCny(estimate.rail.high / estimate.rail.segments)} = ${formatCny(estimate.rail.low)}–${formatCny(estimate.rail.high)}</p>`
+        : '';
+
+      const flightLine = estimate.flight
+        ? `<p class="addon-line"><strong>International flights:</strong> ${formatCny(estimate.flight.low)}–${formatCny(estimate.flight.high)} round trip (estimate)</p>`
+        : '';
+
+      const tips = estimate.tips.map((tip) => `<li>${tip}</li>`).join('');
+
+      resultCard.classList.remove('result-placeholder');
+      resultCard.classList.add('result-plan');
+      resultCard.innerHTML = `
+        <p class="eyebrow">Your budget estimate</p>
+        <h2>${formatCny(estimate.totalLow)}–${formatCny(estimate.totalHigh)} for ${estimate.days} days</h2>
+        <p class="total-usd">≈ ${formatUsd(estimate.totalLow / USD_RATE)}–${formatUsd(estimate.totalHigh / USD_RATE)} at an estimated ¥${USD_RATE} per USD</p>
+        <div class="daily-box">
+          <div class="daily-figure">
+            <p class="daily-label">Daily budget</p>
+            <p class="daily-value">${formatCny(estimate.dailyLow)}–${formatCny(estimate.dailyHigh)}</p>
+            <p class="daily-usd">≈ ${formatUsd(estimate.dailyLow / USD_RATE)}–${formatUsd(estimate.dailyHigh / USD_RATE)} per day</p>
+          </div>
+          <p class="daily-note">${estimate.tierLabel} tier · ${estimate.cityNames} · blended city index ${estimate.index.toFixed(2)}</p>
+        </div>
+        <h3 class="breakdown-title">Where the money goes, per day</h3>
+        <table class="budget-table">
+          <thead>
+            <tr>
+              <th scope="col">Category</th>
+              <th scope="col">Per day (CNY)</th>
+              <th scope="col">Share</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+        ${railLine}
+        ${flightLine}
+        <div class="tips-card">
+          <h3>Three ways to spend less</h3>
+          <ul>${tips}</ul>
+        </div>
+        <p class="estimate-note">All figures are planning estimates in CNY for one traveler, not quotes. Confirm hotel, rail, and ticket prices when you book.</p>
+        <button type="button" class="button-ghost" data-reset>Start over</button>
+        <p class="mono-meta verified-dot result-verify">VERIFIED · 24 OCT 2026</p>
+      `;
+
+      resultCard.querySelector('[data-reset]').addEventListener('click', () => {
+        form.reset();
+        citiesError.hidden = true;
+        railSegmentsRow.hidden = false;
+        daysOutput.textContent = `${daysInput.value} days`;
+        resultCard.classList.add('result-placeholder');
+        resultCard.classList.remove('result-plan');
+        resultCard.innerHTML = placeholderHTML;
+      });
+    }
+
+    daysInput.addEventListener('input', () => {
+      daysOutput.textContent = `${daysInput.value} days`;
+    });
+
+    railYes.addEventListener('change', () => {
+      if (railYes.checked) railSegmentsRow.hidden = false;
+    });
+
+    railNo.addEventListener('change', () => {
+      if (railNo.checked) railSegmentsRow.hidden = true;
+    });
+
+    averageBox.addEventListener('change', () => {
+      if (averageBox.checked) {
+        cityBoxes.forEach((box) => {
+          box.checked = false;
+        });
+      }
+      citiesError.hidden = true;
+    });
+
+    cityBoxes.forEach((box) => {
+      box.addEventListener('change', () => {
+        if (box.checked) averageBox.checked = false;
+        citiesError.hidden = true;
+      });
+    });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      const data = new FormData(form);
+      const cities = data.getAll('cities').filter((value) => value !== 'average');
+      if (cities.length === 0 && !data.get('cities')) {
+        citiesError.hidden = false;
+        return;
+      }
+      renderEstimate(
+        buildEstimate({
+          days: Number(data.get('days')),
+          tier: data.get('tier'),
+          cities,
+          railSegments: data.get('rail') === 'yes' ? Math.min(Math.max(Number(data.get('railSegments')) || 1, 1), 8) : 0,
+          flights: data.get('flights') === 'yes',
+        })
+      );
+    });
+  </script>
+</Layout>
+
+<style>
+  .budget-page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .hero-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(280px, 0.9fr);
+    gap: 1rem;
+    align-items: stretch;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-copy,
+  .intro-card,
+  .checker-card,
+  .result-card,
+  .info-card,
+  .related-section {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+  }
+
+  .hero-copy {
+    padding: 2.2rem;
+    background:
+      radial-gradient(circle at 14% 12%, var(--seal-tint), transparent 30%),
+      radial-gradient(circle at 86% 8%, var(--celadon-tint), transparent 26%),
+      var(--surface);
+  }
+
+  .kicker,
+  .eyebrow {
+    color: var(--seal);
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: var(--fs-meta);
+    margin-bottom: 0.55rem;
+  }
+
+  h1 {
+    max-width: 820px;
+    font-size: clamp(2rem, 4.6vw, 3.5rem);
+    line-height: 1.02;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: var(--fs-h3);
+    margin-bottom: 0.55rem;
+  }
+
+  h3 {
+    font-size: var(--fs-h4);
+  }
+
+  .lead {
+    max-width: 760px;
+    color: var(--ink-70);
+    font-size: var(--fs-lede);
+  }
+
+  .intro-card {
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .intro-card p {
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+  }
+
+  .trust-row {
+    display: flex;
+    gap: 0.55rem;
+    flex-wrap: wrap;
+    margin-top: 1.4rem;
+  }
+
+  .trust-row span {
+    border: 1px solid var(--hairline);
+    background: var(--paper);
+    color: var(--ink);
+    padding: 0.45rem 0.7rem;
+    border-radius: var(--r-pill);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+  }
+
+  .verified-dot {
+    margin-top: 1rem;
+    color: var(--celadon);
+    font-weight: var(--fw-semibold);
+  }
+
+  .tool-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .checker-card,
+  .result-card,
+  .info-card,
+  .related-section {
+    padding: 1.35rem;
+  }
+
+  .form-header {
+    margin-bottom: 1rem;
+  }
+
+  .form-header p {
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+  }
+
+  fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0 0 1rem;
+  }
+
+  legend {
+    font-weight: var(--fw-bold);
+    margin-bottom: 0.55rem;
+    font-size: var(--fs-sm);
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-height: 44px;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--surface);
+    color: var(--ink);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    cursor: pointer;
+    margin-bottom: 0.4rem;
+    transition:
+      border-color var(--dur-fast) var(--ease-out),
+      background-color var(--dur-fast) var(--ease-out);
+  }
+
+  .option:hover {
+    border-color: var(--seal);
+  }
+
+  .option:has(input:checked) {
+    border-color: var(--seal);
+    background: var(--seal-tint);
+  }
+
+  .option input {
+    margin: 0;
+    accent-color: var(--seal);
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .option span {
+    display: block;
+  }
+
+  .option span strong {
+    display: block;
+    font-weight: var(--fw-bold);
+  }
+
+  .inline-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem;
+  }
+
+  .inline-options .option {
+    margin-bottom: 0;
+  }
+
+  .chip-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 44px;
+    padding: 0.5rem 0.85rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-pill);
+    background: var(--surface);
+    color: var(--ink);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    cursor: pointer;
+    transition:
+      border-color var(--dur-fast) var(--ease-out),
+      background-color var(--dur-fast) var(--ease-out);
+  }
+
+  .chip:hover {
+    border-color: var(--seal);
+  }
+
+  .chip:has(input:checked) {
+    border-color: var(--seal);
+    background: var(--seal-tint);
+  }
+
+  .chip input {
+    margin: 0;
+    accent-color: var(--seal);
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .days-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .days-row input[type="range"] {
+    flex: 1;
+    accent-color: var(--seal);
+    min-height: 44px;
+  }
+
+  .days-value {
+    min-width: 84px;
+    text-align: center;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--paper);
+    color: var(--ink);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-sm);
+    padding: 0.55rem 0.7rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .segment-row {
+    margin-top: 0.6rem;
+    padding: 0.85rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--paper);
+  }
+
+  .segment-row label {
+    display: block;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    margin-bottom: 0.45rem;
+  }
+
+  .segment-row input {
+    width: 100%;
+    max-width: 140px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    font-size: var(--fs-sm);
+    padding: 0.6rem 0.7rem;
+    min-height: 44px;
+  }
+
+  .segment-row[hidden] {
+    display: none;
+  }
+
+  small {
+    display: block;
+    color: var(--ink-45);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-meta);
+    margin-top: 0.4rem;
+  }
+
+  .field-error {
+    color: var(--seal);
+    font-weight: var(--fw-semibold);
+  }
+
+  .field-error[hidden] {
+    display: none;
+  }
+
+  .button-primary {
+    width: 100%;
+    border: 0;
+    border-radius: var(--r-none);
+    background: var(--seal);
+    color: var(--surface);
+    padding: 0.9rem 1rem;
+    min-height: 48px;
+    font: inherit;
+    font-weight: var(--fw-bold);
+    cursor: pointer;
+    margin-top: 0.25rem;
+    transition: background-color var(--dur-fast) var(--ease-out);
+  }
+
+  .button-primary:hover {
+    background: var(--seal-deep);
+  }
+
+  .button-ghost {
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-none);
+    background: transparent;
+    color: var(--ink);
+    padding: 0.7rem 1.1rem;
+    min-height: 44px;
+    font: inherit;
+    font-weight: var(--fw-semibold);
+    cursor: pointer;
+    margin-top: 1rem;
+    transition:
+      border-color var(--dur-fast) var(--ease-out),
+      color var(--dur-fast) var(--ease-out);
+  }
+
+  .button-ghost:hover {
+    border-color: var(--seal);
+    color: var(--seal);
+  }
+
+  .result-card {
+    position: sticky;
+    top: 5rem;
+  }
+
+  .result-card h2 {
+    font-size: var(--fs-h4);
+  }
+
+  .result-card p {
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+  }
+
+  .result-placeholder {
+    border-style: dashed;
+    border-color: var(--hairline);
+    background: var(--paper);
+  }
+
+  .result-plan {
+    border-color: var(--seal);
+  }
+
+  .total-usd {
+    font-weight: var(--fw-semibold);
+    color: var(--celadon);
+    margin-bottom: 0.75rem;
+  }
+
+  .daily-box {
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--paper);
+    padding: 0.9rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .daily-label {
+    font-size: var(--fs-meta);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-45);
+    margin-bottom: 0.2rem;
+  }
+
+  .daily-value {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-bold);
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+  }
+
+  .daily-usd {
+    color: var(--celadon);
+    font-weight: var(--fw-semibold);
+    margin-top: 0.15rem;
+  }
+
+  .daily-note {
+    border-top: 1px solid var(--hairline);
+    margin-top: 0.6rem;
+    padding-top: 0.55rem;
+    font-size: var(--fs-meta);
+    color: var(--ink-70);
+  }
+
+  .breakdown-title {
+    margin-bottom: 0.5rem;
+  }
+
+  .budget-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--fs-sm);
+    margin-bottom: 0.75rem;
+  }
+
+  .budget-table th,
+  .budget-table td {
+    text-align: left;
+    padding: 0.5rem 0.6rem;
+    border-bottom: 1px solid var(--hairline);
+    font-weight: var(--fw-regular);
+    color: var(--ink-70);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .budget-table thead th {
+    font-size: var(--fs-meta);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-45);
+  }
+
+  .budget-table tbody th {
+    font-weight: var(--fw-semibold);
+    color: var(--ink);
+  }
+
+  .budget-table td:last-child,
+  .budget-table thead th:last-child {
+    text-align: right;
+  }
+
+  .addon-line {
+    border-top: 1px solid var(--hairline);
+    padding-top: 0.55rem;
+    margin-top: 0.2rem;
+  }
+
+  .addon-line strong {
+    color: var(--seal);
+  }
+
+  .tips-card {
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    padding: 0.9rem 1rem;
+    background: var(--paper);
+    margin-top: 0.6rem;
+  }
+
+  .tips-card h3 {
+    margin-bottom: 0.4rem;
+  }
+
+  .tips-card ul {
+    padding-left: 1.1rem;
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+  }
+
+  .tips-card li {
+    margin-bottom: 0.3rem;
+  }
+
+  .estimate-note {
+    font-size: var(--fs-meta);
+    color: var(--ink-45);
+    margin-top: 0.75rem;
+  }
+
+  .result-verify {
+    margin-top: 0.75rem;
+    color: var(--celadon);
+    font-weight: var(--fw-semibold);
+  }
+
+  .explain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .explain-grid--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .info-card p {
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+  }
+
+  .info-card ul {
+    padding-left: 1.1rem;
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+  }
+
+  .info-card li {
+    margin-bottom: 0.45rem;
+  }
+
+  .caution-card {
+    background:
+      linear-gradient(135deg, var(--paper-dim), var(--surface));
+  }
+
+  .related-section {
+    margin-top: 1rem;
+  }
+
+  .related-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .related-list a {
+    display: block;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    padding: 0.8rem 1rem;
+    background: var(--paper);
+    color: var(--ink);
+    transition:
+      border-color var(--dur-fast) var(--ease-out),
+      background-color var(--dur-fast) var(--ease-out);
+  }
+
+  .related-list a:hover {
+    border-color: var(--seal);
+    background: var(--seal-tint);
+    text-decoration: none;
+  }
+
+  .related-list strong {
+    display: block;
+    font-size: var(--fs-body);
+    font-weight: var(--fw-semibold);
+    color: var(--celadon);
+  }
+
+  .related-list small {
+    display: block;
+    margin-top: 0.2rem;
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-regular);
+  }
+
+  @media (max-width: 860px) {
+    .hero-panel,
+    .tool-grid,
+    .explain-grid,
+    .explain-grid--three {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-copy {
+      padding: 1.35rem;
+    }
+
+    .result-card {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .budget-page {
+      padding: 1.35rem 1rem 3rem;
+    }
+
+    .inline-options {
+      grid-template-columns: 1fr;
+    }
+
+    .days-row {
+      gap: 0.6rem;
+    }
+  }
+</style>

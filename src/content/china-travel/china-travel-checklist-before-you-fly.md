@@ -16,9 +16,13 @@ officialSources: ["nia-arrival-card-online", "gov-payment-guide-2024", "alipaypl
 relatedTools:
   - title: "240-Hour Transit Self-Check"
     href: "/tools/china-transit-checker/"
+  - title: "China Trip Budget Calculator"
+    href: "/tools/china-trip-budget-calculator/"
 ---
 
 The easiest China trips usually start before the plane takes off. Once you land, your phone becomes your map, wallet, translator, contact tool, and hotel lifeline. This checklist is built for first-time visitors who want to avoid small problems turning into stressful arrival-day delays.
+
+If you are still weighing whether China is the right 2026 trip, [why visit China in 2026](/china-travel/articles/why-visit-china-in-2026/) covers the case for going — this checklist handles the preparation part.
 
 ## Quick Answer
 

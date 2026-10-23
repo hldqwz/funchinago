@@ -31,6 +31,8 @@ If this is your first trip to China, your first city matters. Some cities are be
 - Chengdu for food and a slower pace.
 - Chongqing for dramatic city visuals and a strong wow factor.
 
+If you are still deciding whether China earns a place on your 2026 list, [why visit China in 2026](/china-travel/articles/why-visit-china-in-2026/) covers the case for going — once the answer is yes, the question becomes which city to start with.
+
 ## Beijing
 
 Best for:

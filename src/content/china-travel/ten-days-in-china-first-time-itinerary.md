@@ -21,6 +21,8 @@ relatedTools:
 
 Ten days is enough for a great first trip to China, but only if you keep the route simple.
 
+If you are still deciding whether China earns a 2026 trip, [why visit China in 2026](/china-travel/articles/why-visit-china-in-2026/) covers why the setup effort is worth it — this page turns that decision into a route.
+
 ## Quick Answer
 
 For a first trip, choose two or three cities, not five or six. A short but well-paced route will feel much better than a rushed list of famous places.

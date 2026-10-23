@@ -25,6 +25,8 @@ China can feel very easy after setup and very confusing before setup. That split
 
 For many visitors, the surprise is not that China is "hard." The surprise is that once payment, internet, and transport are ready, many parts of daily travel feel very efficient. The awkward part is usually the first few hours or the first day, when your phone, bank card, maps, and hotel setup are still not finished.
 
+If you are still deciding whether the trip is worth the effort at all, [why visit China in 2026](/china-travel/articles/why-visit-china-in-2026/) breaks the decision down before you plan the details.
+
 ## What Feels Easier Than Expected
 
 - Major cities often feel clean, organized, and active.

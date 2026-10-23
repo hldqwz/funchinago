@@ -18,6 +18,8 @@ relatedTools:
     href: "/tools/china-payment-readiness-checker/"
   - title: "China Travel Checklist Generator"
     href: "/tools/china-travel-checklist/"
+  - title: "China Trip Budget Calculator"
+    href: "/tools/china-trip-budget-calculator/"
 ---
 
 ## Quick Answer
@@ -25,6 +27,8 @@ relatedTools:
 Most foreign visitors should prepare Alipay first, WeChat Pay as backup, bring one physical Visa or Mastercard, and keep a small amount of RMB cash. Apple Pay and Google Pay may help in limited card-terminal situations, but they are not reliable enough as your main payment plan in China.
 
 This page is the payment hub for first-time visitors. Use it to decide your setup before flying, then go deeper into the app-specific guides — or a city guide such as [Beijing](/china-travel/articles/beijing-travel-guide-first-time-visitors/) or [Xi'an](/china-travel/articles/xian-travel-guide-first-time-visitors/) — when something needs more detail.
+
+If you are still deciding whether a 2026 China trip is worth the setup effort, [why visit China in 2026](/china-travel/articles/why-visit-china-in-2026/) makes the case first — then come back here to build the payment plan.
 
 If payment fails, skip the theory and move to the scenario guide below. If you are still choosing an app, use this page to Compare Alipay and WeChat Pay before you fly.
 
