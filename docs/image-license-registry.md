@@ -75,6 +75,11 @@ These files were already in the repository when this registry was extended on 20
 | Image file | Kind | Description | Status | Used in |
 | `hero-shanghai-bund-night.jpg` | photograph | The Bund waterfront in Shanghai at night, historic buildings lit in gold along the Huangpu River | public platform origin, source pending | Homepage hero (`src/pages/china-travel.astro`) |
 | `guilin-hero.jpg` | photograph | Li River corridor aerial at dusk | Unsplash, source pending | Guilin guide hero |
+| `china-cost-hero.jpg` | photograph | Nanjing Road pedestrian street at dusk, Shanghai | Unsplash (Fenghua), source pending | Cost breakdown hero |
+| `china-cost-street-food.jpg` | photograph | Night market food stalls | Unsplash (MChe Lee), source pending | Cost breakdown |
+| `china-cost-train.jpg` | photograph | High-speed train on a Beijing platform | Unsplash (Eric Prouzet), source pending | Cost breakdown |
+| `china-cost-attraction.jpg` | photograph | Great Wall autumn ridge with visitors | Unsplash, source pending | Cost breakdown |
+| `china-cost-street-scene.jpg` | photograph | Older street in Suzhou | Unsplash (Jakub Tomasik), source pending | Cost breakdown |
 | `hero-carousel-shanghai.jpg` | photograph | Bund night, crop of the Shanghai hero | Unsplash, source pending | Homepage hero carousel |
 | `hero-carousel-great-wall.jpg` | photograph | Great Wall at Mutianyu, crop | public platform, source pending | Homepage hero carousel |
 | `hero-carousel-panda.jpg` | photograph | Giant panda, crop | public platform, source pending | Homepage hero carousel |
