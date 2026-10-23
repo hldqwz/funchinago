@@ -164,35 +164,35 @@ Six habits, in rough order of impact. Stay in fewer cities — each extra stop c
 
 ## FAQ
 
-**How much does a trip to China cost?**
+### How much does a trip to China cost?
 
 Ten days mid-range, excluding flights, runs ¥7,500-10,500 per person — about $1,100-1,560. Budget travelers land at ¥4,800-7,000; comfortable trips start near ¥15,000.
 
-**How much money do I need per day in China?**
+### How much money do I need per day in China?
 
 Plan on ¥350-500 for a hostel-and-street-food trip, ¥700-1,100 mid-range with 3-star hotels and paid attractions, or ¥1,500-2,500 for four-star hotels, taxis and private guides. Second-tier cities shave ¥100-200 off the mid-range line.
 
-**Is China expensive for tourists?**
+### Is China expensive for tourists?
 
 Not by global standards. Mid-range daily costs run well below Japan or Western Europe, and street food is a fraction of equivalent meals elsewhere. The expensive part is payment friction and advance bookings, not prices.
 
-**How much does a 10-day trip to China cost?**
+### How much does a 10-day trip to China cost?
 
 The Beijing-Xi'an-Shanghai route works out to about ¥7,700 mid-range, within a ¥6,500-10,500 range depending on hotel tier and season. The full itemization is in the table above.
 
-**How much is a China visa?**
+### How much is a China visa?
 
 US citizens pay $140 for a single-entry visa ($165 with expedite). Many European and other nationalities travel visa-free; confirm your status on the official channels before budgeting anything.
 
-**Do you tip in China?**
+### Do you tip in China?
 
 No. Tipping isn't expected anywhere in China, so don't build it into your budget. The rare exception is a voluntary thank-you to a guide or performer, which is never required.
 
-**How much cash should I bring to China?**
+### How much cash should I bring to China?
 
 ¥500-1,000 as a backup is plenty. Most places take QR payments, ATMs are widely available, and airport exchange desks cost 3-5% more than a bank ATM. Don't exchange a large stack before departure.
 
-**Is China cheaper than Japan?**
+### Is China cheaper than Japan?
 
 Yes, meaningfully. Train fares, hotels and especially restaurants are cheaper in China — a restaurant table for two costs roughly a third to a half of the Japanese equivalent for comparable food.
 
