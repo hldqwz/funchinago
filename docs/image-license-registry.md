@@ -2,7 +2,7 @@
 
 Updated: 2026-10-24
 
-Coverage: **99/99** files under `public/china-travel/images/` are registered below.
+Coverage: **102/102** files under `public/china-travel/images/` are registered below.
 
 ## Purpose
 
@@ -70,6 +70,9 @@ Externally sourced photographs with a confirmed source page, author, and license
 | `zhuhai-lovers-road-walkway.webp` | [Pexels](https://www.pexels.com/photo/scenic-coastal-walkway-in-zhuhai-china-31507206/) | Madzery Ma | Pexels License | `zhuhai-travel-guide-first-time-visitors.md` |
 | `zhuhai-fisher-girl-statue.webp` | [Pexels](https://www.pexels.com/photo/zhuhai-s-iconic-fisher-girl-statue-in-summer-39501948/) | Alex M | Pexels License | `zhuhai-travel-guide-first-time-visitors.md` |
 | `zhuhai-hzmb-bridge-aerial.webp` | [Pexels](https://www.pexels.com/photo/aerial-view-of-hong-kong-zhuhai-macau-bridge-32871281/) | Zonghao Feng | Pexels License | `zhuhai-travel-guide-first-time-visitors.md` |
+| `en-dim-sum-table.webp` | [Pexels](https://www.pexels.com/photo/delicious-chinese-dim-sum-spread-in-bamboo-steamers-32860331/) | change c c | Pexels License | `guangzhou-travel-guide-first-time-visitors.md` |
+| `en-canton-tower-night.webp` | [Pexels](https://www.pexels.com/photo/illuminated-canton-tower-in-guangzhou-14230468/) | Lywin | Pexels License | `guangzhou-travel-guide-first-time-visitors.md` |
+| `en-shamian-arcade.webp` | [Pexels](https://www.pexels.com/photo/charming-street-scene-in-shamian-island-guangzhou-36626301/) | Hossein Ghaedi | Pexels License | `guangzhou-travel-guide-first-time-visitors.md` |
 
 ## Site-owned photographs and graphics pending provenance check
 
@@ -106,12 +109,12 @@ These files were already in the repository when this registry was extended on 20
 | `chengdu-mount-qingcheng.webp` | Photograph | Wooded temple path on Mount Qingcheng near Chengdu | Source unconfirmed - provenance check required | `chengdu-travel-guide-first-time-visitors.md` |
 | `chengdu-panda-base.webp` | Photograph | Panda enclosure walkway at the Chengdu Research Base | Source unconfirmed - provenance check required | portal/landing (`src/data/chinaStarterPortal.ts`, `src/pages/china-travel/*.astro`) |
 | `chengdu-peoples-park-teahouse.webp` | Photograph | Tea house terrace in Chengdu People's Park | Source unconfirmed - provenance check required | `chengdu-travel-guide-first-time-visitors.md` |
-| `en-beijing-road.webp` | Photograph | Beijing Road shopping street, Guangzhou | Source unconfirmed - provenance check required | Not currently linked |
-| `en-cantonese-food.webp` | Photograph | Cantonese dim sum and roast dishes, Guangzhou | Source unconfirmed - provenance check required | Not currently linked |
-| `en-chenclan-hall.webp` | Photograph | Chen Clan Ancestral Hall courtyard and roof sculpture, Guangzhou | Source unconfirmed - provenance check required | Not currently linked |
-| `en-pearl-river.webp` | Photograph | Pearl River waterfront and skyline, Guangzhou | Source unconfirmed - provenance check required | Not currently linked |
-| `en-shamian-island.webp` | Photograph | Colonial-era streets on Shamian Island, Guangzhou | Source unconfirmed - provenance check required | Not currently linked |
-| `en-yongqing-fang.webp` | Photograph | Yongqing Fang lane-house district, Guangzhou | Source unconfirmed - provenance check required | Not currently linked |
+| `en-beijing-road.webp` | Photograph | Beijing Road shopping street, Guangzhou | **UNUSABLE - Xiaohongshu screenshot with third-party watermark and creator overlay; do not publish** | Not currently linked |
+| `en-cantonese-food.webp` | Photograph | Cantonese dim sum and roast dishes, Guangzhou | **UNUSABLE - Xiaohongshu screenshot with third-party watermark and creator overlay; do not publish** | Not currently linked |
+| `en-chenclan-hall.webp` | Photograph | Chen Clan Ancestral Hall courtyard and roof sculpture, Guangzhou | **UNUSABLE - Xiaohongshu screenshot with third-party watermark and creator overlay; do not publish** | Not currently linked |
+| `en-pearl-river.webp` | Photograph | Pearl River waterfront and skyline, Guangzhou | **UNUSABLE - Xiaohongshu screenshot with third-party watermark and creator overlay; do not publish** | Not currently linked |
+| `en-shamian-island.webp` | Photograph | Colonial-era streets on Shamian Island, Guangzhou | **UNUSABLE - Xiaohongshu screenshot with third-party watermark and creator overlay; do not publish** | Not currently linked |
+| `en-yongqing-fang.webp` | Photograph | Yongqing Fang lane-house district, Guangzhou | **UNUSABLE - Xiaohongshu screenshot with third-party watermark and creator overlay; do not publish** | Not currently linked |
 | `hero-hongyadong.webp` | Photograph | Hongyadong stilted riverfront complex, Chongqing | Source unconfirmed - provenance check required | portal/landing (`src/data/chinaStarterPortal.ts`, `src/pages/china-travel/*.astro`) |
 | `shanghai-bund-night.webp` | Photograph | The Bund at night, Shanghai | Source unconfirmed - provenance check required | `shanghai-travel-guide-first-time-visitors.md` |
 | `shanghai-bund-skyline.jpg` | Photograph | Pudong skyline seen from the Bund across the Huangpu River | Source unconfirmed - provenance check required | `shanghai-travel-guide-first-time-visitors.md` |
