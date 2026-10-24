@@ -1,8 +1,8 @@
 # FunChinaGo Image License Registry
 
-Updated: 2026-10-17
+Updated: 2026-10-24
 
-Coverage: **81/81** files under `public/china-travel/images/` are registered below.
+Coverage: **99/99** files under `public/china-travel/images/` are registered below.
 
 ## Purpose
 
@@ -67,6 +67,9 @@ Externally sourced photographs with a confirmed source page, author, and license
 | `xian-city-wall.jpg` | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Xian_City_Wall_2_(5458617189).jpg) | Ronnie Macdonald | CC BY 2.0 | `xian-travel-guide-first-time-visitors.md` |
 | `xian-muslim-quarter.jpg` | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Xi%27an_Muslim_Quarter.jpg) | Qianeal | CC BY-SA 4.0 | `xian-travel-guide-first-time-visitors.md` |
 | `xian-giant-wild-goose-pagoda.jpg` | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Giant_Wild_Goose_Pagoda_(54075072188).jpg) | Xiquinho Silva | CC BY 2.0 | `xian-travel-guide-first-time-visitors.md` |
+| `zhuhai-lovers-road-walkway.webp` | [Pexels](https://www.pexels.com/photo/scenic-coastal-walkway-in-zhuhai-china-31507206/) | Madzery Ma | Pexels License | `zhuhai-travel-guide-first-time-visitors.md` |
+| `zhuhai-fisher-girl-statue.webp` | [Pexels](https://www.pexels.com/photo/zhuhai-s-iconic-fisher-girl-statue-in-summer-39501948/) | Alex M | Pexels License | `zhuhai-travel-guide-first-time-visitors.md` |
+| `zhuhai-hzmb-bridge-aerial.webp` | [Pexels](https://www.pexels.com/photo/aerial-view-of-hong-kong-zhuhai-macau-bridge-32871281/) | Zonghao Feng | Pexels License | `zhuhai-travel-guide-first-time-visitors.md` |
 
 ## Site-owned photographs and graphics pending provenance check
 
