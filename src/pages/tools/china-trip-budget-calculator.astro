@@ -873,7 +873,7 @@ const description = "Estimate your China travel cost: daily budget ranges in CNY
     background: var(--seal-deep);
   }
 
-  .button-ghost {
+  :global(.button-ghost) {
     border: 1px solid var(--hairline);
     border-radius: var(--r-none);
     background: transparent;
@@ -889,7 +889,7 @@ const description = "Estimate your China travel cost: daily budget ranges in CNY
       color var(--dur-fast) var(--ease-out);
   }
 
-  .button-ghost:hover {
+  :global(.button-ghost:hover) {
     border-color: var(--seal);
     color: var(--seal);
   }
@@ -914,17 +914,17 @@ const description = "Estimate your China travel cost: daily budget ranges in CNY
     background: var(--paper);
   }
 
-  .result-plan {
+  :global(.result-plan) {
     border-color: var(--seal);
   }
 
-  .total-usd {
+  :global(.total-usd) {
     font-weight: var(--fw-semibold);
     color: var(--celadon);
     margin-bottom: 0.75rem;
   }
 
-  .daily-box {
+  :global(.daily-box) {
     border: 1px solid var(--hairline);
     border-radius: var(--r-sm);
     background: var(--paper);
@@ -932,7 +932,7 @@ const description = "Estimate your China travel cost: daily budget ranges in CNY
     margin-bottom: 1rem;
   }
 
-  .daily-label {
+  :global(.daily-label) {
     font-size: var(--fs-meta);
     font-weight: var(--fw-semibold);
     letter-spacing: 0.06em;
@@ -941,7 +941,7 @@ const description = "Estimate your China travel cost: daily budget ranges in CNY
     margin-bottom: 0.2rem;
   }
 
-  .daily-value {
+  :global(.daily-value) {
     font-size: var(--fs-h3);
     font-weight: var(--fw-bold);
     color: var(--ink);
@@ -949,13 +949,13 @@ const description = "Estimate your China travel cost: daily budget ranges in CNY
     line-height: 1.1;
   }
 
-  .daily-usd {
+  :global(.daily-usd) {
     color: var(--celadon);
     font-weight: var(--fw-semibold);
     margin-top: 0.15rem;
   }
 
-  .daily-note {
+  :global(.daily-note) {
     border-top: 1px solid var(--hairline);
     margin-top: 0.6rem;
     padding-top: 0.55rem;
@@ -963,19 +963,18 @@ const description = "Estimate your China travel cost: daily budget ranges in CNY
     color: var(--ink-70);
   }
 
-  .breakdown-title {
+  :global(.breakdown-title) {
     margin-bottom: 0.5rem;
   }
 
-  .budget-table {
+  :global(.budget-table) {
     width: 100%;
     border-collapse: collapse;
     font-size: var(--fs-sm);
     margin-bottom: 0.75rem;
   }
 
-  .budget-table th,
-  .budget-table td {
+  :global(.budget-table th, .budget-table td) {
     text-align: left;
     padding: 0.5rem 0.6rem;
     border-bottom: 1px solid var(--hairline);
@@ -984,7 +983,7 @@ const description = "Estimate your China travel cost: daily budget ranges in CNY
     font-variant-numeric: tabular-nums;
   }
 
-  .budget-table thead th {
+  :global(.budget-table thead th) {
     font-size: var(--fs-meta);
     font-weight: var(--fw-bold);
     text-transform: uppercase;
@@ -992,27 +991,26 @@ const description = "Estimate your China travel cost: daily budget ranges in CNY
     color: var(--ink-45);
   }
 
-  .budget-table tbody th {
+  :global(.budget-table tbody th) {
     font-weight: var(--fw-semibold);
     color: var(--ink);
   }
 
-  .budget-table td:last-child,
-  .budget-table thead th:last-child {
+  :global(.budget-table td:last-child, .budget-table thead th:last-child) {
     text-align: right;
   }
 
-  .addon-line {
+  :global(.addon-line) {
     border-top: 1px solid var(--hairline);
     padding-top: 0.55rem;
     margin-top: 0.2rem;
   }
 
-  .addon-line strong {
+  :global(.addon-line strong) {
     color: var(--seal);
   }
 
-  .tips-card {
+  :global(.tips-card) {
     border: 1px solid var(--hairline);
     border-radius: var(--r-sm);
     padding: 0.9rem 1rem;
@@ -1020,27 +1018,27 @@ const description = "Estimate your China travel cost: daily budget ranges in CNY
     margin-top: 0.6rem;
   }
 
-  .tips-card h3 {
+  :global(.tips-card h3) {
     margin-bottom: 0.4rem;
   }
 
-  .tips-card ul {
+  :global(.tips-card ul) {
     padding-left: 1.1rem;
     color: var(--ink-70);
     font-size: var(--fs-sm);
   }
 
-  .tips-card li {
+  :global(.tips-card li) {
     margin-bottom: 0.3rem;
   }
 
-  .estimate-note {
+  :global(.estimate-note) {
     font-size: var(--fs-meta);
     color: var(--ink-45);
     margin-top: 0.75rem;
   }
 
-  .result-verify {
+  :global(.result-verify) {
     margin-top: 0.75rem;
     color: var(--celadon);
     font-weight: var(--fw-semibold);

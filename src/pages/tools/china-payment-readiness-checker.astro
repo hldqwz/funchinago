@@ -736,7 +736,7 @@ const description = "Answer five questions about your cards, verification, and t
     background: var(--seal-deep);
   }
 
-  .button-ghost {
+  :global(.button-ghost) {
     border: 1px solid var(--hairline);
     border-radius: var(--r-none);
     background: transparent;
@@ -752,7 +752,7 @@ const description = "Answer five questions about your cards, verification, and t
       color var(--dur-fast) var(--ease-out);
   }
 
-  .button-ghost:hover {
+  :global(.button-ghost:hover) {
     border-color: var(--seal);
     color: var(--seal);
   }
@@ -777,11 +777,11 @@ const description = "Answer five questions about your cards, verification, and t
     background: var(--paper);
   }
 
-  .result-plan {
+  :global(.result-plan) {
     border-color: var(--seal);
   }
 
-  .plan-list {
+  :global(.plan-list) {
     list-style: none;
     padding: 0;
     margin: 1rem 0;
@@ -789,26 +789,26 @@ const description = "Answer five questions about your cards, verification, and t
     gap: 0.7rem;
   }
 
-  .plan-step {
+  :global(.plan-step) {
     border: 1px solid var(--hairline);
     border-radius: var(--r-media);
     padding: 0.9rem 1rem;
     background: var(--surface);
   }
 
-  .plan-step.is-primary {
+  :global(.plan-step.is-primary) {
     border-color: var(--seal);
     box-shadow: var(--sh-hard);
   }
 
-  .plan-head {
+  :global(.plan-head) {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     margin-bottom: 0.5rem;
   }
 
-  .plan-rank {
+  :global(.plan-rank) {
     flex-shrink: 0;
     width: 32px;
     height: 32px;
@@ -822,12 +822,12 @@ const description = "Answer five questions about your cards, verification, and t
     font-size: var(--fs-sm);
   }
 
-  .plan-heading h3 {
+  :global(.plan-heading h3) {
     margin: 0;
     font-size: var(--fs-body);
   }
 
-  .plan-role {
+  :global(.plan-role) {
     color: var(--celadon);
     font-size: var(--fs-meta);
     font-weight: var(--fw-semibold);
@@ -836,51 +836,51 @@ const description = "Answer five questions about your cards, verification, and t
     margin-top: 0.1rem;
   }
 
-  .plan-action {
+  :global(.plan-action) {
     font-size: var(--fs-sm);
     color: var(--ink);
     margin-bottom: 0.35rem;
   }
 
-  .plan-risk {
+  :global(.plan-risk) {
     border-top: 1px solid var(--hairline);
     padding-top: 0.45rem;
     font-size: var(--fs-sm);
     color: var(--ink-70);
   }
 
-  .plan-risk strong {
+  :global(.plan-risk strong) {
     color: var(--seal);
   }
 
-  .plan-checklist {
+  :global(.plan-checklist) {
     border: 1px solid var(--hairline);
     border-radius: var(--r-media);
     padding: 0.9rem 1rem;
     background: var(--paper);
   }
 
-  .plan-checklist h3 {
+  :global(.plan-checklist h3) {
     margin-bottom: 0.4rem;
   }
 
-  .plan-checklist ul {
+  :global(.plan-checklist ul) {
     padding-left: 1.1rem;
     color: var(--ink-70);
     font-size: var(--fs-sm);
   }
 
-  .plan-checklist li {
+  :global(.plan-checklist li) {
     margin-bottom: 0.3rem;
   }
 
-  .plan-note {
+  :global(.plan-note) {
     font-size: var(--fs-sm);
     color: var(--ink-70);
     margin-top: 0.6rem;
   }
 
-  .plan-verify {
+  :global(.plan-verify) {
     margin-top: 0.75rem;
     color: var(--celadon);
     font-weight: var(--fw-semibold);
