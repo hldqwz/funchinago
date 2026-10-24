@@ -83,7 +83,7 @@ Pit 1 creates the famous first impression: rows of figures stretching into a vas
 
 <img src="/china-travel/images/xian-terracotta-warriors.jpg" alt="Rows of Terracotta Warriors inside Pit 1 near Xi'an" width="1920" height="1440" loading="lazy" decoding="async">
 
-The official Emperor Qinshihuang's Mausoleum Site Museum ticket page currently says all visitors, including foreign visitors, must make a real-name advance reservation with a passport, up to seven days ahead in a fixed entry time slot. The ticket is ¥120, covering both the Terracotta Army Museum and the Lishan Garden site with a free shuttle between them; students pay ¥60. Daily entry is capped at 65,000 (70,000 in peak summer), high-season hours are 8:30–18:30, and unlike Beijing's Palace Museum, the museum opens on Mondays. Book through bmy.com.cn or the official WeChat accounts; outside fast-track sellers are not official. Check the official page again; channels and entry times can change.
+The official Emperor Qinshihuang's Mausoleum Site Museum ticket page currently says all visitors, including foreign visitors, must make a real-name advance reservation with a passport, up to seven days ahead in a fixed entry time slot. The ticket is ¥120, covering both the Terracotta Army Museum and the Lishan Garden site with a free shuttle between them; students pay ¥60. Daily entry is capped at 65,000 (70,000 in peak summer), and unlike Beijing's Palace Museum, the museum opens on Mondays. Peak season (16 March to 15 November) runs 8:30 to 18:30 with **last entry at 17:00**; the low season (16 November to 15 March) closes at 18:00 with last entry at 16:30. Book through bmy.com.cn or the official WeChat accounts; outside fast-track sellers are not official. Check the official page again; channels and entry times can change.
 
 Allow most of a day once transport is included; Lintong is outside central Xi'an. Public bus 306 from the Fangzhicheng hub costs about ¥7-10 each way, metro line 9 reaches Lintong for a short taxi hop, and coaches run about ¥25 each way; a taxi or ride-hailing car is ¥120–150. Agree the return plan and save the destination name in Chinese before leaving. A guide can add archaeological context; a guide who rushes you from photo point to photo point can subtract it.
 
@@ -224,7 +224,7 @@ The official pages were checked for this article on October 24, 2026. Where diff
 
 ### Is the Terracotta Army closed on Mondays?
 
-No. It opens seven days a week, 8:30–18:30 in high season, with entry capped at 65,000 a day.
+No. It opens seven days a week, 8:30–18:30 in peak season (16 March to 15 November) with last entry at 17:00, and entry is capped at 65,000 a day.
 
 ### How much are Terracotta Warriors tickets?
 
