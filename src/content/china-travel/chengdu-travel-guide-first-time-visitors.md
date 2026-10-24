@@ -1,11 +1,13 @@
 ---
 title: "Chengdu Travel Guide for First-Time Visitors: Pandas, Hotpot and Tea Houses"
 date: 2026-06-22
-updatedAt: 2026-06-23
-lastChecked: 2026-10-17
+updatedAt: 2026-10-24
+lastChecked: 2026-10-24
 changelog:
   - date: 2026-10-17
     note: "Refreshed verification metadata and image optimisation pass"
+  - date: 2026-10-24
+    note: "Added Panda Base official ticketing data, two-airport section, attraction and transport prices, best-time months, and FAQ"
 description: "A practical and human Chengdu travel guide for first-time visitors to China, covering pandas, hotpot, teahouses, neighborhoods, day trips, transport, payment and common mistakes."
 stage: "discover"
 section: "cities"
@@ -86,13 +88,19 @@ Three days gives you time to make a small mistake and recover from it: ordering 
 
 Stay longer if you want to use Chengdu as a base for deeper Sichuan travel. With four or five days, the city becomes less of a destination and more of a comfortable base: one foot in urban China, one foot toward mountains, rivers, and the Tibetan edges of Sichuan.
 
+## Getting to Chengdu: Two Airports, One Metro System
+
+Chengdu has two airports, and first-time visitors regularly book flights into the wrong one. Check the airport code on your ticket: CTU or TFU.
+
+**Shuangliu International Airport (CTU)** is the old, close one, roughly 10-15 km southwest of downtown. Metro Line 10 runs from the airport into the city network, and a taxi to Chunxi Road or Tianfu Square typically costs about ¥60-90. If your flight uses CTU, your transfer is short.
+
+**Tianfu International Airport (TFU)** is the new, far one, about 45-50 km southeast of the city. Metro Line 18 connects it to the city center; published journeys run roughly 40-50 minutes, but schedules change, so check the current timetable before you fly. A taxi from TFU costs significantly more than from CTU because of the distance — the metro is usually the better value.
+
+Which should you choose? CTU for convenience; TFU if it is the only realistic option for your route or airline. If you land at TFU, build the transfer into your first-day plan instead of assuming a quick ride into town.
+
 ## Best Time to Visit Chengdu
 
-Spring and autumn are usually the easiest seasons for a first Chengdu trip. The weather is more comfortable, parks and tea houses feel pleasant, and you are less likely to build the whole day around heat, rain, or heavy indoor breaks.
-
-Summer can still be fun, especially if your main goal is food, but it is often humid and hot. If pandas are a priority, go early in the morning. Later in the day, especially in warmer weather, they may be less active or harder to see clearly.
-
-Winter can be gray and damp, but it suits Chengdu better than many cities: hotpot feels right, tea houses still work, and the slower rhythm makes sense. The main caution is crowding. Chinese public holidays such as National Day and Spring Festival can make attractions, trains, and hotels much busier, so check opening hours, reservation rules, and transport schedules before you lock the route.
+The most reliable windows are **March to May** and **September to November**, with April and October the best of them. Summer (June to August) is hot and humid — fine if your main goal is food, but schedule pandas and walking for the morning. December to February is the cheapest and quietest stretch, but gray and damp — hotpot weather, in other words. Avoid National Day (October 1-7) and Spring Festival week, when trains, hotels, and the Panda Base are at their busiest. Autumn also brings the Huaxi autumn rain, so pack an umbrella even on dry-looking mornings.
 
 ## Best Things to Do in Chengdu
 
@@ -102,9 +110,18 @@ For many visitors, the Chengdu Research Base of Giant Panda Breeding is the reas
 
 Go early. Not "after breakfast at 10:30" early, but properly early. Pandas are usually more active in the morning, especially when eating. Later in the day, especially in warm weather, they may become sleepy and retreat indoors. That can still be cute, but it is not the same as watching a panda sit with ridiculous seriousness over a pile of bamboo.
 
-Do not treat the Panda Base like a quick photo stop. It is larger than many visitors expect, and the walking can add up. Wear comfortable shoes, bring water, and check the official reservation rules before you go. The official Panda Base ticket page currently says visitors should make an online real-name reservation and bring the valid ID document used for the booking. Reservation channels and entry rules can change, so check the official Panda Base ticket page before you go.
+Do not treat the Panda Base like a quick photo stop. It is larger than many visitors expect — allow three to four hours — and the walking can add up. Wear comfortable shoes, bring water, and book ahead.
 
-A good panda visit is not about seeing every enclosure. It is about giving yourself enough time to slow down, watch properly, and accept that the animals are not performers. They are pandas. Their schedule is mostly bamboo, sleep, and complete emotional independence from your travel plans.
+The official numbers, from the base's ticket information (confirm before you go, since rules change):
+
+- **Admission:** ¥55 for adults, ¥27 for students. Visitors aged 60 and over, and children under 6 or under 1.3m, enter free and do not need a reservation.
+- **Opening hours:** March to October, entry 7:30-12:00 and 12:00-17:00, closing at 18:00. November to February, entry starts an hour later (8:00-12:00 and 12:00-16:30), closing at 17:30.
+- **Booking:** online real-name reservation up to 14 days ahead, with a daily cap of 85,000 visitors. Official channels are the base's WeChat account and mini-program plus authorized platforms. Bring the valid ID document used for the booking.
+- **Shuttle bus inside the park:** ¥30.
+
+Two practical consequences. First, the active window is roughly 8 to 10 AM — an afternoon entry ticket can mean the pandas are already napping, so do not buy one if pandas are the point of the trip. Second, entry is tied to your booked time slot; afternoon tickets do not let you in early.
+
+A good panda visit is not about seeing every enclosure. It is about giving yourself enough time to slow down, watch properly, and accept that the animals are not performers. They are pandas. Their schedule is mostly bamboo, sleep, and no interest in your itinerary.
 
 ![Giant panda at Chengdu Panda Base](/china-travel/images/chengdu-giant-panda.jpg)
 
@@ -116,7 +133,7 @@ The easiest place for first-time visitors is People's Park. It is central, atmos
 
 At first, it may feel like nothing is happening. Then you start to notice everything: people chatting for hours, retirees reading, friends leaning back in bamboo chairs, cups being refilled, mahjong sounds nearby, someone getting their ears cleaned, a server moving through tables with a kettle.
 
-For many foreign visitors, this is the moment Chengdu makes sense. The city is not asking you to consume another attraction. It is asking whether you can sit still long enough to feel the local rhythm.
+For many foreign visitors, this is the moment Chengdu makes sense. The city is not asking you to consume another attraction. It is asking whether you can stay long enough to feel the local rhythm.
 
 ![Bamboo chairs and tea service at a tea house in Chengdu People's Park](/china-travel/images/chengdu-peoples-park-teahouse.webp)
 
@@ -138,7 +155,7 @@ Jinli and Kuanzhai Alley are popular for a reason: red lanterns, old-style archi
 
 That does not mean you should skip them. It means you should know what they are.
 
-Go in the late afternoon or evening if you want atmosphere. Walk slowly. Try a snack or two. Take photos, but do not expect the most authentic hidden corner of Chengdu. These places work best as light city walks, especially if you are already nearby.
+Go in the late afternoon or evening if you want atmosphere. Walk slowly. Try a snack or two. Take photos, but do not expect the most authentic hidden corner of Chengdu. These places work best as light city walks, especially if you are already nearby. Evening Sichuan opera shows with face-changing are easy to add from here — listings start around ¥50, though prices vary by venue and show, so confirm before booking.
 
 If you want a stronger sense of everyday life, pair them with a tea house, a park, a local noodle shop, or a neighborhood walk away from the main tourist drag.
 
@@ -158,7 +175,7 @@ It also shows something important: Chengdu's relaxed personality does not mean t
 
 ### Day 1: Pandas, tea, and hotpot
 
-Start with the Panda Base in the morning. Go early, wear comfortable shoes, and keep your schedule light afterward.
+Start with the Panda Base in the morning. Go early, wear comfortable shoes, and keep your schedule light afterward. A direct shuttle from the IFS area near Chunxi Road to the base's south gate runs about ¥12 if you would rather not work out the metro.
 
 ![Bamboo paths and panda enclosures at the Chengdu Research Base](/china-travel/images/chengdu-panda-base.webp)
 
@@ -168,7 +185,7 @@ At night, eat hotpot. Choose a place with photos or a manageable menu if you do 
 
 ### Day 2: Old streets, temples, and city life
 
-Start with Wuhou Shrine and Jinli if you want a classic tourist route. Then move toward Kuanzhai Alley or a local lunch spot.
+Start with Wuhou Shrine (about ¥50) and Jinli if you want a classic tourist route. Then move toward Kuanzhai Alley or a local lunch spot. If museums appeal, the Chengdu Museum near Tianfu Square is free but needs a reservation.
 
 In the late afternoon, head to Taikoo Li and Chunxi Road. See the IFS panda, walk through the shopping district, and watch how Chengdu shifts from old-style leisure to modern city energy.
 
@@ -178,7 +195,7 @@ For dinner, choose something gentler if hotpot defeated you the night before: da
 
 Pick one, not all.
 
-Leshan is best if you want a major cultural sight and do not mind a full travel day. Mount Qingcheng is better if you want green scenery, temples, and a calmer mountain atmosphere. Dujiangyan is good if you enjoy history, engineering, and UNESCO-listed heritage.
+Leshan is best if you want a major cultural sight and do not mind a full travel day. High-speed trains from Chengdu East take roughly 40-60 minutes, with second-class fares around ¥51-54, and the Giant Buddha sight ticket runs about ¥80 (confirm the current price on official channels). With transfers on both ends, plan the whole day: leave by 8 AM, expect to be back by dinner. Mount Qingcheng is better if you want green scenery, temples, and a calmer mountain atmosphere — the front-mountain ticket is about ¥80, and the Qingchengshan railway station is 30-40 minutes from the mountain. Dujiangyan is good if you enjoy history, engineering, and UNESCO-listed heritage (ticket about ¥80). Buy rail tickets a day or two ahead around holidays.
 
 Do not try to do too much in one day. Chengdu is not a city that rewards rushing.
 
@@ -218,6 +235,8 @@ Hotpot is one of the best Chengdu experiences, but it is also one of the easiest
 
 Choose a split pot if you are unsure about spice. The mild side is not a failure. It is strategy.
 
+For reference, a full hotpot dinner typically runs ¥90-180 per person: chains such as Xiaolongkan (Chunxi Road branch) sit toward the bottom of that range, Shu Da Xia in Xiyulong toward the top. Outside the hotpot restaurants, noodles and snack shops are cheap — roughly ¥10-25 a bowl (estimates).
+
 Order slowly. It is easy to order too much because everything looks small on the menu. Start with a few meats, tofu, mushrooms, and vegetables, then add more.
 
 Do not put everything in at once. Different foods cook at different speeds. If you are not sure, watch what locals do or ask staff with a translation app.
@@ -238,7 +257,7 @@ That is why it works.
 
 A Chengdu tea house is not only about tea. It is a public living room. People use it to pass time without apologizing for passing time. For visitors from countries where travel often means constant movement, this can feel strange at first. You may feel you are "wasting" an afternoon.
 
-You are not. You are finally seeing Chengdu in its natural state.
+You are not. You are watching the city the way it runs when nobody is performing for you.
 
 People's Park is the easiest place to start, but if you have more time, ask your hotel or a local friend for a less touristy tea house. The tea does not need to be fancy. The point is the room, the chairs, the pace, and the permission to stay.
 
@@ -274,7 +293,7 @@ Save your hotel address in Chinese. Keep screenshots of important bookings. Use 
 
 ### Transport
 
-Chengdu has a useful metro system, and ride-hailing can be convenient if your app setup works. For day trips, high-speed rail may be faster and more reliable than a long car ride, depending on the destination.
+Chengdu has a useful metro system: fares run ¥2-9 per journey, paid with a Tianfu Tong card or the metro code inside Alipay or WeChat. Taxis start at about ¥8-9 plus ¥1.9 per kilometer, and city ride-hails usually land between ¥15-40. For day trips, high-speed rail may be faster and more reliable than a long car ride, depending on the destination.
 
 If you are new to China trains, read our [high-speed rail guide for foreigners](/china-travel/articles/how-to-book-high-speed-train-tickets-china-foreigner/).
 
@@ -320,9 +339,7 @@ Jinli and Kuanzhai are atmospheric, but they are also commercial. Enjoy them for
 
 ## What Locals Understand About Chengdu That Visitors Often Miss
 
-Chengdu's slowness is not laziness. It is confidence.
-
-The city knows food matters. It knows friends matter. It knows weather can be gray, traffic can be annoying, work can be tiring, and yet there should still be time for tea.
+Chengdu's pace has a logic. The city knows food matters. It knows friends matter. It knows weather can be gray, traffic can be annoying, work can be tiring, and yet there should still be time for tea.
 
 A visitor may come to Chengdu for pandas and hotpot. That is fine. Those are good reasons. But the thing that lingers is often smaller: a bamboo chair that is more comfortable than it looks, the sound of tea water hitting a cup, the smell of chili oil on your jacket after dinner, the way a city of millions can somehow make an afternoon feel unclaimed.
 
@@ -350,6 +367,32 @@ Policies, opening hours, booking systems, and transport arrangements can change.
 - [How to Book High-Speed Train Tickets in China as a Foreigner](/china-travel/articles/how-to-book-high-speed-train-tickets-china-foreigner/)
 - [Best Places to Visit in China for First-Time Visitors](/china-travel/articles/best-places-to-visit-in-china-first-time/)
 
+## Frequently Asked Questions
+
+### How much is the Chengdu Panda Base ticket?
+
+¥55 for adults and ¥27 for students; visitors aged 60+ and children under 6 enter free without a reservation. Book online up to 14 days ahead through the base's official WeChat account or mini-program — the daily cap is 85,000 visitors, and weekends sell out.
+
+### Which Chengdu airport should I fly into?
+
+Shuangliu (CTU) is the closer one, about 10-15 km from downtown with Metro Line 10 and taxis around ¥60-90. Tianfu (TFU) is about 45-50 km out, served by Metro Line 18 (roughly 40-50 minutes). Check your ticket's airport code before booking transfers.
+
+### How do I visit Leshan as a day trip?
+
+High-speed rail from Chengdu East takes about 40-60 minutes; second-class fares run around ¥51-54. The Giant Buddha sight ticket is about ¥80 (confirm current prices). Plan a full day — leave by 8 AM, return by dinner — and buy train tickets a day or two ahead around holidays.
+
+### How much does hotpot cost in Chengdu?
+
+Expect ¥90-180 per person at a full hotpot dinner. Chains like Xiaolongkan sit near the bottom of that range; Shu Da Xia near the top. Noodles and snacks outside the hotpot restaurants run roughly ¥10-25.
+
+### What is the best time to visit Chengdu?
+
+March to May and September to November, with April and October the pick of them. December to February is cheapest but gray and damp. Avoid National Day and Spring Festival week.
+
+### How much do I need per day in Chengdu?
+
+Roughly ¥250-400 for a backpacker day (metro, street food, budget hotels) and ¥500-900 mid-range (3-star hotel, hotpot, taxis, paid attractions). Add ¥55 and most of a day if the Panda Base is the morning's plan.
+
 ## Final Thoughts
 
 Chengdu is a good first-China city because it gives visitors permission to breathe.
@@ -358,6 +401,6 @@ It has famous things: pandas, hotpot, tea houses, Jinli, Kuanzhai, Taikoo Li, Le
 
 Come with a plan, but not a military schedule. Wake early for pandas. Sit too long over tea. Order something you cannot fully identify. Let one afternoon remain loose.
 
-Some cities impress you by being efficient. Chengdu wins by being warm.
+Some cities impress you with scale. What stays with you from Chengdu is smaller: that daily life here is allowed to be enjoyable, and that you are welcome to slow down to its speed for a few days.
 
 Photo credits: People's Park tea house - Daderot, CC0; Giant panda - Mikael Haggstrom, Public Domain; Chengdu hotpot - Prince Roy, CC BY 2.0; Jinli Street - Daderot, CC0; Mount Qingcheng - JianEn Yu, CC BY 2.0.

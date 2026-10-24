@@ -1,11 +1,13 @@
 ---
 title: "Shanghai Travel Guide for First-Time Visitors: Skyline, Old Streets and Easy First Steps"
 date: 2026-07-02
-updatedAt: 2026-07-02
-lastChecked: 2026-10-17
+updatedAt: 2026-10-24
+lastChecked: 2026-10-24
 changelog:
   - date: 2026-10-17
     note: "Refreshed verification metadata and image optimisation pass"
+  - date: 2026-10-24
+    note: "Added budget price table, metro foreign-card payment note, food prices, best-time months, tourist traps and FAQ"
 description: "A practical and human Shanghai travel guide for first-time visitors to China, covering the Bund, Yu Garden, French Concession walks, food, transport, payment, where to stay and common mistakes."
 stage: "discover"
 section: "cities"
@@ -45,8 +47,6 @@ That matters more than people think. A first China trip can be tiring before it 
 Shanghai is also visually immediate. You do not need deep historical knowledge to feel something on the Bund at night. You stand by the river, look across at Pudong, and the city explains itself in lights.
 
 But Shanghai should not be reduced to convenience. The city has layers: the old treaty-port architecture along the Bund, the polished towers of Lujiazui, the garden walls around Yu Garden, the plane trees of the former French Concession, the lane-house texture of older neighborhoods, and the new appetite for coffee, galleries, design, and food.
-
-Shanghai is a gateway city, but a real one.
 
 ## Who Should Visit Shanghai?
 
@@ -109,6 +109,8 @@ You do not need to go up every tower. For many first-time visitors, simply walki
 
 The important thing is to see both sides of the river. From the Bund, Pudong looks futuristic. From Pudong, the Bund looks historic and almost European. Shanghai makes more sense when you stand on both banks.
 
+If you do go up, the decks are not priced the same: Shanghai Tower's 118th-floor observation deck starts around ¥170, the Oriental Pearl Tower is about ¥199 for the second sphere and ¥299 for all three spheres, and the Shanghai World Financial Center sits in between. One deck is enough for most first visits.
+
 If the weather is foggy or rainy, think carefully before paying for an observation deck. The view may disappear into gray. Shanghai is beautiful in mist, but a clouded observation deck can be disappointing.
 
 ![The Bund in Shanghai at night](/china-travel/images/shanghai-bund-night.webp)
@@ -119,7 +121,7 @@ Yu Garden is one of Shanghai's most famous traditional sights. It has classical 
 
 The surrounding Yuyuan area is also one of the most tourist-heavy parts of the city. It can be crowded, commercial, and full of snack shops and souvenir stalls. That does not mean you should skip it. It means you should separate the garden from the bazaar in your mind.
 
-The garden itself is a ticketed classical space. The surrounding area is a busy visitor district. Both can be interesting, but they are not the same experience.
+The garden itself is a ticketed classical space: about ¥40 for adults, with students and seniors paying roughly half. The surrounding area is a busy visitor district. Both can be interesting, but they are not the same experience.
 
 Go early if you want a calmer visit. Give yourself time to actually look at the garden details rather than only walking through for photos. If you are tired, crowded, or hungry, the area can feel overwhelming. A slower visit works better.
 
@@ -155,11 +157,13 @@ Do not try to see every museum. Choose one based on your interest and current ex
 
 Before visiting, check the official museum website for opening hours, reservation rules, branch location, and last-entry time. Some museums have more than one site, and special exhibitions can change crowd levels or ticket requirements.
 
+The Shanghai Museum on People's Square has long been free with a reservation, but that can change: ticketing listings reported that during a major special exhibition running from July 9, 2026 to November 14, 2027, the museum required paid admission for all visitors. That window comes from a single travel-cost source and had not been confirmed on the museum's own site at the time of writing, so check shanghaimuseum.net for your dates before assuming the museum is free.
+
 ### 7. Consider one side trip if you have extra time
 
 Shanghai is a useful base for nearby trips.
 
-Suzhou is good for classical gardens and canals. Hangzhou is good for West Lake and a softer landscape feel. Some water towns are pretty but can be very touristy, especially on weekends and holidays.
+Suzhou is good for classical gardens and canals: high-speed trains from Hongqiao take roughly 30 minutes. Hangzhou is good for West Lake and a softer landscape feel. Zhujiajiao, the closest water town, sits on Metro Line 17, about an hour from the city center. Some water towns are pretty but can be very touristy, especially on weekends and holidays.
 
 Do not force a side trip into a two-day Shanghai stay. If this is your first time in China, one relaxed day inside Shanghai may be more valuable than a rushed train trip just to say you went somewhere else.
 
@@ -179,7 +183,7 @@ Start with Yu Garden in the morning before the area gets too crowded. Walk throu
 
 In the afternoon, cross toward Pudong or Lujiazui. Choose one viewpoint, riverside walk, or observation deck depending on weather and energy.
 
-At night, look back across the river. Shanghai is a city that enjoys being seen from both sides.
+At night, look back across the river. From Pudong, the Bund is the history; from the Bund, Pudong is the future. Both readings are correct, which is the point.
 
 ### Day 3: Former French Concession, museum, and food
 
@@ -191,9 +195,9 @@ This is the day that keeps Shanghai from becoming only skyline photos.
 
 ## Best Time to Visit Shanghai
 
-Spring and autumn are usually the easiest seasons for first-time visitors. The weather is milder, walking is more pleasant, and outdoor areas like the Bund, Yu Garden, and the former French Concession are easier to enjoy.
+The most comfortable windows are **March to May** and **September to November**. Spring is mild and green; autumn brings clear skies, lower humidity, and the start of hairy crab season. These are also the busiest museum and Bund months, so book hotels early.
 
-Summer can be hot, humid, and tiring, especially if you plan to walk a lot. Afternoon storms can happen, and crowded attractions may feel more exhausting. Winter can be cold and damp, but the city still works well for museums, food, shopping, cafes, and evening lights.
+Summer (July and August) is hot and humid with afternoon storms. It is doable, but plan walking for mornings and evenings. Winter (December to February) is cold and damp rather than freezing, and it is actually a reasonable season for museums, shopping, cafes, and the evening lights, with thinner crowds at outdoor sights.
 
 Chinese public holidays can make Shanghai much busier. National Day, Spring Festival, Labor Day, and school holiday periods may affect hotels, train tickets, museums, and popular attractions. If your dates overlap with a major holiday, book earlier and keep the itinerary lighter.
 
@@ -217,7 +221,33 @@ Start with:
 
 The most famous food mistake is treating xiaolongbao like a normal dumpling. They are hot inside. Bite too quickly and you may burn your mouth or lose the soup. Pick one up gently, place it on a spoon, make a small opening, let steam escape, then eat.
 
+Where to eat, with rough prices (these are estimates — menus and branches change):
+
+- **Jia Jia Tangbao**, near People's Square — the classic xiaolongbao stop, around ¥15-25 per basket
+- **Yang's Fry Dumpling**, several branches — shengjianbao around ¥10-15 for four pieces
+- **Nanxiang Steamed Bun Restaurant** in the Yu Garden area — the famous name, at tourist-district prices
+
+Hairy crab has a short, real season: roughly October to December. Outside those months, "crab" on a menu usually means something else.
+
 Shanghai is also a good city for visitors who are nervous about food. Central areas have more international options than many Chinese cities. That can be useful on a long trip. You do not need every meal to be adventurous.
+
+## Shanghai on a Budget: What Things Actually Cost
+
+Shanghai is not a cheap city, but its most famous parts are. The Bund, Nanjing Road, the former French Concession, and People's Square cost nothing. The money goes into observation decks, Disney, river cruises, and hotels.
+
+| Item | Price (RMB) | Notes |
+|---|---|---|
+| The Bund and Nanjing Road | Free | No ticket, no reservation |
+| Yu Garden | ¥40 | Students and seniors around ¥20; the surrounding bazaar is free |
+| Oriental Pearl Tower | ¥199 / ¥299 | Second sphere / all three spheres |
+| Shanghai Tower observation deck | From ¥170 | 118th floor; check the weather before paying |
+| Huangpu River cruise | From ¥50 | Short harbor cruises; dinner boats cost much more |
+| Shanghai Disneyland | From ¥475 | Six-tier calendar pricing; peak holiday days reach ¥799 |
+| Bund ferry crossing | About ¥2 | The cheapest skyline view in the city |
+| Maglev, Pudong Airport | ¥50 | 8 minutes to Longyang Road, then transfer to metro |
+| Metro | From ¥3 | Per journey; foreign cards work, see below |
+
+For daily budgets, a backpacker day runs roughly ¥470-700, mid-range around ¥1,000-1,100, and upper-mid from about ¥2,500 (converted from published USD budget tiers at roughly ¥6.7/USD). Attraction pricing changes, and several figures above come from ticketing listings rather than official sites — confirm current rates before you book.
 
 ## Where to Stay in Shanghai
 
@@ -257,9 +287,11 @@ Read our guide to [best apps for traveling in China](/china-travel/articles/best
 
 ### Metro and transport
 
-Shanghai's metro is one of the best reasons the city works well for first-time visitors. It is extensive, clear by Chinese big-city standards, and useful for most central sights.
+Shanghai's metro is one of the best reasons the city works well for first-time visitors. It is extensive, clear by Chinese big-city standards, and useful for most central sights. Fares start at ¥3 per journey.
 
-The Maglev can be interesting if you arrive at Pudong Airport and want to try it, but it does not take you all the way into every hotel district. Check whether Longyang Road transfer makes sense for your route.
+One detail that matters for foreign visitors: since June 28, 2025, metro gates across the network have accepted contactless foreign bank cards — Visa, Mastercard, American Express, JCB — and phone wallets such as Apple Pay, Google Pay, Samsung Pay, and Huawei Pay. You can tap in and out without a Chinese bank card or a metro app. This was widely reported in 2025 but had not been verified on the metro operator's own channels at the time of writing, so keep a payment app as backup on your first rides.
+
+The Maglev is worth ¥50 if you arrive at Pudong Airport: 8 minutes to Longyang Road, where you transfer to the metro. It does not take you all the way into every hotel district, so check whether the Longyang Road transfer makes sense for your route. Metro Line 2 to the city center is slower but direct.
 
 ### Airports
 
@@ -305,6 +337,12 @@ It is not a gate-ticket sight. It is a walking area. Pick a few streets and let 
 
 Suzhou and Hangzhou are tempting, but if you only have two or three days, do not spend all of Shanghai on trains. Leave time for the city itself.
 
+### Tourist traps worth knowing
+
+- **Bund Sightseeing Tunnel.** A pricey, underwhelming ride under the river. The ¥2 ferry crossing or a metro trip gets you across for a fraction of the price.
+- **Nanjing Road "tea house" touts.** Strangers inviting you to a "free tea ceremony" or teahouse experience along Nanjing Road are running a classic bill scam. Decline politely and keep walking.
+- **Yuyuan bazaar souvenirs.** Snack and souvenir stalls around Yu Garden charge tourist premiums. Enjoy the atmosphere; buy elsewhere if the price matters.
+
 ## Shanghai vs Beijing, Chengdu, and Guangzhou
 
 Choose Shanghai if you want the easiest first landing, skyline views, museums, shopping, metro convenience, and international comfort.
@@ -323,9 +361,9 @@ Shanghai is not trying to be old in the way visitors sometimes expect Chinese ci
 
 Its identity is movement: ships, banks, factories, cafes, newspapers, migrants, fashion, trade, cinema, finance, design, technology, and reinvention. The city's charm is not only in preservation. It is in the way different eras keep touching each other.
 
-You can feel it when you walk from a quiet lane to a luxury mall, from an old apartment block to a coffee shop, from the Bund's stone buildings to Pudong's towers. Shanghai does not ask you to choose between old and new. It lets them argue in the same afternoon.
+You can feel it when you walk from a quiet lane to a luxury mall, from an old apartment block to a coffee shop, from the Bund's stone buildings to Pudong's towers. Shanghai does not ask you to choose between old and new. Both are simply there, stacked within a few streets of each other.
 
-That is why Shanghai is a good first city. It does not show you all of China. No city can. But it gives you a clear, bright doorway.
+That is why Shanghai is a good first city. It does not show you all of China. No city can. But it gives you a base where the basics work: transport, hotels, food, and enough English to get your second week started.
 
 ## Check Official Sources Before You Travel
 
@@ -349,6 +387,32 @@ Opening hours, reservation systems, ticketing rules, and transport arrangements 
 - [How to Pay in China as a Tourist](/china-travel/articles/how-to-pay-in-china-tourist/)
 - [Best Apps for Traveling in China](/china-travel/articles/best-apps-for-traveling-in-china/)
 - [How to Book High-Speed Train Tickets in China as a Foreigner](/china-travel/articles/how-to-book-high-speed-train-tickets-china-foreigner/)
+
+## Frequently Asked Questions
+
+### Is two days enough in Shanghai?
+
+Two days covers the essentials — the Bund, Yu Garden and one neighborhood — but three is the sweet spot for a first visit: one day for the Bund and Pudong, one for Yu Garden and the old city, one for the French Concession, museums and food. Four days lets you add Suzhou or a water town.
+
+### Is Shanghai expensive for tourists?
+
+Less than its reputation. The famous sights are cheap or free, and a budget day runs roughly ¥470-700 with street food and metro. Costs spike in three places: observation decks (¥170-299), Disneyland (from ¥475), and Bund-area hotels.
+
+### Can I use a foreign credit card on the Shanghai metro?
+
+Yes, in principle: since June 28, 2025, metro gates accept contactless Visa, Mastercard, Amex, and JCB cards plus Apple Pay and Google Pay, so you can tap through without a Chinese bank card. Keep a payment app as backup, and confirm at the gate on your first ride.
+
+### How much is the Maglev from Pudong Airport?
+
+¥50 one way for the 8-minute ride to Longyang Road, where you transfer to the metro. Metro Line 2 reaches the city center directly but takes closer to an hour.
+
+### Do I need to book the Shanghai Museum in advance?
+
+Yes, book through the official site or WeChat account. It has historically been free with a reservation, but a ticketed special exhibition period was reported for July 2026 to November 2027 — confirm the current policy on shanghaimuseum.net before your visit.
+
+### Is the Bund free?
+
+Completely. No ticket, no reservation — just crowds on weekend evenings. The ¥2 ferry crossing is the cheapest way to see the skyline from the water.
 
 ## Final Thoughts
 
