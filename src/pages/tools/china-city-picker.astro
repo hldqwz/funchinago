@@ -358,7 +358,7 @@ const description = "Answer 6 quick questions about your travel style and get a 
     background: rgba(220, 38, 38, 0.04);
   }
 
-  .cl-result-header {
+  :global(.cl-result-header) {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 22px;
@@ -367,17 +367,17 @@ const description = "Answer 6 quick questions about your travel style and get a 
     margin-bottom: 1rem;
   }
 
-  .cl-result-header h2 { font-size: 1.45rem; margin: 0.4rem 0 0.5rem; }
+  :global(.cl-result-header h2) { font-size: 1.45rem; margin: 0.4rem 0 0.5rem; }
 
-  .cl-disclaimer {
+  :global(.cl-disclaimer) {
     font-size: 0.85rem;
     color: var(--text-tertiary);
   }
 
-  /* ── City cards ── */
-  .city-list { display: grid; gap: 0.75rem; }
+  :global(/* ── City cards ── */
+  .city-list) { display: grid; gap: 0.75rem; }
 
-  .city-card {
+  :global(.city-card) {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 20px;
@@ -388,17 +388,20 @@ const description = "Answer 6 quick questions about your travel style and get a 
     gap: 0.65rem;
   }
 
-  .city-card.top-pick {
+  :global(.city-card.top-pick) {
     border-color: var(--accent);
     box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
   }
 
-  .city-card.tier-excellent { border-left: 4px solid #22c55e; }
-  .city-card.tier-great { border-left: 4px solid #3b82f6; }
-  .city-card.tier-good { border-left: 4px solid #f59e0b; }
-  .city-card.tier-ok { border-left: 4px solid var(--border); }
+  :global(.city-card.tier-excellent) { border-left: 4px solid #22c55e; }
 
-  .top-badge {
+  :global(.city-card.tier-great) { border-left: 4px solid #3b82f6; }
+
+  :global(.city-card.tier-good) { border-left: 4px solid #f59e0b; }
+
+  :global(.city-card.tier-ok) { border-left: 4px solid var(--border); }
+
+  :global(.top-badge) {
     position: absolute;
     top: -10px;
     right: 1rem;
@@ -412,13 +415,13 @@ const description = "Answer 6 quick questions about your travel style and get a 
     letter-spacing: 0.04em;
   }
 
-  .city-head {
+  :global(.city-head) {
     display: flex;
     align-items: center;
     gap: 0.75rem;
   }
 
-  .city-rank {
+  :global(.city-rank) {
     flex-shrink: 0;
     width: 32px;
     height: 32px;
@@ -432,38 +435,38 @@ const description = "Answer 6 quick questions about your travel style and get a 
     font-size: 1rem;
   }
 
-  .city-head-text {
+  :global(.city-head-text) {
     flex: 1;
     min-width: 0;
   }
 
-  .city-head-text h3 {
+  :global(.city-head-text h3) {
     font-size: 1rem;
     letter-spacing: 0;
     line-height: 1.2;
     margin: 0;
   }
 
-  .city-head-text h3 small {
+  :global(.city-head-text h3 small) {
     font-weight: 400;
     color: var(--text-tertiary);
     font-size: 0.8rem;
     margin-left: 0.2rem;
   }
 
-  .city-tagline {
+  :global(.city-tagline) {
     font-size: 0.78rem;
     color: var(--text-secondary);
     margin-top: 0.1rem;
   }
 
-  .city-score {
+  :global(.city-score) {
     flex-shrink: 0;
     text-align: center;
     min-width: 48px;
   }
 
-  .city-score-num {
+  :global(.city-score-num) {
     display: block;
     font-size: 1.35rem;
     font-weight: 700;
@@ -472,26 +475,26 @@ const description = "Answer 6 quick questions about your travel style and get a 
     color: var(--text);
   }
 
-  .city-score-label {
+  :global(.city-score-label) {
     font-size: 0.65rem;
     color: var(--text-tertiary);
     text-transform: uppercase;
     letter-spacing: 0.04em;
   }
 
-  .city-desc {
+  :global(.city-desc) {
     font-size: 0.85rem;
     color: var(--text-secondary);
     line-height: 1.55;
   }
 
-  .city-meta {
+  :global(.city-meta) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.75rem;
   }
 
-  .meta-label {
+  :global(.meta-label) {
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -501,12 +504,12 @@ const description = "Answer 6 quick questions about your travel style and get a 
     margin-bottom: 0.3rem;
   }
 
-  .city-best {
+  :global(.city-best) {
     font-size: 0.8rem;
     color: var(--text-secondary);
   }
 
-  .city-best ul {
+  :global(.city-best ul) {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -514,17 +517,17 @@ const description = "Answer 6 quick questions about your travel style and get a 
     gap: 0.18rem;
   }
 
-  .city-best li::before { content: '→ '; }
+  :global(.city-best li::before) { content: '→ '; }
 
-  .city-tags-display { min-width: 0; }
+  :global(.city-tags-display) { min-width: 0; }
 
-  .tag-badges {
+  :global(.tag-badges) {
     display: flex;
     flex-wrap: wrap;
     gap: 0.3rem;
   }
 
-  .tag-badge {
+  :global(.tag-badge) {
     display: inline-block;
     font-size: 0.68rem;
     font-weight: 600;
@@ -535,7 +538,7 @@ const description = "Answer 6 quick questions about your travel style and get a 
     border: 1px solid rgba(161, 77, 43, 0.15);
   }
 
-  .city-links {
+  :global(.city-links) {
     display: flex;
     gap: 0.4rem;
     flex-wrap: wrap;
@@ -543,7 +546,7 @@ const description = "Answer 6 quick questions about your travel style and get a 
     border-top: 1px solid var(--border-light);
   }
 
-  .guide-link {
+  :global(.guide-link) {
     font-size: 0.76rem;
     font-weight: 700;
     border-radius: 999px;
@@ -553,19 +556,22 @@ const description = "Answer 6 quick questions about your travel style and get a 
     color: #1d4ed8;
   }
 
-  .guide-link:hover { text-decoration: none; background: rgba(37, 99, 235, 0.15); }
+  :global(.guide-link:hover) { text-decoration: none; background: rgba(37, 99, 235, 0.15); }
 
-  .city-card.top-pick {
+  :global(.city-card.top-pick) {
     border-color: var(--accent);
     box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
   }
 
-  .city-card.tier-excellent { border-left: 4px solid #22c55e; }
-  .city-card.tier-great { border-left: 4px solid #3b82f6; }
-  .city-card.tier-good { border-left: 4px solid #f59e0b; }
-  .city-card.tier-ok { border-left: 4px solid var(--border); }
+  :global(.city-card.tier-excellent) { border-left: 4px solid #22c55e; }
 
-  .top-badge {
+  :global(.city-card.tier-great) { border-left: 4px solid #3b82f6; }
+
+  :global(.city-card.tier-good) { border-left: 4px solid #f59e0b; }
+
+  :global(.city-card.tier-ok) { border-left: 4px solid var(--border); }
+
+  :global(.top-badge) {
     position: absolute;
     top: -10px;
     right: 1rem;
@@ -579,14 +585,14 @@ const description = "Answer 6 quick questions about your travel style and get a 
     letter-spacing: 0.05em;
   }
 
-  .city-head {
+  :global(.city-head) {
     display: flex;
     align-items: flex-start;
     gap: 0.85rem;
     margin-bottom: 0.7rem;
   }
 
-  .city-rank {
+  :global(.city-rank) {
     flex-shrink: 0;
     width: 36px;
     height: 36px;
@@ -600,31 +606,31 @@ const description = "Answer 6 quick questions about your travel style and get a 
     font-size: 1.1rem;
   }
 
-  .city-head h3 {
+  :global(.city-head h3) {
     font-size: 1.15rem;
     letter-spacing: 0;
     line-height: 1.2;
   }
 
-  .city-head h3 small {
+  :global(.city-head h3 small) {
     font-weight: 400;
     color: var(--text-tertiary);
     font-size: 0.85rem;
   }
 
-  .city-tagline {
+  :global(.city-tagline) {
     font-size: 0.82rem;
     color: var(--text-secondary);
     margin-top: 0.15rem;
   }
 
-  .city-score {
+  :global(.city-score) {
     margin-left: auto;
     text-align: center;
     flex-shrink: 0;
   }
 
-  .city-score-num {
+  :global(.city-score-num) {
     display: block;
     font-size: 1.5rem;
     font-weight: 700;
@@ -633,25 +639,25 @@ const description = "Answer 6 quick questions about your travel style and get a 
     color: var(--text);
   }
 
-  .city-score-label {
+  :global(.city-score-label) {
     font-size: 0.68rem;
     color: var(--text-tertiary);
   }
 
-  .city-desc {
+  :global(.city-desc) {
     font-size: 0.9rem;
     color: var(--text-secondary);
     line-height: 1.6;
     margin-bottom: 0.85rem;
   }
 
-  .city-links {
+  :global(.city-links) {
     display: flex;
     gap: 0.45rem;
     flex-wrap: wrap;
   }
 
-  .guide-link {
+  :global(.guide-link) {
     font-size: 0.8rem;
     font-weight: 700;
     border-radius: 999px;
@@ -661,20 +667,20 @@ const description = "Answer 6 quick questions about your travel style and get a 
     color: #1d4ed8;
   }
 
-  /* ── Rest section ── */
-  .rest-section {
+  :global(/* ── Rest section ── */
+  .rest-section) {
     margin-top: 1rem;
     margin-bottom: 0.75rem;
   }
 
-  .rest-list {
+  :global(.rest-list) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
     margin-top: 0.5rem;
   }
 
-  .rest-card {
+  :global(.rest-card) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -689,10 +695,10 @@ const description = "Answer 6 quick questions about your travel style and get a 
     transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
   }
 
-  .rest-card:hover { border-color: var(--accent); text-decoration: none; }
+  :global(.rest-card:hover) { border-color: var(--accent); text-decoration: none; }
 
-  /* ── Related ── */
-  .cl-related {
+  :global(/* ── Related ── */
+  .cl-related) {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 20px;
@@ -700,9 +706,9 @@ const description = "Answer 6 quick questions about your travel style and get a 
     margin-bottom: 0.75rem;
   }
 
-  .cl-related h2 { font-size: 1.05rem; margin-bottom: 0.6rem; }
+  :global(.cl-related h2) { font-size: 1.05rem; margin-bottom: 0.6rem; }
 
-  .cl-related ul {
+  :global(.cl-related ul) {
     list-style: none;
     padding: 0;
     display: flex;
@@ -710,7 +716,7 @@ const description = "Answer 6 quick questions about your travel style and get a 
     gap: 0.45rem;
   }
 
-  .cl-related a {
+  :global(.cl-related a) {
     display: inline-block;
     border-radius: 999px;
     padding: 0.45rem 0.75rem;
@@ -748,7 +754,9 @@ const description = "Answer 6 quick questions about your travel style and get a 
     }
     .hero-copy { padding: 1.35rem; }
     .checker-card { position: static; }
-    .city-meta { grid-template-columns: 1fr; }
-    .rest-list { grid-template-columns: 1fr; }
+
+  :global(.city-meta) { grid-template-columns: 1fr; }
+
+  :global(.rest-list) { grid-template-columns: 1fr; }
   }
 </style>
