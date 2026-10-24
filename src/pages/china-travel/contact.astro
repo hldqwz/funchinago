@@ -5,8 +5,7 @@ const title = "Contact FunChinaGo";
 const description =
   "How to reach FunChinaGo by email: what kinds of messages get a reply, what response time to expect, and which questions should go to an official authority instead.";
 
-const contactEmail = "hello@funchinago.com";
-const correctionsEmail = "corrections@funchinago.com";
+const contactEmail = "llxl940303655@outlook.com";
 const mailtoHref =
   "mailto:" +
   contactEmail +
@@ -17,11 +16,13 @@ const channels = [
   {
     name: "General questions",
     address: contactEmail,
+    subject: "Question about a China travel guide",
     body: "Anything about a guide, a topic you think is missing, a source you think should be tracked, or how to use the site."
   },
   {
     name: "Corrections",
-    address: correctionsEmail,
+    address: contactEmail,
+    subject: "Correction report",
     body: "A fact on a page that no longer matches the official source. See the corrections page for the fields to include."
   }
 ];
@@ -62,33 +63,33 @@ const replyScope = [
     <section class="quick-answer reveal" aria-labelledby="quick-answer">
       <h2 id="quick-answer">Quick answer</h2>
       <p>
-        Email <strong>{contactEmail}</strong> for general questions and
-        <strong>{correctionsEmail}</strong> for a factual error on a page. Expect a reply within a
+        Email <strong>{contactEmail}</strong> — the same address handles general questions and
+        factual corrections, so put what you need in the subject line. Expect a reply within a
         few business days if the question is in scope. Visa and entry decisions are not answered
         here — those go to the official authority.
       </p>
       <div class="cta-row">
-        <a class="cta cta-primary" href={mailtoHref}>Email hello@funchinago.com</a>
+        <a class="cta cta-primary" href={mailtoHref}>Email {contactEmail}</a>
         <a class="cta cta-ghost" href="/china-travel/corrections/">Report a correction</a>
       </div>
     </section>
 
-    <section class="notice reveal" aria-labelledby="address-note">
-      <h2 id="address-note">About the address</h2>
+    <section class="reveal" aria-labelledby="address-note">
+      <h2 id="address-note">One inbox, two subject lines</h2>
       <p>
-        <strong>{contactEmail}</strong> is currently a placeholder address and is being replaced
-        with a monitored mailbox. Until that change lands, a message sent here may not reach us.
-        This page will be updated as soon as the address is live.
+        This site runs a single monitored mailbox. Use the subject line to route your message:
+        anything else is read as a general question, and a correction sent without a clear subject
+        may take longer to route. There is no automated ticketing system behind it.
       </p>
     </section>
 
     <section class="reveal" aria-labelledby="channels">
-      <h2 id="channels">Which address to use</h2>
+      <h2 id="channels">What to put in the subject line</h2>
       <div class="channel-grid">
         {channels.map((channel) => (
           <article>
             <h3>{channel.name}</h3>
-            <p class="channel-address mono-meta">{channel.address}</p>
+            <p class="channel-address mono-meta">{channel.subject}</p>
             <p>{channel.body}</p>
           </article>
         ))}
@@ -182,7 +183,7 @@ const replyScope = [
         answers were produced.
       </p>
       <div class="cta-row">
-        <a class="cta cta-primary" href={mailtoHref}>Email hello@funchinago.com</a>
+        <a class="cta cta-primary" href={mailtoHref}>Email {contactEmail}</a>
         <a class="cta cta-ghost" href="/china-travel/methodology/">How we verify</a>
         <a class="cta cta-ghost" href="/china-travel/about/">About this site</a>
       </div>
