@@ -1,8 +1,8 @@
 ---
 import Layout from "../../layouts/ChinaTravelLayout.astro";
 
-const title = "China Travel Checklist Generator";
-const description = "Generate a personalized pre-travel checklist for your first trip to China based on your trip stage, route, payment setup, and internet needs.";
+const title = "China Travel Countdown Checklist";
+const description = "Enter your departure date and get a deadline-based China preparation checklist — what to do now, what opens this week, and which tasks have hard deadlines such as 12306 train tickets.";
 ---
 
 <Layout title={title} description={description}>
@@ -10,10 +10,11 @@ const description = "Generate a personalized pre-travel checklist for your first
     <section class="hero-panel">
       <div class="hero-copy">
         <p class="kicker">China Travel Made Easy · Tools</p>
-        <h1>China Travel Checklist Generator</h1>
+        <h1>China Travel Countdown Checklist</h1>
         <p class="lead">
-          Answer a few questions about your trip and get a personalized checklist
-          covering documents, payment, internet, transport, packing, and last-minute prep.
+          Enter the date you fly. Get everything you still need to do, sorted by deadline —
+          what is due now, what opens this week, and which tasks have a hard cutoff you cannot
+          work around.
         </p>
         <div class="trust-row">
           <span>No sign-up</span>
@@ -24,14 +25,15 @@ const description = "Generate a personalized pre-travel checklist for your first
       </div>
       <aside class="intro-card">
         <p class="eyebrow">How it works</p>
-        <h2>1-minute setup</h2>
+        <h2>Built on real deadlines</h2>
         <p>
-          Tell us where you are in planning, how long you are staying, whether you
-          travel between cities, and whether payment and internet are ready.
+          Most preparation advice lists tasks without telling you when any of them actually
+          matter. This one attaches a deadline to each item, worked back from your departure date.
         </p>
         <p>
-          The checklist adapts to your answers. Each item links to a detailed guide
-          or official source when accuracy matters.
+          Some deadlines are hard rules — China Railway opens ticket sales 15 days before
+          departure, including the travel day. Others are buffers for things that take
+          days, like renewing a passport or getting a card to bind.
         </p>
       </aside>
     </section>
@@ -41,16 +43,19 @@ const description = "Generate a personalized pre-travel checklist for your first
         <div class="form-header">
           <p class="eyebrow">Your trip profile</p>
           <h2>Answer these questions</h2>
-          <p>All questions help tailor the checklist. None of your answers are saved.</p>
+          <p>Your departure date drives the timeline. None of your answers are saved.</p>
         </div>
 
-        <label>
-          Where are you in planning?
-          <select name="tripStage" required>
-            <option value="thinking">Just thinking about it</option>
-            <option value="booked">Booked flights or dates set</option>
-            <option value="flying-soon">Flying soon (within 2 weeks)</option>
-          </select>
+        <label class="field-lead">
+          When do you fly to China?
+          <input
+            type="date"
+            name="departureDate"
+            data-departure-input
+            required
+            min="2026-01-01"
+          />
+          <span class="field-hint">Leave it blank only if your dates are still open.</span>
         </label>
 
         <label>
@@ -96,14 +101,14 @@ const description = "Generate a personalized pre-travel checklist for your first
           </select>
         </label>
 
-        <button type="submit">Generate my checklist</button>
+        <button type="submit">Build my countdown checklist</button>
       </form>
 
       <div class="result-area" data-checklist-result>
         <div class="result-placeholder">
-          <p class="eyebrow">Your checklist</p>
+          <p class="eyebrow">Your countdown</p>
           <h2>Fill out the form</h2>
-          <p>Select your trip profile on the left and generate a personalized checklist.</p>
+          <p>Set your departure date on the left and every task gets a deadline.</p>
         </div>
       </div>
     </section>
@@ -122,13 +127,26 @@ const description = "Generate a personalized pre-travel checklist for your first
         </ul>
       </article>
 
+      <article class="info-card">
+        <p class="eyebrow">The deadlines behind the list</p>
+        <h2>Where the timing comes from</h2>
+        <ul>
+          <li><strong>90 days — passport check</strong> — China requires six months of validity, and renewal takes weeks in most countries.</li>
+          <li><strong>45 days — visa route and holidays</strong> — time to apply for a visa or move dates off Golden Week.</li>
+          <li><strong>15 days — train tickets</strong> — China Railway opens sales 15 days ahead including the travel day; popular trains sell out in minutes.</li>
+          <li><strong>14 days — payment setup</strong> — card binding and identity checks are not always instant.</li>
+          <li><strong>7 days — install everything</strong> — VPNs and Google-dependent app downloads do not work once you land.</li>
+        </ul>
+      </article>
+
       <article class="info-card caution-card">
         <p class="eyebrow">Accuracy note</p>
         <h2>Check official sources before travel</h2>
         <p>
           This tool gives preparation advice based on common first-time visitor needs.
-          For visa, entry, payment, and railway rules, the linked official Chinese government
-          or platform sources should be your final reference.
+          Deadlines marked as buffers are recommendations, not rules. For visa, entry, payment,
+          and railway rules, the linked official Chinese government or platform sources should
+          be your final reference.
         </p>
       </article>
     </section>
@@ -280,6 +298,19 @@ const description = "Generate a personalized pre-travel checklist for your first
     font: inherit; font-weight: 600;
   }
 
+  .field-lead {
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    border-radius: 14px;
+    background: rgba(245, 158, 11, 0.06);
+  }
+
+  .field-hint {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-tertiary);
+  }
+
   button {
     width: 100%;
     border: 0;
@@ -309,7 +340,7 @@ const description = "Generate a personalized pre-travel checklist for your first
 
   .result-placeholder h2 { margin-top: 0.5rem; }
 
-  .cl-result-header {
+  :global(.cl-result-header) {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 22px;
@@ -318,37 +349,39 @@ const description = "Generate a personalized pre-travel checklist for your first
     margin-bottom: 1rem;
   }
 
-  .cl-result-header h2 {
+  :global(.cl-result-header h2) {
     font-size: 1.65rem;
     margin: 0.4rem 0 0.7rem;
   }
 
-  .cl-summary { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
+  :global(.cl-summary) { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
 
-  .cl-badge {
+  :global(.cl-badge) {
     border-radius: 999px;
-    padding: 0.35rem 0.7rem;
+    padding: 0.32rem 0.7rem;
     font-weight: 700;
     font-size: 0.82rem;
+    color: var(--text);
+    border: 1px solid transparent;
   }
 
-  .cl-badge.must {
-    background: rgba(220, 38, 38, 0.12);
-    color: #b91c1c;
+  :global(.cl-badge.must) {
+    background: rgba(220, 38, 38, 0.16);
+    border-color: rgba(220, 38, 38, 0.38);
   }
 
-  .cl-badge.nice {
-    background: rgba(22, 163, 74, 0.12);
-    color: #15803d;
+  :global(.cl-badge.nice) {
+    background: rgba(22, 163, 74, 0.16);
+    border-color: rgba(22, 163, 74, 0.38);
   }
 
-  .cl-disclaimer {
+  :global(.cl-disclaimer) {
     font-size: 0.85rem;
     color: var(--text-tertiary);
   }
 
   /* ── Checklist sections ── */
-  .cl-section {
+  :global(.cl-section) {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 20px;
@@ -356,7 +389,7 @@ const description = "Generate a personalized pre-travel checklist for your first
     margin-bottom: 0.75rem;
   }
 
-  .cl-section h2 {
+  :global(.cl-section h2) {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -364,28 +397,28 @@ const description = "Generate a personalized pre-travel checklist for your first
     font-size: 1.15rem;
   }
 
-  .cl-section h2 span {
+  :global(.cl-section h2 span) {
     font-size: 0.82rem;
     color: var(--text-tertiary);
     font-weight: 600;
   }
 
-  .cl-must { border-left: 4px solid rgba(220, 38, 38, 0.5); }
-  .cl-nice { border-left: 4px solid rgba(22, 163, 74, 0.5); }
+  :global(.cl-must) { border-left: 4px solid rgba(220, 38, 38, 0.5); }
+  :global(.cl-nice) { border-left: 4px solid rgba(22, 163, 74, 0.5); }
 
-  .cl-section ul {
+  :global(.cl-section ul) {
     list-style: none;
     padding: 0;
     display: grid;
     gap: 0.65rem;
   }
 
-  .cl-section li {
+  :global(.cl-section li) {
     display: grid;
     gap: 0.2rem;
   }
 
-  .cl-cat {
+  :global(.cl-cat) {
     font-size: 0.68rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -393,17 +426,93 @@ const description = "Generate a personalized pre-travel checklist for your first
     color: var(--accent);
   }
 
-  .cl-section li p {
+  :global(.cl-section li p) {
     font-weight: 600;
     line-height: 1.5;
   }
 
-  .cl-links {
+  :global(.cl-links) {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
     margin-top: 0.15rem;
   }
+
+  /* ── Countdown mode ── */
+  :global(.cl-result-header.has-count) {
+    text-align: left;
+  }
+
+  :global(.cl-countdown-number) {
+    font-family: var(--font-display, var(--font));
+    font-size: clamp(2.6rem, 7vw, 3.6rem) !important;
+    line-height: 1 !important;
+    letter-spacing: -0.02em;
+    margin: 0.2rem 0 0.5rem !important;
+  }
+
+  :global(.cl-departure-line) {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.7rem !important;
+  }
+
+  :global(.cl-badge.pending) {
+    background: rgba(59, 130, 246, 0.16);
+    border-color: rgba(59, 130, 246, 0.38);
+  }
+
+  :global(.cl-section-hint) {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    margin: -0.4rem 0 0.8rem !important;
+  }
+
+  :global(.cl-item-head) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  :global(.cl-due-tag) {
+    font-family: var(--font-mono, var(--font));
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.15rem 0.5rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+
+  :global(.cl-due-tag.is-now) {
+    background: rgba(245, 158, 11, 0.18);
+    border-color: rgba(245, 158, 11, 0.5);
+    color: var(--text);
+  }
+
+  :global(.cl-due-tag.is-overdue) {
+    background: rgba(220, 38, 38, 0.2);
+    border-color: rgba(220, 38, 38, 0.5);
+    color: var(--text);
+  }
+
+  :global(.cl-due-note) {
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    color: var(--text-tertiary);
+    line-height: 1.5;
+    border-left: 2px solid var(--border);
+    padding-left: 0.6rem;
+  }
+
+  :global(.cl-soon) { border-left: 4px solid rgba(245, 158, 11, 0.55); }
+  :global(.cl-later) { border-left: 4px solid rgba(59, 130, 246, 0.45); }
 
   .cl-guide-link, .cl-source-link {
     font-size: 0.82rem;
@@ -413,18 +522,18 @@ const description = "Generate a personalized pre-travel checklist for your first
     text-decoration: none;
   }
 
-  .cl-guide-link {
+  :global(.cl-guide-link) {
     background: rgba(37, 99, 235, 0.1);
     color: #1d4ed8;
   }
 
-  .cl-source-link {
+  :global(.cl-source-link) {
     background: rgba(22, 163, 74, 0.1);
     color: #15803d;
   }
 
   /* ── Related ── */
-  .cl-related {
+  :global(.cl-related) {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 20px;
@@ -432,12 +541,12 @@ const description = "Generate a personalized pre-travel checklist for your first
     margin-bottom: 0.75rem;
   }
 
-  .cl-related h2 {
+  :global(.cl-related h2) {
     font-size: 1.05rem;
     margin-bottom: 0.6rem;
   }
 
-  .cl-related ul {
+  :global(.cl-related ul) {
     list-style: none;
     padding: 0;
     display: flex;
@@ -445,7 +554,7 @@ const description = "Generate a personalized pre-travel checklist for your first
     gap: 0.45rem;
   }
 
-  .cl-related a {
+  :global(.cl-related a) {
     display: inline-block;
     border-radius: 999px;
     padding: 0.45rem 0.75rem;
@@ -461,7 +570,7 @@ const description = "Generate a personalized pre-travel checklist for your first
   /* ── Explain grid ── */
   .explain-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
     gap: 1rem;
     margin-top: 1rem;
   }
