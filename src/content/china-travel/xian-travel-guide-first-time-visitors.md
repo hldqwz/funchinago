@@ -8,7 +8,7 @@ changelog:
     note: "Refreshed verification metadata and image optimisation pass"
   - date: 2026-10-24
     note: "Added ticket prices, transport fares, booking windows and FAQ block; removed generic prose"
-description: "A practical and human Xi'an travel guide for first-time visitors to China, covering the Terracotta Warriors, city wall, Muslim Quarter, food, reservations, transport and common mistakes."
+description: "Give Xi'an three days: the Terracotta Warriors, a bike loop on the Ming city wall at sunset, and the Muslim Quarter's food streets after dark."
 stage: "discover"
 section: "cities"
 hero_image: "/china-travel/images/xian-bell-tower-night.jpg"

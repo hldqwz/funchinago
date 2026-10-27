@@ -19,7 +19,9 @@ relatedTools:
 
 China is too large to plan by fame alone. For a first trip, the better question is not “What are the most famous places in China?” It is “Which places match my travel style, time, and tolerance for logistics?”
 
-If this is your first visit, choose fewer cities and make the trip easy to execute. China rewards slow planning. A simple route with good transport, reliable hotels, and clear payment setup will usually feel better than a rushed checklist of famous places.
+If this is your first visit, choose fewer cities and make the trip easy to execute. China rewards slow planning. A simple route with good transport, reliable hotels, and clear payment setup will usually feel better than a rushed checklist of famous places — and if you would rather start from a theme than a list of cities, the [itineraries by travel style](/china-travel/articles/best-china-itineraries-by-travel-style/) approach routes the same destinations by culture, food, nature, and modern-city priorities.
+
+Before you cost any of them out, it helps to know what the trip feels like day to day: [what China is really like for first-time visitors](/china-travel/articles/what-china-is-really-like-for-first-time-visitors/) covers the gap between expectation and reality.
 
 If you are still deciding whether China belongs on your 2026 list at all, [why visit China in 2026](/china-travel/articles/why-visit-china-in-2026/) lays out what has become easier and what still needs preparation — then come back here to choose the cities.
 

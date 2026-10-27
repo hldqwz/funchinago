@@ -8,7 +8,7 @@ changelog:
     note: "Refreshed verification metadata and image optimisation pass"
   - date: 2026-10-24
     note: "Added ticket prices, airport fares, Great Wall full-cost section and FAQ block; removed generic prose"
-description: "A practical and human Beijing travel guide for first-time visitors to China, covering the Forbidden City, Great Wall, hutongs, food, transport, reservations, where to stay and common mistakes."
+description: "Plan Beijing around its big days: the Forbidden City, the Great Wall at Mutianyu or Badaling, hutong lanes — and the separate reservations each one needs."
 stage: "discover"
 section: "cities"
 hero_image: "/china-travel/images/beijing-forbidden-city-hero.jpg"
@@ -187,7 +187,7 @@ Prepare payment before arrival and keep a backup. The official payment guide say
 
 Do not confuse Beijing Capital International Airport (PEK) with Beijing Daxing International Airport (PKX). The Capital Airport Express into town costs ¥25 one way; the Daxing line between PKX and Caoqiao costs ¥35. The city also has several major railway stations, so verify the exact airport, terminal, and station shown on every ticket. Metro rides start at ¥3 for the first 6 km. If you will ride several times a day, the network's electronic periodic passes are cheaper than single journeys: ¥20 for one day, ¥30 for two, ¥40 for three, ¥70 for five, ¥90 for seven, each valid for unlimited single-person rides with no time or distance limits, bought in the Yitongxing app. Otherwise load a transit code such as Yitongxing or Alipay before you fly. For rail travel, use the [high-speed train booking guide](/china-travel/articles/how-to-book-high-speed-train-tickets-china-foreigner/) and the official 12306 channel.
 
-If your route depends on visa-free transit, read the [240-hour transit guide](/china-travel/articles/china-240-hour-visa-free-transit/) and confirm current rules for your nationality and itinerary.
+If your entry into China depends on a policy rather than a visa, start with the [China visa-free travel guide](/china-travel/articles/china-visa-free-travel-guide/) to establish which rule applies to your passport, then read the [240-hour transit guide](/china-travel/articles/china-240-hour-visa-free-transit/) and confirm current rules for your nationality and itinerary.
 
 ## Common Mistakes First-Time Visitors Make in Beijing
 
@@ -235,7 +235,7 @@ The PEK airport express costs ¥25 into town; the PKX Daxing line costs ¥35 to 
 
 ### What is a realistic daily budget in Beijing?
 
-Budget travelers spend about ¥260–350 a day and mid-range travelers ¥650–1000, counting a budget room, three meals, metro rides and one paid attraction.
+Budget travelers spend about ¥260–350 a day and mid-range travelers ¥650–1000, counting a budget room, three meals, metro rides and one paid attraction. The [China trip cost breakdown](/china-travel/articles/china-travel-cost-breakdown/) shows how those numbers are assembled and how much foreign-card fees add on top.
 
 ### When is the best time to visit Beijing?
 

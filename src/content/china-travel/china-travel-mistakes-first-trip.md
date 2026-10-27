@@ -29,7 +29,7 @@ Avoid relying only on credit cards, setting up payment after arrival, overpackin
 
 International cards can work in some places, but daily China travel often expects mobile payment. Small restaurants, local shops, taxis, and QR ordering may not be credit-card friendly.
 
-Prepare mobile payment and cash backup before arrival. Start with [How to Pay in China as a Tourist](/china-travel/articles/how-to-pay-in-china-tourist/), then set up Alipay and WeChat Pay while you still have time to handle card or SMS verification.
+Prepare mobile payment and cash backup before arrival. Card acceptance is real but patchy — [can foreign credit cards work in China?](/china-travel/articles/can-foreign-credit-cards-work-in-china/) shows where they land and where they fail, and [do you need cash in China as a tourist?](/china-travel/articles/do-you-need-cash-in-china-as-a-tourist/) settles how much backup cash to carry. Start with [How to Pay in China as a Tourist](/china-travel/articles/how-to-pay-in-china-tourist/), then set up Alipay and WeChat Pay while you still have time to handle card or SMS verification.
 
 ## Mistake 2: Setting Up Apps After Landing
 
@@ -41,7 +41,7 @@ Before departure, install key apps, test login, link cards where possible, and m
 
 China is large. A route that looks neat on a map may involve long station transfers, airport time, hotel changes, and fatigue.
 
-For a first trip, two or three cities in 10 days is often better than five cities in 10 days.
+For a first trip, two or three cities in 10 days is often better than five cities in 10 days. Start from a tested shape like the [10-day China itinerary](/china-travel/articles/ten-days-in-china-first-time-itinerary/) rather than inventing one.
 
 ## Mistake 4: Underestimating Train Stations
 
@@ -55,13 +55,13 @@ Travel during major holidays can mean higher prices, sold-out trains, and crowde
 
 ## Mistake 6: Not Preparing Translation Tools
 
-English is common in some airports, major hotels, and tourist areas, but not everywhere. Restaurants, taxi conversations, small shops, and local stations may require translation help.
+English is common in some airports, major hotels, and tourist areas, but not everywhere. Restaurants, taxi conversations, small shops, and local stations may require translation help. Menus are usually the first wall visitors hit, so read [how to order food in China without speaking Chinese](/china-travel/articles/how-to-order-food-in-china-without-speaking-chinese/) before your first dinner.
 
 Prepare a translation app, screenshot key phrases, and save hotel addresses in Chinese.
 
 ## Mistake 7: Forgetting Internet Is A Travel Essential
 
-Without mobile data, you may lose access to payment, maps, translation, bookings, and communication. Choose eSIM, roaming, or another internet plan before arrival.
+Without mobile data, you may lose access to payment, maps, translation, bookings, and communication. Choose eSIM, roaming, or another internet plan before arrival — the [eSIM and internet comparison for China](/china-travel/articles/best-esim-for-china-travel-internet-access/) lays out the trade-offs and the setup failures that catch people at the airport.
 
 ## Mistake 8: Assuming Every Hotel Is Equally Easy For Foreign Guests
 
@@ -71,7 +71,7 @@ For your first night, choose a hotel that clearly handles foreign guests.
 
 ## Mistake 9: Confusing Visa-Free Rules
 
-Visa-free access and 240-hour visa-free transit are not the same thing. If your entry depends on a policy, verify the latest official rule and keep onward documents ready.
+Visa-free access and 240-hour visa-free transit are not the same thing. The [China visa-free travel guide](/china-travel/articles/china-visa-free-travel-guide/) separates the three rules that get blended together in most summaries. If your entry depends on a policy, verify the latest official rule and keep onward documents ready.
 
 ## The Better First-Trip Mindset
 

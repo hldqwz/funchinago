@@ -6,7 +6,7 @@ lastChecked: 2026-10-17
 changelog:
   - date: 2026-10-17
     note: "Refreshed verification metadata and image optimisation pass"
-description: "If WeChat Pay fails in China, the problem may be card support, verification, QR-code type, mini programs, or merchant settings. Here is what foreign tourists can try at the counter."
+description: "Fix WeChat Pay failures fast: check the card link and network, change the QR direction at the counter, then fall back to Alipay or cash."
 stage: "before"
 section: "travel"
 hero_image: "/china-travel/images/article-wechatpay-editorial.webp"

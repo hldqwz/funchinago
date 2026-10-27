@@ -32,9 +32,9 @@ Prepare:
 - [Alipay as your first payment app](/china-travel/articles/how-to-use-alipay-in-china-foreigner/).
 - [WeChat / WeChat Pay as backup and communication layer](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/).
 - Your bank app for fraud alerts.
-- A backup card or cash plan.
+- A backup card or cash plan — [do you need cash in China as a tourist?](/china-travel/articles/do-you-need-cash-in-china-as-a-tourist/) covers how much backup cash actually makes sense.
 
-Do not assume international credit cards will work everywhere. Daily China travel often moves through QR payments.
+Do not assume international credit cards will work everywhere. Daily China travel often moves through QR payments, and [what foreign cards can realistically do in China](/china-travel/articles/can-foreign-credit-cards-work-in-china/) differs sharply between hotels and food stalls.
 
 If payment is your main worry, start with [How to Pay in China as a Tourist](/china-travel/articles/how-to-pay-in-china-tourist/) before choosing the rest of your app stack.
 
@@ -53,7 +53,7 @@ Offline support matters because your first problem may happen before your data p
 
 ## Maps And Navigation
 
-Map choice can be tricky. Some foreign map services may have limitations in mainland China, while local map apps can be powerful but harder for non-Chinese speakers.
+Map choice can be tricky. Some foreign map services may have limitations in mainland China, while local map apps can be powerful but harder for non-Chinese speakers. Sort this out before departure, along with the rest of your [internet and VPN plan](/china-travel/articles/do-you-need-a-vpn-in-china-travel/).
 
 Prepare at least one map option you can actually use. Save your hotel address in Chinese and English. Screenshot your first airport-to-hotel route.
 
@@ -69,7 +69,7 @@ WeChat can be useful because many hotels, guides, restaurants, or local services
 
 ## Food And Attraction Apps
 
-Many restaurants and attractions use QR codes, mini programs, or local booking flows. This is where WeChat and Alipay can become more than payment apps.
+Many restaurants and attractions use QR codes, mini programs, or local booking flows. This is where WeChat and Alipay can become more than payment apps — and where knowing [how to order food without speaking Chinese](/china-travel/articles/how-to-order-food-in-china-without-speaking-chinese/) saves the most discomfort on day one.
 
 For a first trip, do not try to master every local app. Prepare the basics and use hotel staff or travel platforms when a local-only process is too hard.
 
@@ -81,7 +81,7 @@ Before departure, prepare:
 - Translation offline data.
 - Hotel booking access.
 - First hotel address in Chinese.
-- Mobile data or eSIM.
+- Mobile data or eSIM — compare the options in [best eSIMs and internet access for China](/china-travel/articles/best-esim-for-china-travel-internet-access/) before you buy, because some plans throttle exactly when maps and payments need them most.
 - Train account or booking platform.
 - Bank app access.
 

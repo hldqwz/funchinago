@@ -7,7 +7,7 @@ lastChecked: 2026-10-17
 changelog:
   - date: 2026-10-17
     note: "Refreshed verification metadata and image optimisation pass"
-description: "Link an international card to WeChat Pay before departure: the 2026 fee waiver (90 days, up to RMB 1,000 a day), why cards get declined, and the fix order when a QR menu, taxi, or mini-program payment fails."
+description: "Link a foreign card to WeChat Pay before you fly and pay by QR at most merchants. Includes the 90-day fee waiver (up to RMB 1,000 a day) and the fix order."
 stage: "before"
 section: "travel"
 hero_image: "/china-travel/images/article-wechatpay-editorial.webp"
@@ -72,13 +72,13 @@ The safest time to prepare WeChat Pay is before departure, while you still have 
 
 A practical setup sequence is:
 
-- Download the official WeChat app and confirm you can log in.
-- Make sure your phone number can still receive verification codes.
-- Try linking a supported international card.
-- Complete any identity or security checks the app requests.
-- Ask your bank to expect overseas travel activity if that is an option.
-- Prepare [Alipay before arrival](/china-travel/articles/how-to-use-alipay-in-china-foreigner/) as a second payment route.
-- Keep your [China travel checklist before you fly](/china-travel/articles/china-travel-checklist-before-you-fly/) nearby so payment setup stays connected to internet, hotel, and transport preparation.
+1. Download the official WeChat app and confirm you can log in.
+2. Make sure your phone number can still receive verification codes.
+3. Try linking a supported international card.
+4. Complete any identity or security checks the app requests.
+5. Ask your bank to expect overseas travel activity if that is an option.
+6. Prepare [Alipay before arrival](/china-travel/articles/how-to-use-alipay-in-china-foreigner/) as a second payment route.
+7. Keep your [China travel checklist before you fly](/china-travel/articles/china-travel-checklist-before-you-fly/) nearby so payment setup stays connected to internet, hotel, and transport preparation.
 
 If setup half-works, that is your answer: WeChat Pay will help during the trip, and it cannot be your only plan. Pair it with Alipay, a physical card, and some cash.
 

@@ -48,7 +48,7 @@ The good news is that the problems are usually solvable. They just need preparat
 Many first-time visitors expect China to feel like a "sightseeing only" trip. In reality, the most memorable part is often daily life:
 
 - Paying with a phone.
-- Ordering food by QR code.
+- Ordering food by QR code — once you recognise the three common ordering styles, the anxiety mostly disappears, so we broke them out in [how to order food in China without speaking Chinese](/china-travel/articles/how-to-order-food-in-china-without-speaking-chinese/).
 - Moving across a huge city by metro.
 - Seeing people treat parks, tea houses, and riversides as part of normal life.
 

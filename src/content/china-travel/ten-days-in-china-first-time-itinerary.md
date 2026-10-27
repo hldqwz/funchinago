@@ -21,6 +21,8 @@ relatedTools:
 
 Ten days is enough for a great first trip to China, but only if you keep the route simple.
 
+Ten days mid-range costs roughly ¥7,500-10,500 per person once international flights are excluded; the [China trip cost breakdown](/china-travel/articles/china-travel-cost-breakdown/) itemises hotels, food, rail and attraction add-ons line by line, and it is the fastest way to test whether this route fits your budget.
+
 If you are still deciding whether China earns a 2026 trip, [why visit China in 2026](/china-travel/articles/why-visit-china-in-2026/) covers why the setup effort is worth it — this page turns that decision into a route.
 
 ## Quick Answer
@@ -100,8 +102,9 @@ If the connection is awkward or the route is too long, a flight can still be bet
 
 Before departure, make sure you have:
 
-- Payment ready.
-- Internet access ready.
+- Payment ready — [Alipay](/china-travel/articles/how-to-use-alipay-in-china-foreigner/) or WeChat Pay linked to a card, plus one physical card in your pocket. Hotels take plastic; the noodle shop probably will not.
+- Internet access ready — settle your [eSIM, roaming or local SIM plan](/china-travel/articles/best-esim-for-china-travel-internet-access/) before departure, because maps, translation, rail tickets and payment all sit on top of that connection.
+- Entry paperwork confirmed — whether your passport enters [visa-free](/china-travel/articles/china-visa-free-travel-guide/) or needs a visa decides how early you have to book anything at all.
 - Hotel addresses saved in Chinese.
 - Train ticket information prepared.
 - A realistic daily pacing plan.

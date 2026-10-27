@@ -8,7 +8,7 @@ changelog:
     note: "Refreshed verification metadata and image optimisation pass"
   - date: 2026-10-24
     note: "Added ticket prices, a cost table and daily budget, a Macau border-crossing section, month-by-month timing, a FAQ block and three licensed photographs"
-description: "A practical Zhuhai travel guide for first-time visitors to China: a no-backtracking three-day itinerary along Lovers' Road, the Sun Moon Shells opera house, old-town Xiangzhou, Chimelong Ocean Kingdom, seafood, hotels, Macau connections and common mistakes."
+description: "Plan three days in Zhuhai: the Lovers' Road coast, the Sun Moon Shells after dark, a full Chimelong day, and a Macau crossing that takes under an hour."
 stage: "discover"
 section: "cities"
 hero_image: "/china-travel/images/zhuhai-opera-house-hero.jpg"

@@ -78,6 +78,16 @@ Try:
 
 Guangzhou is especially good for first-timers who want Chinese food without starting at the spiciest end of the spectrum.
 
+### Guilin and Yangshuo
+
+Try:
+
+- Guilin rice noodles, eaten dry-mixed rather than in soup, with beef or brisket.
+- Beer fish from Yangshuo.
+- Steamed taro layered with pork belly.
+
+The [Guilin travel guide for first-time visitors](/china-travel/articles/guilin-travel-guide-first-time-visitors/) has the noodle-shop streets worth walking to, and why the bowl costs ¥6 two blocks off the tourist drag.
+
 ## How To Choose Comfort Level
 
 If you are nervous, start with:

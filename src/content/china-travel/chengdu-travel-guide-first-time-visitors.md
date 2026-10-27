@@ -8,7 +8,7 @@ changelog:
     note: "Refreshed verification metadata and image optimisation pass"
   - date: 2026-10-24
     note: "Added Panda Base official ticketing data, two-airport section, attraction and transport prices, best-time months, and FAQ"
-description: "A practical and human Chengdu travel guide for first-time visitors to China, covering pandas, hotpot, teahouses, neighborhoods, day trips, transport, payment and common mistakes."
+description: "See Chengdu's pandas early, then spend the rest of the day slowly: bamboo chairs in a People's Park tea house and a Sichuan hotpot dinner."
 stage: "discover"
 section: "cities"
 hero_image: "/china-travel/images/chengdu-peoples-park-teahouse.webp"

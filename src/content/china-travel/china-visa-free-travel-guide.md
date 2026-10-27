@@ -6,7 +6,7 @@ lastChecked: 2026-10-17
 changelog:
   - date: 2026-10-17
     note: "Refreshed verification metadata and image optimisation pass"
-description: "A cautious first-time guide to China visa-free travel, including how to think about unilateral visa-free access, mutual visa-free access, and 240-hour transit."
+description: "A cautious first-time guide to China visa-free travel: how to think about unilateral visa-free access, mutual visa-free access, and 240-hour transit."
 stage: "before"
 section: "travel"
 hero_image: "/china-travel/images/article-visa-free-editorial.webp"

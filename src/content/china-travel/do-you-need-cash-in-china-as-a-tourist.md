@@ -68,7 +68,7 @@ The safest first-trip setup usually looks like this:
 - [How to Pay in China as a Tourist](/china-travel/articles/how-to-pay-in-china-tourist/) as the main strategy,
 - [Alipay](/china-travel/articles/how-to-use-alipay-in-china-foreigner/) as a likely primary app,
 - [WeChat Pay](/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/) as a useful second option,
-- one or two physical cards,
+- one or two physical cards — [can foreign credit cards work in China?](/china-travel/articles/can-foreign-credit-cards-work-in-china/) covers which merchants will actually take them,
 - a small amount of cash.
 
 Cash is not the star of the system. It is the safety net.

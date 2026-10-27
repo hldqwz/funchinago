@@ -7,7 +7,7 @@ lastChecked: 2026-10-17
 changelog:
   - date: 2026-10-17
     note: "Refreshed verification metadata and image optimisation pass"
-description: "Set up Alipay before you fly: link an international card at home, avoid the 3 failures tourists hit most (bank block, unsupported card, weak network), and keep the backup order — WeChat Pay, then card, then cash."
+description: "Set up Alipay before you fly: link a foreign card at home, then pay by QR at shops, taxis, and hotels — plus the 3 failures tourists hit most."
 stage: "before"
 section: "travel"
 hero_image: "/china-travel/images/article-alipay-editorial.webp"
@@ -71,13 +71,13 @@ Arrival day is a bad time to discover that your first card link fails or that yo
 
 A practical setup sequence is:
 
-- Download the official Alipay app.
-- Register with a phone number you can still access abroad.
-- Switch the app language if needed.
-- Link a supported international card.
-- Complete any identity or security checks.
-- Tell your bank you are traveling if that helps reduce false fraud blocks.
-- Save a second payment route before departure.
+1. Download the official Alipay app.
+2. Register with a phone number you can still access abroad.
+3. Switch the app language if needed.
+4. Link a supported international card.
+5. Complete any identity or security checks.
+6. Tell your bank you are traveling if that helps reduce false fraud blocks.
+7. Save a second payment route before departure.
 
 If the first card fails, try another one while you still have time. It is usually much easier to troubleshoot at home than at a checkout counter.
 
@@ -121,7 +121,7 @@ Alipay is often useful in six common visitor settings:
 - flights and hotels,
 - attraction tickets and other app-based bookings.
 
-This does not mean every merchant, card, or mini program will work. It means Alipay is usually a strong first app to prepare. If you are still deciding where to go, the [Beijing](/china-travel/articles/beijing-travel-guide-first-time-visitors/) and [Shanghai](/china-travel/articles/shanghai-travel-guide-first-time-visitors/) first-time visitor guides cover the same payment setup alongside local itineraries.
+This does not mean every merchant, card, or mini program will work. It means Alipay is usually a strong first app to prepare. The transaction limits and fee rules behind these payments sit in [how to pay in China as a tourist](/china-travel/articles/how-to-pay-in-china-tourist/). If you are still deciding where to go, the [Beijing](/china-travel/articles/beijing-travel-guide-first-time-visitors/) and [Shanghai](/china-travel/articles/shanghai-travel-guide-first-time-visitors/) first-time visitor guides cover the same payment setup alongside local itineraries.
 
 ## Official Alipay support
 
@@ -193,7 +193,7 @@ Yes — when you download the official Alipay app and link your own internationa
 
 Yes. Foreign visitors can register in the international Alipay app, link a supported international bank card, and pay at eligible merchants across mainland China. The visitor route covers everyday purchases, but it does not support person-to-person transfers, red packets, wealth management, or insurance. Finish verification before you fly, because SMS codes and bank approvals are much easier to solve at home.
 
-## how to use alipay
+## How do you actually pay with Alipay in a shop?
 
 Download the official Alipay app, register with a phone number you can still access abroad, switch the language if needed, link a supported international card, and complete any identity checks — all before departure. In China you pay in one of two ways: show your payment code for the merchant to scan, or scan the merchant's QR code and enter the amount only if asked. If a payment fails, retry once, then switch to WeChat Pay, a physical card, or cash.
 

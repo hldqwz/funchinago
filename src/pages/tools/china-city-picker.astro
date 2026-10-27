@@ -127,7 +127,8 @@ const description = "Answer 6 quick questions about your travel style and get a 
         <p>
           The City Picker narrows down your options. Once you choose a city, use our
           detailed guides to plan your visa, payment setup, train tickets, and daily
-          itinerary. City recommendations are editorial, not official travel advice.
+          itinerary — start with the <a href="/china-travel/articles/best-china-itineraries-by-travel-style/">itineraries by travel style</a>
+          if you would rather pick a route theme than a single city. City recommendations are editorial, not official travel advice.
         </p>
       </article>
     </section>
@@ -156,6 +157,7 @@ const description = "Answer 6 quick questions about your travel style and get a 
         <ul>
           <li><a href="/china-travel/articles/beijing-shanghai-chengdu-or-chongqing-which-city-to-visit-first/">Beijing, Shanghai, Chengdu or Chongqing — Which city first?</a></li>
           <li><a href="/china-travel/articles/best-places-to-visit-in-china-first-time/">Best Places to Visit in China for First-Time Visitors</a></li>
+          <li><a href="/china-travel/articles/guilin-travel-guide-first-time-visitors/">Guilin Travel Guide for First-Time Visitors</a></li>
           <li><a href="/china-travel/articles/ten-days-in-china-first-time-itinerary/">10 Days in China: First-Time Itinerary</a></li>
         </ul>
       </article>
@@ -330,13 +332,18 @@ const description = "Answer 6 quick questions about your travel style and get a 
     width: 100%;
     border: 0;
     border-radius: 14px;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    color: white;
+    background: var(--seal);
+    color: var(--surface);
     padding: 0.9rem 1rem;
     font: inherit; font-weight: 700;
     cursor: pointer;
     box-shadow: var(--shadow-lg);
     margin-top: 0.25rem;
+    transition: background-color var(--dur-fast) var(--ease-out);
+  }
+
+  button:hover {
+    background: var(--seal-deep);
   }
 
   /* ── Result area ── */

@@ -8,7 +8,7 @@ changelog:
     note: "Refreshed verification metadata and image optimisation pass"
   - date: 2026-10-24
     note: "Added a cost breakdown with daily budgets, a Canton Fair planning section, month-by-month timing with humidity notes, a FAQ block and three licensed photographs"
-description: "The best-value tier-1 city in China for travelers: world-class Cantonese food at budget prices, slow pace, tropical parks, and one of the easiest Chinese cities for first-time foreign visitors."
+description: "Eat your way through Guangzhou: morning dim sum, Shamian Island and the old city, then check the Canton Fair dates before you book a hotel."
 stage: "discover"
 section: "cities"
 hero_image: "/china-travel/images/article-weekly-guangzhou.webp"
@@ -189,7 +189,7 @@ Guangzhou's headline appeal is that tier-1 infrastructure comes at second-tier p
 | Guangzhou South to Hong Kong West Kowloon | second class ¥215 on most trains (¥187 on a few), 47 min to 1 h 20 min |
 | Pearl River night cruise | from about ¥98 |
 
-**Daily budget.** Budget travellers — simple room, noodle-shop breakfasts, metro everywhere — get by on roughly ¥300–450 a day. A mid-range trip (hotel around ¥450–700 a night, proper yum cha, a hotpot dinner, occasional taxis) lands around ¥600–950. That sits a notch above Zhuhai and clearly below Beijing or Shanghai. Canton Tower tickets and the Pearl River cruise are extras.
+**Daily budget.** Budget travellers — simple room, noodle-shop breakfasts, metro everywhere — get by on roughly ¥300–450 a day. A mid-range trip (hotel around ¥450–700 a night, proper yum cha, a hotpot dinner, occasional taxis) lands around ¥600–950. That sits a notch above Zhuhai and clearly below Beijing or Shanghai. Canton Tower tickets and the Pearl River cruise are extras. For how those daily bands are built up from real hotel, food and ticket prices, see the [full China trip cost breakdown](/china-travel/articles/china-travel-cost-breakdown/).
 
 **What costs nothing.** Shamian Island, Yuexiu Park and the old city wall, Yongqing Fang, the Cantonese Opera Museum, the Sacred Heart Cathedral, Dafo Temple, and the Pearl River promenade.
 
@@ -227,6 +227,7 @@ Guangzhou works well as a base for day trips.
 - **Shenzhen** — 30 minutes by high-speed train. Worth it if you want a much newer Chinese city for half a day.
 - **Hong Kong** — from 47 minutes on the high-speed rail to West Kowloon, or three to five hours by cross-border coach (about HK$85–120). Check passport and visa requirements for your nationality before booking.
 - **Baiyun Mountain** — inside the city, with a cable car and a wide view over the Pearl River Delta on clear days.
+- **Guilin** — about 2.5 hours north on the high-speed rail from Guangzhou South. It is the classic add-on for scenery rather than another metro, and it needs three days to work; the [Guilin travel guide for first-time visitors](/china-travel/articles/guilin-travel-guide-first-time-visitors/) covers cruise versus bamboo raft and where to sleep.
 
 ## What the Canton Fair Does to Your Trip
 

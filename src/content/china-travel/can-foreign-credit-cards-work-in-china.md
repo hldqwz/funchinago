@@ -53,6 +53,8 @@ Two ceilings apply, and the lower one decides.
 
 Your bank's daily spending limit usually sits below both figures, so raise it before you travel if you plan a large purchase.
 
+There is also a price to using a foreign card through the apps: transactions over ¥200 usually carry a 3% service fee on the whole amount, while smaller payments are typically fee-free. Our [China trip cost breakdown](/china-travel/articles/china-travel-cost-breakdown/) works out what that adds to a ten-day trip and how to route hotel and rail payments around it.
+
 ## Why A Foreign Card Gets Declined
 
 Declines trace back to five concrete causes:

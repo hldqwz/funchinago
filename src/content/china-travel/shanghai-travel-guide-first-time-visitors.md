@@ -8,7 +8,7 @@ changelog:
     note: "Refreshed verification metadata and image optimisation pass"
   - date: 2026-10-24
     note: "Added budget price table, metro foreign-card payment note, food prices, best-time months, tourist traps and FAQ"
-description: "A practical and human Shanghai travel guide for first-time visitors to China, covering the Bund, Yu Garden, French Concession walks, food, transport, payment, where to stay and common mistakes."
+description: "Walk Shanghai's Bund at night and its French Concession lanes by day, see Yu Garden, and tap a foreign card straight through the metro gates."
 stage: "discover"
 section: "cities"
 hero_image: "/china-travel/images/shanghai-bund-skyline.jpg"

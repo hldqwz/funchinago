@@ -1,12 +1,13 @@
 ---
 title: "Alipay Not Working in China for Foreign Tourists: Common Fixes and Backup Options"
+seoTitle: "Alipay Not Working in China for Foreign Tourists: Fixes (2026)"
 date: 2026-06-15
 updatedAt: 2026-07-02
 lastChecked: 2026-10-17
 changelog:
   - date: 2026-10-17
     note: "Refreshed verification metadata and image optimisation pass"
-description: "Alipay is useful for tourists in China, but foreign cards, verification, QR-code payments, and mini programs can still fail. Learn what to check and what backup payment method to use."
+description: "Fix Alipay when it fails in China: check data, card status, and bank alerts, then switch QR direction, app, card, or cash without blocking the queue."
 stage: "before"
 section: "travel"
 hero_image: "/china-travel/images/article-alipay-editorial.webp"
@@ -33,6 +34,8 @@ Alipay may fail because:
 - a temporary limit or review is triggered.
 
 A failure in one place does not always mean Alipay is unusable everywhere.
+
+The transaction limits and fee rules that sit behind those reviews are explained in [how to pay in China as a tourist](/china-travel/articles/how-to-pay-in-china-tourist/).
 
 ## What to Do Immediately
 

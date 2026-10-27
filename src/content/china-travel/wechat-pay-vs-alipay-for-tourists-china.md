@@ -1,13 +1,13 @@
 ---
 title: "WeChat Pay vs Alipay for Tourists in China: Which Should You Set Up First?"
-seoTitle: "Alipay vs WeChat Pay for Tourists: Which One to Set Up First (2026)"
+seoTitle: "WeChat Pay vs Alipay for Tourists: Which to Set Up First (2026)"
 date: 2026-07-02
 updatedAt: 2026-08-04
 lastChecked: 2026-10-17
 changelog:
   - date: 2026-10-17
     note: "Refreshed verification metadata and image optimisation pass"
-description: "Alipay vs WeChat Pay for tourists: 7 decision factors compared — Alipay first for shop and counter payments, WeChat Pay second for mini programs, plus the backup plan when either app fails."
+description: "Compare WeChat Pay and Alipay before you fly: which one to set up first, what each one covers, and the backup stack both apps still need."
 stage: "before"
 section: "travel"
 hero_image: "/china-travel/images/article-payment-editorial.webp"
@@ -128,6 +128,8 @@ Before flying, prepare in this order:
 3. Keep one or two physical cards for hotels, airports, and card-terminal moments.
 4. Carry a small amount of RMB cash for arrival-day friction.
 5. Keep mobile data and bank-app access working, because both payment apps depend on them.
+
+This is the same order the [how to pay in China as a tourist](/china-travel/articles/how-to-pay-in-china-tourist/) guide sets out, along with the transaction limits and fee rules behind it.
 
 Pair this with the [China Travel Checklist Before You Fly](/china-travel/articles/china-travel-checklist-before-you-fly/) so payment setup is connected to internet, SMS verification, hotel details, and arrival-day backups. The official references used here and a curated set of related payment guides appear below.
 

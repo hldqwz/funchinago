@@ -7,7 +7,7 @@ lastChecked: 2026-10-17
 changelog:
   - date: 2026-10-17
     note: "Refreshed verification metadata and image optimisation pass"
-description: "Pay in China without a Chinese bank account: Alipay and WeChat Pay with a foreign card (USD 5,000 per transaction, USD 50,000 per year), plus the backup order when payment fails at a shop, taxi, or hotel desk."
+description: "Build a China payment plan that works: set up Alipay and WeChat Pay with a foreign card (USD 5,000 per transaction), plus the backup order when one fails."
 stage: "before"
 section: "travel"
 hero_image: "/china-travel/images/article-payment-editorial.webp"

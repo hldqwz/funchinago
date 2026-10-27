@@ -1,13 +1,13 @@
 ---
 title: "China Travel Checklist Before You Fly: Apps, Payments, Internet & Documents"
-seoTitle: "What Do You Need to Prepare for Your Trip to China? Checklist (2026)"
+seoTitle: "China Travel Checklist Before You Fly: 7 Things to Set Up (2026)"
 date: 2026-06-02
 updatedAt: 2026-06-15
 lastChecked: 2026-10-17
 changelog:
   - date: 2026-10-17
     note: "Refreshed verification metadata and image optimisation pass"
-description: "China pre-flight checklist: 7 things to set up before you fly — documents, Alipay or WeChat Pay, eSIM or roaming, translation, hotel details in Chinese, and arrival-day backups."
+description: "Set up 7 things before you fly to China: passport and entry rules, Alipay or WeChat Pay, eSIM or roaming, offline translation, hotel address in Chinese."
 stage: "before"
 section: "travel"
 hero_image: "/china-travel/images/article-checklist-editorial.webp"

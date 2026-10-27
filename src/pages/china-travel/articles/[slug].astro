@@ -256,6 +256,7 @@ const HOW_TO_SLUGS = new Set([
   'how-to-use-alipay-in-china-foreigner',
   'how-to-use-wechat-pay-in-china-foreigner',
   'how-to-pay-in-china-tourist',
+  'can-you-use-apple-pay-or-google-pay-in-china',
 ]);
 
 type HowToStep = { name: string; text: string };
@@ -342,7 +343,8 @@ function extractHowToSteps(body: string): HowToStep[] {
 
   const steps = preferred.items
     .map((item) => {
-      const text = stripHtmlTags(item);
+      /* markdown 编号列表里的链接语法先转成纯文本，避免 [文字](路径) 原样落进 JSON-LD */
+      const text = stripHtmlTags(stripInlineMarkdown(item));
       return text ? { name: stepNameFrom(item, text), text } : null;
     })
     .filter((step): step is HowToStep => Boolean(step));
@@ -351,7 +353,14 @@ function extractHowToSteps(body: string): HowToStep[] {
   return steps.length >= 2 ? steps : [];
 }
 
-const howToSteps = HOW_TO_SLUGS.has(articleSlug(article.id)) ? extractHowToSteps(article.body) : [];
+const slugId = articleSlug(article.id);
+const howToSteps = HOW_TO_SLUGS.has(slugId) ? extractHowToSteps(article.body) : [];
+/* 白名单内的文章抽不到步骤时，HowTo schema 会静默变成 null；构建期提示一次，便于及时修正文或从白名单移除 */
+if (HOW_TO_SLUGS.has(slugId) && howToSteps.length === 0) {
+  console.warn(
+    `[china-travel] HowTo whitelist miss: "${slugId}" produced 0 steps. Add an ordered list to the article or remove it from HOW_TO_SLUGS.`,
+  );
+}
 const howToSchema = howToSteps.length > 0
   ? {
       "@context": "https://schema.org",

@@ -1,5 +1,24 @@
 {
   "version": 1,
   "include": ["/*"],
-  "exclude": []
+  "exclude": [
+    "/_astro/*",
+    "/fonts/*",
+    "/china-travel/images/*",
+    "/*.css",
+    "/*.js",
+    "/*.mjs",
+    "/*.json",
+    "/*.txt",
+    "/*.xml",
+    "/*.woff",
+    "/*.woff2",
+    "/*.ico",
+    "/*.svg",
+    "/*.png",
+    "/*.jpg",
+    "/*.jpeg",
+    "/*.webp",
+    "/*.avif"
+  ]
 }

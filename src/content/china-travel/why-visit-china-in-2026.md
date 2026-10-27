@@ -59,7 +59,7 @@ The most important practical improvement is not a shiny new attraction. It is th
 - Transit and city infrastructure are strong in major destinations.
 - More travelers now arrive already expecting a mobile-first experience.
 
-That said, "easier" does not mean "skip the prep." China still rewards people who set up their phone and payment before departure.
+That said, "easier" does not mean "skip the prep." China still rewards people who set up their phone and payment before departure. The honest version of how that first day feels is in [what China is really like for first-time visitors](/china-travel/articles/what-china-is-really-like-for-first-time-visitors/).
 
 ## What Still Needs Preparation
 
@@ -87,7 +87,7 @@ China is a strong choice for you if you want:
 
 You should be more careful if you:
 
-- Depend heavily on Google-only workflows.
+- Depend heavily on Google-only workflows — plan your [internet and VPN approach](/china-travel/articles/do-you-need-a-vpn-in-china-travel/) while you still have unrestricted app store access.
 - Need constant social media access for work.
 - Do not want to set up payment apps before departure.
 - Have a very packed itinerary with many same-day transfers.
@@ -98,7 +98,7 @@ In those cases, China can still be a great trip, but the setup burden matters mo
 
 Do not think of China as "a destination you tick once." Think of it as a country where your experience changes a lot depending on which cities you choose.
 
-That is why this site starts with city selection, preparation, and practical setup before it gets into detailed itineraries.
+That is why this site starts with city selection, preparation, and practical setup before it gets into detailed itineraries. When you are ready for the route itself, the [10-day China itinerary](/china-travel/articles/ten-days-in-china-first-time-itinerary/) is the shape most first-time trips settle into.
 
 ## Related Guides
 

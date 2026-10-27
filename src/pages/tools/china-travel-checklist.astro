@@ -135,7 +135,7 @@ const description = "Enter your departure date and get a deadline-based China pr
           <li><strong>45 days — visa route and holidays</strong> — time to apply for a visa or move dates off Golden Week.</li>
           <li><strong>15 days — train tickets</strong> — China Railway opens sales 15 days ahead including the travel day; popular trains sell out in minutes.</li>
           <li><strong>14 days — payment setup</strong> — card binding and identity checks are not always instant.</li>
-          <li><strong>7 days — install everything</strong> — VPNs and Google-dependent app downloads do not work once you land.</li>
+          <li><strong>7 days — install everything</strong> — VPNs and Google-dependent app downloads do not work once you land, so decide your <a href="/china-travel/articles/do-you-need-a-vpn-in-china-travel/">VPN and connectivity plan</a> before you fly.</li>
         </ul>
       </article>
 
@@ -176,6 +176,7 @@ const description = "Enter your departure date and get a deadline-based China pr
           <li><a href="/china-travel/articles/china-travel-checklist-before-you-fly/">China Travel Checklist article</a></li>
           <li><a href="/china-travel/articles/how-to-pay-in-china-tourist/">How to Pay in China as a Tourist</a></li>
           <li><a href="/china-travel/articles/best-esim-for-china-travel-internet-access/">Best eSIMs for China Travel</a></li>
+          <li><a href="/china-travel/articles/what-china-is-really-like-for-first-time-visitors/">What China Is Really Like for First-Time Visitors</a></li>
           <li><a href="/china-travel/sources/">Official source library</a></li>
         </ul>
       </article>
@@ -315,13 +316,18 @@ const description = "Enter your departure date and get a deadline-based China pr
     width: 100%;
     border: 0;
     border-radius: 14px;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: white;
+    background: var(--seal);
+    color: var(--surface);
     padding: 0.9rem 1rem;
     font: inherit; font-weight: 700;
     cursor: pointer;
     box-shadow: var(--shadow-lg);
     margin-top: 0.25rem;
+    transition: background-color var(--dur-fast) var(--ease-out);
+  }
+
+  button:hover {
+    background: var(--seal-deep);
   }
 
   /* ── Result area ── */
