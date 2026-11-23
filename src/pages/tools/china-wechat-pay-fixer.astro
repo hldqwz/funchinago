@@ -1,0 +1,778 @@
+---
+import Layout from "../../layouts/ChinaTravelLayout.astro";
+
+const title = "WeChat Pay Unsupported Card: Fix a Foreign Card That Won't Pay";
+const description =
+  "Diagnose a WeChat Pay unsupported card: check foreign-card support, verification, QR direction and the fallback order at the counter.";
+---
+
+<Layout title={title} description={description}>
+  <main class="fixer-page">
+    <section class="hero-panel">
+      <div class="hero-copy">
+        <p class="kicker">China Travel Made Easy · Tools</p>
+        <h1>WeChat Pay unsupported card: fix a foreign card that won't pay</h1>
+        <p class="lead">
+          Your foreign card is linked, the QR code is right there, and WeChat Pay still refuses
+          the payment. Four questions will narrow the cause to a card, verification, flow, or
+          limit problem and give you a repair order you can actually use at a counter.
+        </p>
+        <div class="trust-row" aria-label="Tool properties">
+          <span>4 questions</span>
+          <span>No sign-up</span>
+          <span>No data stored</span>
+          <span>Official sources linked</span>
+        </div>
+        <p class="mono-meta verified-dot">VERIFIED · 17 OCT 2026</p>
+      </div>
+      <aside class="intro-card">
+        <p class="eyebrow">Start here</p>
+        <h2>Read the message before you blame the card</h2>
+        <p>
+          A WeChat Pay unsupported card message usually means the card issuer, network, or app
+          rules did not accept this particular payment flow. It rarely means the plastic itself
+          is broken. That distinction changes what you should try next.
+        </p>
+        <p>
+          This checker takes the symptom you can see — the error, the card, the place — and
+          returns the two most likely causes, a short repair sequence, and the backup order to
+          use if the queue is moving. It is built for wechat pay travel situations, not for
+          account recovery or bank calls.
+        </p>
+      </aside>
+    </section>
+
+    <section class="seo-section">
+      <article class="info-card">
+        <p class="eyebrow">Symptom one</p>
+        <h2>Why a WeChat Pay unsupported card message appears</h2>
+        <p>
+          When WeChat Pay calls a foreign card unsupported, the card itself is often fine.
+          International-card support varies by issuer, country, card network, and the current
+          app rules. A Visa or Mastercard that clears a shop counter can still be refused inside
+          a restaurant mini program, and the same card can behave differently after a bank
+          security review. Treat the message as a signal about the combination of card, account,
+          and flow — not as proof that you need a new card.
+        </p>
+        <p>
+          Network choice matters, but no network is a guarantee. Visa and Mastercard are the
+          common routes for linking an international card to a payment app; JCB works for some
+          issuers; Amex and UnionPay are more often terminal-first and app linking is not
+          guaranteed for every card. If your bank or app refuses the link, check the card support
+          notice inside WeChat before you assume a specific network is excluded. WeChat Pay for
+          tourists is a variable setup, not a single switch.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <p class="eyebrow">Symptom two</p>
+        <h2>Verification and payment flow are separate problems</h2>
+        <p>
+          Real-name verification and card linking are related but not identical. You can have a
+          card visible in your wallet and still fail because a passport check, SMS code, or bank
+          approval step is unfinished. Conversely, verification can be complete while the card
+          issuer blocks the transaction. Finish identity steps before departure, when your home
+          phone number and bank app still work — the same steps are much harder from a hotel Wi-Fi
+          network at midnight.
+        </p>
+        <p>
+          The flow changes the failure too. Scanning a merchant's QR code, being scanned by the
+          cashier, and paying inside a mini program are three different paths. Ride-hailing and
+          delivery apps add another merchant account on top. A card that works in one path can
+          fail in another, which is why a single test payment at a shop does not prove your setup
+          is complete. When you pay with WeChat abroad, match the fix to the flow that failed.
+        </p>
+      </article>
+    </section>
+
+    <section class="tool-grid">
+      <form class="checker-card" data-wechat-form novalidate>
+        <div class="form-header">
+          <p class="eyebrow">Symptom check</p>
+          <h2>Answer these questions</h2>
+          <p>Pick the closest answer. Everything runs in your browser — nothing is sent or stored.</p>
+        </div>
+
+        <fieldset>
+          <legend>1. Which card are you using?</legend>
+          <div class="card-options">
+            <label class="option">
+              <input type="radio" name="card" value="visa" required />
+              <span>Visa</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="card" value="mastercard" required />
+              <span>Mastercard</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="card" value="amex" required />
+              <span>Amex</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="card" value="jcb" required />
+              <span>JCB</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="card" value="unionpay" required />
+              <span>UnionPay</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="card" value="unsure" required />
+              <span>Not sure</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Is the card linked and verified in WeChat Pay?</legend>
+          <label class="option">
+            <input type="radio" name="linked" value="linked" required />
+            <span>Yes — linked and verified</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="linked" value="rejected" required />
+            <span>No — it was rejected while linking</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="linked" value="not-linked" required />
+            <span>Not linked yet</span>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. Where does the payment fail?</legend>
+          <label class="option">
+            <input type="radio" name="where" value="scan" required />
+            <span>I scan the merchant's QR code</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="where" value="scanned" required />
+            <span>The merchant scans my payment code</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="where" value="miniapp" required />
+            <span>A mini-program checkout or QR menu</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="where" value="app" required />
+            <span>A ride-hailing or delivery app</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="where" value="all" required />
+            <span>Everywhere I try</span>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>4. What does WeChat show?</legend>
+          <label class="option">
+            <input type="radio" name="message" value="unsupported" required />
+            <span>Card not supported</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="message" value="identity" required />
+            <span>Identity verification needed</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="message" value="limit" required />
+            <span>Limit exceeded</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="message" value="bank" required />
+            <span>Bank declined the payment</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="message" value="silent" required />
+            <span>No message — it just does not succeed</span>
+          </label>
+        </fieldset>
+
+        <button type="submit" class="button-primary">Diagnose my WeChat Pay failure</button>
+      </form>
+
+      <div class="result-card result-placeholder" data-wechat-result aria-live="polite">
+        <p class="eyebrow">Your diagnosis</p>
+        <h2>Answer the four questions</h2>
+        <p>
+          The likely causes, the repair order, and your backup payment sequence appear here.
+          No account details or card numbers are needed.
+        </p>
+      </div>
+    </section>
+
+    <section class="seo-section">
+      <article class="info-card">
+        <p class="eyebrow">After the diagnosis</p>
+        <h2>The fallback order when a payment fails at the counter</h2>
+        <p>
+          At a busy counter, speed beats a perfect fix. Try WeChat Pay once, change the QR
+          direction if the cashier can help, then move on: Alipay first, a physical card second,
+          and cash last. Alipay and WeChat Pay cover different merchant flows, so a failure in one
+          app is not evidence that the other will fail. A physical card still works at hotels,
+          airports, and international terminals; cash covers QR-only stalls when both apps and
+          cards are blocked.
+        </p>
+        <p>
+          In a mini program, ride-hailing app, or delivery app, confirm the order status before
+          you retry or pay a second time. If the flow keeps rejecting your account, ask staff for
+          a counter payment or manual ordering path. That is usually faster than proving the app
+          should work while other people are waiting.
+        </p>
+      </article>
+
+      <article class="info-card caution-card">
+        <p class="eyebrow">Numbers, not guesses</p>
+        <h2>Limits and fees that can look like a card rejection</h2>
+        <p>
+          Under People's Bank of China guidance, foreign-card payments through Alipay and WeChat
+          Pay carry a single-transaction limit of USD 5,000 and a cumulative annual limit of
+          USD 50,000. Your bank's daily cap usually binds first. Separately, transactions of
+          ¥200 or less are typically fee-free, while larger ones carry a cross-border service fee
+          of roughly 3% — a small test payment is therefore a clean way to isolate the problem.
+        </p>
+        <p>
+          Tencent's 2026 promotion waives the 3% international-card fee for 90 consecutive
+          calendar days from the first transaction, on daily spending up to RMB 1,000, for
+          first-time card linkers. Treat this as a current promotion with conditions, not a
+          permanent pricing rule. Confirm current limits, fee notices, and card support on
+          official channels inside the app and with your bank before you rely on them.
+        </p>
+      </article>
+    </section>
+
+    <section class="explain-grid">
+      <article class="info-card">
+        <p class="eyebrow">What this tool checks</p>
+        <h2>Four inputs, seven causes</h2>
+        <ul>
+          <li><strong>Card network</strong> — Visa, Mastercard, Amex, JCB, and UnionPay differ in app-linking support.</li>
+          <li><strong>Link status</strong> — a card refused at the link step is a different problem from a payment refusal.</li>
+          <li><strong>Failure flow</strong> — scan, be scanned, mini program, and ride-hailing apps take different paths.</li>
+          <li><strong>Error text</strong> — "unsupported", "verification", "limit", "bank declined", and no message point to different fixes.</li>
+        </ul>
+      </article>
+
+      <article class="info-card caution-card">
+        <p class="eyebrow">Important limitation</p>
+        <h2>Diagnosis, not a payment guarantee</h2>
+        <p>
+          This tool ranks likely causes from the published guidance and the symptoms you select.
+          Issuer rules, app versions, and merchant setups change often, and your bank has the
+          final word on any transaction. For policy-sensitive decisions, check the
+          <a href="/china-travel/sources/">official source library</a> and the notices inside
+          WeChat before you travel.
+        </p>
+      </article>
+    </section>
+
+    <section class="related-section">
+      <p class="eyebrow">Related payment guides</p>
+      <h2>Read the detail behind each fix</h2>
+      <ul class="related-list">
+        <li>
+          <a href="/china-travel/articles/how-to-use-wechat-pay-in-china-foreigner/">
+            <strong>How to Use WeChat Pay in China as a Foreigner</strong>
+            <small>Card setup, verification, the 2026 fee waiver, and the fix order at real counters.</small>
+          </a>
+        </li>
+        <li>
+          <a href="/china-travel/articles/wechat-pay-not-working-in-china-foreigners/">
+            <strong>WeChat Pay Not Working in China for Foreigners</strong>
+            <small>What to try first at a shop counter, a QR menu, or a mini program.</small>
+          </a>
+        </li>
+        <li>
+          <a href="/china-travel/articles/how-to-use-alipay-in-china-foreigner/">
+            <strong>How to Use Alipay in China as a Foreigner</strong>
+            <small>The first backup route, with its own card-linking and verification steps.</small>
+          </a>
+        </li>
+        <li>
+          <a href="/china-travel/articles/how-to-pay-in-china-tourist/">
+            <strong>How to Pay in China as a Tourist</strong>
+            <small>The full payment stack, transaction limits, and the backup order when one method fails.</small>
+          </a>
+        </li>
+        <li>
+          <a href="/tools/china-payment-readiness-checker/">
+            <strong>China Payment Readiness Self-Check</strong>
+            <small>Build the ranked pre-trip payment plan before you need a counter fix.</small>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <script type="module" src="/tools/china-wechat-pay-fixer.js"></script>
+</Layout>
+
+<style>
+  .fixer-page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .hero-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(280px, 0.9fr);
+    gap: 1rem;
+    align-items: stretch;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-copy,
+  .intro-card,
+  .checker-card,
+  .result-card,
+  .info-card,
+  .related-section {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-media);
+  }
+
+  .hero-copy {
+    padding: 2.2rem;
+    background: var(--surface);
+  }
+
+  .kicker,
+  .eyebrow {
+    color: var(--seal);
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: var(--fs-meta);
+    margin-bottom: 0.55rem;
+  }
+
+  h1 {
+    max-width: 820px;
+    font-size: clamp(2rem, 4.6vw, 3.5rem);
+    line-height: 1.02;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: var(--fs-h3);
+    margin-bottom: 0.55rem;
+  }
+
+  .lead {
+    max-width: 760px;
+    color: var(--ink-70);
+    font-size: var(--fs-lede);
+  }
+
+  .intro-card {
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .intro-card p {
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+  }
+
+  .trust-row {
+    display: flex;
+    gap: 0.55rem;
+    flex-wrap: wrap;
+    margin-top: 1.4rem;
+  }
+
+  .trust-row span {
+    border: 1px solid var(--hairline);
+    background: var(--paper);
+    color: var(--ink);
+    padding: 0.45rem 0.7rem;
+    border-radius: var(--r-pill);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+  }
+
+  .verified-dot {
+    margin-top: 1rem;
+    color: var(--celadon);
+    font-weight: var(--fw-semibold);
+  }
+
+  .seo-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .info-card {
+    padding: 1.35rem;
+  }
+
+  .info-card p {
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+    margin-bottom: 0.75rem;
+  }
+
+  .info-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .info-card ul {
+    padding-left: 1.1rem;
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+  }
+
+  .info-card li {
+    margin-bottom: 0.45rem;
+  }
+
+  .caution-card {
+    background: linear-gradient(135deg, var(--paper-dim), var(--surface));
+  }
+
+  .tool-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+    gap: 1rem;
+    align-items: start;
+    margin-bottom: 1rem;
+  }
+
+  .form-header {
+    margin-bottom: 1rem;
+  }
+
+  .form-header p {
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+  }
+
+  fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0 0 1rem;
+  }
+
+  legend {
+    font-weight: var(--fw-bold);
+    margin-bottom: 0.55rem;
+    font-size: var(--fs-sm);
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-height: 44px;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--surface);
+    color: var(--ink);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    cursor: pointer;
+    margin-bottom: 0.4rem;
+    transition:
+      border-color var(--dur-fast) var(--ease-out),
+      background-color var(--dur-fast) var(--ease-out);
+  }
+
+  .option:hover {
+    border-color: var(--seal);
+  }
+
+  .option:has(input:checked) {
+    border-color: var(--seal);
+    background: var(--seal-tint);
+  }
+
+  .option input {
+    margin: 0;
+    accent-color: var(--seal);
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .card-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .card-options .option {
+    margin-bottom: 0;
+  }
+
+  .button-primary {
+    width: 100%;
+    border: 0;
+    border-radius: var(--r-none);
+    background: var(--seal);
+    color: var(--surface);
+    padding: 0.9rem 1rem;
+    min-height: 48px;
+    font: inherit;
+    font-weight: var(--fw-bold);
+    cursor: pointer;
+    margin-top: 0.25rem;
+    transition: background-color var(--dur-fast) var(--ease-out);
+  }
+
+  .button-primary:hover {
+    background: var(--seal-deep);
+  }
+
+  .result-card {
+    position: sticky;
+    top: 5rem;
+    padding: 1.35rem;
+  }
+
+  .result-placeholder {
+    border-style: dashed;
+    border-color: var(--hairline);
+    background: var(--paper);
+  }
+
+  :global(.result-diagnosis) {
+    border-color: var(--seal);
+  }
+
+  :global(.result-heading) {
+    font-size: var(--fs-h4);
+  }
+
+  :global(.result-summary) {
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+  }
+
+  :global(.dx-block) {
+    border-top: 1px solid var(--hairline);
+    padding-top: 0.75rem;
+    margin-top: 0.85rem;
+  }
+
+  :global(.dx-label) {
+    color: var(--celadon);
+    font-size: var(--fs-meta);
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  :global(.dx-list) {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  :global(.dx-item) {
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--paper);
+    padding: 0.7rem 0.8rem;
+  }
+
+  :global(.dx-item.is-primary) {
+    border-color: var(--seal);
+    box-shadow: var(--sh-hard);
+  }
+
+  :global(.dx-item-title) {
+    color: var(--seal);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-bold);
+    margin-bottom: 0.25rem;
+  }
+
+  :global(.dx-item-detail) {
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+  }
+
+  :global(.dx-step) {
+    display: flex;
+    gap: 0.65rem;
+    align-items: flex-start;
+    font-size: var(--fs-sm);
+    color: var(--ink);
+  }
+
+  :global(.dx-step-num) {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: var(--r-sm);
+    background: var(--ink);
+    color: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-meta);
+  }
+
+  :global(.dx-fallback) {
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--paper);
+    padding: 0.7rem 0.8rem;
+    margin-bottom: 0.4rem;
+  }
+
+  :global(.dx-fallback-title) {
+    display: block;
+    color: var(--celadon);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-bold);
+  }
+
+  :global(.dx-fallback-note) {
+    display: block;
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+    margin-top: 0.15rem;
+  }
+
+  :global(.dx-links) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  :global(.dx-links a) {
+    display: inline-block;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--paper);
+    color: var(--celadon);
+    padding: 0.4rem 0.6rem;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    text-decoration: none;
+  }
+
+  :global(.dx-links a:hover) {
+    border-color: var(--seal);
+    color: var(--seal);
+  }
+
+  :global(.dx-note) {
+    font-size: var(--fs-meta);
+    color: var(--ink-45);
+    margin-top: 0.75rem;
+  }
+
+  :global(.button-ghost) {
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-none);
+    background: transparent;
+    color: var(--ink);
+    padding: 0.7rem 1.1rem;
+    min-height: 44px;
+    font: inherit;
+    font-weight: var(--fw-semibold);
+    cursor: pointer;
+    margin-top: 1rem;
+    transition:
+      border-color var(--dur-fast) var(--ease-out),
+      color var(--dur-fast) var(--ease-out);
+  }
+
+  :global(.button-ghost:hover) {
+    border-color: var(--seal);
+    color: var(--seal);
+  }
+
+  .explain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .related-section {
+    padding: 1.35rem;
+    margin-top: 1rem;
+  }
+
+  .related-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .related-list a {
+    display: block;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-media);
+    padding: 0.8rem 1rem;
+    background: var(--paper);
+    color: var(--ink);
+    transition:
+      border-color var(--dur-fast) var(--ease-out),
+      background-color var(--dur-fast) var(--ease-out);
+  }
+
+  .related-list a:hover {
+    border-color: var(--seal);
+    background: var(--seal-tint);
+    text-decoration: none;
+  }
+
+  .related-list strong {
+    display: block;
+    font-size: var(--fs-body);
+    font-weight: var(--fw-semibold);
+    color: var(--celadon);
+  }
+
+  .related-list small {
+    display: block;
+    margin-top: 0.2rem;
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-regular);
+  }
+
+  @media (max-width: 860px) {
+    .hero-panel,
+    .seo-section,
+    .tool-grid,
+    .explain-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-copy {
+      padding: 1.35rem;
+    }
+
+    .result-card {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .fixer-page {
+      padding: 1.35rem 1rem 3rem;
+    }
+
+    .card-options {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

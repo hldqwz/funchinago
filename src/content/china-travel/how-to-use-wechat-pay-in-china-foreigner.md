@@ -104,6 +104,8 @@ Useful first steps:
 - If you are holding up a line, stop debugging and switch to [Alipay as a backup](/china-travel/articles/how-to-use-alipay-in-china-foreigner/), cash, or another card.
 - If the failure keeps repeating, open [what to do if WeChat Pay fails in China](/china-travel/articles/wechat-pay-not-working-in-china-foreigners/).
 
+To narrow the cause from the exact message and where the payment failed, [run the WeChat Pay card checker](/tools/china-wechat-pay-fixer/). It turns the card, link status, flow, and error text into a repair order rather than another generic retry list.
+
 Real examples matter here:
 
 - At a convenience store, a small network delay may be enough to break the first attempt.

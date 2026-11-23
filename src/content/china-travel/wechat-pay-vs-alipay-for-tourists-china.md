@@ -117,7 +117,7 @@ Both apps can still fail because of:
 - mini-program behavior,
 - account region or security review.
 
-If you hit a real failure, use [Alipay Not Working in China for Foreign Tourists](/china-travel/articles/alipay-not-working-in-china-foreign-tourists/) or [WeChat Pay Not Working in China for Foreigners](/china-travel/articles/wechat-pay-not-working-in-china-foreigners/).
+If you hit a real failure, use [Alipay Not Working in China for Foreign Tourists](/china-travel/articles/alipay-not-working-in-china-foreign-tourists/) or [WeChat Pay Not Working in China for Foreigners](/china-travel/articles/wechat-pay-not-working-in-china-foreigners/). If the message points at your card, [run the WeChat Pay card checker](/tools/china-wechat-pay-fixer/) first — it tells you whether to change the card, finish verification, switch the payment flow, or simply move to your backup.
 
 ## Practical Backup Plan
 

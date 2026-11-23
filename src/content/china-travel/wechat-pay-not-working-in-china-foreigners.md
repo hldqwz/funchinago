@@ -32,7 +32,7 @@ WeChat Pay may fail because:
 - your data connection is weak,
 - a mini program or QR page fails to refresh correctly.
 
-One failed transaction does not always mean WeChat Pay is unusable for the whole trip.
+One failed transaction does not always mean WeChat Pay is unusable for the whole trip. If the error names your card, [run the WeChat Pay card checker](/tools/china-wechat-pay-fixer/) to separate card support, verification, and payment-flow causes before you retry the same counter.
 
 ## What to Do Immediately
 

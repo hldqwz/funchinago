@@ -171,6 +171,13 @@ export const paymentReadinessTools = [
     image: '/china-travel/images/article-payment-editorial.webp',
     label: 'Payment',
   },
+  {
+    title: 'WeChat Pay card checker',
+    href: '/tools/china-wechat-pay-fixer/',
+    text: 'Diagnose why WeChat Pay rejects a foreign card: card support, verification, QR direction, and what to try at the counter.',
+    image: '/china-travel/images/article-payment-editorial.webp',
+    label: 'Payment',
+  },
 ] as const;
 
 export const budgetPlannerTools = [

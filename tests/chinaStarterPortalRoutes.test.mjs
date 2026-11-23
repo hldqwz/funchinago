@@ -43,6 +43,9 @@ function assertRealRoute(href, label) {
     '/tools/china-transit-checker/',
     '/tools/china-travel-checklist/',
     '/tools/china-city-picker/',
+    '/tools/china-payment-readiness-checker/',
+    '/tools/china-trip-budget-calculator/',
+    '/tools/china-wechat-pay-fixer/',
   ]);
   assert.ok(knownRoutes.has(href), `${label} must point to a current route or homepage section anchor: ${href}`);
 }
