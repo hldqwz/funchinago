@@ -20,6 +20,7 @@ export const travelArticleGroups = [
       'how-to-pay-in-china-tourist',
       'how-to-use-alipay-in-china-foreigner',
       'how-to-use-wechat-pay-in-china-foreigner',
+      'wechat-pay-setup-step-by-step',
       'wechat-pay-vs-alipay-for-tourists-china',
       'can-you-use-apple-pay-or-google-pay-in-china',
       'can-foreign-credit-cards-work-in-china',

@@ -1,8 +1,8 @@
 # FunChinaGo Image License Registry
 
-Updated: 2026-10-24
+Updated: 2026-11-26
 
-Coverage: **102/102** files under `public/china-travel/images/` are registered below.
+Coverage: **108/108** files under `public/china-travel/images/` are registered below.
 
 ## Purpose
 
@@ -73,6 +73,12 @@ Externally sourced photographs with a confirmed source page, author, and license
 | `en-dim-sum-table.webp` | [Pexels](https://www.pexels.com/photo/delicious-chinese-dim-sum-spread-in-bamboo-steamers-32860331/) | change c c | Pexels License | `guangzhou-travel-guide-first-time-visitors.md` |
 | `en-canton-tower-night.webp` | [Pexels](https://www.pexels.com/photo/illuminated-canton-tower-in-guangzhou-14230468/) | Lywin | Pexels License | `guangzhou-travel-guide-first-time-visitors.md` |
 | `en-shamian-arcade.webp` | [Pexels](https://www.pexels.com/photo/charming-street-scene-in-shamian-island-guangzhou-36626301/) | Hossein Ghaedi | Pexels License | `guangzhou-travel-guide-first-time-visitors.md` |
+| `wxsetup-airport-phone.webp` | [Pexels](https://www.pexels.com/photo/traveler-at-modern-airport-terminal-in-guangzhou-34147081/) | dongfang xiaowu | Pexels License | `wechat-pay-setup-step-by-step.md` hero |
+| `wxsetup-qr-counter.webp` | [Pexels](https://www.pexels.com/photo/customer-paying-at-the-checkout-6925809/) | Tom Tillhub | Pexels License | `wechat-pay-setup-step-by-step.md` Step 3 |
+| `wxsetup-passport-phone.webp` | [Pexels](https://www.pexels.com/photo/close-up-of-a-person-holding-a-passport-and-a-smartphone-20805604/) | Jacob | Pexels License | `wechat-pay-setup-step-by-step.md` Step 4 |
+| `wxsetup-qr-scan.webp` | [Pexels](https://www.pexels.com/photo/a-close-up-shot-of-a-person-scanning-a-qr-code-12935064/) | iMin Technology | Pexels License | `wechat-pay-setup-step-by-step.md` Step 7 |
+| `wxsetup-street-stall-payment.webp` | [Pexels](https://www.pexels.com/photo/customer-paying-at-traditional-street-vendor-stall-39220559/) | Matthew Jesús | Pexels License | `wechat-pay-setup-step-by-step.md` Step 8 |
+| `wxsetup-contactless-counter.webp` | [Pexels](https://www.pexels.com/photo/contactless-payment-at-restaurant-bar-counter-37594390/) | SpotOn POS | Pexels License | `wechat-pay-setup-step-by-step.md` Step 9 |
 
 ## Site-owned photographs and graphics pending provenance check
 

@@ -37,6 +37,7 @@ function assertRealRoute(href, label) {
     '/china-travel/cities/',
     '/china-travel/life-culture/',
     '/china-travel/tools/',
+    '/china-travel/seasonal/',
     '/china-travel/#start-here',
     '/china-travel/#cities',
     '/china-travel/articles/',
@@ -59,7 +60,7 @@ function assertImageExists(src, label) {
 const homepagePortalOrder = readExportedArray(portalData, 'homepagePortalOrder');
 assert.deepEqual(
   homepagePortalOrder,
-  ['hero', 'start-here', 'cities', 'life-culture', 'tools', 'featured-city'],
+  ['hero', 'start-here', 'cities', 'life-culture', 'tools', 'seasonal', 'featured-city'],
   'homepage must keep the approved portal-first section order',
 );
 

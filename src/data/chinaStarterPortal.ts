@@ -39,6 +39,14 @@ export const portalSections = [
     description: 'Jump into the current planning tools for checklists, city picking, and transit screening when you are ready to act.',
     image: '/china-travel/images/article-city-comparison-editorial.webp',
   },
+  {
+    slug: 'seasonal',
+    title: 'Seasonal',
+    href: '/china-travel/seasonal/',
+    eyebrow: 'Read the calendar',
+    description: 'Understand the local events and seasonal conditions that change prices, crowds, and daily life across China.',
+    image: '/china-travel/images/article-why-visit-china-2026-editorial.webp',
+  },
 ] as const;
 
 export const startHereCards = [
@@ -74,6 +82,7 @@ export const homepagePortalOrder = [
   'cities',
   'life-culture',
   'tools',
+  'seasonal',
   'featured-city',
 ] as const;
 
@@ -257,6 +266,11 @@ export const paymentGuideLinks = [
     title: 'How to Pay in China as a Tourist',
     text: 'The hub for Alipay, WeChat Pay, cards, cash, and payment failures.',
     href: '/china-travel/articles/how-to-pay-in-china-tourist/',
+  },
+  {
+    title: 'WeChat Pay setup, step by step',
+    text: 'Install, verify with a passport, link a card, and make a first QR payment.',
+    href: '/china-travel/articles/wechat-pay-setup-step-by-step/',
   },
   {
     title: 'Alipay Guide',

@@ -199,6 +199,63 @@ import {
       </div>
     </section>
 
+    <section id="seasonal" class="portal-section seasonal-section reveal" aria-labelledby="seasonal-title">
+      <div class="section-heading">
+        <p class="portal-kicker">Seasonal</p>
+        <div class="section-heading-copy">
+          <h2 id="seasonal-title">Travel by what is actually happening on the ground.</h2>
+          <p>Trade fairs, humidity, migration waves, storms, and flower streets change prices and plans. Read the local calendar before you book.</p>
+        </div>
+      </div>
+
+      <div class="seasonal-grid">
+        <a class="seasonal-card" href="/china-travel/articles/canton-fair-2026-travel-guide/">
+          <img src="/china-travel/images/en-canton-tower-night.webp" alt="Canton Tower lit up at night in Guangzhou" loading="lazy" />
+          <div>
+            <span>April · October</span>
+            <h3>Canton Fair travel surge</h3>
+            <p>Three phases, two sessions, and a city that fills up fast.</p>
+          </div>
+        </a>
+        <a class="seasonal-card" href="/china-travel/articles/huinantian-south-china-humidity-guide/">
+          <img src="/china-travel/images/life-daily-editorial.webp" alt="Editorial illustration of everyday life in a Chinese city" loading="lazy" />
+          <div>
+            <span>February · April</span>
+            <h3>Huinantian: the walls sweat</h3>
+            <p>Why South China turns damp and what visitors should do.</p>
+          </div>
+        </a>
+        <a class="seasonal-card" href="/china-travel/articles/spring-festival-travel-rush-12306/">
+          <img src="/china-travel/images/article-15-high-speed-train.webp" alt="High-speed train travelling in China" loading="lazy" />
+          <div>
+            <span>40 days</span>
+            <h3>Spring Festival travel rush</h3>
+            <p>How the 15-day ticket window works and how to plan around it.</p>
+          </div>
+        </a>
+        <a class="seasonal-card" href="/china-travel/articles/typhoon-season-china-flights/">
+          <img src="/china-travel/images/shanghai-nanjing-road-night.webp" alt="Busy Nanjing Road at night in Shanghai" loading="lazy" />
+          <div>
+            <span>July · September</span>
+            <h3>Typhoon season and your flights</h3>
+            <p>Warnings, cancellations, refunds, and backup routes.</p>
+          </div>
+        </a>
+        <a class="seasonal-card" href="/china-travel/articles/chinese-new-year-flower-markets/">
+          <img src="/china-travel/images/article-weekly-guangzhou.webp" alt="Guangzhou cityscape along the Pearl River" loading="lazy" />
+          <div>
+            <span>Before Lunar New Year</span>
+            <h3>New Year flower markets</h3>
+            <p>A free, open-to-all local ritual in Guangzhou.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="section-foot-links mono-meta">
+        <a href="/china-travel/seasonal/">Open the seasonal library</a>
+      </div>
+    </section>
+
     <section id="featured-city" class="city-spotlight reveal" aria-labelledby="featured-title">
       <div class="spotlight-head">
         <div>
@@ -1112,6 +1169,75 @@ import {
     font-size: var(--fs-mono);
     letter-spacing: 0.06em;
     text-transform: uppercase;
+  }
+
+  /* ------------------------------------------------------------- seasonal */
+
+  .seasonal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--grid-gap);
+  }
+
+  .seasonal-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    background: var(--surface);
+    color: var(--ink);
+    text-decoration: none;
+    transition: border-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+  }
+
+  .seasonal-card:hover {
+    border-color: var(--seal);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  .seasonal-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .seasonal-card div {
+    padding: 0.9rem 1.1rem 1.15rem;
+  }
+
+  .seasonal-card span {
+    color: var(--seal);
+    font-family: var(--font-mono);
+    font-size: var(--fs-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .seasonal-card h3 {
+    margin: 0.35rem 0 0.4rem;
+    font-size: var(--fs-h4);
+    font-weight: var(--fw-semibold);
+    line-height: 1.25;
+  }
+
+  .seasonal-card p {
+    color: var(--ink-70);
+    font-size: var(--fs-sm);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 980px) {
+    .seasonal-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .seasonal-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
   }
 
   /* ------------------------------------------------------- city spotlight */

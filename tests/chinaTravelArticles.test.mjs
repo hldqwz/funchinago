@@ -7,9 +7,9 @@ const sourcePath = path.resolve('src/data/chinaTravelSources.json');
 const portalDataPath = path.resolve('src/data/chinaStarterPortal.ts');
 const sources = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
 const sourceIds = new Set(sources.sources.map((source) => source.id));
-const validSections = new Set(['start-here', 'travel', 'cities', 'life-culture', 'tools']);
+const validSections = new Set(['start-here', 'travel', 'cities', 'life-culture', 'tools', 'seasonal']);
 const portalData = fs.readFileSync(portalDataPath, 'utf8');
-const expectedPortalSlugs = ['start-here', 'travel', 'cities', 'life-culture', 'tools'];
+const expectedPortalSlugs = ['start-here', 'travel', 'cities', 'life-culture', 'tools', 'seasonal'];
 const beijingGuideFile = 'beijing-travel-guide-first-time-visitors.md';
 const beijingGuidePath = path.join(articlesDir, beijingGuideFile);
 const beijingGuideHref = '/china-travel/articles/beijing-travel-guide-first-time-visitors/';
@@ -23,6 +23,7 @@ const knownPortalHrefs = new Set([
   '/china-travel/cities/',
   '/china-travel/life-culture/',
   '/china-travel/tools/',
+  '/china-travel/seasonal/',
   '/china-travel/sources/',
   '/tools/china-transit-checker/',
   '/tools/china-travel-checklist/',
